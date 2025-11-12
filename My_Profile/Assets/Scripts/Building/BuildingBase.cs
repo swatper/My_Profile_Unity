@@ -11,7 +11,7 @@ public abstract  class BuildingBase : MonoBehaviour
     /// 충돌 감지
     /// </summary>
     /// <param name="collision"></param>
-    public abstract void OnCollisionEnter2D(Collision2D collision);
+    public abstract void OnTriggerEnter2D(Collider2D collision);
 
     /// <summary>
     /// 빌딩 정보(포폴 정보) 보여주기

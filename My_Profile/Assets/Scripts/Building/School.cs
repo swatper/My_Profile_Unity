@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class School : BuildingBase
 {
-    public override void OnCollisionEnter2D(Collision2D collision)
+public override void OnTriggerEnter2D(Collider2D collision)
     {
         throw new System.NotImplementedException();
     }

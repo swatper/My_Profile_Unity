@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6148151668478404465}
   - component: {fileID: 8328329833054888011}
-  - component: {fileID: 2972679257071581878}
+  - component: {fileID: 6892499320644788629}
   m_Layer: 0
-  m_Name: Diagonal_Fence_2
-  m_TagString: Untagged
+  m_Name: Diagonal_Fence_1
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -289867225
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1408638347, guid: 3ce13e881799b2c43b2288f5dc14f5ae, type: 3}
+  m_Sprite: {fileID: -951241191, guid: 3ce13e881799b2c43b2288f5dc14f5ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2972679257071581878
-BoxCollider2D:
+--- !u!60 &6892499320644788629
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,6 +127,23 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.09, y: 1.67}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.465, y: -0.085}
+      - {x: 0.545, y: 0.005}
+      - {x: 0.545, y: 0.755}
+      - {x: 0.48499998, y: 0.835}
+      - {x: 0.405, y: 0.835}
+      - {x: 0.33499998, y: 0.765}
+      - {x: 0.325, y: 0.635}
+      - {x: -0.345, y: 0.035}
+      - {x: -0.465, y: 0.105}
+      - {x: -0.545, y: -0.005}
+      - {x: -0.545, y: -0.745}
+      - {x: -0.53499997, y: -0.775}
+      - {x: -0.445, y: -0.835}
+      - {x: -0.385, y: -0.835}
+      - {x: -0.33499998, y: -0.755}
+      - {x: -0.33499998, y: -0.645}
+      - {x: 0.275, y: -0.095}
+  m_UseDelaunayMesh: 0

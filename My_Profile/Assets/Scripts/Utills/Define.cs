@@ -9,4 +9,17 @@ public class Define : MonoBehaviour
         Up,
         Down,
     }
+    /// <summary>
+    /// 언전간 필요하겠지...?
+    /// </summary>
+    public enum Layers 
+    {
+        Default,
+        BackGround,
+        Player_Back,
+        Fence,
+        Building,
+        Player_Front,
+        Reserve
+    }
 }

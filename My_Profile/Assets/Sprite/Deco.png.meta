@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3ce13e881799b2c43b2288f5dc14f5ae
+guid: 2dab7e36993277948a5cac3f238d2162
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,139 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fences_0
+      name: Lamp
       rect:
         serializedVersion: 2
-        x: 0
-        y: 317
-        width: 143
-        height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74b1d0b81e17d0546810085f3ce4c450
-      internalID: -1250113433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fences_1
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 314
-        width: 22
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e70aabd9cade99468e9995b4644587e
-      internalID: 1953062290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fences_2
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 253
-        width: 45
-        height: 163
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d27ae0880d3f4d4d81809afed5f4331
-      internalID: -451932662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fences_3
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 312
-        width: 22
-        height: 98
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08bf44d1b1cbaf341b48b352e0d35e4c
-      internalID: 683029272
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fences_4
-      rect:
-        serializedVersion: 2
-        x: 291
-        y: 252
-        width: 109
-        height: 167
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1cdf078a8877df4faa34b1df77fdda6
-      internalID: -951241191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fences_5
-      rect:
-        serializedVersion: 2
-        x: 406
-        y: 303
-        width: 46
-        height: 107
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd14f8076d87ce742a96d74c0103a0bd
-      internalID: 547445307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fences_6
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 82
-        width: 109
-        height: 167
+        x: 121
+        y: 389
+        width: 155
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,8 +111,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a128f4e8abc3dda48a8ea9ac597934b4
-      internalID: -1408638347
+      spriteID: 630f4e819b4ba794c87ae18f29691889
+      internalID: 1384466041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 389
+        width: 258
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2fc98c9d357d04a8d1be5d14ac22b4
+      internalID: 890259057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bush
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 431
+        width: 262
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f973f903889374f9ee9ae9dd15e15b
+      internalID: -1906598633
       vertices: []
       indices: 
       edges: []
@@ -254,19 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Diagon_Fence: 1301939909
-      Fences_0: -1250113433
-      Fences_1: 1953062290
-      Fences_2: -451932662
-      Fences_3: 683029272
-      Fences_4: -951241191
-      Fences_5: 547445307
-      Fences_6: -1408638347
-      Halfe_Fence: -2060347768
-      Horizental_Fence: -820513791
-      Pillar_Fence_1: -1547784663
-      Pillar_Fence_2: 1970128388
-      Vertical_Fence: -2076547183
+      Bush: -1906598633
+      Lamp: 1384466041
+      Tree: 890259057
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

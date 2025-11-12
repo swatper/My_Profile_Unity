@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Building
+  - Fence
   layers:
   - Default
   - TransparentFX
@@ -44,12 +46,21 @@ TagManager:
   - name: BackGround
     uniqueID: 392086237
     locked: 0
-  - name: Player
+  - name: Player_Back
     uniqueID: 2264620921
     locked: 0
   - name: Fence
     uniqueID: 4005100071
     locked: 0
+  - name: Player_Mid
+    uniqueID: 1697934669
+    locked: 0
   - name: Building
     uniqueID: 3452738685
+    locked: 0
+  - name: Player_Front
+    uniqueID: 1457403231
+    locked: 0
+  - name: Reserve
+    uniqueID: 1539213663
     locked: 0

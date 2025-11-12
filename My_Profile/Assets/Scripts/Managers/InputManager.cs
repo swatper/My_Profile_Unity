@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputManager
 {
     public Action<Define.KeyEvent> KeyPress;
 
@@ -13,22 +11,22 @@ public class InputManager : MonoBehaviour
             return;
 
         //LeftArrow
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             KeyPress.Invoke(Define.KeyEvent.Left);
         }
         //RightArrow
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             KeyPress.Invoke(Define.KeyEvent.Right);
         }
         //UpArrow
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             KeyPress.Invoke(Define.KeyEvent.Up);
         }
         //DownArrow
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             KeyPress.Invoke(Define.KeyEvent.Down);
         }

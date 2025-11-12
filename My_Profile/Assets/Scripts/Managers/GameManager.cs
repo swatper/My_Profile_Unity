@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,17 +8,16 @@ public class GameManager : MonoBehaviour
 
     InputManager M_Input = new InputManager();
     public static InputManager Input { get { return Instance.M_Input; } }
-
     #endregion
 
     static void Init()
     {
         if (GM_Instance == null)
         {
-            GameObject gmObject = GameObject.Find("GameManager_PSH");
+            GameObject gmObject = GameObject.Find("GameManager");
             if (gmObject == null)
             {
-                gmObject = new GameObject { name = "GameManager_PSH" };
+                gmObject = new GameObject { name = "GameManager" };
                 gmObject.AddComponent<GameManager>();
             }
             DontDestroyOnLoad(gmObject);
@@ -28,4 +25,9 @@ public class GameManager : MonoBehaviour
             GM_Instance = gmObject.GetComponent<GameManager>();
         }
     }
+
+    private void Update() {
+        Input.KeyEvent();
+    }
+
 }
