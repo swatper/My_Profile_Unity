@@ -8,10 +8,4 @@ public class Smithy : BuildingBase
     {
         throw new System.NotImplementedException();
     }
-
-    public override void ShowInfomattion()
-    {
-        throw new System.NotImplementedException();
-    }
-
 }

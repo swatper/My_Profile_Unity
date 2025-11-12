@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public static InputManager Input { get { return Instance.M_Input; } }
     #endregion
 
+    public PlayerController pController;
+    public static PlayerController Player { get { return Instance.pController; } }
+
     static void Init()
     {
         if (GM_Instance == null)
@@ -20,9 +23,17 @@ public class GameManager : MonoBehaviour
                 gmObject = new GameObject { name = "GameManager" };
                 gmObject.AddComponent<GameManager>();
             }
-            DontDestroyOnLoad(gmObject);
-
             GM_Instance = gmObject.GetComponent<GameManager>();
+            DontDestroyOnLoad(gmObject);
+        }
+    }
+
+    private void Awake()
+    {
+        GameObject playerObject = GameObject.Find("Player");
+        if (playerObject != null)
+        {
+            pController = playerObject.GetComponent<PlayerController>();
         }
     }
 

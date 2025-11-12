@@ -8,6 +8,7 @@ public class Define : MonoBehaviour
         Right,
         Up,
         Down,
+        ESC
     }
     /// <summary>
     /// 언전간 필요하겠지...?

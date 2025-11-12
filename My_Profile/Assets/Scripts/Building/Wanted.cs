@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Wanted : BuildingBase
 {
+    [SerializeField] WANTED_UI uiScript;
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        throw new System.NotImplementedException();
+        uiScript.Show();
     }
-
-    public override void ShowInfomattion()
-    {
-        throw new System.NotImplementedException();
-    }
-
 }

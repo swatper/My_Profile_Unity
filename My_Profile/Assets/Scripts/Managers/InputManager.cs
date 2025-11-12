@@ -30,13 +30,17 @@ public class InputManager
         {
             KeyPress.Invoke(Define.KeyEvent.Down);
         }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            KeyPress.Invoke(Define.KeyEvent.ESC);
+        }
     }
 
     public void SubscribeKeyEvent(Action<Define.KeyEvent> tragetMethod) {
         KeyPress += tragetMethod;
     }
 
-    public void RemveSubscribe(Action<Define.KeyEvent> tragetMethod) {
+    public void RemoveSubscribe(Action<Define.KeyEvent> tragetMethod) {
         KeyPress -= tragetMethod;
     }
 }

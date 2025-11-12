@@ -12,9 +12,4 @@ public abstract  class BuildingBase : MonoBehaviour
     /// </summary>
     /// <param name="collision"></param>
     public abstract void OnTriggerEnter2D(Collider2D collision);
-
-    /// <summary>
-    /// 빌딩 정보(포폴 정보) 보여주기
-    /// </summary>
-    public abstract void ShowInfomattion();
 }
