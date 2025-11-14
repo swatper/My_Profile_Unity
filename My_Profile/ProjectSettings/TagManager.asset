@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Building
   - Fence
+  - ETC
   layers:
   - Default
   - TransparentFX

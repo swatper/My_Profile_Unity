@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WANTED_UI : UIBase
+public class InfoUI : UIBase
 {
     [SerializeField]Animator uiAni;
     public override void KeyEvent(Define.KeyEvent key)

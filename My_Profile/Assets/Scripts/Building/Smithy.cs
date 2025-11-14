@@ -6,6 +6,7 @@ public class Smithy : BuildingBase
 {
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        throw new System.NotImplementedException();
+        if (collision.tag == "Player")
+            uiScript.Show();
     }
 }
