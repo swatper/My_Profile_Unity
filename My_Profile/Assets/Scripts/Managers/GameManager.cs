@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     InputManager M_Input = new InputManager();
     public static InputManager Input { get { return Instance.M_Input; } }
     #endregion
+
+    public TimeUpdater TimeUpdater = new TimeUpdater();
+    public static TimeUpdater Clock { get { return Instance.TimeUpdater; } }
 
     public PlayerController pController;
     public static PlayerController Player { get { return Instance.pController; } }
@@ -35,10 +39,17 @@ public class GameManager : MonoBehaviour
         {
             pController = playerObject.GetComponent<PlayerController>();
         }
+        StartCoroutine(UpdateTimePerSec());
     }
 
     private void Update() {
         Input.KeyEvent();
     }
 
+    IEnumerator UpdateTimePerSec() {
+        while (true) {
+            TimeUpdater.UpdateTime();
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
 }
