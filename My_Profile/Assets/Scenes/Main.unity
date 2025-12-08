@@ -2752,7 +2752,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce955dfae5082df4cb5e0efb1dc19da6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7226,9 +7226,10 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 0.7712866, y: -0.19812226}
-  - {x: -0.40101624, y: 0.23800945}
-  - {x: -0.44381762, y: -0.14188814}
-  - {x: 0.4482746, y: -0.5333767}
+  - {x: -0.2828927, y: 0.19767451}
+  - {x: -0.7211647, y: 0.37883544}
+  - {x: -0.8636097, y: 0.01513803}
+  - {x: 0.5208869, y: -0.5722761}
   - {x: 0.764163, y: -0.22013617}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
@@ -7980,9 +7981,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5ba3b5dd0ccff2244862d71254909c44, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8717,8 +8718,8 @@ EdgeCollider2D:
   - {x: -0.8597443, y: -1.035141}
   - {x: -1.2214324, y: -1.1878734}
   - {x: -0.92714643, y: -1.550034}
-  - {x: -0.22279716, y: -1.5043216}
-  - {x: 0.21436977, y: -1.2948594}
+  - {x: -0.09087658, y: -1.6664743}
+  - {x: 0.3435421, y: -1.3828063}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -10162,6 +10163,7 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.17949462, y: -1.3278075}
   - {x: -1.1662908, y: -0.92487097}
+  - {x: -1.4481962, y: -0.9589622}
   - {x: -1.4507487, y: -1.1871722}
   - {x: -0.5618994, y: -1.5796332}
   - {x: -0.08759308, y: -1.3583319}
