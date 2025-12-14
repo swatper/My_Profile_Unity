@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5043054248303416922}
   - component: {fileID: 8295155702895546023}
   - component: {fileID: 6223681199652743171}
+  - component: {fileID: -231769118758883122}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -289867225
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1384466041, guid: 2dab7e36993277948a5cac3f238d2162, type: 3}
+  m_Sprite: {fileID: 726526234, guid: 2dab7e36993277948a5cac3f238d2162, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,3 +131,18 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &-231769118758883122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4128362237344660326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ee8dffb4977aa4cbd7441d801a2a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8295155702895546023}
+  lampOff: {fileID: 726526234, guid: 2dab7e36993277948a5cac3f238d2162, type: 3}
+  lampOn: {fileID: 1384466041, guid: 2dab7e36993277948a5cac3f238d2162, type: 3}

@@ -6,8 +6,10 @@ using UnityEngine.SocialPlatforms;
 
 public class TimeUpdater
 {
+    [Header("시간 알리미")]
+    public Action<string> OnTimeUpdated;
     [Header("정각 알리미")]
-    public Action OnTheHour;
+    public Action OnHourChanged;
 
     [Header("로컬 시간 데이터")]
     public string localYear;
@@ -29,14 +31,23 @@ public class TimeUpdater
 
         //정각 알림
         if (localMinute == "00" && localSecond == "00") {
-            OnTheHour.Invoke();
+            OnHourChanged?.Invoke();
         }
+        OnTimeUpdated?.Invoke($"{localHour}:{localMinute}");
+    }
+
+    public void SubscribeOnRealTime(Action<string> method){
+        OnTimeUpdated += method;
+    }
+
+    public void UnsubscribeOnTimeAlarm(Action<string> method){
+        OnTimeUpdated -= method;
     }
 
     public void SubscribeOnTimeAlarm(Action method) {
-        OnTheHour += method;
+        OnHourChanged += method;
     }
     public void UnsubscribeOnTimeAlarm(Action method){
-        OnTheHour -= method;
+        OnHourChanged -= method;
     }
 }
