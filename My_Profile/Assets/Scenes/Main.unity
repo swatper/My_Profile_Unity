@@ -5078,7 +5078,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6302,6 +6302,7 @@ MonoBehaviour:
   amb: {fileID: 363865598}
   birdAmb: {fileID: 8300000, guid: ce955dfae5082df4cb5e0efb1dc19da6, type: 3}
   wolfAmb: {fileID: 0}
+  lastTOD: 0
 --- !u!1001 &709446462
 PrefabInstance:
   m_ObjectHideFlags: 0
