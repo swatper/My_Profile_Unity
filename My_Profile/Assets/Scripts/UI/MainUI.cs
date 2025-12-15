@@ -12,6 +12,7 @@ public class MainUI : MonoBehaviour
 
     private void Awake(){
         GameManager.Clock.SubscribeOnRealTime(UpdateTime);
+        UpdateTime($"{GameManager.Clock.localHour}:{GameManager.Clock.localMinute}");
     }
 
     void UpdateTime(string Time) {

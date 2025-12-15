@@ -1,25 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
-public class Lamp : MonoBehaviour
+public class Lamp : TimeSensitiveControllerBase
 {
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Light2D lampLight;
     [SerializeField] Sprite lampOff;
     [SerializeField] Sprite lampOn;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        GameManager.Clock.SubscribeOnTimeAlarm(CheckTime);
-        CheckTime();
+        lampLight = GetComponentInChildren<Light2D>();
     }
 
-    void CheckTime() {
-        int curTime = int.Parse(GameManager.Clock.localHour);
-
-        if (curTime <= 5 || curTime >= 18) 
+    protected override void CheckTime(Define.TimeOfDay timeOfDay) {
+        if (timeOfDay == Define.TimeOfDay.Night) {
             spriteRenderer.sprite = lampOn;
-        else
+            lampLight.enabled = true;
+        }
+        else{
             spriteRenderer.sprite = lampOff;
+            lampLight.enabled = false;
+        }
     }
 }

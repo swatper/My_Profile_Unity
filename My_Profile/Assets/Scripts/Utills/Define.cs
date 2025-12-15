@@ -11,7 +11,7 @@ public class Define : MonoBehaviour
         ESC
     }
     /// <summary>
-    /// 언전간 필요하겠지...?
+    /// 언젠간 필요하겠지...?
     /// </summary>
     public enum Layers 
     {
@@ -22,5 +22,12 @@ public class Define : MonoBehaviour
         Building,
         Player_Front,
         Reserve
+    }
+
+    public enum TimeOfDay 
+    {
+        Morning,
+        Day,
+        Night
     }
 }

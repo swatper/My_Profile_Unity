@@ -2837,7 +2837,7 @@ GameObject:
   - component: {fileID: 363865597}
   - component: {fileID: 363865598}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: Ambience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2872,7 +2872,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5078,7 +5078,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6262,6 +6262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 708119042}
+  - component: {fileID: 708119043}
   m_Layer: 0
   m_Name: SoundRoot
   m_TagString: Untagged
@@ -6286,6 +6287,21 @@ Transform:
   - {fileID: 1022522791}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708119043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708119041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2cc2bfabc860d47ab008387cd6449f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amb: {fileID: 363865598}
+  birdAmb: {fileID: 8300000, guid: ce955dfae5082df4cb5e0efb1dc19da6, type: 3}
+  wolfAmb: {fileID: 0}
 --- !u!1001 &709446462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12307,51 +12323,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565409861}
   m_CullTransparentMesh: 1
---- !u!1 &1574082114
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1574082116}
-  - component: {fileID: 1574082115}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1574082115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574082114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1152e475766fbf428e08b961b07acc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pController: {fileID: 0}
---- !u!4 &1574082116
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574082114}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1579472010
 GameObject:
   m_ObjectHideFlags: 0
@@ -12859,6 +12830,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1668514197}
+  - component: {fileID: 1668514198}
   m_Layer: 0
   m_Name: Lights
   m_TagString: Untagged
@@ -12875,13 +12847,29 @@ Transform:
   m_GameObject: {fileID: 1668514196}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1677104197}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1668514198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668514196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45155cffceae4047a6915e38edc84df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golbalLight: {fileID: 1677104198}
+  moringLight: {r: 1, g: 1, b: 1, a: 0}
+  dayLight: {r: 1, g: 1, b: 1, a: 0}
+  nightLight: {r: 0.30588236, g: 0.32941177, b: 0.39215687, a: 0}
 --- !u!1 &1677104196
 GameObject:
   m_ObjectHideFlags: 0
@@ -12930,8 +12918,8 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.30588236, g: 0.32941177, b: 0.39215687, a: 1}
+  m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000ddc25e17795ffb8627fab8ee4d6d34657d9ccccd5f35de565f89be5b
@@ -21528,7 +21516,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 915779974}
   - {fileID: 1668514197}
-  - {fileID: 1574082116}
   - {fileID: 708119042}
   - {fileID: 1727327393}
   - {fileID: 1201084053}

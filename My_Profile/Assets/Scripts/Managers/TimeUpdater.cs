@@ -29,10 +29,6 @@ public class TimeUpdater
         localSecond = dateTime.Second.ToString("D2");
         Debug.Log($"{localHour}:{localMinute}:{localSecond}");
 
-        //정각 알림
-        if (localMinute == "00" && localSecond == "00") {
-            OnHourChanged?.Invoke();
-        }
         OnTimeUpdated?.Invoke($"{localHour}:{localMinute}");
     }
 
@@ -42,12 +38,5 @@ public class TimeUpdater
 
     public void UnsubscribeOnTimeAlarm(Action<string> method){
         OnTimeUpdated -= method;
-    }
-
-    public void SubscribeOnTimeAlarm(Action method) {
-        OnHourChanged += method;
-    }
-    public void UnsubscribeOnTimeAlarm(Action method){
-        OnHourChanged -= method;
     }
 }

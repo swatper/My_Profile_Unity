@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -16,6 +17,13 @@ public class GameManager : MonoBehaviour
 
     public PlayerController pController;
     public static PlayerController Player { get { return Instance.pController; } }
+
+    [Header("시간 관련 데이터 및 이벤트")]
+    [SerializeField] public Define.TimeOfDay curTOD;
+    [Header("정각 알리미")]
+    public Action OnHourChanged;
+    [Header("시간대 알리미")]
+    public Action<Define.TimeOfDay> OnTimeOfDayChanged;
 
     static void Init()
     {
@@ -46,9 +54,32 @@ public class GameManager : MonoBehaviour
         Input.KeyEvent();
     }
 
+    private void CheckTime() {
+        //시간대 알림
+        int curHour = int.Parse(GameManager.Clock.localHour);
+        //저녁/밤: 18시부터 5시
+        if (curHour >= 18 || curHour < 5)
+            curTOD = Define.TimeOfDay.Night;
+        //아침: 5시부터 11시
+        else if (curHour >= 5 && curHour < 11)
+            curTOD = Define.TimeOfDay.Morning;
+        //점심/낮: 11시부터 18시
+        else
+            curTOD = Define.TimeOfDay.Day;
+        
+        Debug.Log($"{curTOD}");
+        OnTimeOfDayChanged?.Invoke(curTOD);
+
+        //정각 알림
+        if (Clock.localMinute == "00" && Clock.localSecond == "00"){
+            OnHourChanged?.Invoke();
+        }
+    }
+
     IEnumerator UpdateTimePerSec() {
         while (true) {
             TimeUpdater.UpdateTime();
+            CheckTime();
             yield return new WaitForSeconds(1.0f);
         }
     }
