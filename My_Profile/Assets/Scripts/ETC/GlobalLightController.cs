@@ -15,12 +15,15 @@ public class GlobalLightController : TimeSensitiveControllerBase
         switch (timeOfDay) {
             case Define.TimeOfDay.Morning:
                 golbalLight.color = moringLight;
+                golbalLight.intensity = 1.0f;
                 break;
             case Define.TimeOfDay.Day:
                 golbalLight.color = dayLight;
+                golbalLight.intensity = 1.0f;
                 break;
             case Define.TimeOfDay.Night:
                 golbalLight.color = nightLight;
+                golbalLight.intensity = 0.4f;
                 break;
         }
     }

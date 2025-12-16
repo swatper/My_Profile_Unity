@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rigid;
     [SerializeField] private SpriteRenderer pSprite;
     [SerializeField] Animator pAnimator;
+    [SerializeField] Transform lightPivot;
     public Vector2 inputVec;
     private void Awake()
     {
@@ -39,7 +41,12 @@ public class PlayerController : MonoBehaviour
     {
         pAnimator.SetFloat("speed", inputVec.magnitude);
         if (inputVec.x != 0) {
-            pSprite.flipX = inputVec.x < 0;
+            bool isFlipped = inputVec.x < 0;
+            pSprite.flipX = isFlipped;
+            lightPivot.localRotation = Quaternion.Euler(
+                 lightPivot.localRotation.eulerAngles.x,
+                 isFlipped ? 180f : 0f,
+                 lightPivot.localRotation.eulerAngles.z);
         }
     }
 }
