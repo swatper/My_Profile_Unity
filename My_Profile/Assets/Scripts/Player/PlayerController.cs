@@ -1,3 +1,4 @@
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -7,10 +8,12 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] string playerName = "Tester";
     [SerializeField] float playerSpeed = 5.0f;
     [SerializeField] public bool isReadingInfo = false;
+    [SerializeField] int pType = 0; //È®ÀÎ¿ë
     [Header("Player Component")]
     [SerializeField] Rigidbody2D rigid;
     [SerializeField] private SpriteRenderer pSprite;
     [SerializeField] Animator pAnimator;
+    [SerializeField] AnimatorOverrideController[] pAniControllers;
     [SerializeField] Transform lightPivot;
     public Vector2 inputVec;
     private void Awake()
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
         rigid =  GetComponent<Rigidbody2D>();
         pSprite =  GetComponent<SpriteRenderer>();
         pAnimator = GetComponent<Animator>();
+        ChangePlayerSkin(pType);
     }
 
     void Update()
@@ -48,5 +52,10 @@ public class PlayerController : MonoBehaviour
                  isFlipped ? 180f : 0f,
                  lightPivot.localRotation.eulerAngles.z);
         }
+    }
+
+    public void ChangePlayerSkin(int pType) {
+       this.pType = pType;
+        pAnimator.runtimeAnimatorController = pAniControllers[pType];
     }
 }

@@ -34,6 +34,9 @@ public class InputManager
         {
             KeyPress.Invoke(Define.KeyEvent.ESC);
         }
+        if (Input.GetKey(KeyCode.Tab)) {
+            KeyPress.Invoke(Define.KeyEvent.Tab);
+        }
     }
 
     public void SubscribeKeyEvent(Action<Define.KeyEvent> tragetMethod) {

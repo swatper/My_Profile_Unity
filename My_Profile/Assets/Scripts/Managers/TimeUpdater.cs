@@ -27,7 +27,7 @@ public class TimeUpdater
         localHour = dateTime.Hour.ToString("D2");
         localMinute = dateTime.Minute.ToString("D2");
         localSecond = dateTime.Second.ToString("D2");
-        Debug.Log($"{localHour}:{localMinute}:{localSecond}");
+        //Debug.Log($"{localHour}:{localMinute}:{localSecond}");
 
         OnTimeUpdated?.Invoke($"{localHour}:{localMinute}");
     }
