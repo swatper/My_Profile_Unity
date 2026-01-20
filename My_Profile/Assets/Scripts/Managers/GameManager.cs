@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
     }
 
     private void CheckTime() {
-        /*
         //시간대 알림
         int curHour = int.Parse(GameManager.Clock.localHour);
         //저녁/밤: 18시부터 4시
@@ -68,7 +67,6 @@ public class GameManager : MonoBehaviour
         //점심/낮: 12시부터 18시
         else
             curTOD = Define.TimeOfDay.Day;
-        */
 
         //Debug.Log($"{curTOD}");
         OnTimeOfDayChanged?.Invoke(curTOD);
