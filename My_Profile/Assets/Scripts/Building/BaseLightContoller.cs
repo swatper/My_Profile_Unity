@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class BaseLightContoller : TimeSensitiveControllerBase
 {
-    [SerializeField] Light2D[] light2D;
+    [SerializeField] protected Light2D[] light2D;
     protected override void Awake()
     {
         base.Awake();

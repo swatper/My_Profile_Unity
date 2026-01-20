@@ -1558,7 +1558,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -7}
+  m_Offset: {x: 0, y: -8}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9228,7 +9228,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.7
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14439,10 +14439,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45155cffceae4047a6915e38edc84df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  golbalLight: {fileID: 1677104198}
-  moringLight: {r: 1, g: 1, b: 1, a: 0}
-  dayLight: {r: 1, g: 1, b: 1, a: 0}
-  nightLight: {r: 0.30588236, g: 0.32941177, b: 0.39215687, a: 0}
+  globalLight: {fileID: 1677104198}
+  moringLight:
+    serializedVersion: 2
+    rgba: 4294967295
+  dayLight:
+    serializedVersion: 2
+    rgba: 9885695
+  nightLight:
+    serializedVersion: 2
+    rgba: 6575182
 --- !u!1 &1677104196
 GameObject:
   m_ObjectHideFlags: 0
@@ -23379,6 +23385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 655365447}
     m_Modifications:
+    - target: {fileID: -231769118758883122, guid: cda15e7036b877048a19475a5580dd43, type: 3}
+      propertyPath: light2D.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4128362237344660326, guid: cda15e7036b877048a19475a5580dd43, type: 3}
       propertyPath: m_Name
       value: Lamp

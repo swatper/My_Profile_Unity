@@ -18,10 +18,10 @@ public class SoundClipController : TimeSensitiveControllerBase
                     amb.Play();
                     break;
                 case Define.TimeOfDay.Day:
-                    Debug.Log("음악 없음");
+                    Debug.Log("오후 음악");
                     break;
                 case Define.TimeOfDay.Night:
-                    Debug.Log("음악 없음");
+                    Debug.Log("늑대 울음 소리");
                     //음악이 없으므로 일단 정지
                     amb.Stop();
                     break;

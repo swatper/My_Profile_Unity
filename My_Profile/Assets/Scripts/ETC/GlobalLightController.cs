@@ -5,26 +5,42 @@ using UnityEngine.Rendering.Universal;
 
 public class GlobalLightController : TimeSensitiveControllerBase
 {
-    [SerializeField] Light2D golbalLight;
+    [SerializeField] Light2D globalLight;
     [Header("시간대별 빛 밝기")]
-    [SerializeField] Color moringLight = Color.white;
-    [SerializeField] Color dayLight;
-    [SerializeField] Color nightLight; 
+    [SerializeField] Color32 moringLight = new Color32(255, 255, 255, 0);
+    [SerializeField] Color32 dayLight = new Color32(255, 215, 150, 0);
+    [SerializeField] Color32 nightLight = new Color32(78, 84, 100, 0);
+    [SerializeField] float changeDuration = 1.5f;
 
     protected override void CheckTime(Define.TimeOfDay timeOfDay) {
         switch (timeOfDay) {
             case Define.TimeOfDay.Morning:
-                golbalLight.color = moringLight;
-                golbalLight.intensity = 1.0f;
+                StartCoroutine(ChangeLightColor(moringLight, 1.0f));
                 break;
             case Define.TimeOfDay.Day:
-                golbalLight.color = dayLight;
-                golbalLight.intensity = 1.0f;
+                StartCoroutine(ChangeLightColor(dayLight, 0.8f));
                 break;
             case Define.TimeOfDay.Night:
-                golbalLight.color = nightLight;
-                golbalLight.intensity = 0.4f;
+                StartCoroutine(ChangeLightColor(nightLight, 0.4f));
                 break;
         }
+    }
+
+    IEnumerator ChangeLightColor(Color32 targetColor, float targetIntensity) {
+        float elapsedTime = 0.0f;
+        Color32 startColor = globalLight.color;
+        float startIntensity = globalLight.intensity;
+        while (elapsedTime < changeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / changeDuration;
+            globalLight.color = Color.Lerp(startColor, targetColor, t);
+            globalLight.intensity = Mathf.Lerp(startIntensity, targetIntensity, t);
+            yield return null;
+        }
+
+        //오차 보정
+        globalLight.color = targetColor;
+        globalLight.intensity = targetIntensity;
     }
 }
