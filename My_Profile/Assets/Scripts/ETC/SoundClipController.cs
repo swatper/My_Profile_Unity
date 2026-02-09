@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SoundClipController : TimeSensitiveControllerBase
 {
-    [SerializeField] AudioSource amb;
-    [SerializeField] AudioClip birdAmb;
-    [SerializeField] AudioClip wolfAmb;
+    [SerializeField] AudioSource bgmBox;
+    [SerializeField] AudioSource ambBox;
+    [SerializeField] AudioClip[] natureAmbs;
     [SerializeField] Define.TimeOfDay lastTOD = Define.TimeOfDay.Morning;
 
     protected override void CheckTime(Define.TimeOfDay newTime)
@@ -14,19 +14,26 @@ public class SoundClipController : TimeSensitiveControllerBase
         if (lastTOD != newTime) {
             switch (newTime) {
                 case Define.TimeOfDay.Morning:
-                    amb.clip = birdAmb;
-                    amb.Play();
+                    ambBox.clip = natureAmbs[0];
                     break;
                 case Define.TimeOfDay.Day:
                     Debug.Log("오후 음악");
                     break;
                 case Define.TimeOfDay.Night:
-                    Debug.Log("늑대 울음 소리");
-                    //음악이 없으므로 일단 정지
-                    amb.Stop();
+                    ambBox.clip = natureAmbs[1];
                     break;
             }
+            ambBox.Play();
             lastTOD = newTime;
         }
+    }
+    public void MuteAllSound() {
+        bgmBox.volume = 0;
+        ambBox.volume = 0;
+    }
+    public void UnMuteAllSound()
+    {
+        bgmBox.volume = 0.35f;
+        ambBox.volume = 0.95f;
     }
 }

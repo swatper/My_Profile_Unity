@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Mannequin" Collapsed="true">
-    <Position X="18" Y="1.5" Width="1.5" />
+    <Position X="11" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAQAAAAAAAAFQIAABAAABAAAAAAFA=</HashCode>
       <FileName>Assets\Scripts\Building\Mannequin.cs</FileName>
@@ -92,70 +92,70 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GameManager" Collapsed="true">
-    <Position X="16.25" Y="0.5" Width="1.5" />
+    <Position X="9.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAAAAAAAAAAEAgAIIgAAEBAAAAABQAACAQAgAkA=</HashCode>
       <FileName>Assets\Scripts\Managers\GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InputManager" Collapsed="true">
-    <Position X="18" Y="0.5" Width="1.5" />
+    <Position X="11" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAQAAAQAAAAAAACAAAA=</HashCode>
       <FileName>Assets\Scripts\Managers\InputManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ResourceManager" Collapsed="true">
-    <Position X="16.25" Y="2.5" Width="1.5" />
+    <Position X="9.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Managers\ResourceManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TimeUpdater" Collapsed="true">
-    <Position X="18" Y="2.5" Width="1.5" />
+    <Position X="11" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AASBAAgAQAAAAQAEEgAAAAAAAAAAAAAAAAEAAAAAEAA=</HashCode>
       <FileName>Assets\Scripts\Managers\TimeUpdater.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LayerController" Collapsed="true">
-    <Position X="14.5" Y="1.5" Width="1.5" />
+    <Position X="7.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAACAACAQAAAAAAAAIAAAAEAAACAAAEQAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Player\LayerController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlayerController" Collapsed="true">
-    <Position X="14.5" Y="2.5" Width="1.5" />
+    <Position X="7.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAABAggAAAAAAAAAAYUgAAABQAAAAAAAAAIAAAEA=</HashCode>
       <FileName>Assets\Scripts\Player\PlayerController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InfoUI" Collapsed="true">
-    <Position X="3.25" Y="8" Width="1.5" />
+    <Position X="13.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAEAAAAAAAAAAEAAAAAAAAAACAAAA=</HashCode>
       <FileName>Assets\Scripts\UI\InfoUI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MainUI" Collapsed="true">
-    <Position X="16.25" Y="1.5" Width="1.5" />
+    <Position X="9.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAACAAAAAEA=</HashCode>
       <FileName>Assets\Scripts\UI\MainUI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UIBase" Collapsed="true">
-    <Position X="3.25" Y="6.5" Width="1.5" />
+    <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAAAACAAAA=</HashCode>
       <FileName>Assets\Scripts\UI\UIBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Define" Collapsed="true">
-    <Position X="14.5" Y="0.5" Width="1.5" />
+    <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Utills\Define.cs</FileName>

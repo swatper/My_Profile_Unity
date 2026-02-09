@@ -5,32 +5,16 @@ using UnityEngine.UI;
 
 public class Wanted : BuildingBase
 {
-    public Text ageText;
+    //public Text ageText;
     private const int birthYear = 2001;
     private const int birthMonth = 5;
     private const int birthDay = 10;
-
-    string notionURL = "https://www.notion.so/d553e45114e04fd69fde4ed56d8afe6b?source=copy_link";
-    string gitURL = "https://github.com/swatper";
 
     public override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "ETC")
             return;
         uiScript.Show();
-    }
-    public void MoreInfomation(string type)
-    {
-        string targetURL = "";
-        switch (type) {
-            case "Notion":
-                targetURL = notionURL;
-                break;
-            case "GitHub":
-                    targetURL = gitURL;
-                    break;
-        }
-        Application.OpenURL(targetURL);
     }
 
     private void Awake()
@@ -45,6 +29,6 @@ public class Wanted : BuildingBase
         if (curMonth < birthMonth || (curMonth == birthMonth && curDay < birthDay))
             fullAge--;
     
-        ageText.text = $"Age: {koreanAge}技 (父 {fullAge}技)";
+        //ageText.text = $"Age: {koreanAge}技 (父 {fullAge}技)";
     }
 }
