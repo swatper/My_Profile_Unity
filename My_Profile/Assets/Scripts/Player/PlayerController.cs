@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         pSprite =  GetComponent<SpriteRenderer>();
         pAnimator = GetComponent<Animator>();
         ChangePlayerSkin(pType);
+        DontDestroyOnLoad(transform);
     }
 
     void Update()

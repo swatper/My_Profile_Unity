@@ -1,2 +1,2 @@
 # MY_Profile_Unity
-깃허브를 이용한 프로필 웹 페이지
+Git Pages로 배포할 포트폴리오 소개 게임

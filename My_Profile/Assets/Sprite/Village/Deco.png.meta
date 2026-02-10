@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2dab7e36993277948a5cac3f238d2162
+guid: 930e333f593e2f24194210dcd92d0a8a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,8 +113,8 @@ TextureImporter:
       name: Lamp_1
       rect:
         serializedVersion: 2
-        x: 121
-        y: 389
+        x: 45
+        y: 617
         width: 155
         height: 290
       alignment: 0
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 630f4e819b4ba794c87ae18f29691889
-      internalID: 1384466041
+      spriteID: 515dc213a4cedb44d84a02f14c3f6d01
+      internalID: 579768366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree
+      name: Lamp_2
       rect:
         serializedVersion: 2
-        x: 383
-        y: 389
-        width: 258
-        height: 301
+        x: 45
+        y: 322
+        width: 155
+        height: 290
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e2fc98c9d357d04a8d1be5d14ac22b4
-      internalID: 890259057
+      spriteID: 97aefa9d6659cdc4db304afbe5826f59
+      internalID: 23677772
       vertices: []
       indices: 
       edges: []
@@ -155,8 +155,8 @@ TextureImporter:
       name: Bush
       rect:
         serializedVersion: 2
-        x: 691
-        y: 431
+        x: 612
+        y: 653
         width: 262
         height: 194
       alignment: 0
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55f973f903889374f9ee9ae9dd15e15b
-      internalID: -1906598633
+      spriteID: b85ae891b9fad104aad1399b768a0857
+      internalID: 1385943217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lamp_2
+      name: Tree
       rect:
         serializedVersion: 2
-        x: 121
-        y: 95
-        width: 155
-        height: 290
+        x: 307
+        y: 611
+        width: 258
+        height: 301
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e329e92af51f8dc4fa3ca2ff89ddd779
-      internalID: 726526234
+      spriteID: fa8d1b4ed5dbac64cb753a63e9f5a672
+      internalID: -668110772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SignBoard_1
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 336
+        width: 150
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806a13999fddf654e99ff197fbb087cc
+      internalID: 2077239896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SignBoard_2
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 336
+        width: 150
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff9126d4ded0774981483df8d942e09
+      internalID: 667983378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 18
+        width: 238
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9740e91b36fcd84c87d5a84ecfbc333
+      internalID: -616967691
       vertices: []
       indices: 
       edges: []
@@ -204,10 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bush: -1906598633
-      Lamp_1: 1384466041
-      Lamp_2: 726526234
-      Tree: 890259057
+      Bush: 1385943217
+      Lamp_1: 579768366
+      Lamp_2: 23677772
+      Portal: -616967691
+      SignBoard_1: 2077239896
+      SignBoard_2: 667983378
+      Tree: -668110772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract  class BuildingBase : MonoBehaviour
 {
-    [SerializeField] public GameObject infomaionObject;
+    [SerializeField] public GameObject infomaionUI;
     [SerializeField] public InfoUI uiScript;
     [SerializeField] public string buildingName;
 

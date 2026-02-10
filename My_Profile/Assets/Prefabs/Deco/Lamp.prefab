@@ -157,8 +157,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -289867225
   m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1384466041, guid: 2dab7e36993277948a5cac3f238d2162, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 579768366, guid: 930e333f593e2f24194210dcd92d0a8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -234,5 +234,5 @@ MonoBehaviour:
   light2D:
   - {fileID: 645685014278212453}
   spriteRenderer: {fileID: 8295155702895546023}
-  lampOff: {fileID: 726526234, guid: 2dab7e36993277948a5cac3f238d2162, type: 3}
-  lampOn: {fileID: 1384466041, guid: 2dab7e36993277948a5cac3f238d2162, type: 3}
+  lampOff: {fileID: 23677772, guid: 930e333f593e2f24194210dcd92d0a8a, type: 3}
+  lampOn: {fileID: 579768366, guid: 930e333f593e2f24194210dcd92d0a8a, type: 3}

@@ -10,7 +10,7 @@ public class GlobalLightController : TimeSensitiveControllerBase
     [SerializeField] Color32 moringLight = new Color32(255, 255, 255, 0);
     [SerializeField] Color32 dayLight = new Color32(255, 215, 150, 0);
     [SerializeField] Color32 nightLight = new Color32(78, 84, 100, 0);
-    [SerializeField] float changeDuration = 0.6f;
+    [SerializeField] float changeDuration = 0.7f;
 
     protected override void CheckTime(Define.TimeOfDay timeOfDay) {
         switch (timeOfDay) {
