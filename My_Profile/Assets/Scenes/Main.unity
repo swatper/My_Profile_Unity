@@ -3226,7 +3226,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce955dfae5082df4cb5e0efb1dc19da6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.95
+  m_Volume: 0.9
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5753,11 +5753,11 @@ Transform:
   m_GameObject: {fileID: 575478970}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.25, y: -0.119, z: 0}
+  m_LocalPosition: {x: 0.25, y: -0.11900002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1053323609}
+  m_Father: {fileID: 1727327393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &575478972
 MonoBehaviour:
@@ -9523,38 +9523,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027378824}
   m_CullTransparentMesh: 1
---- !u!1 &1053323608
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1053323609}
-  m_Layer: 0
-  m_Name: Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1053323609
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053323608}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 575478971}
-  m_Father: {fileID: 1727327393}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1057146804
 GameObject:
   m_ObjectHideFlags: 0
@@ -15144,7 +15112,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1053323609}
+  - {fileID: 575478971}
   - {fileID: 2141141990}
   - {fileID: 1554835334}
   m_Father: {fileID: 0}
@@ -15243,8 +15211,9 @@ MonoBehaviour:
   - {fileID: 22100000, guid: 2ab99d63d9b3bd54bb13a1221101048f, type: 2}
   - {fileID: 22100000, guid: 10b6dc6ff44c3d14b9c74b220dc05251, type: 2}
   - {fileID: 22100000, guid: 0b6695e26abf7e04bb396f2d2e53752b, type: 2}
-  lightPivot: {fileID: 1053323609}
+  lightPivot: {fileID: 575478971}
   inputVec: {x: 0, y: 0}
+  moveBuffer: {x: 0, y: 0}
 --- !u!95 &1727327397
 Animator:
   serializedVersion: 5

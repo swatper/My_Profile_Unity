@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public class Define : MonoBehaviour
+public class Define
 {
     public enum KeyEvent
     {

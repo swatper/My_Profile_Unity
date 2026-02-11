@@ -15,14 +15,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AnimatorOverrideController[] pAniControllers;
     [SerializeField] Transform lightPivot;
     public Vector2 inputVec;
+    public Vector2 moveBuffer;
     private void Awake()
     {
-        //GameManager.Input.SubscribeKeyEvent(PlayerControll);
+        GameManager.Input.SubscribeKeyEvent(OnKeyboardAction);
         rigid =  GetComponent<Rigidbody2D>();
         pSprite =  GetComponent<SpriteRenderer>();
         pAnimator = GetComponent<Animator>();
         ChangePlayerSkin(pType);
-        DontDestroyOnLoad(transform);
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -32,11 +33,13 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        inputVec.x = Input.GetAxisRaw("Horizontal");
-        inputVec.y = Input.GetAxisRaw("Vertical");
+        inputVec = moveBuffer;
+        moveBuffer = Vector2.zero;
     }
 
     private void FixedUpdate(){
+        if (inputVec == Vector2.zero)
+            return;
        Vector2 nxtVec= inputVec.normalized * playerSpeed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nxtVec);
     }
@@ -51,6 +54,26 @@ public class PlayerController : MonoBehaviour
                  lightPivot.localRotation.eulerAngles.x,
                  isFlipped ? 180f : 0f,
                  lightPivot.localRotation.eulerAngles.z);
+        }
+    }
+
+    void OnKeyboardAction(Define.KeyEvent keyEvent) {
+        if (isReadingInfo)
+            return;
+
+        switch (keyEvent) {
+            case Define.KeyEvent.Up:
+                moveBuffer.y = 1;
+                break;
+            case Define.KeyEvent.Down:
+                moveBuffer.y = -1; 
+                break;
+            case Define.KeyEvent.Left:
+                moveBuffer.x = -1; 
+                break;
+            case Define.KeyEvent.Right:
+                moveBuffer.x = 1;
+                break;
         }
     }
 
