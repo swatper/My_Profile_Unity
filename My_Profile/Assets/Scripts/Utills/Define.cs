@@ -29,4 +29,9 @@ public class Define
         Day,
         Night
     }
+
+    public enum MonsterType
+    {
+
+    }
 }

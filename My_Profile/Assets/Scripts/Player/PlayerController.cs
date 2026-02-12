@@ -4,16 +4,16 @@ using UnityEngine.Rendering.Universal;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
-    //[SerializeField] string playerName = "Tester";
-    [SerializeField] float playerSpeed = 5.0f;
-    [SerializeField] public bool isReadingInfo = false;
-    [SerializeField] int pType = 0; //확인용
+    [Tooltip("캐릭터 능력치")]
+    [SerializeField] PlayerData pData;
+    [Tooltip("실시간 데이터 처리용")]
+    [SerializeField] PlayerState pState;
     [Header("Player Component")]
     [SerializeField] Rigidbody2D rigid;
     [SerializeField] private SpriteRenderer pSprite;
     [SerializeField] Animator pAnimator;
     [SerializeField] AnimatorOverrideController[] pAniControllers;
-    [SerializeField] Transform lightPivot;
+    [SerializeField] Transform playerPivot;
     public Vector2 inputVec;
     public Vector2 moveBuffer;
     private void Awake()
@@ -22,13 +22,14 @@ public class PlayerController : MonoBehaviour
         rigid =  GetComponent<Rigidbody2D>();
         pSprite =  GetComponent<SpriteRenderer>();
         pAnimator = GetComponent<Animator>();
-        ChangePlayerSkin(pType);
+        pState = new PlayerState(pData);
+        ChangePlayerSkin(pState.pID);
         DontDestroyOnLoad(gameObject);
     }
 
     void Update()
     {
-        if (isReadingInfo) {
+        if (pState.isReadingInfo) {
             inputVec = Vector2.zero;
             return;
         }
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate(){
         if (inputVec == Vector2.zero)
             return;
-       Vector2 nxtVec= inputVec.normalized * playerSpeed * Time.fixedDeltaTime;
+       Vector2 nxtVec= inputVec.normalized * pState.curSpeed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nxtVec);
     }
 
@@ -49,16 +50,15 @@ public class PlayerController : MonoBehaviour
         pAnimator.SetFloat("speed", inputVec.magnitude);
         if (inputVec.x != 0) {
             bool isFlipped = inputVec.x < 0;
-            pSprite.flipX = isFlipped;
-            lightPivot.localRotation = Quaternion.Euler(
-                 lightPivot.localRotation.eulerAngles.x,
+            playerPivot.localRotation = Quaternion.Euler(
+                 playerPivot.localRotation.eulerAngles.x,
                  isFlipped ? 180f : 0f,
-                 lightPivot.localRotation.eulerAngles.z);
+                 playerPivot.localRotation.eulerAngles.z);
         }
     }
 
     void OnKeyboardAction(Define.KeyEvent keyEvent) {
-        if (isReadingInfo)
+        if (pState.isReadingInfo)
             return;
 
         switch (keyEvent) {
@@ -77,8 +77,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ChangePlayerSkin(int pType) {
-       this.pType = pType;
-        pAnimator.runtimeAnimatorController = pAniControllers[pType];
+    public void ChangePlayerSkin(int pID) {
+        pState.pID = pID;
+        pAnimator.runtimeAnimatorController = pAniControllers[pState.pID];
+    }
+
+    public void ReadUIInfo() {
+        pState.isReadingInfo = true;
+    }
+
+    public void StopReadUIInfo() {
+        pState.isReadingInfo = false;
     }
 }

@@ -11,13 +11,13 @@ public class InfoUI : UIBase
 
     public override void Hide(){
         GameManager.Input.RemoveSubscribe(KeyEvent);
-        GameManager.Player.isReadingInfo = false;
+        GameManager.Player.StopReadUIInfo();
         gameObject.SetActive(false);
     }
 
     public override void Show(){
         GameManager.Input.SubscribeKeyEvent(KeyEvent);
-        GameManager.Player.isReadingInfo = true;
+        GameManager.Player.ReadUIInfo();
         gameObject.SetActive(true);
         uiAni.Play("Show");
     }
