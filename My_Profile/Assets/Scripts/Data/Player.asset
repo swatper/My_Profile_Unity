@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7529db00a12be8145a9ea9ed24f1a4a7, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  Name: Tester
-  Description: Test Player
+  Name: CollegeStudent
+  Description: College Student
   MaxHP: 10
   MoveSpeed: 3.5
   SpriteNum: 0
