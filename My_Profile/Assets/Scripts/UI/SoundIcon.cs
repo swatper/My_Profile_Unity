@@ -3,24 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundIcon : MonoBehaviour
+public class SoundIcon : OnOffIconBase
 {
-    [SerializeField] Image soundIcon;
-    [SerializeField] Sprite[] iconSprites;
     [SerializeField] SoundClipController soundController;
-    [SerializeField] bool IsMute = false;
 
-
-    public void SoundOnOff()
+    protected override void AddtionalProcessing()
     {
-        IsMute = !IsMute;
-        if (IsMute){
+        if(IsOn)
             soundController.MuteAllSound();
-            soundIcon.sprite = iconSprites[1];
-        }
-        else {
+        else
             soundController.UnMuteAllSound();
-            soundIcon.sprite = iconSprites[0];
-        }
     }
 }
