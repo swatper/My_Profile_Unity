@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
-public class SurvivalPortal : BuildingBase
+public class SurvivalPortal : KeyHintDisplay
 {
-    public override void OnTriggerEnter2D(Collider2D collision)
-    {
-        throw new System.NotImplementedException();
-    }
 }

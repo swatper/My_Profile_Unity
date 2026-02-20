@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,12 @@ public class GameManager : MonoBehaviour
 
     InputManager M_Input = new InputManager();
     public static InputManager Input { get { return Instance.M_Input; } }
+
+    ResourceManager M_Resource = new ResourceManager();
+    public static ResourceManager Resource { get { return Instance.M_Resource; } }
+
+    LoadingUI M_Scene;
+    public static LoadingUI SceneLoader { get { return Instance.M_Scene; } }
     #endregion
 
     public TimeUpdater TimeUpdater = new TimeUpdater();

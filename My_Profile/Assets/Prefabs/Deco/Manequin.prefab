@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8009946377023979132}
   - component: {fileID: 731687461365092901}
   m_Layer: 6
-  m_Name: Tab
+  m_Name: KeyBoardDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eace1016c0b9c1e4f9f290bf079697bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyAni: {fileID: 731687461365092901}
+  keyType: Tab
   skinType: 0
   sprite: {fileID: 9054234972328661203}
-  tabAni: {fileID: 731687461365092901}
   playerController: {fileID: 0}
