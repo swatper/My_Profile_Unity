@@ -7,7 +7,8 @@ public class Define
         Up,
         Down,
         ESC,
-        Tab
+        Tab,
+        Enter
     }
     /// <summary>
     /// 언젠간 필요하겠지...?

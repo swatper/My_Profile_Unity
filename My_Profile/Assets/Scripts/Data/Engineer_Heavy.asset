@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7529db00a12be8145a9ea9ed24f1a4a7, type: 3}
-  m_Name: Player
+  m_Name: Engineer_Heavy
   m_EditorClassIdentifier: 
-  Name: CollegeStudent
-  Description: "\uB300\uD559\uC0DD,"
-  MaxHP: 10
-  MoveSpeed: 3.5
-  SpriteNum: 0
-  MagnetRange: 3
+  Name: Engineer_Heavy
+  Description: "\uC815\uBCF4\uCC98\uB9AC\"\uAE30\uC0AC\"\uC18D\uB3C4 \uB290\uB9BC
+    but \uCCB4\uB825 \uB192\uC74C"
+  MaxHP: 20
+  MoveSpeed: 2
+  SpriteNum: 2
+  MagnetRange: 2

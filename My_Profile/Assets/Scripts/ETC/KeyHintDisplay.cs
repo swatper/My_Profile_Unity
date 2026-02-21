@@ -8,6 +8,16 @@ public abstract class KeyHintDisplay : MonoBehaviour
     [SerializeField]public  Animator keyAni;
     [SerializeField] string keyType;
 
+    protected void Awake()
+    {
+        GameManager.Input.SubscribeKeyEvent(OnInteract);
+    }
+
+    protected void OnDestroy()
+    {
+        GameManager.Input.RemoveSubscribe(OnInteract);
+    }
+
     protected  void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "ETC")
@@ -22,7 +32,10 @@ public abstract class KeyHintDisplay : MonoBehaviour
         keyAni.Play("Default");
         OnLost(other);
     }
-    protected virtual void OnDetected(Collider2D collision) { 
-    }
+
+    protected virtual void OnDetected(Collider2D collision) { }
+
     protected virtual void OnLost(Collider2D other) { }
+
+    protected virtual void OnInteract(Define.KeyEvent keyEvent) { }
 }

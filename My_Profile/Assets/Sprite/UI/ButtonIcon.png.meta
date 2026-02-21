@@ -113,9 +113,9 @@ TextureImporter:
       name: Sound_On
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 225
-        width: 204
+        width: 205
         height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -136,7 +136,7 @@ TextureImporter:
         serializedVersion: 2
         x: 262
         y: 224
-        width: 204
+        width: 205
         height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -155,9 +155,9 @@ TextureImporter:
       name: FullScreen_On
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 15
-        width: 204
+        width: 205
         height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -178,7 +178,7 @@ TextureImporter:
         serializedVersion: 2
         x: 262
         y: 14
-        width: 204
+        width: 205
         height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

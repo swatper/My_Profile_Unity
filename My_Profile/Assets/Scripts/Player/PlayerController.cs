@@ -22,8 +22,7 @@ public class PlayerController : MonoBehaviour
         rigid =  GetComponent<Rigidbody2D>();
         pSprite =  GetComponent<SpriteRenderer>();
         pAnimator = GetComponent<Animator>();
-        pState = new PlayerState(pData);
-        ChangePlayerSkin(pState.pID);
+        ChangeStat(pData);
         DontDestroyOnLoad(gameObject);
     }
 
@@ -77,8 +76,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ChangePlayerSkin(int pID) {
-        pState.pID = pID;
+    public void ChangeStat(PlayerData newData) {
+        pData = newData;
+        pState = new PlayerState(newData);
         pAnimator.runtimeAnimatorController = pAniControllers[pState.pID];
     }
 

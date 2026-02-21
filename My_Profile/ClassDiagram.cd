@@ -1,165 +1,249 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BaseLightContoller" Collapsed="true">
-    <Position X="0.5" Y="5" Width="1.5" />
+    <Position X="0.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>iAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAGA=</HashCode>
       <FileName>Assets\Scripts\Building\BaseLightContoller.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BuildingBase" Collapsed="true">
-    <Position X="6.25" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABAAIAAAAAAAAAAAAAAAAAEAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAABAAIAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Building\BuildingBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Clan" Collapsed="true">
-    <Position X="5.25" Y="2" Width="1.5" />
+    <Position X="3.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Building\Clan.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Mannequin" Collapsed="true">
-    <Position X="11" Y="4.25" Width="1.5" />
+    <Position X="4.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAQAAAAAAAAFQIAABAAABAAAAAAFA=</HashCode>
+      <HashCode>CAAAAAAAAIAAAAAAQAAAAAAAABQIAAAAAABAAAAAAFA=</HashCode>
       <FileName>Assets\Scripts\Building\Mannequin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PostOffice" Collapsed="true">
-    <Position X="12" Y="2" Width="1.5" />
+    <Position X="10" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgCAAAAAAIAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Building\PostOffice.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="School" Collapsed="true">
-    <Position X="0.75" Y="2" Width="1.5" />
+    <Position X="12.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Building\School.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Smithy" Collapsed="true">
-    <Position X="3" Y="2" Width="1.5" />
+    <Position X="1" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Building\Smithy.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Temple" Collapsed="true">
-    <Position X="7.5" Y="2" Width="1.5" />
+  <Class Name="SurvivalPortal" Collapsed="true">
+    <Position X="2" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACABgAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Building\SurvivalPortal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Temple" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Building\Temple.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Wanted" Collapsed="true">
-    <Position X="9.75" Y="2" Width="1.5" />
+    <Position X="7.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gIAAAAAEAAAAAAgAAAAAAAgAAEQAAAAAAAAIAAAAAEA=</HashCode>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAgAAEQAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scripts\Building\Wanted.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GlobalLightController" Collapsed="true">
-    <Position X="5" Y="5" Width="1.5" />
+    <Position X="5.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAAAAABAAAAIAAAAEgAAAAAAAAAQAAgAAA=</HashCode>
       <FileName>Assets\Scripts\ETC\GlobalLightController.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="KeyHintDisplay" Collapsed="true">
+    <Position X="3" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAACAAIAAAAAAAAAAABAIAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ETC\KeyHintDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Lamp" Collapsed="true">
-    <Position X="0.5" Y="6.5" Width="1.5" />
+    <Position X="0.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAACAAAAAAIAAAAAAAAAAAAAQAAAAAAEA=</HashCode>
       <FileName>Assets\Scripts\ETC\Lamp.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoundClipController" Collapsed="true">
-    <Position X="2.75" Y="5" Width="1.5" />
+    <Position X="3" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAABAAAAAAIAAAAEAAAAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAAAAAAAAAAAAIAAgAAAAAAAAAAIAAECCAAA=</HashCode>
       <FileName>Assets\Scripts\ETC\SoundClipController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TimeSensitiveControllerBase" Collapsed="true">
-    <Position X="2.75" Y="3.5" Width="1.5" />
+    <Position X="3" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scripts\ETC\TimeSensitiveControllerBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameManager" Collapsed="true">
-    <Position X="9.25" Y="3.25" Width="1.5" />
+    <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQIAAAAAAAAAAAEAgAIIgAAEBAAAAABQAACAQAgAkA=</HashCode>
+      <HashCode>AAQIAAAAIAAAAAAEAgAIIgAAEBAAAABBQAACARAggkA=</HashCode>
       <FileName>Assets\Scripts\Managers\GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InputManager" Collapsed="true">
-    <Position X="11" Y="3.25" Width="1.5" />
+    <Position X="18.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAQAAAQAAAAAAACAAAA=</HashCode>
       <FileName>Assets\Scripts\Managers\InputManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ResourceManager" Collapsed="true">
-    <Position X="9.25" Y="5.25" Width="1.5" />
+    <Position X="20" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Managers\ResourceManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TimeUpdater" Collapsed="true">
-    <Position X="11" Y="5.25" Width="1.5" />
+    <Position X="14.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AASBAAgAQAAAAQAEEgAAAAAAAAAAAAAAAAEAAAAAEAA=</HashCode>
       <FileName>Assets\Scripts\Managers\TimeUpdater.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LayerController" Collapsed="true">
-    <Position X="7.5" Y="4.25" Width="1.5" />
+    <Position X="20" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAACAACAQAAAAAAAAIAAAAEAAACAAAEQAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Player\LayerController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlayerController" Collapsed="true">
-    <Position X="7.5" Y="5.25" Width="1.5" />
+    <Position X="18.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAABAggAAAAAAAAAAYUgAAABQAAAAAAAAAIAAAEA=</HashCode>
+      <HashCode>AAQAgBAAAgEAAAgAAAAAIUgAAEBQAAAAAAAAAIIAAEg=</HashCode>
       <FileName>Assets\Scripts\Player\PlayerController.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="FullScreenIcon" Collapsed="true">
+    <Position X="11" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\FullScreenIcon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="InfoUI" Collapsed="true">
-    <Position X="13.75" Y="2" Width="1.5" />
+    <Position X="15.25" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAEAAAAAAAAAAEAAAAAAAAAACAAAA=</HashCode>
       <FileName>Assets\Scripts\UI\InfoUI.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="LoadingUI" Collapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEAAAwAAAAAAAAAAAECAAAAAEAAAAAAAQAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\LoadingUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="MainUI" Collapsed="true">
-    <Position X="9.25" Y="4.25" Width="1.5" />
+    <Position X="16.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAACAAAAAEA=</HashCode>
       <FileName>Assets\Scripts\UI\MainUI.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="OnOffIconBase" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABEAAAAAAAAABAAQAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\OnOffIconBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundIcon" Collapsed="true">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\SoundIcon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="UIBase" Collapsed="true">
-    <Position X="13.75" Y="0.5" Width="1.5" />
+    <Position X="15.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAAAACAAAA=</HashCode>
       <FileName>Assets\Scripts\UI\UIBase.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="URLOpen" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\URLOpen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Define" Collapsed="true">
-    <Position X="7.5" Y="3.25" Width="1.5" />
+    <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Utills\Define.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="BaseData" Collapsed="true">
+    <Position X="15.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgABAAAAAAEAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utills\SO\BaseData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterData" Collapsed="true">
+    <Position X="14.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utills\SO\MonsterData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerData" Collapsed="true">
+    <Position X="16.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utills\SO\PlayerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponData" Collapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utills\SO\WeaponData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="PlayerState" Collapsed="true">
+    <Position X="18.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgAAAAAAEAAAAEAAAAAAAAAABAAAAAAAQAAAIBAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utills\Struct\PlayerState.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
   <Font Name="맑은 고딕" Size="9" />
 </ClassDiagram>

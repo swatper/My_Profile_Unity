@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OnOffIconBase : MonoBehaviour
+public abstract class OnOffIconBase : MonoBehaviour
 {
     [SerializeField] public Image buttonIcon;
     [SerializeField] public Sprite[] iconSprites;

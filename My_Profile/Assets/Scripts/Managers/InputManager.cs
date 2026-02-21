@@ -37,6 +37,9 @@ public class InputManager
         if (Input.GetKey(KeyCode.Tab)) {
             KeyPress.Invoke(Define.KeyEvent.Tab);
         }
+        if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter)) {
+            KeyPress.Invoke(Define.KeyEvent.Enter);
+        }
     }
 
     public void SubscribeKeyEvent(Action<Define.KeyEvent> tragetMethod) {

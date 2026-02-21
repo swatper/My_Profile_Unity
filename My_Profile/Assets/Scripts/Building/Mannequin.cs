@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Mannequin : KeyHintDisplay
 {
-    public int skinType;
     [SerializeField] SpriteRenderer sprite;
     Color32 offColor = new Color32(142,142, 142, 255);
     Color32 OnColor = new Color32(255, 255, 255, 255);
     [SerializeField] PlayerController playerController;
-
-    private void Awake(){
-        GameManager.Input.SubscribeKeyEvent(ChangeSkin);
-    }
+    [SerializeField] PlayerData skinStat;
 
     protected override void OnDetected(Collider2D collision) {
         sprite.color = OnColor;
@@ -25,8 +21,10 @@ public class Mannequin : KeyHintDisplay
         playerController = null;
     }
 
-    void ChangeSkin(Define.KeyEvent keyEvent) {
-        if (keyEvent == Define.KeyEvent.Tab && playerController!= null) 
-            playerController.ChangePlayerSkin(skinType);
+    protected override void OnInteract(Define.KeyEvent keyEvent)
+    {
+        if (keyEvent == Define.KeyEvent.Tab && playerController != null) {
+            playerController.ChangeStat(skinStat);
+        }
     }
 }
