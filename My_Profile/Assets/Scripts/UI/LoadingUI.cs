@@ -14,14 +14,44 @@ public class LoadingUI : MonoBehaviour
     public bool isLoading;
     [SerializeField] Slider progressBar;
     [SerializeField] Text progressText;
+    [SerializeField] string[] loadingComment;
+    int lastCommentIndex;
+
+    private void Awake()
+    {
+        string startMSG = loadingComment[0];
+        string endMSG = loadingComment[1];
+
+        loadingComment = new string[101];
+        //문자열 최적화: StringBuilder로 가비지 없이 문장 조립 (조합할 공간 미리 할당)
+        System.Text.StringBuilder sb = new System.Text.StringBuilder(64);
+
+        for (int i = 0; i <= 100; i++)
+        {
+            sb.Clear();
+            if (i <= 90)
+                sb.Append(startMSG);
+            else
+                sb.Append(endMSG);
+
+            sb.Append("(").Append(i).Append("%)");
+
+            loadingComment[i] = sb.ToString();
+        }
+        progressText.text = loadingComment[0];
+    }
 
 
     public void SceneReady() => isDone = true;
 
     void UpdateLoadingUI(float progress)
     {
-        progressBar.value = progress;
-        progressText.text = $"{Mathf.RoundToInt(progress * 100)}%";
+        int currentIndex = Mathf.Clamp(Mathf.RoundToInt(progress * 100), 0, 100);
+        if (currentIndex != lastCommentIndex)
+        {
+            lastCommentIndex = currentIndex;
+            progressText.text = loadingComment[currentIndex];
+        }
     }
 
     public void LoadScene(string sceneName) {
