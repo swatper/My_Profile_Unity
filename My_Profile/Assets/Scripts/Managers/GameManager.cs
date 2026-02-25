@@ -52,14 +52,21 @@ public class GameManager : MonoBehaviour
     {
         GameObject playerObject = GameObject.Find("Player");
         if (playerObject != null)
-        {
             pController = playerObject.GetComponent<PlayerController>();
-        }
         StartCoroutine(UpdateTimePerSec());
+        SetupUILoading();
     }
 
     private void Update() {
         Input.KeyEvent();
+    }
+
+    void SetupUILoading() {
+        if (M_Scene == null)
+        {
+            GameObject loadingObj = M_Resource.Instantiate("LoadingUI", transform);
+            M_Scene = loadingObj.GetComponent<LoadingUI>();
+        }
     }
 
     private void CheckTime() {

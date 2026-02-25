@@ -37,7 +37,7 @@ public class InputManager
         if (Input.GetKey(KeyCode.Tab)) {
             KeyPress.Invoke(Define.KeyEvent.Tab);
         }
-        if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter)) {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
             KeyPress.Invoke(Define.KeyEvent.Enter);
         }
     }

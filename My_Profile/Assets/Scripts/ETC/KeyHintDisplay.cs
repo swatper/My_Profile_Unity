@@ -16,6 +16,7 @@ public abstract class KeyHintDisplay : MonoBehaviour
     protected void OnDestroy()
     {
         GameManager.Input.RemoveSubscribe(OnInteract);
+        OnBeforeDistroy();
     }
 
     protected  void OnTriggerEnter2D(Collider2D collision)
@@ -38,4 +39,6 @@ public abstract class KeyHintDisplay : MonoBehaviour
     protected virtual void OnLost(Collider2D other) { }
 
     protected virtual void OnInteract(Define.KeyEvent keyEvent) { }
+
+    protected virtual void OnBeforeDistroy() { }
 }

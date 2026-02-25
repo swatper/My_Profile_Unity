@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerState pState;
     [Header("Player Component")]
     [SerializeField] Rigidbody2D rigid;
-    [SerializeField] private SpriteRenderer pSprite;
+    //[SerializeField] private SpriteRenderer pSprite; //현재 애니메이션 자체를 바꾸는 중
     [SerializeField] Animator pAnimator;
     [SerializeField] AnimatorOverrideController[] pAniControllers;
     [SerializeField] Transform playerPivot;
@@ -20,10 +20,10 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Input.SubscribeKeyEvent(OnKeyboardAction);
         rigid =  GetComponent<Rigidbody2D>();
-        pSprite =  GetComponent<SpriteRenderer>();
+        //pSprite =  GetComponent<SpriteRenderer>();
         pAnimator = GetComponent<Animator>();
         ChangeStat(pData);
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
     }
 
     void Update()
