@@ -2547,7 +2547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249444490}
   m_Layer: 5
-  m_Name: Project2
+  m_Name: Project3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2571,7 +2571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 86}
+  m_AnchoredPosition: {x: 0, y: 6.8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &259994357
@@ -2803,9 +2803,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2107440659}
   - {fileID: 1133178678}
   - {fileID: 249444490}
-  - {fileID: 2107440659}
   m_Father: {fileID: 762372351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4474,7 +4474,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &449813750
 MonoBehaviour:
@@ -5743,12 +5743,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575478970}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.25, y: -0.12, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.25, y: -0.120000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1727327393}
+  m_Father: {fileID: 2063601925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &575478972
 MonoBehaviour:
@@ -5971,7 +5971,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: Project1
           m_BoolArgument: 0
@@ -6179,7 +6179,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: ProjectAll
           m_BoolArgument: 0
@@ -6387,7 +6387,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Project3
           m_BoolArgument: 0
@@ -7449,7 +7449,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &774886684
 MonoBehaviour:
@@ -9898,7 +9898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1133178678}
   m_Layer: 5
-  m_Name: Project1
+  m_Name: Project2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9922,7 +9922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 163}
+  m_AnchoredPosition: {x: 0, y: 86}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1135147039
@@ -10792,7 +10792,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!1 &1213418873
 GameObject:
@@ -12457,7 +12457,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1391540225
 MonoBehaviour:
@@ -12472,9 +12472,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   urlList:
-  - https://www.notion.so/InMusic-1d2d6c7cb36580a2beb9e57919abc5ae?source=copy_link
+  - https://www.notion.so/My_Profile_Unity-2a7d6c7cb3658049be03d55830b59195?source=copy_link
+  - https://www.notion.so/My_Diary-https://www.notion.so/InMusic-1d2d6c7cb36580a2beb9e57919abc5ae?source=copy_link?source=copy_link
   - https://www.notion.so/My_Diary-1d2d6c7cb36580b28dcaf576096f6fd2?source=copy_link
-  - https://www.notion.so/1d2d6c7cb36580be8d37c0ad1522fe68?source=copy_link
   - https://www.notion.so/1d2d6c7cb36580e8a6b2e49791043998?v=1d2d6c7cb365802eb2c3000c264ba94d&source=copy_link
 --- !u!1 &1396858841
 GameObject:
@@ -13065,7 +13065,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bung Pang Land
+  m_Text: My_Profile_Unity
 --- !u!222 &1490998114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13263,7 +13263,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1523516341
 MonoBehaviour:
@@ -13433,12 +13433,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554835333}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1727327393}
+  m_Father: {fileID: 2063601925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1554835335
 BoxCollider2D:
@@ -14923,9 +14923,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 575478971}
-  - {fileID: 2141141990}
-  - {fileID: 1554835334}
+  - {fileID: 2063601925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1727327394
@@ -15030,7 +15028,8 @@ MonoBehaviour:
   - {fileID: 22100000, guid: 2ab99d63d9b3bd54bb13a1221101048f, type: 2}
   - {fileID: 22100000, guid: 10b6dc6ff44c3d14b9c74b220dc05251, type: 2}
   - {fileID: 22100000, guid: 0b6695e26abf7e04bb396f2d2e53752b, type: 2}
-  playerPivot: {fileID: 1727327393}
+  playerPivot: {fileID: 2063601925}
+  pPosition: {fileID: 1727327393}
   inputVec: {x: 0, y: 0}
   moveBuffer: {x: 0, y: 0}
 --- !u!95 &1727327397
@@ -22064,7 +22063,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2110335171, guid: 319ea288ef5126843bd94c4826f1d93b, type: 3}
+  m_Sprite: {fileID: 953720264, guid: 319ea288ef5126843bd94c4826f1d93b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22491,6 +22490,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050031342}
   m_CullTransparentMesh: 1
+--- !u!1 &2063601924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2063601925}
+  m_Layer: 0
+  m_Name: PlayerPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2063601925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063601924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 575478971}
+  - {fileID: 2141141990}
+  - {fileID: 1554835334}
+  m_Father: {fileID: 1727327393}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085508404
 GameObject:
   m_ObjectHideFlags: 0
@@ -22539,7 +22572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107440659}
   m_Layer: 5
-  m_Name: Project3
+  m_Name: Project1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22563,7 +22596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 6.8}
+  m_AnchoredPosition: {x: 0, y: 163}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2123254040
@@ -22955,6 +22988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyAni: {fileID: 1565318172}
   keyType: Enter
+  playerController: {fileID: 0}
 --- !u!1 &2141141989
 GameObject:
   m_ObjectHideFlags: 0
@@ -22985,7 +23019,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1727327393}
+  m_Father: {fileID: 2063601925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2141141991
 SpriteRenderer:
@@ -23459,7 +23493,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &3684225512484677696
 MonoBehaviour:

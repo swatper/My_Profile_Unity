@@ -12,6 +12,7 @@ public class SurvivalPortal : KeyHintDisplay
             if (GameManager.SceneLoader.isLoading) return;
             playerController.ReadUIInfo();
             Debug.Log("게임씬으로 이동");
+            GameManager.Instance.StopTimer();
             GameManager.SceneLoader.LoadScene("Dev Survival");
         }
     }

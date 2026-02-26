@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,17 +11,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerState pState;
     [Header("Player Component")]
     [SerializeField] Rigidbody2D rigid;
-    //[SerializeField] private SpriteRenderer pSprite; //현재 애니메이션 자체를 바꾸는 중
+    [SerializeField] private SpriteRenderer pSprite;
     [SerializeField] Animator pAnimator;
     [SerializeField] AnimatorOverrideController[] pAniControllers;
     [SerializeField] Transform playerPivot;
+    [SerializeField] Transform pPosition;
     public Vector2 inputVec;
     public Vector2 moveBuffer;
     private void Awake()
     {
         GameManager.Input.SubscribeKeyEvent(OnKeyboardAction);
+        pSprite = GetComponent<SpriteRenderer>();
         rigid =  GetComponent<Rigidbody2D>();
-        //pSprite =  GetComponent<SpriteRenderer>();
         pAnimator = GetComponent<Animator>();
         ChangeStat(pData);
         DontDestroyOnLoad(this);
@@ -47,8 +49,10 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         pAnimator.SetFloat("speed", inputVec.magnitude);
+        //방향 조절
         if (inputVec.x != 0) {
             bool isFlipped = inputVec.x < 0;
+            pSprite.flipX = isFlipped;
             playerPivot.localRotation = Quaternion.Euler(
                  playerPivot.localRotation.eulerAngles.x,
                  isFlipped ? 180f : 0f,
@@ -88,5 +92,9 @@ public class PlayerController : MonoBehaviour
 
     public void StopReadUIInfo() {
         pState.isReadingInfo = false;
+    }
+    public void InitPlayerPosition()
+    {
+        pPosition.position = Vector3.zero;
     }
 }

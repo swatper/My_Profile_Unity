@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -55,6 +54,8 @@ public class LoadingUI : MonoBehaviour
     }
 
     public void LoadScene(string sceneName) {
+        if (isLoading)
+            return;
         isLoading = true;
         targertScene = sceneName;
         canvas.Play("FadeIn");
