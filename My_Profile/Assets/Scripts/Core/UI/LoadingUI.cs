@@ -38,6 +38,7 @@ public class LoadingUI : MonoBehaviour
             loadingComment[i] = sb.ToString();
         }
         progressText.text = loadingComment[0];
+        loadingPanel.SetActive(false);
     }
 
 
@@ -56,6 +57,7 @@ public class LoadingUI : MonoBehaviour
     public void LoadScene(string sceneName) {
         if (isLoading)
             return;
+        loadingPanel.SetActive(true);
         isLoading = true;
         targertScene = sceneName;
         canvas.Play("FadeIn");
@@ -71,6 +73,7 @@ public class LoadingUI : MonoBehaviour
         isDone = false;
         isLoading = false;
         progressBar.value = 0f;
+        loadingPanel.SetActive(false);
     }
 
     IEnumerator LoadAsync(string sceneName)

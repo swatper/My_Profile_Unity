@@ -1,0 +1,18 @@
+{
+    "name": "DevSurvival",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e3fc8a3cbd9ac0d41add7a6f7cacfd1d",
+        "GUID:4307f53044263cf4b835bd812fc161a4",
+        "GUID:ba61b32df2612484482c955f219b350e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -17,7 +17,7 @@ public class Wanted : BuildingBase
         uiScript.Show();
     }
 
-    private void Awake()
+    private void Start()
     {
         int curYear = int.Parse(GameManager.Clock.localYear);
         int curMonth = int.Parse(GameManager.Clock.localMonth);

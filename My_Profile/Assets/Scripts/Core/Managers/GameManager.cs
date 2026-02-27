@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
         //시간대 알림
         int curHour = int.Parse(Clock.localHour);
         
-        /*
         //저녁/밤: 18시부터 4시
         if (curHour >= 18 || curHour < 5)
             curTOD = Define.TimeOfDay.Night;
@@ -84,7 +83,6 @@ public class GameManager : MonoBehaviour
         else
             curTOD = Define.TimeOfDay.Day;
  
-        */
         OnTimeOfDayChanged?.Invoke(curTOD);
 
         //정각 알림

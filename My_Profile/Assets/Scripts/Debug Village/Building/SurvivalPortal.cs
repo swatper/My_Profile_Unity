@@ -18,7 +18,7 @@ public class SurvivalPortal : KeyHintDisplay
     }
     protected override void OnDetected(Collider2D collision)
     {
-        playerController = collision.transform.parent.GetComponent<PlayerController>();
+        playerController = collision.transform.parent.parent.GetComponent<PlayerController>(); ;
     }
 
     protected override void OnLost(Collider2D other)

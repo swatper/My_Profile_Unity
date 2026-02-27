@@ -10,7 +10,7 @@ public class MainUI : MonoBehaviour
     [SerializeField] Text location;
     [SerializeField] bool IsBlink= false;
 
-    private void Awake(){
+    private void Start(){
         GameManager.Clock.SubscribeOnRealTime(UpdateTime);
         UpdateTime($"{GameManager.Clock.localHour}:{GameManager.Clock.localMinute}");
     }

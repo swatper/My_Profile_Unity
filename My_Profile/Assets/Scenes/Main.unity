@@ -22780,7 +22780,7 @@ GameObject:
   - component: {fileID: 2136919889}
   - component: {fileID: 2136919890}
   m_Layer: 6
-  m_Name: Protal
+  m_Name: Portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

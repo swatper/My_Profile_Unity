@@ -1,0 +1,17 @@
+{
+    "name": "DebugVillage",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e3fc8a3cbd9ac0d41add7a6f7cacfd1d",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
