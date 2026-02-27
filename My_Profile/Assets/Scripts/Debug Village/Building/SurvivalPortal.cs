@@ -10,15 +10,15 @@ public class SurvivalPortal : KeyHintDisplay
     {
         if (keyEvent == Define.KeyEvent.Enter) {
             if (GameManager.SceneLoader.isLoading) return;
-            playerController.ReadUIInfo();
             Debug.Log("게임씬으로 이동");
-            GameManager.Instance.StopTimer();
-            GameManager.SceneLoader.LoadScene("Dev Survival");
+            // playerController.ReadUIInfo();
+            // GameManager.Instance.StopTimer();
+            // GameManager.SceneLoader.LoadScene("Dev Survival");
         }
     }
     protected override void OnDetected(Collider2D collision)
     {
-        playerController = collision.transform.parent.parent.GetComponent<PlayerController>(); ;
+        playerController = collision.transform.parent.parent.GetComponent<PlayerController>();
     }
 
     protected override void OnLost(Collider2D other)
