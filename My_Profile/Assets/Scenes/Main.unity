@@ -910,7 +910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4824482971926839195, guid: 9764f7b32871ec843ab9a3b16081b978, type: 3}
       propertyPath: urlList.Array.data[1]
-      value: https://www.notion.so/My_Diary-https://www.notion.so/InMusic-1d2d6c7cb36580a2beb9e57919abc5ae?source=copy_link?source=copy_link
+      value: https://www.notion.so/InMusic-1d2d6c7cb36580a2beb9e57919abc5ae?source=copy_link
       objectReference: {fileID: 0}
     - target: {fileID: 4824482971926839195, guid: 9764f7b32871ec843ab9a3b16081b978, type: 3}
       propertyPath: urlList.Array.data[2]
@@ -6742,6 +6742,10 @@ PrefabInstance:
       propertyPath: light2D.Array.data[4]
       value: 
       objectReference: {fileID: 145199128}
+    - target: {fileID: 3565269536670570839, guid: 9764f7b32871ec843ab9a3b16081b978, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3931776601358360330, guid: 9764f7b32871ec843ab9a3b16081b978, type: 3}
       propertyPath: m_Name
       value: School
@@ -7744,7 +7748,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: Project2
           m_BoolArgument: 0
@@ -14287,7 +14291,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: ProjectAll
           m_BoolArgument: 0
@@ -22169,7 +22173,8 @@ MonoBehaviour:
   m_Text: "\uC81C 4\uD68C \uC9C0\uC5ED \uC0C1\uC0DD \uB124\uD2B8\uC6CC\uD06C  \n\uBD80\uC0B0\uC9C4\uAD6C
     \uC5F0\uD569 \uCC3D\uC5C5 \uCEA0\uD504 (2024.05.10)\n\n2024\uB144 \uD559\uC0DD
     \uCC3D\uC5C5\uC720\uB9DD\uD300 300+ \n\uC608\uBE44\uD2B8\uB799 (2024.08.13)\n\n\uC624\uB79C\uC9C0\uD50C\uB798\uB2DB
-    \uAC8C\uC784 \uC720\uC800\uB2E8 (2025.07.04)\n\nGoogle AI Essentials (2025.10.21)"
+    \uAC8C\uC784 \uC720\uC800\uB2E8 (2025.07.04)\n\nGoogle AI Essentials (2025.10.21)\n\n2025\uB144
+    DEU \uB514\uC9C0\uD138 \uB9C8\uC2A4\uD130 (2026.01.20)"
 --- !u!222 &1968437113
 CanvasRenderer:
   m_ObjectHideFlags: 0
