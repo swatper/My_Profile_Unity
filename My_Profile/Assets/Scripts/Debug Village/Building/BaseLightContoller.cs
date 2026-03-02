@@ -19,7 +19,7 @@ public class BaseLightContoller : TimeSensitiveControllerBase
             LightOff();
     }
 
-    private void LightOff() {
+    public void LightOff() {
         for (int i = 0; i < light2D.Length; i++){
             light2D[i].enabled = false;
         }

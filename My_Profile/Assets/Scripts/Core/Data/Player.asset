@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   Name: CollegeStudent
-  Description: "\uB300\uD559\uC0DD,"
+  Description: "\uB300\uD559\uC0DD"
   MaxHP: 10
   MoveSpeed: 3.5
   SpriteNum: 0

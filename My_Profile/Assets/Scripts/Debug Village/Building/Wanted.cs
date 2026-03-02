@@ -19,9 +19,9 @@ public class Wanted : BuildingBase
 
     private void Start()
     {
-        int curYear = int.Parse(GameManager.Clock.localYear);
-        int curMonth = int.Parse(GameManager.Clock.localMonth);
-        int curDay = int.Parse(GameManager.Clock.localDay);
+        int curYear = GameManager.Clock.Year;
+        int curMonth = GameManager.Clock.Month;
+        int curDay = GameManager.Clock.Day;
         int koreanAge = curYear - birthYear + 1;
         //만 나이 계산
         int fullAge = curYear - birthYear;

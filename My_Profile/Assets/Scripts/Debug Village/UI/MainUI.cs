@@ -8,18 +8,12 @@ public class MainUI : MonoBehaviour
     [Tooltip("현재 위치 및 시간 정보")]
     [SerializeField] Text clock;
     [SerializeField] Text location;
-    [SerializeField] bool IsBlink= false;
 
     private void Start(){
         GameManager.Clock.SubscribeOnRealTime(UpdateTime);
-        UpdateTime($"{GameManager.Clock.localHour}:{GameManager.Clock.localMinute}");
     }
 
     void UpdateTime(string Time) {
-        if (IsBlink)
-            clock.text = Time.Replace(":", " ");
-        else
-            clock.text = Time;
-        IsBlink = !IsBlink;
+        clock.text = Time;
     }
 }

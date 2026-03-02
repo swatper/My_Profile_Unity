@@ -23,7 +23,17 @@ public class GameManager : MonoBehaviour
     public static TimeUpdater Clock { get { return Instance.TimeUpdater; } }
 
     public PlayerController pController;
-    public static PlayerController Player { get { return Instance.pController; } }
+    public static PlayerController Player {
+        get
+        {
+            if (Instance.pController == null)
+            {
+                GameObject go = GameObject.FindWithTag("Player");  // Name보다는 Tag가 성능상 유리
+                if (go != null) Instance.pController = go.GetComponent<PlayerController>();
+            }
+            return Instance.pController;
+        }
+    }
 
     [Header("시간 관련 데이터 및 이벤트")]
     [Tooltip("확인 및 수동 조작용")]
@@ -50,9 +60,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        GameObject playerObject = GameObject.Find("Player");
-        if (playerObject != null)
-            pController = playerObject.GetComponent<PlayerController>();
         StartCoroutine(UpdateTimePerSec());
         SetupUILoading();
     }
@@ -71,7 +78,9 @@ public class GameManager : MonoBehaviour
 
     private void CheckTime() {
         //시간대 알림
-        int curHour = int.Parse(Clock.localHour);
+        int curHour = Clock.Hour;
+        int curMin = Clock.Minute;
+        int curSec = Clock.Second;
         
         //저녁/밤: 18시부터 4시
         if (curHour >= 18 || curHour < 5)
@@ -86,11 +95,12 @@ public class GameManager : MonoBehaviour
         OnTimeOfDayChanged?.Invoke(curTOD);
 
         //정각 알림
-        if (Clock.localMinute == "00" && Clock.localSecond == "00"){
+        if (curHour == 0 && curMin == 0){
             OnHourChanged?.Invoke();
         }
     }
 
+    //1초마다 시간 측정
     IEnumerator UpdateTimePerSec() {
         while (true) {
             TimeUpdater.UpdateTime();

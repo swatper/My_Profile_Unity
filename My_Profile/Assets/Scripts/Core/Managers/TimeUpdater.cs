@@ -11,25 +11,36 @@ public class TimeUpdater
     [Header("정각 알리미")]
     public Action OnHourChanged;
 
-    [Header("로컬 시간 데이터")]
-    public string localYear;
-    public string localMonth;
-    public string localDay;
-    public string localHour;
-    public string localMinute;
-    public string localSecond;
+    [Tooltip("로컬 시간 데이터")]
+    public int Year { get; private set; }
+    public int Month { get; private set; }
+    public int Day { get; private set; }
+    public int Hour { get; private set; }
+    public int Minute { get; private set; }
+    public int Second { get; private set; }
+    private bool showColon = true;
+    string timeColon;
+    string timeText;
 
     public void UpdateTime() {
-        DateTime dateTime = DateTime.Now;
-        localYear = dateTime.Year.ToString("D4");
-        localMonth = dateTime.Month.ToString("D2");
-        localDay = dateTime.Day.ToString("D2");
-        localHour = dateTime.Hour.ToString("D2");
-        localMinute = dateTime.Minute.ToString("D2");
-        localSecond = dateTime.Second.ToString("D2");
-        //Debug.Log($"{localHour}:{localMinute}:{localSecond}");
+        DateTime now = DateTime.Now;
 
-        OnTimeUpdated?.Invoke($"{localHour}:{localMinute}");
+        if (Second == now.Second) return;
+
+        int prevMinute = Minute;
+        Hour = now.Hour;
+        Minute = now.Minute;
+        Second = now.Second;
+        Second = now.Second;
+
+        showColon = !showColon;
+        timeColon = showColon ? ":" : " ";
+        timeText = $"{Hour:D2}{timeColon}{Minute:D2}";
+
+        OnTimeUpdated?.Invoke(timeText);
+    }
+
+    public void InitClock() { 
     }
 
     public void SubscribeOnRealTime(Action<string> method){
