@@ -6,8 +6,14 @@ using UnityEngine.UI;
 
 public class EXPUI : MonoBehaviour
 {
-    [SerializeField] Slider progressBar;
+    [SerializeField] Slider expBar;
+    [SerializeField] Text levelText;
+    string preText = "Lv. ";
 
+    void Awake() {
+        expBar.value = 0;
+        levelText.text = preText + '1';
+    }
     public void SetMaxEXP() { }
     public void GainEXP() { }
 }

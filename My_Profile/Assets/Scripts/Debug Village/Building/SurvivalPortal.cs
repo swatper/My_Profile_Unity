@@ -10,7 +10,6 @@ public class SurvivalPortal : KeyHintDisplay
     {
         if (keyEvent == Define.KeyEvent.Enter) {
             if (GameManager.SceneLoader.isLoading) return;
-            GameManager.Instance.StopTimer();
             playerController.ReadUIInfo();
             GameManager.SceneLoader.LoadScene("Dev Survival");
         }

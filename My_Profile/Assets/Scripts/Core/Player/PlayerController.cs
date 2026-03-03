@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
     [Header("Player Info")]
     [Tooltip("캐릭터 능력치")]
     [SerializeField] PlayerData pData;
@@ -20,12 +21,19 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveBuffer;
     private void Awake()
     {
-        GameManager.Input.SubscribeKeyEvent(OnKeyboardAction);
-        pSprite = GetComponent<SpriteRenderer>();
-        rigid =  GetComponent<Rigidbody2D>();
-        pAnimator = GetComponent<Animator>();
-        ChangeStat(pData);
-        DontDestroyOnLoad(this);
+        if (Instance == null)
+        {
+            Instance = this;
+            GameManager.Input.SubscribeKeyEvent(OnKeyboardAction);
+            pSprite = GetComponent<SpriteRenderer>();
+            rigid = GetComponent<Rigidbody2D>();
+            pAnimator = GetComponent<Animator>();
+            ChangeStat(pData);
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+
     }
 
     void Update()
@@ -93,8 +101,12 @@ public class PlayerController : MonoBehaviour
     public void StopReadUIInfo() {
         pState.isReadingInfo = false;
     }
-    public void InitPlayerPosition()
+    public void InitPlayerPositionInSurvival()
     {
         pPosition.position = Vector3.zero;
+    }
+    public void InitPlayerPositionInVillagel()
+    {
+        pPosition.position = new Vector3(-7f, -0.8f, 0);
     }
 }

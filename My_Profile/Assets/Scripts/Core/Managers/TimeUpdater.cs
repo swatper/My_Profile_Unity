@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
+using static UnityEditor.PlayerSettings;
 
 public class TimeUpdater
 {
@@ -10,6 +11,8 @@ public class TimeUpdater
     public Action<string> OnTimeUpdated;
     [Header("정각 알리미")]
     public Action OnHourChanged;
+    //[Header("시간대 알리미")]
+    //public Action<Define.TimeOfDay> OnTimeOfDayChanged;
 
     [Tooltip("로컬 시간 데이터")]
     public int Year { get; private set; }
@@ -38,16 +41,28 @@ public class TimeUpdater
         timeText = $"{Hour:D2}{timeColon}{Minute:D2}";
 
         OnTimeUpdated?.Invoke(timeText);
+        //정각 알림
+        if (Hour == 0 && Minute == 0)
+            OnHourChanged?.Invoke();
     }
 
-    public void InitClock() { 
-    }
-
+    /// <summary>
+    /// 초 단위 알람
+    /// </summary>
+    /// <param name="method"></param>
     public void SubscribeOnRealTime(Action<string> method){
         OnTimeUpdated += method;
     }
 
-    public void UnsubscribeOnTimeAlarm(Action<string> method){
+    public void UnsubscribeOnRealTime(Action<string> method){
         OnTimeUpdated -= method;
+    }
+
+    public void SubscribeHourlyAlarm(Action method) {
+        OnHourChanged += method;
+    }
+
+    public void UnsubscribeHourlyAlarm(Action method) {
+        OnHourChanged -= method;
     }
 }

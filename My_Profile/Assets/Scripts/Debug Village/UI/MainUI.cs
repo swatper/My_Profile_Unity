@@ -16,4 +16,8 @@ public class MainUI : MonoBehaviour
     void UpdateTime(string Time) {
         clock.text = Time;
     }
+
+    private void OnDestroy(){
+        GameManager.Clock.UnsubscribeOnRealTime(UpdateTime);
+    }
 }

@@ -41,7 +41,6 @@ public class LoadingUI : MonoBehaviour
         loadingPanel.SetActive(false);
     }
 
-
     public void SceneReady() => isDone = true;
 
     void UpdateLoadingUI(float progress)
@@ -61,13 +60,18 @@ public class LoadingUI : MonoBehaviour
         isLoading = true;
         targertScene = sceneName;
         canvas.Play("FadeIn");
+        if (sceneName == "Dev Survival")
+            GameManager.Instance.StopTimer();
+        else if (sceneName == "Debug Village")
+            GameManager.Instance.StartTimer();
     }
 
+    //Animation Event에서 사용 중
     public void StartLoading() {
         StartCoroutine(LoadAsync(targertScene));
     }
 
-    void ResetLoadingState()
+    public void ResetLoadingState()
     {
         GameManager.Player.StopReadUIInfo();
         isDone = false;
@@ -110,7 +114,5 @@ public class LoadingUI : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
 
         canvas.Play("FadeOut");
-
-        ResetLoadingState();
     }
 }

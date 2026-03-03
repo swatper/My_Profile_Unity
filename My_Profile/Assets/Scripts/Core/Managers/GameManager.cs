@@ -38,8 +38,6 @@ public class GameManager : MonoBehaviour
     [Header("시간 관련 데이터 및 이벤트")]
     [Tooltip("확인 및 수동 조작용")]
     [SerializeField] public Define.TimeOfDay curTOD;
-    [Header("정각 알리미")]
-    public Action OnHourChanged;
     [Header("시간대 알리미")]
     public Action<Define.TimeOfDay> OnTimeOfDayChanged;
 
@@ -82,6 +80,8 @@ public class GameManager : MonoBehaviour
         int curMin = Clock.Minute;
         int curSec = Clock.Second;
         
+
+        //TODO: 추후 TimerUpdater로 옮길 예정
         //저녁/밤: 18시부터 4시
         if (curHour >= 18 || curHour < 5)
             curTOD = Define.TimeOfDay.Night;
@@ -91,13 +91,8 @@ public class GameManager : MonoBehaviour
         //점심/낮: 12시부터 18시
         else
             curTOD = Define.TimeOfDay.Day;
- 
         OnTimeOfDayChanged?.Invoke(curTOD);
 
-        //정각 알림
-        if (curHour == 0 && curMin == 0){
-            OnHourChanged?.Invoke();
-        }
     }
 
     //1초마다 시간 측정
@@ -111,5 +106,11 @@ public class GameManager : MonoBehaviour
 
     public void StopTimer() {
         StopCoroutine(UpdateTimePerSec());
+        curTOD = Define.TimeOfDay.Morning;
+        OnTimeOfDayChanged?.Invoke(curTOD);
+    }
+
+    public void StartTimer() { 
+        StartCoroutine (UpdateTimePerSec());
     }
 }
