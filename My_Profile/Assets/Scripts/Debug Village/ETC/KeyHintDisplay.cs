@@ -7,6 +7,7 @@ public abstract class KeyHintDisplay : MonoBehaviour
 {
     [SerializeField]public  Animator keyAni;
     [SerializeField] string keyType;
+    public bool isEnter;
 
     protected void Awake()
     {
@@ -25,6 +26,7 @@ public abstract class KeyHintDisplay : MonoBehaviour
             return;
         keyAni.Play(keyType);
         OnDetected(collision);
+        isEnter = true;
     }
     protected void OnTriggerExit2D(Collider2D other)
     {
@@ -32,6 +34,7 @@ public abstract class KeyHintDisplay : MonoBehaviour
             return;
         keyAni.Play("Default");
         OnLost(other);
+        isEnter = false;
     }
 
     protected virtual void OnDetected(Collider2D collision) { }

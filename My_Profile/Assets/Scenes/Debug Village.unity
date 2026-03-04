@@ -813,6 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8375c374016631c42a7b98a60bc44bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneName: Dev Survival
 --- !u!1 &48429319
 GameObject:
   m_ObjectHideFlags: 0
@@ -22524,7 +22525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyAni: {fileID: 1565318172}
   keyType: Enter
-  playerController: {fileID: 0}
+  sceneDirector: {fileID: 45230760}
 --- !u!1001 &848821222123741301
 PrefabInstance:
   m_ObjectHideFlags: 0

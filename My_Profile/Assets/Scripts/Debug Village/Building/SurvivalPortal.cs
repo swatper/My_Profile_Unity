@@ -5,22 +5,12 @@ using UnityEngine.U2D;
 
 public class SurvivalPortal : KeyHintDisplay
 {
-    [SerializeField] PlayerController playerController;
+    [SerializeField] DebugSceneDirector sceneDirector;
     protected override void OnInteract(Define.KeyEvent keyEvent)
     {
         if (keyEvent == Define.KeyEvent.Enter) {
-            if (GameManager.SceneLoader.isLoading) return;
-            playerController.ReadUIInfo();
-            GameManager.SceneLoader.LoadScene("Dev Survival");
+            if (GameManager.SceneLoader.isLoading || !isEnter) return;
+            sceneDirector.GoToScene();
         }
-    }
-    protected override void OnDetected(Collider2D collision)
-    {
-        playerController = collision.transform.parent.parent.GetComponent<PlayerController>();
-    }
-
-    protected override void OnLost(Collider2D other)
-    {
-        playerController = null;
     }
 }

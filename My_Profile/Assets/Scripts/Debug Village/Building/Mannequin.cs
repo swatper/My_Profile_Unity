@@ -13,17 +13,19 @@ public class Mannequin : KeyHintDisplay
     protected override void OnDetected(Collider2D collision) {
         sprite.color = OnColor;
         playerController = collision.transform.parent.parent.GetComponent<PlayerController>();
+        isEnter = true;
     }
 
     protected override void OnLost(Collider2D other)
     {
         sprite.color = offColor;
         playerController = null;
+        isEnter = false;
     }
 
     protected override void OnInteract(Define.KeyEvent keyEvent)
     {
-        if (keyEvent == Define.KeyEvent.Tab && playerController != null) {
+        if (keyEvent == Define.KeyEvent.Tab && playerController != null  && isEnter) {
             playerController.ChangeStat(skinStat);
         }
     }
