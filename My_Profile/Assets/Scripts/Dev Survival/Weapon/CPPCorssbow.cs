@@ -9,7 +9,9 @@ public class CPPCorssbow : MonoBehaviour
     [SerializeField] WeaponData wData;
     [Tooltip("실시간 데이터 처리용")]
     [SerializeField] WeaponState wState;
+    [SerializeField] float projectileSpeed = 15f;
     float timer;
+    [SerializeField] int bID;
     [Header("Weapon Component")]
     [SerializeField] MonsterScanner mScanner;
 
@@ -29,7 +31,18 @@ public class CPPCorssbow : MonoBehaviour
     void Fire() {
         if (!mScanner.nearestTarget)
             return;
-        //Transform bullet = 
+        //방향 조절
+        Vector3 targetPos = mScanner.nearestTarget.position;
+        Vector3 dir = targetPos - transform.position;
+        dir = dir.normalized;
+
+        //탄 생성
+        Bullet bullet = SurvivalSceneDirector.Instance.poolManager.GetBulletFromPool(bID);
+
+        //초기화 및 발싸
+        bullet.transform.position = transform.position;
+        bullet.transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+        bullet.Init(wState.wDamage, wState.pCount, dir * projectileSpeed);
     }
 
     void SetWeaponData(WeaponData newData){

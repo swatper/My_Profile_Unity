@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5618246333739456686}
   - component: {fileID: 1922925750574592640}
   m_Layer: 7
-  m_Name: Monster(TMP)
+  m_Name: NullPointException
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7689358774858787162}
   - component: {fileID: 2281329407595869514}
   - component: {fileID: 122696296652618164}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CppCrossbow
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029999240546000731}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.37, y: -0.04, z: 0}
+  m_LocalScale: {x: 0.45000002, y: 0.45000002, z: 0.45000002}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &7689358774858787162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -103,8 +103,10 @@ MonoBehaviour:
     wName: 
     wDamage: 0
     wSpeed: 0
-    pCount: 0
+    pCount: 1
     wRange: 0
+  projectileSpeed: 15
+  bID: 0
   mScanner: {fileID: 122696296652618164}
 --- !u!114 &122696296652618164
 MonoBehaviour:

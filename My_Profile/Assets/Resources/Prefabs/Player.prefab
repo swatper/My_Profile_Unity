@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9185203835941204998}
   - component: {fileID: 171953433243328731}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5047424141096528091}
   - component: {fileID: 7569262408764920816}
   - component: {fileID: 4098545741229559445}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 15
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -306,6 +306,8 @@ MonoBehaviour:
     isReadingInfo: 0
   rigid: {fileID: 4033354161993616692}
   pSprite: {fileID: 7176890837902994793}
+  boxCollider: {fileID: 0}
+  capsuleCollider: {fileID: 0}
   pAnimator: {fileID: 5047424141096528091}
   pAniControllers:
   - {fileID: 22100000, guid: 2ab99d63d9b3bd54bb13a1221101048f, type: 2}
@@ -315,6 +317,7 @@ MonoBehaviour:
   pPosition: {fileID: 180601632213276830}
   inputVec: {x: 0, y: 0}
   moveBuffer: {x: 0, y: 0}
+  weaponContainer: {fileID: 0}
 --- !u!1 &2878973935588855030
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 977014485673624022}
   - component: {fileID: 599546068277291128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +411,7 @@ GameObject:
   - component: {fileID: 3508556193152499185}
   - component: {fileID: 2585094000639790528}
   - component: {fileID: 2597891052220925728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LayerController
   m_TagString: ETC
   m_Icon: {fileID: 0}
@@ -502,7 +505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6779590158419825957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

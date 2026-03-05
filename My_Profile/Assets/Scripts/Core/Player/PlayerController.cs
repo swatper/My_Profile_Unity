@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [Header("Player Component")]
     [SerializeField] Rigidbody2D rigid;
     [SerializeField] private SpriteRenderer pSprite;
+    [SerializeField] BoxCollider2D boxCollider;
+    [SerializeField] CapsuleCollider2D capsuleCollider;
     [SerializeField] Animator pAnimator;
     [SerializeField] AnimatorOverrideController[] pAniControllers;
     [SerializeField] Transform playerPivot;
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
             GameManager.Input.SubscribeKeyEvent(OnKeyboardAction);
             pSprite = GetComponent<SpriteRenderer>();
             rigid = GetComponent<Rigidbody2D>();
+            boxCollider = GetComponent<BoxCollider2D>();
+            capsuleCollider = GetComponent<CapsuleCollider2D>();
             pAnimator = GetComponent<Animator>();
             ChangeStat(pData);
             DontDestroyOnLoad(gameObject);
@@ -50,8 +54,11 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate(){
-        if (inputVec == Vector2.zero)
+        rigid.velocity = Vector2.zero;
+
+        if (inputVec == Vector2.zero) 
             return;
+ 
        Vector2 nxtVec= inputVec.normalized * pState.curSpeed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nxtVec);
     }
@@ -108,7 +115,7 @@ public class PlayerController : MonoBehaviour
         pPosition.position = Vector3.zero;
         if (weaponContainer == null) {
             weaponContainer = new GameObject("Weapon Container");
-            weaponContainer.transform.SetParent(this.transform);
+            weaponContainer.transform.SetParent(playerPivot);
             weaponContainer.transform.localPosition = Vector3.zero;
 
             //기본 무기 생성

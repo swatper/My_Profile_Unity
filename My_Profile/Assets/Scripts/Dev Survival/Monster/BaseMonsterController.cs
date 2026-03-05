@@ -10,7 +10,7 @@ public class BaseMonsterController : MonoBehaviour
     [SerializeField] MonsterState mState;
     [Tooltip("플레이어")]
     [SerializeField] Rigidbody2D target;
-    [Header("Monster Componen")]
+    [Header("Monster Component")]
     [SerializeField] Rigidbody2D rigid;
     [SerializeField] Collider2D mColl;
     [SerializeField] SpriteRenderer mSprite;
@@ -22,16 +22,15 @@ public class BaseMonsterController : MonoBehaviour
         mSprite = GetComponent<SpriteRenderer>();
         target = GameManager.Player.GetComponent<Rigidbody2D>();
         mAnimator = GetComponent<Animator>();
-        InitMonster(mData);
+        InitMonster();
     }
 
     /// <summary>
     /// Pool에서 꺼내질 때 마다 실행 (능력치/상태 초기화)
     /// </summary>
     /// <param name="data"></param>
-    public void InitMonster(MonsterData data) {
-        mData = data;
-        SetMonsterData(data);
+    public void InitMonster() {
+        SetMonsterData(mData);
         SetComponentState(mState.isDead);
     }
 
@@ -45,12 +44,10 @@ public class BaseMonsterController : MonoBehaviour
         rigid.simulated = !IsDead;
         mAnimator.SetBool("Dead", IsDead);
         mSprite.sortingOrder = IsDead ? 0 : 1;
-        gameObject.SetActive(!IsDead);
     }
 
     public void Dead() {
         SurvivalSceneDirector.Instance.poolManager.InsertDeadMonster(this);
-        gameObject.SetActive(false);
     }
 
     private void FixedUpdate()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TmpMonster : BaseMonsterController
+public class NullPointException : BaseMonsterController
 {
     private void Awake()
     {
