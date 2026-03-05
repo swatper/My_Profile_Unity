@@ -4,7 +4,7 @@ public struct MonsterState
     public string mName;
     public Define.MonsterType mType;
     public string mDesc;
-    public int curHp;
+    public float curHp;
     public float curSpeed;
     public float Damage;
     public float Exp;

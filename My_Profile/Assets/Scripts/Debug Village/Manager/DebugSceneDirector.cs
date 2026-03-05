@@ -6,7 +6,7 @@ public class DebugSceneDirector : BaseSceneDirector
 {
     protected override void InitScene()
     {
-        GameManager.Player.InitPlayerPositionInVillagel();
+        GameManager.Player.InitPlayerInVillagel();
         GameManager.Player.StopReadUIInfo();
         SceneReady();
     }

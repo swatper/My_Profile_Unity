@@ -4,7 +4,7 @@ public struct PlayerState
     public string pName;
     public int pID;
     public string pDesc;
-    public int curHp;
+    public float curHp;
     public float curSpeed;
     public float curMagnetRange;
     public int curExp;

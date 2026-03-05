@@ -17,10 +17,10 @@ public class GameManager : MonoBehaviour
 
     LoadingUI M_Scene;
     public static LoadingUI SceneLoader { get { return Instance.M_Scene; } }
-    #endregion
 
     public TimeUpdater TimeUpdater = new TimeUpdater();
     public static TimeUpdater Clock { get { return Instance.TimeUpdater; } }
+    #endregion
 
     public PlayerController pController;
     public static PlayerController Player {

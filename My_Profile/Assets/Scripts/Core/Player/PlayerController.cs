@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
     [Header("Player Info")]
-    [Tooltip("캐릭터 능력치")]
+    [Tooltip("캐릭터 기본 능력치")]
     [SerializeField] PlayerData pData;
     [Tooltip("실시간 데이터 처리용")]
     [SerializeField] PlayerState pState;
@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform pPosition;
     public Vector2 inputVec;
     public Vector2 moveBuffer;
+    [Header("Weapon Settings")]
+    [SerializeField] GameObject weaponContainer;
     private void Awake()
     {
         if (Instance == null)
@@ -101,11 +103,19 @@ public class PlayerController : MonoBehaviour
     public void StopReadUIInfo() {
         pState.isReadingInfo = false;
     }
-    public void InitPlayerPositionInSurvival()
+    public void InitPlayerInSurvival()
     {
         pPosition.position = Vector3.zero;
+        if (weaponContainer == null) {
+            weaponContainer = new GameObject("Weapon Container");
+            weaponContainer.transform.SetParent(this.transform);
+            weaponContainer.transform.localPosition = Vector3.zero;
+
+            //기본 무기 생성
+            GameManager.Resource.Instantiate("Weapon/CppCrossbow", weaponContainer.transform);
+        }
     }
-    public void InitPlayerPositionInVillagel()
+    public void InitPlayerInVillagel()
     {
         pPosition.position = new Vector3(-7f, -0.8f, 0);
     }

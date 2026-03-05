@@ -4,6 +4,8 @@ using UnityEngine;
 public class WeaponData : ScriptableObject
 {
     public string WeaponName;
-    public int WeaponDamage;
+    public float WeaponDamage;
     public int WeaponSpeed;
+    public int PierceCount;
+    public int ScanRange;
 }
