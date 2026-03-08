@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     }
 
     [Header("시간 관련 데이터 및 이벤트")]
+    Coroutine timeRoutine;
     [Tooltip("확인 및 수동 조작용")]
     [SerializeField] public Define.TimeOfDay curTOD;
     [Header("시간대 알리미")]
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(UpdateTimePerSec());
+        StartTimer();
         SetupUILoading();
     }
 
@@ -105,12 +106,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void StopTimer() {
-        StopCoroutine(UpdateTimePerSec());
+        StopCoroutine(timeRoutine);
         curTOD = Define.TimeOfDay.Morning;
         OnTimeOfDayChanged?.Invoke(curTOD);
     }
 
-    public void StartTimer() { 
-        StartCoroutine (UpdateTimePerSec());
+    public void StartTimer() {
+        timeRoutine = StartCoroutine(UpdateTimePerSec());
     }
 }

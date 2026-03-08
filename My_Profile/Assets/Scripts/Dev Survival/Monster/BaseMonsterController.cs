@@ -5,9 +5,11 @@ using UnityEngine;
 public class BaseMonsterController : MonoBehaviour
 {
     [Header("MonsterInfo")]
-    [Tooltip("몬스터 기본 능력치")]
+    [Tooltip("Monster Data")]
     [SerializeField] MonsterData mData;
-    [SerializeField] MonsterState mState;
+    [Tooltip("Current Monster Data")]
+    [SerializeField] MonsterStat mStat;
+    [SerializeField] int curLevel = 1;
     [Tooltip("플레이어")]
     [SerializeField] Rigidbody2D target;
     [Header("Monster Component")]
@@ -30,16 +32,16 @@ public class BaseMonsterController : MonoBehaviour
     /// </summary>
     /// <param name="data"></param>
     public void InitMonster() {
-        SetMonsterData(mData);
-        SetComponentState(mState.isDead);
+        SetMonsterData();
+        SetComponentState(mStat.isDead);
     }
 
-    void SetMonsterData(MonsterData newData) {
-        mState = new MonsterState(newData);
+    void SetMonsterData() {
+        mStat = mData.levelTables[curLevel - 1];
     }
 
     void SetComponentState(bool IsDead) {
-        mState.isDead = IsDead;
+        mStat.isDead = IsDead;
         mColl.enabled = !IsDead;
         rigid.simulated = !IsDead;
         mAnimator.SetBool("Dead", IsDead);
@@ -52,13 +54,13 @@ public class BaseMonsterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (mState.isDead || mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
+        if (mStat.isDead || mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
         //플레이어 방향 찾기
         Vector2 dirVec = target.position - rigid.position;
         //가야할 위치 찾기
-        Vector2 nextVec = dirVec.normalized * mState.curSpeed * Time.fixedDeltaTime;
+        Vector2 nextVec = dirVec.normalized * mStat.curSpeed * Time.fixedDeltaTime;
         //이동
         rigid.MovePosition(rigid.position + nextVec);
         rigid.velocity = Vector2.zero;
@@ -74,18 +76,18 @@ public class BaseMonsterController : MonoBehaviour
         if (!collision.CompareTag("Weapon"))
             return;
 
-        mState.curHp -= collision.GetComponent<Bullet>().Damage;
+        mStat.curHp -= collision.GetComponent<Bullet>().Damage;
         collision.GetComponent<Bullet>().DescPiercingCNT();
 
         StartCoroutine("KnockBack");
 
-        if (mState.curHp > 0)
+        if (mStat.curHp > 0)
         {
             mAnimator.SetTrigger("Hit");
         }
         else {
-            mState.isDead = true;
-            SetComponentState(mState.isDead);
+            mStat.isDead = true;
+            SetComponentState(mStat.isDead);
         }
     }
 
@@ -93,6 +95,6 @@ public class BaseMonsterController : MonoBehaviour
         yield return null;
         Vector3 playerPos = GameManager.Player.transform.position;
         Vector3 dirVec = transform.position - playerPos;
-        rigid.AddForce(dirVec.normalized * 3, ForceMode2D.Impulse);
+        rigid.AddForce(dirVec.normalized * mStat.KnockBack, ForceMode2D.Impulse);
     }
 }

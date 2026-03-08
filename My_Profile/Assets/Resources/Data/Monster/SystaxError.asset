@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: SystaxError
   Description: "\uBB38\uB9E5\uC0C1 \uC624\uB958"
-  MaxHP: 11
-  MoveSpeed: 1
+  MaxHP: 0
+  MoveSpeed: 0
   MonsterType: 0
-  Damage: 0
-  DropExp: 0
+  levelTables:
+  - curHp: 11
+    curSpeed: 1
+    Damage: 1
+    KnockBack: 1
+    Exp: 1
+    isDead: 0

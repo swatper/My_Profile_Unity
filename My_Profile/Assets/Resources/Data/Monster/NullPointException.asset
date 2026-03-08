@@ -15,7 +15,12 @@ MonoBehaviour:
   Name: NullPointException
   Description: "\uC81C\uBC1C \uBABB \uCC3E\uC9C0 \uB9D0\uC544\uB2E4\uC624..."
   MaxHP: 0
-  MoveSpeed: 0
+  MoveSpeed: 3
   MonsterType: 0
-  Damage: 0
-  DropExp: 0
+  levelTables:
+  - curHp: 15
+    curSpeed: 3
+    Damage: 0
+    KnockBack: 0.5
+    Exp: 0
+    isDead: 0

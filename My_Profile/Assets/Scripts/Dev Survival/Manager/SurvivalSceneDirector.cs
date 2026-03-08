@@ -13,6 +13,8 @@ public class SurvivalSceneDirector : BaseSceneDirector
     private void Awake()
     {
         Instance = this;
+        GameManager.Player.SubscribeLevelUp(OnLevelUp);
+
     }
     protected override void InitScene()
     {
@@ -20,5 +22,13 @@ public class SurvivalSceneDirector : BaseSceneDirector
         poolManager = FindObjectOfType<PoolManager>();
         GameManager.Player.InitPlayerInSurvival();
         GameManager.SceneLoader.SceneReady();
+    }
+
+    void OnLevelUp() { 
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Player.UnsubscribeLevelUp(OnLevelUp);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
@@ -13,8 +14,6 @@ public class PlayerController : MonoBehaviour
     [Header("Player Component")]
     [SerializeField] Rigidbody2D rigid;
     [SerializeField] private SpriteRenderer pSprite;
-    [SerializeField] BoxCollider2D boxCollider;
-    [SerializeField] CapsuleCollider2D capsuleCollider;
     [SerializeField] Animator pAnimator;
     [SerializeField] AnimatorOverrideController[] pAniControllers;
     [SerializeField] Transform playerPivot;
@@ -22,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 inputVec;
     public Vector2 moveBuffer;
     [Header("Weapon Settings")]
+    public Action LevelUp;
     [SerializeField] GameObject weaponContainer;
     private void Awake()
     {
@@ -31,8 +31,6 @@ public class PlayerController : MonoBehaviour
             GameManager.Input.SubscribeKeyEvent(OnKeyboardAction);
             pSprite = GetComponent<SpriteRenderer>();
             rigid = GetComponent<Rigidbody2D>();
-            boxCollider = GetComponent<BoxCollider2D>();
-            capsuleCollider = GetComponent<CapsuleCollider2D>();
             pAnimator = GetComponent<Animator>();
             ChangeStat(pData);
             DontDestroyOnLoad(gameObject);
@@ -113,10 +111,14 @@ public class PlayerController : MonoBehaviour
     public void InitPlayerInSurvival()
     {
         pPosition.position = Vector3.zero;
+        pPosition.rotation = Quaternion.identity;
+        pSprite.flipX = false;
+
         if (weaponContainer == null) {
             weaponContainer = new GameObject("Weapon Container");
             weaponContainer.transform.SetParent(playerPivot);
             weaponContainer.transform.localPosition = Vector3.zero;
+            weaponContainer.transform.localRotation = Quaternion.identity;
 
             //기본 무기 생성
             GameManager.Resource.Instantiate("Weapon/CppCrossbow", weaponContainer.transform);
@@ -124,6 +126,17 @@ public class PlayerController : MonoBehaviour
     }
     public void InitPlayerInVillagel()
     {
+        Destroy(weaponContainer);
         pPosition.position = new Vector3(-7f, -0.8f, 0);
+        playerPivot.rotation = Quaternion.identity;
+        pSprite.flipX = false;
+    }
+
+    public void SubscribeLevelUp(Action weaponMethod) {
+        LevelUp += weaponMethod;
+    }
+
+    public void UnsubscribeLevelUp(Action weaponMethod) { 
+        LevelUp -= weaponMethod;
     }
 }

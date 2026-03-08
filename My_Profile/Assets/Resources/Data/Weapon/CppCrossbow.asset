@@ -13,7 +13,20 @@ MonoBehaviour:
   m_Name: CppCrossbow
   m_EditorClassIdentifier: 
   WeaponName: C++Corossbow
-  WeaponDamage: 10
-  WeaponSpeed: 2
-  PierceCount: 1
-  ScanRange: 100
+  levelTables:
+  - WeaponDamage: 10
+    WeaponSpeed: 1
+    PierceCount: 1
+    ScanRange: 100
+  - WeaponDamage: 12
+    WeaponSpeed: 2
+    PierceCount: 2
+    ScanRange: 120
+  - WeaponDamage: 15
+    WeaponSpeed: 3
+    PierceCount: 2
+    ScanRange: 150
+  - WeaponDamage: 0
+    WeaponSpeed: 0
+    PierceCount: 0
+    ScanRange: 0

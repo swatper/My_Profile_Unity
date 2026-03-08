@@ -1,9 +1,21 @@
+using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public struct MonsterStat
+{
+    public float curHp;
+    public float curSpeed;
+    public float Damage;
+    public float KnockBack;
+    public float Exp;
+    public bool isDead;
+}
+
 
 [CreateAssetMenu(fileName = "Monster", menuName = "ScriptableObject/MonsterData", order = 1)]
 public class MonsterData : BaseData
 {
     public Define.MonsterType MonsterType;
-    public int Damage;
-    public int DropExp;
+    public List<MonsterStat> levelTables;
 }
