@@ -113,16 +113,36 @@ public class PlayerController : MonoBehaviour
         pPosition.position = Vector3.zero;
         pPosition.rotation = Quaternion.identity;
         pSprite.flipX = false;
+        SetWeapon(0);
+    }
 
-        if (weaponContainer == null) {
+    public void SetWeapon(int wID) {
+        if (weaponContainer == null)
+        {
             weaponContainer = new GameObject("Weapon Container");
             weaponContainer.transform.SetParent(playerPivot);
             weaponContainer.transform.localPosition = Vector3.zero;
             weaponContainer.transform.localRotation = Quaternion.identity;
-
-            //기본 무기 생성
-            GameManager.Resource.Instantiate("Weapon/CppCrossbow", weaponContainer.transform);
         }
+        switch (wID) {
+            case 1:
+                //C# 지팡이
+                GameManager.Resource.Instantiate("Weapon/CsharpStaff", weaponContainer.transform);
+                break;
+            case 2:
+                //Unity 책
+                GameManager.Resource.Instantiate("Weapon/", weaponContainer.transform);
+                break;
+                //Flutter
+            case 3:
+                GameManager.Resource.Instantiate("Weapon/", weaponContainer.transform);
+                break;
+            default:
+                //기본무기: Cpp 쇠뇌
+                GameManager.Resource.Instantiate("Weapon/CppCrossbow", weaponContainer.transform);
+                break;
+        }
+    
     }
     public void InitPlayerInVillagel()
     {

@@ -19,8 +19,8 @@ public class BaseRangedWeapon : BaseWeapon
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > wStat.WeaponSpeed) {
+        timer += Time.deltaTime * wStat.WeaponSpeed;
+        if (timer > 1.0f) {
             timer = 0f;
             Attack();
         }

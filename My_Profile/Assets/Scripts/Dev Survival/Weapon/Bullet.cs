@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float Damage;
-    public int piercingCnt;
+    int piercingCnt;
     public float lifeTime;
     Rigidbody2D rigid;
 

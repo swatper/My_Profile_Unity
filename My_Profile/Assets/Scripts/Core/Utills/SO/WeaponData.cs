@@ -9,7 +9,7 @@ public struct WeaponStat
 {
     public float WeaponDamage;
     [Tooltip("공격 주기")]
-    public int WeaponSpeed;
+    public float WeaponSpeed;
     public int PierceCount;
     public int ScanRange;
 }

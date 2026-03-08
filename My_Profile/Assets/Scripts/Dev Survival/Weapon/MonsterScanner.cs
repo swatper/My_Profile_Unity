@@ -5,7 +5,7 @@ using UnityEngine;
 public class MonsterScanner : MonoBehaviour
 {
     [Header("Scanner State")]
-    float scanRange;
+    [SerializeField] float scanRange;
     public LayerMask targetLayer;
     public RaycastHit2D[] targets;
     public Transform nearestTarget;
@@ -37,4 +37,19 @@ public class MonsterScanner : MonoBehaviour
         return result;
     }
 
+    //탐지 범위 시각화용
+    private void OnDrawGizmos()
+    {
+#if UNITY_EDITOR
+        Color baseColor = (nearestTarget != null) ? Color.green : Color.red;
+
+        //내부 그리기
+        UnityEditor.Handles.color = new Color(baseColor.r, baseColor.g, baseColor.b, 0.15f);
+        UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.forward, scanRange);
+
+        //테두리 그리기 
+        UnityEditor.Handles.color = new Color(baseColor.r, baseColor.g, baseColor.b, 1f);
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, scanRange);
+#endif
+    }
 }
