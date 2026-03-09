@@ -9,31 +9,43 @@ public class PoolManager : MonoBehaviour
     [SerializeField] GameObject[] bulletPefabs;
     [Header("Pool Settings")]
     [SerializeField] float spawnRate = 0.5f;
-    [SerializeField] int maxUnit;
+    [SerializeField] PaseData spawnData;
+    [SerializeField] Pase paseState;
+    [SerializeField] int curPase;
     [SerializeField] int curUnit;
-    [SerializeField] int curPhase;
 
     [SerializeField] Queue<BaseMonsterController> monsterPool = new Queue<BaseMonsterController>();
     [SerializeField] Queue<Bullet> bulletPool = new Queue<Bullet>();
 
     private void Awake(){
+        curPase = -1;
+        PaseUp();
         PreparePool();
     }
 
-    public void PreparePool() {
+    public void PaseUp() {
+        curPase++;
+        paseState = spawnData.levelTables[curPase];
+        //대기하고 있는 전 단계 몬스터 제거
+        while (monsterPool.Count > 0){
+            BaseMonsterController oldMonster = monsterPool.Dequeue();
+            Destroy(oldMonster.gameObject);
+        }
         InitPool();
+    }
+
+    /// <summary>
+    /// 맨 처음 한번만 실행
+    /// </summary>
+    public void PreparePool() {
         sceneDirector.SceneReady();
         StartCoroutine("SpawnRoutine");
     }
 
     //Pool에 최대 유닛 수 만큼 몬스터 넣기
     public void InitPool() {
-        for (int i = curUnit; i < maxUnit; i++) {
-            GameObject monsterObj = Instantiate(monsterPefabs[0], this.transform);
-            BaseMonsterController monster = monsterObj.GetComponent<BaseMonsterController>();
-            monster.PreSetUp();
-            monsterObj.SetActive(false);
-            monsterPool.Enqueue(monster);
+        for (int i = curUnit; i < paseState.MaxUnit; i++) {
+            CreateNewMonster();
         }
     }
 
@@ -45,6 +57,14 @@ public class PoolManager : MonoBehaviour
             monster.gameObject.SetActive(true);
             curUnit++;
         }
+    }
+
+    void CreateNewMonster() {
+        GameObject monsterObj = Instantiate(monsterPefabs[curPase], this.transform);
+        BaseMonsterController newMonster = monsterObj.GetComponent<BaseMonsterController>();
+        newMonster.PreSetUp();
+        monsterObj.SetActive(false);
+        monsterPool.Enqueue(newMonster);
     }
 
     //Pool에서 총알 소환하기
@@ -64,8 +84,15 @@ public class PoolManager : MonoBehaviour
 
     public void InsertDeadMonster(BaseMonsterController monster) {
         monster.gameObject.SetActive(false);
-        monsterPool.Enqueue(monster);
         curUnit--;
+
+        //필터링: 이전 몬스터 관리
+        if (monster.GetMonsterID() == curPase)
+            monsterPool.Enqueue(monster);
+        else {
+            Destroy(monster.gameObject);
+            CreateNewMonster();
+        }
     }
 
     public void InsertUsedBullet(Bullet bullet) {
@@ -74,7 +101,7 @@ public class PoolManager : MonoBehaviour
     }
 
     IEnumerator SpawnRoutine() {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.7f);
         while (true)
         {
             yield return new WaitForSeconds(spawnRate);

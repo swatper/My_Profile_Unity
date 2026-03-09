@@ -41,6 +41,12 @@ public class MonsterScanner : MonoBehaviour
     private void OnDrawGizmos()
     {
 #if UNITY_EDITOR
+        DrowDetectRange();
+#endif
+    }
+
+#if UNITY_EDITOR
+    void DrowDetectRange() {
         Color baseColor = (nearestTarget != null) ? Color.green : Color.red;
 
         //내부 그리기
@@ -50,6 +56,6 @@ public class MonsterScanner : MonoBehaviour
         //테두리 그리기 
         UnityEditor.Handles.color = new Color(baseColor.r, baseColor.g, baseColor.b, 1f);
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, scanRange);
-#endif
     }
+#endif
 }

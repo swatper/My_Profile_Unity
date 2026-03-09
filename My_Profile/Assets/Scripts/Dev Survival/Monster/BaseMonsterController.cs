@@ -48,6 +48,10 @@ public class BaseMonsterController : MonoBehaviour
         mSprite.sortingOrder = IsDead ? 0 : 1;
     }
 
+    public int GetMonsterID() {
+        return mData.MonsterID;
+    }
+
     public void Dead() {
         SurvivalSceneDirector.Instance.poolManager.InsertDeadMonster(this);
     }

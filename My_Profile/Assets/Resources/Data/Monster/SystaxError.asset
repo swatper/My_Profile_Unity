@@ -24,3 +24,9 @@ MonoBehaviour:
     KnockBack: 1
     Exp: 1
     isDead: 0
+  - curHp: 20
+    curSpeed: 2
+    Damage: 1
+    KnockBack: 1
+    Exp: 1
+    isDead: 0

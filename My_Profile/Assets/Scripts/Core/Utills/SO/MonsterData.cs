@@ -17,5 +17,6 @@ public struct MonsterStat
 public class MonsterData : BaseData
 {
     public Define.MonsterType MonsterType;
+    public int MonsterID;
     public List<MonsterStat> levelTables;
 }
