@@ -70,8 +70,9 @@ public class GameManager : MonoBehaviour
     void SetupUILoading() {
         if (M_Scene == null)
         {
-            GameObject loadingObj = M_Resource.Instantiate("LoadingUI", transform);
+            GameObject loadingObj = M_Resource.Instantiate("LoadingUI");
             M_Scene = loadingObj.GetComponent<LoadingUI>();
+            DontDestroyOnLoad (loadingObj);
         }
     }
 

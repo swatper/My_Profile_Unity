@@ -6742,7 +6742,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.734375
+  orthographic size: 85.17083
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7030,7 +7030,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 341141953}
   m_HandleRect: {fileID: 0}
@@ -7240,6 +7240,12 @@ MonoBehaviour:
   nextSceneName: Debug Village
   poolManager: {fileID: 1977532592}
   virtualCamera: {fileID: 361335526}
+  expBar: {fileID: 842657908}
+  expData: {fileID: 11400000, guid: 58469eb5a3f86b04aa6c18b2f42f8069, type: 2}
+  reqExp:
+    MaxExp: 0
+  curExp: 0
+  curLv: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7247,9 +7253,9 @@ SceneRoots:
   - {fileID: 1691900276}
   - {fileID: 361335527}
   - {fileID: 1166402561}
+  - {fileID: 209959206}
   - {fileID: 2088430018}
   - {fileID: 1977532591}
-  - {fileID: 209959206}
   - {fileID: 842657907}
   - {fileID: 1280779873}
   - {fileID: 1018566782}

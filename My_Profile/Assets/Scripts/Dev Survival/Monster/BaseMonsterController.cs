@@ -53,6 +53,7 @@ public class BaseMonsterController : MonoBehaviour
     }
 
     public void Dead() {
+        SurvivalSceneDirector.Instance.OnMonsterKilled?.Invoke(mStat.Exp);
         SurvivalSceneDirector.Instance.poolManager.InsertDeadMonster(this);
     }
 
@@ -70,8 +71,7 @@ public class BaseMonsterController : MonoBehaviour
         rigid.velocity = Vector2.zero;
     }
 
-    private void LateUpdate()
-    {
+    private void LateUpdate(){
         mSprite.flipX = target.position.x < rigid.position.x;
     }
 
@@ -85,8 +85,7 @@ public class BaseMonsterController : MonoBehaviour
 
         StartCoroutine("KnockBack");
 
-        if (mStat.curHp > 0)
-        {
+        if (mStat.curHp > 0){
             mAnimator.SetTrigger("Hit");
         }
         else {

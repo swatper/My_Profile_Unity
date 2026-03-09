@@ -8,12 +8,15 @@ public class EXPUI : MonoBehaviour
 {
     [SerializeField] Slider expBar;
     [SerializeField] Text levelText;
-    string preText = "Lv. ";
+    private const string preText = "Lv.  ";
 
-    void Awake() {
-        expBar.value = 0;
-        levelText.text = preText + '1';
+   public void SetMaxEXP(float MaxExp) {
+        expBar.maxValue = MaxExp;
     }
-    public void SetMaxEXP() { }
-    public void GainEXP() { }
+
+    public void UpdateUI(float currentExp, int level)
+    {
+        expBar.value = currentExp;
+        levelText.text = preText + level;
+    }
 }

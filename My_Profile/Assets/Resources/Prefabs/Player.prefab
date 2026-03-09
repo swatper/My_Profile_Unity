@@ -306,8 +306,6 @@ MonoBehaviour:
     isReadingInfo: 0
   rigid: {fileID: 4033354161993616692}
   pSprite: {fileID: 7176890837902994793}
-  boxCollider: {fileID: 0}
-  capsuleCollider: {fileID: 0}
   pAnimator: {fileID: 5047424141096528091}
   pAniControllers:
   - {fileID: 22100000, guid: 2ab99d63d9b3bd54bb13a1221101048f, type: 2}

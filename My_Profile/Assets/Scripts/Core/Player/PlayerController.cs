@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public Vector2 inputVec;
     public Vector2 moveBuffer;
     [Header("Weapon Settings")]
-    public Action LevelUp;
     [SerializeField] GameObject weaponContainer;
     private void Awake()
     {
@@ -150,13 +149,5 @@ public class PlayerController : MonoBehaviour
         pPosition.position = new Vector3(-7f, -0.8f, 0);
         playerPivot.rotation = Quaternion.identity;
         pSprite.flipX = false;
-    }
-
-    public void SubscribeLevelUp(Action weaponMethod) {
-        LevelUp += weaponMethod;
-    }
-
-    public void UnsubscribeLevelUp(Action weaponMethod) { 
-        LevelUp -= weaponMethod;
     }
 }

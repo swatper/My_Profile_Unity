@@ -1,7 +1,7 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class SurvivalSceneDirector : BaseSceneDirector
@@ -9,11 +9,21 @@ public class SurvivalSceneDirector : BaseSceneDirector
     public static SurvivalSceneDirector Instance { get; private set; }
     public PoolManager poolManager;
     [SerializeField] CinemachineVirtualCamera virtualCamera;
+    [Header("Exp Info")]
+    [SerializeField] EXPUI expBar;
+    [SerializeField] ExpData expData;
+    [SerializeField] Exp reqExp;
+    [SerializeField] float curExp;
+    [SerializeField] int curLv;
+    public Action<float> OnMonsterKilled;
 
     private void Awake()
     {
+        curExp = 0.0f;
+        curLv = 1;
         Instance = this;
-        GameManager.Player.SubscribeLevelUp(OnLevelUp);
+        SetUpExp();
+        OnMonsterKilled += AddExp;
     }
     protected override void InitScene()
     {
@@ -23,16 +33,50 @@ public class SurvivalSceneDirector : BaseSceneDirector
         GameManager.SceneLoader.SceneReady();
     }
 
-    public void OnLevelUp() {
-        
-    }
-
-    public void PaseUp() { 
+    public void PaseUp(){
         poolManager.PaseUp();
     }
 
-    private void OnDestroy()
-    {
-        GameManager.Player.UnsubscribeLevelUp(OnLevelUp);
+    #region 경험치용
+
+    /// <summary>
+    /// 경험치 바 초기화
+    /// </summary>
+    public void SetUpExp() {
+        reqExp.MaxExp = expData.levelTables[curLv - 1].MaxExp;
+        expBar.SetMaxEXP(reqExp.MaxExp);
+        expBar.UpdateUI(curExp, curLv);
     }
+
+    /// <summary>
+    /// 경험치 추가
+    /// </summary>
+    /// <param name="exp">경험치 증가량</param>
+    void AddExp(float exp) {
+        curExp += exp;
+        //레벨 업 처리
+        while (curExp >= expData.levelTables[curLv - 1].MaxExp) {
+            curExp -= expData.levelTables[curLv - 1].MaxExp;
+
+            curLv++;
+            OnLevelUp();
+
+            if (curLv -1 < expData.levelTables.Count) {
+                SetUpExp();
+            }
+            else
+            {
+                //TODO: 만렙 처리
+
+                break;
+            }
+        }
+        expBar.UpdateUI(curExp, curLv);
+    }
+
+    void OnLevelUp() {
+        Debug.Log($"레벨업: {curLv}");
+    }
+
+    #endregion
 }
