@@ -1,3 +1,4 @@
+using PlasticPipe.PlasticProtocol.Client;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,15 +14,25 @@ public class LoadingUI : MonoBehaviour
     public bool isLoading;
     [SerializeField] Slider progressBar;
     [SerializeField] Text progressText;
+    [SerializeField] LoadingMessageData data;
+    [SerializeField] LoadingMessage message;
     [SerializeField] string[] loadingComment;
     int lastCommentIndex;
 
     private void Awake()
     {
-        string startMSG = loadingComment[0];
-        string endMSG = loadingComment[1];
-
         loadingComment = new string[101];
+        loadingPanel.SetActive(false);
+    }
+
+    public void SceneReady() => isDone = true;
+
+    void InitMessage(string sceneName) {
+        if (sceneName == "Debug Village")
+            message = data.messageTable[0];
+        else if(sceneName == "Dev Survival")
+            message = data.messageTable[1];
+
         //문자열 최적화: StringBuilder로 가비지 없이 문장 조립 (조합할 공간 미리 할당)
         System.Text.StringBuilder sb = new System.Text.StringBuilder(64);
 
@@ -29,19 +40,16 @@ public class LoadingUI : MonoBehaviour
         {
             sb.Clear();
             if (i <= 90)
-                sb.Append(startMSG);
+                sb.Append(message.StartMessage);
             else
-                sb.Append(endMSG);
+                sb.Append(message.EndMessage);
 
             sb.Append("(").Append(i).Append("%)");
 
             loadingComment[i] = sb.ToString();
         }
         progressText.text = loadingComment[0];
-        loadingPanel.SetActive(false);
     }
-
-    public void SceneReady() => isDone = true;
 
     void UpdateLoadingUI(float progress)
     {
@@ -54,6 +62,8 @@ public class LoadingUI : MonoBehaviour
     }
 
     public void LoadScene(string sceneName) {
+        InitMessage(sceneName);
+
         if (isLoading)
             return;
         loadingPanel.SetActive(true);

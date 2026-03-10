@@ -129,7 +129,7 @@ MonoBehaviour:
   currentLevel: 1
   bID: 1
   timer: 0
-  projectileSpeed: 15
+  projectileSpeed: 8
   mScanner: {fileID: 122696296652618164}
 --- !u!114 &122696296652618164
 MonoBehaviour:
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f3a44de8a3b09409c504fc881cc295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scanRange: 0
   targetLayer:
     serializedVersion: 2
     m_Bits: 128

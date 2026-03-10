@@ -188,6 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d3f3243e6ba9114c910c1a2feaa8590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
-  piercingCnt: 2
+  bID: 1
+  Damage: 7
   lifeTime: 1.5

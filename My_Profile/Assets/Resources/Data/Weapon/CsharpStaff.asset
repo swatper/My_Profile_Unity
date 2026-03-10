@@ -17,16 +17,16 @@ MonoBehaviour:
   - WeaponDamage: 7
     WeaponSpeed: 1
     PierceCount: 0
-    ScanRange: 70
+    ScanRange: 5
   - WeaponDamage: 10
     WeaponSpeed: 1.3
     PierceCount: 0
-    ScanRange: 80
+    ScanRange: 6
   - WeaponDamage: 12
     WeaponSpeed: 1.8
     PierceCount: 0
-    ScanRange: 90
+    ScanRange: 8
   - WeaponDamage: 15
     WeaponSpeed: 2
     PierceCount: 0
-    ScanRange: 100
+    ScanRange: 9

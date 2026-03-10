@@ -196,7 +196,7 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!223 &8491202887299886670
 Canvas:
   m_ObjectHideFlags: 0
@@ -352,6 +352,11 @@ MonoBehaviour:
   isLoading: 0
   progressBar: {fileID: 490251870191030342}
   progressText: {fileID: 5215641010595042185}
+  data: {fileID: 11400000, guid: 6cc20e5bab91b0d4489be73aaa702192, type: 2}
+  message:
+    SceneName: 
+    StartMessage: 
+    EndMessage: 
   loadingComment:
   - "\uD53D\uC140 \uD558\uB098\uD558\uB098\uC5D0 \uC815\uC131\uC744 \uB2F4\uB294
     \uC911..."
@@ -590,11 +595,11 @@ RectTransform:
   - {fileID: 3209494881585400461}
   m_Father: {fileID: 1685506557119467277}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -962.5, y: -542.5}
+  m_SizeDelta: {x: 1925, y: 1085}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &4730775237119908832
 CanvasRenderer:
   m_ObjectHideFlags: 0

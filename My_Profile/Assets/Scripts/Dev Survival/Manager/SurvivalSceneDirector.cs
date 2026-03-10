@@ -28,6 +28,9 @@ public class SurvivalSceneDirector : BaseSceneDirector
     protected override void InitScene()
     {
         virtualCamera.Follow = GameManager.Player.transform;
+        //무기 관리 스크립트 추가
+        if (GameManager.Player.GetComponent<WeaponHandler>() == null)
+            GameManager.Player.gameObject.AddComponent<WeaponHandler>();
         poolManager = FindObjectOfType<PoolManager>();
         GameManager.Player.InitPlayerInSurvival();
         GameManager.SceneLoader.SceneReady();
@@ -79,4 +82,13 @@ public class SurvivalSceneDirector : BaseSceneDirector
     }
 
     #endregion
+
+    public override void GoToScene()
+    {
+        //무기 관리 스크립트 제거
+        WeaponHandler handler = GameManager.Player.GetComponent<WeaponHandler>();
+        if (handler != null)
+            Destroy (handler);
+        base.GoToScene();
+    }
 }

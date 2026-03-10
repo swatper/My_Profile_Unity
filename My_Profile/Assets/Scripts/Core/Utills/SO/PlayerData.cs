@@ -28,7 +28,7 @@ public struct PlayerState
 }
 
 
-[CreateAssetMenu(fileName = "Player", menuName = "ScriptableObject/PlayerData", order = 2)]
+[CreateAssetMenu(fileName = "Player", menuName = "ScriptableObject/PlayerData", order = 1)]
 public class PlayerData : BaseData
 {
     public int SpriteNum;

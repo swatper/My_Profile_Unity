@@ -15,8 +15,8 @@ public class PoolManager : MonoBehaviour
     [SerializeField] int curUnit;
 
     [SerializeField] Queue<BaseMonsterController> monsterPool = new Queue<BaseMonsterController>();
-    [SerializeField] Queue<Bullet> bulletPool = new Queue<Bullet>();
-
+    [Header("각 투사체 Pool")]
+    [SerializeField] List<Queue<Bullet>> bulletPools = new List<Queue<Bullet>>();
     private void Awake(){
         curPase = -1;
         PaseUp();
@@ -34,6 +34,19 @@ public class PoolManager : MonoBehaviour
         InitPool();
     }
 
+    //Pool에 최대 유닛 수 만큼 몬스터 넣기
+    public void InitPool()
+    {
+        //몬스터 Pool 준비
+        for (int i = curUnit; i < paseState.MaxUnit; i++){
+            CreateNewMonster();
+        }
+        //투사체 Pool 준비
+        for (int i = 0; i < bulletPefabs.Length; i++){
+            bulletPools.Add(new Queue<Bullet>());
+        }
+    }
+
     /// <summary>
     /// 맨 처음 한번만 실행
     /// </summary>
@@ -42,12 +55,6 @@ public class PoolManager : MonoBehaviour
         StartCoroutine("SpawnRoutine");
     }
 
-    //Pool에 최대 유닛 수 만큼 몬스터 넣기
-    public void InitPool() {
-        for (int i = curUnit; i < paseState.MaxUnit; i++) {
-            CreateNewMonster();
-        }
-    }
 
     //Pool에서 몬스터 소환히기
     public void SpawnFromPool() {
@@ -67,19 +74,25 @@ public class PoolManager : MonoBehaviour
         monsterPool.Enqueue(newMonster);
     }
 
-    //Pool에서 총알 소환하기
+    /// <summary>
+    /// Pool에서 총알 달라고 요청
+    /// </summary>
+    /// <param name="index">0: C++ 1: C#</param>
+    /// <returns></returns>
     public Bullet GetBulletFromPool(int index) { 
         Bullet bullet = null;
 
-        if (bulletPool.Count  > 0) {
-            bullet = bulletPool.Dequeue();
-        }
-        else
-        {
-            GameObject bulletobj = Instantiate(bulletPefabs[index], this.transform);
-            bullet = bulletobj.GetComponent<Bullet>();
-        }
+        if (bulletPools[index].Count > 0){
+            bullet = bulletPools[index].Dequeue();
+            bullet.gameObject.SetActive(true);
             return bullet;
+        }
+
+        GameObject bulletobj = Instantiate(bulletPefabs[index], this.transform);
+        bullet = bulletobj.GetComponent<Bullet>();
+        bullet.bID = index;
+
+        return bullet;
     }
 
     public void InsertDeadMonster(BaseMonsterController monster) {
@@ -97,7 +110,7 @@ public class PoolManager : MonoBehaviour
 
     public void InsertUsedBullet(Bullet bullet) {
         bullet.gameObject.SetActive(false);
-        bulletPool.Enqueue(bullet);
+        bulletPools[bullet.bID].Enqueue(bullet);
     }
 
     IEnumerator SpawnRoutine() {
@@ -109,8 +122,7 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
+    private void OnDestroy(){
         StopAllCoroutines();
     }
 }

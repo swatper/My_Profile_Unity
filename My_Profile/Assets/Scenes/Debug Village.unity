@@ -22525,6 +22525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyAni: {fileID: 1565318172}
   keyType: Enter
+  isEnter: 0
   sceneDirector: {fileID: 45230760}
 --- !u!1001 &848821222123741301
 PrefabInstance:

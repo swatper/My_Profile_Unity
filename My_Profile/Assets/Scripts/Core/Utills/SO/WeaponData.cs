@@ -18,7 +18,7 @@ public struct WeaponStat
 /// <summary>
 /// Weapon Scriptable Object
 /// </summary>
-[CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObject/WeaopnData", order = 0)]
+[CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObject/WeaopnData", order = 2)]
 public class WeaponData : ScriptableObject
 {
     public string WeaponName;

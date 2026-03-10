@@ -8,7 +8,7 @@ public struct Exp
 }
 
 
-[CreateAssetMenu(fileName = "Exp", menuName = "ScriptableObject/ExpData", order = 3)]
+[CreateAssetMenu(fileName = "Exp", menuName = "ScriptableObject/ExpData", order = 5)]
 public class ExpData : ScriptableObject
 {
     public List<Exp> levelTables;

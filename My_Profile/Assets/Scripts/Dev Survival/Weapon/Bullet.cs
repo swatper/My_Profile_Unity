@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int bID;
     public float Damage;
     int piercingCnt;
     public float lifeTime;
     Rigidbody2D rigid;
 
-    private void Awake()
-    {
+    private void Awake(){
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -18,8 +18,10 @@ public class Bullet : MonoBehaviour
     {
         Damage = damage;
         piercingCnt = cnt;
+        StopAllCoroutines();
+
         gameObject.SetActive(true);
-        if (piercingCnt > 0) {
+        if (piercingCnt >= 0) {
             rigid.velocity = dir;
         }
         StartCoroutine("DeactivateAfterTime");
@@ -34,6 +36,7 @@ public class Bullet : MonoBehaviour
             SurvivalSceneDirector.Instance.poolManager.InsertUsedBullet(this);
         }
     }
+
     IEnumerator DeactivateAfterTime()
     {
         yield return new WaitForSeconds(lifeTime);

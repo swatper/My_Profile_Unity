@@ -6,8 +6,7 @@ public class BaseSceneDirector : MonoBehaviour
 {
     [SerializeField] string nextSceneName;
 
-    private void Start()
-    {
+    private void Start(){
         InitScene();
     }
 
@@ -15,10 +14,10 @@ public class BaseSceneDirector : MonoBehaviour
         GameManager.SceneLoader.SceneReady();
     }
 
-    public void GoToScene() {
+    public virtual void GoToScene() {
         GameManager.Player.ReadUIInfo();
         GameManager.SceneLoader.LoadScene(nextSceneName);
     }
-    protected virtual void InitScene() { }
 
+    protected virtual void InitScene() { }
 }

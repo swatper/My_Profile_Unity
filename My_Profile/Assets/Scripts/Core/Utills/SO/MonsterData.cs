@@ -13,7 +13,7 @@ public struct MonsterStat
 }
 
 
-[CreateAssetMenu(fileName = "Monster", menuName = "ScriptableObject/MonsterData", order = 1)]
+[CreateAssetMenu(fileName = "Monster", menuName = "ScriptableObject/MonsterData", order = 0)]
 public class MonsterData : BaseData
 {
     public Define.MonsterType MonsterType;
