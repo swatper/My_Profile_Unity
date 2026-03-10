@@ -80,8 +80,8 @@ public class BaseMonsterController : MonoBehaviour
         if (!collision.CompareTag("Weapon"))
             return;
 
-        mStat.curHp -= collision.GetComponent<Bullet>().Damage;
-        collision.GetComponent<Bullet>().DescPiercingCNT();
+        mStat.curHp -= collision.GetComponent<BaseBullet>().Damage;
+        collision.GetComponent<BaseBullet>().DescPiercingCNT();
 
         StartCoroutine("KnockBack");
 

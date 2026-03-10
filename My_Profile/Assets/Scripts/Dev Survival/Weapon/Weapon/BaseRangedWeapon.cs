@@ -31,7 +31,7 @@ public class BaseRangedWeapon : BaseWeapon
             return;
 
         //탄 요청: 비활성화 상태
-        Bullet bullet = SurvivalSceneDirector.Instance.poolManager.GetBulletFromPool(bID);
+        BaseBullet bullet = SurvivalSceneDirector.Instance.poolManager.GetBulletFromPool(bID);
 
         //방향 조절
         Vector3 targetPos = mScanner.nearestTarget.position;

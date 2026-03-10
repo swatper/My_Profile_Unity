@@ -16,7 +16,7 @@ public class PoolManager : MonoBehaviour
 
     [SerializeField] Queue<BaseMonsterController> monsterPool = new Queue<BaseMonsterController>();
     [Header("각 투사체 Pool")]
-    [SerializeField] List<Queue<Bullet>> bulletPools = new List<Queue<Bullet>>();
+    [SerializeField] List<Queue<BaseBullet>> bulletPools = new List<Queue<BaseBullet>>();
     private void Awake(){
         curPase = -1;
         PaseUp();
@@ -43,7 +43,7 @@ public class PoolManager : MonoBehaviour
         }
         //투사체 Pool 준비
         for (int i = 0; i < bulletPefabs.Length; i++){
-            bulletPools.Add(new Queue<Bullet>());
+            bulletPools.Add(new Queue<BaseBullet>());
         }
     }
 
@@ -79,8 +79,8 @@ public class PoolManager : MonoBehaviour
     /// </summary>
     /// <param name="index">0: C++ 1: C#</param>
     /// <returns></returns>
-    public Bullet GetBulletFromPool(int index) { 
-        Bullet bullet = null;
+    public BaseBullet GetBulletFromPool(int index) {
+        BaseBullet bullet = null;
 
         if (bulletPools[index].Count > 0){
             bullet = bulletPools[index].Dequeue();
@@ -89,7 +89,7 @@ public class PoolManager : MonoBehaviour
         }
 
         GameObject bulletobj = Instantiate(bulletPefabs[index], this.transform);
-        bullet = bulletobj.GetComponent<Bullet>();
+        bullet = bulletobj.GetComponent<BaseBullet>();
         bullet.bID = index;
 
         return bullet;
@@ -108,7 +108,7 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    public void InsertUsedBullet(Bullet bullet) {
+    public void InsertUsedBullet(BaseBullet bullet) {
         bullet.gameObject.SetActive(false);
         bulletPools[bullet.bID].Enqueue(bullet);
     }

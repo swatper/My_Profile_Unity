@@ -99,14 +99,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wData: {fileID: 11400000, guid: ec85741bac360a04f92bbd5a08983c52, type: 2}
-  wState:
-    wName: 
-    wDamage: 0
-    wSpeed: 0
-    pCount: 1
-    wRange: 0
-  projectileSpeed: 15
+  wStat:
+    WeaponDamage: 0
+    WeaponSpeed: 0
+    PierceCount: 0
+    ScanRange: 0
+  currentLevel: 1
   bID: 0
+  timer: 0
+  projectileSpeed: 15
   mScanner: {fileID: 122696296652618164}
 --- !u!114 &122696296652618164
 MonoBehaviour:
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f3a44de8a3b09409c504fc881cc295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scanRange: 0
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
