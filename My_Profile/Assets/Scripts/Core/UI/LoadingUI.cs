@@ -12,6 +12,7 @@ public class LoadingUI : MonoBehaviour
     [SerializeField] string targertScene;
     [SerializeField] bool isDone;
     public bool isLoading;
+    public float loadDelay;
     [SerializeField] Slider progressBar;
     [SerializeField] Text progressText;
     [SerializeField] LoadingMessageData data;
@@ -119,9 +120,10 @@ public class LoadingUI : MonoBehaviour
         while (!isDone) {
             yield return null;
         }
-
+        progressBar.value = 1f;
         UpdateLoadingUI(1f);
-        yield return new WaitForSecondsRealtime(0.5f);
+
+        yield return new WaitForSecondsRealtime(loadDelay);
 
         canvas.Play("FadeOut");
     }

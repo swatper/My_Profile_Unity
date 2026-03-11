@@ -25,6 +25,12 @@ public class PoolManager : MonoBehaviour
 
     public void PaseUp() {
         curPase++;
+        if (curPase > spawnData.levelTables.Count) {
+            Debug.Log("최대 단계");
+            return;
+        }
+
+
         paseState = spawnData.levelTables[curPase];
         //대기하고 있는 전 단계 몬스터 제거
         while (monsterPool.Count > 0){

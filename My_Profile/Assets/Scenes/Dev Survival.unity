@@ -5953,65 +5953,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expBar: {fileID: 1954907768}
   levelText: {fileID: 259212291}
---- !u!1001 &1018566782
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7
-      objectReference: {fileID: 0}
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2001764962063259086, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 399036540814203089, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 3897115611195682880, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
 --- !u!1 &1166402559
 GameObject:
   m_ObjectHideFlags: 0
@@ -6457,9 +6398,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2041027260}
-        m_TargetAssemblyTypeName: PlayerController, Core
-        m_MethodName: SetWeapon
+      - m_Target: {fileID: 1486645691}
+        m_TargetAssemblyTypeName: EditorUI, DevSurvival
+        m_MethodName: UpgradeWeapon
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6516,6 +6457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1486645690}
+  - component: {fileID: 1486645691}
   m_Layer: 5
   m_Name: ForEditor
   m_TagString: Untagged
@@ -6546,6 +6488,19 @@ RectTransform:
   m_AnchoredPosition: {x: -910, y: -352}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &1486645691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486645689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5356890d1ab7f364bbe4acc6f969c2fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wHandler: {fileID: 0}
 --- !u!1 &1574732388
 GameObject:
   m_ObjectHideFlags: 0
@@ -6629,9 +6584,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2041027260}
-        m_TargetAssemblyTypeName: PlayerController, Core
-        m_MethodName: SetWeapon
+      - m_Target: {fileID: 1486645691}
+        m_TargetAssemblyTypeName: EditorUI, DevSurvival
+        m_MethodName: UpgradeWeapon
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6679,6 +6634,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574732388}
   m_CullTransparentMesh: 1
+--- !u!1001 &1619051344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180601632213276830, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001764962063259086, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
 --- !u!1 &1691900273
 GameObject:
   m_ObjectHideFlags: 0
@@ -7104,17 +7116,6 @@ MonoBehaviour:
     MaxUnit: 0
   curPase: 0
   curUnit: 0
---- !u!114 &2041027260 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4098545741229559445, guid: efaa3510416833f4f97c89d25cd4c77d, type: 3}
-  m_PrefabInstance: {fileID: 1018566782}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 117129a22ab7ddd488851a3e680886e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2075503948
 GameObject:
   m_ObjectHideFlags: 0
@@ -7259,4 +7260,4 @@ SceneRoots:
   - {fileID: 1977532591}
   - {fileID: 842657907}
   - {fileID: 1280779873}
-  - {fileID: 1018566782}
+  - {fileID: 1619051344}

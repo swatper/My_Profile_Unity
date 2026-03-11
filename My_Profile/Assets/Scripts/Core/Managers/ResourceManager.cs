@@ -23,7 +23,7 @@ public class ResourceManager
         return Resources.Load<T>(path);
     }
 
-    public GameObject Instantiate(string path, Transform parent = null)
+    public GameObject Instantiate(string path, Transform parent = null, bool startActive = true)
     {
         GameObject original = Load<GameObject>($"Prefabs/{path}"); //Prefab
         if (original == null)
@@ -34,6 +34,7 @@ public class ResourceManager
 
         GameObject gameObject = Object.Instantiate(original, parent); //GameObject
         gameObject.name = original.name;
+        gameObject.SetActive(startActive);
 
         return gameObject;
     }

@@ -83,8 +83,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
 
     #endregion
 
-    public override void GoToScene()
-    {
+    public override void GoToScene(){
         //公扁 包府 胶农赋飘 力芭
         WeaponHandler handler = GameManager.Player.GetComponent<WeaponHandler>();
         if (handler != null)

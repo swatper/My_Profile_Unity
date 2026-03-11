@@ -27,7 +27,7 @@ public class BaseRangedWeapon : BaseWeapon
     }
 
     protected override void Attack() {
-        if (!mScanner.nearestTarget)
+        if (mScanner.nearestTarget == null)
             return;
 
         //탄 요청: 비활성화 상태

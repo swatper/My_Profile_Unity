@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform pPosition;
     public Vector2 inputVec;
     public Vector2 moveBuffer;
-    [Header("Weapon Settings")]
-    [SerializeField] GameObject weaponContainer;
     private void Awake()
     {
         if (Instance == null)
@@ -110,42 +108,13 @@ public class PlayerController : MonoBehaviour
     public void InitPlayerInSurvival()
     {
         pPosition.position = Vector3.zero;
-        pPosition.rotation = Quaternion.identity;
+        playerPivot.rotation = Quaternion.identity;
         pSprite.flipX = false;
-        SetWeapon(0);
     }
 
-    public void SetWeapon(int wID) {
-        if (weaponContainer == null)
-        {
-            weaponContainer = new GameObject("Weapon Container");
-            weaponContainer.transform.SetParent(playerPivot);
-            weaponContainer.transform.localPosition = Vector3.zero;
-            weaponContainer.transform.localRotation = Quaternion.identity;
-        }
-        switch (wID) {
-            case 1:
-                //C# ÁöÆÎÀÌ
-                GameManager.Resource.Instantiate("Weapon/CsharpStaff", weaponContainer.transform);
-                break;
-            case 2:
-                //Unity Ã¥
-                GameManager.Resource.Instantiate("Weapon/", weaponContainer.transform);
-                break;
-                //Flutter
-            case 3:
-                GameManager.Resource.Instantiate("Weapon/", weaponContainer.transform);
-                break;
-            default:
-                //±âº»¹«±â: Cpp ¼è³ú
-                GameManager.Resource.Instantiate("Weapon/CppCrossbow", weaponContainer.transform);
-                break;
-        }
     
-    }
     public void InitPlayerInVillagel()
     {
-        Destroy(weaponContainer);
         pPosition.position = new Vector3(-7f, -0.8f, 0);
         playerPivot.rotation = Quaternion.identity;
         pSprite.flipX = false;

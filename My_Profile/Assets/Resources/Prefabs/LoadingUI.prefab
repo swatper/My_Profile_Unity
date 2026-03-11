@@ -350,6 +350,7 @@ MonoBehaviour:
   targertScene: 
   isDone: 0
   isLoading: 0
+  loadDelay: 0.3
   progressBar: {fileID: 490251870191030342}
   progressText: {fileID: 5215641010595042185}
   data: {fileID: 11400000, guid: 6cc20e5bab91b0d4489be73aaa702192, type: 2}

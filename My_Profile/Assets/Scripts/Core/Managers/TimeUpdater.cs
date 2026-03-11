@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using static UnityEditor.PlayerSettings;
 
+[System.Serializable]
 public class TimeUpdater
 {
     [Header("시간 알리미")]
