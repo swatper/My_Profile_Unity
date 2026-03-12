@@ -10,7 +10,7 @@ public struct Pase
 }
 
 
-[CreateAssetMenu(fileName = "Pase", menuName = "ScriptableObject/PaseData", order = 4)]
+[CreateAssetMenu(fileName = "Pase", menuName = "ScriptableObject/PaseData", order = 3)]
 public class PaseData: ScriptableObject
 {
     public List<Pase> levelTables;

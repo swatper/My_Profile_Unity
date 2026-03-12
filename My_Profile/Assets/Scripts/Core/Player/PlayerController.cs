@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         }
         else
             Destroy(gameObject);
-
     }
 
     void Update()

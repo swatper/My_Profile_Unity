@@ -12,7 +12,7 @@ public struct LoadingMessage
 /// <summary>
 /// Weapon Scriptable Object
 /// </summary>
-[CreateAssetMenu(fileName = "LoadingMessage", menuName = "ScriptableObject/LoadingMessage", order = 6)]
+[CreateAssetMenu(fileName = "LoadingMessage", menuName = "ScriptableObject/LoadingMessage", order = 5)]
 public class LoadingMessageData : ScriptableObject
 {
     public List<LoadingMessage> messageTable;

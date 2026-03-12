@@ -28,17 +28,18 @@ public class DebugSceneDirector : BaseSceneDirector
             GameManager.Player.ReadUIInfo();
             checkUI.SetActive(true);
             code.text = "";
-            message.text = "코드를 입력하세요.";
+            message.text = "Insert Code:";
+            code.ActivateInputField();
         }
     }
 
     public void CheckCode() {
-        if (code.text == "개발자가 아닙니다.") {
+        if (code.text == "I'm not a robot") {
             checkUI.SetActive(false);
             GoToScene();
         }
         else{
-            message.text = "잘못된 코드입니다.";
+            message.text = "Wrong Code";
         }
     }
 

@@ -1,4 +1,3 @@
-using PlasticPipe.PlasticProtocol.Client;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,8 +19,7 @@ public class LoadingUI : MonoBehaviour
     [SerializeField] string[] loadingComment;
     int lastCommentIndex;
 
-    private void Awake()
-    {
+    private void Awake(){
         loadingComment = new string[101];
         loadingPanel.SetActive(false);
     }
@@ -37,8 +35,7 @@ public class LoadingUI : MonoBehaviour
         //문자열 최적화: StringBuilder로 가비지 없이 문장 조립 (조합할 공간 미리 할당)
         System.Text.StringBuilder sb = new System.Text.StringBuilder(64);
 
-        for (int i = 0; i <= 100; i++)
-        {
+        for (int i = 0; i <= 100; i++){
             sb.Clear();
             if (i <= 90)
                 sb.Append(message.StartMessage);
@@ -52,8 +49,7 @@ public class LoadingUI : MonoBehaviour
         progressText.text = loadingComment[0];
     }
 
-    void UpdateLoadingUI(float progress)
-    {
+    void UpdateLoadingUI(float progress){
         int currentIndex = Mathf.Clamp(Mathf.RoundToInt(progress * 100), 0, 100);
         if (currentIndex != lastCommentIndex)
         {

@@ -358,10 +358,7 @@ MonoBehaviour:
     SceneName: 
     StartMessage: 
     EndMessage: 
-  loadingComment:
-  - "\uD53D\uC140 \uD558\uB098\uD558\uB098\uC5D0 \uC815\uC131\uC744 \uB2F4\uB294
-    \uC911..."
-  - "\uC804\uC7A5 \uC9C4\uC785 \uC911... \uD589\uC6B4\uC744 \uBE55\uB2C8\uB2E4!"
+  loadingComment: []
 --- !u!1 &2340012592169580474
 GameObject:
   m_ObjectHideFlags: 0
