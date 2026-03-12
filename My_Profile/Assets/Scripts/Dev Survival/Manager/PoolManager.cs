@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PoolManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class PoolManager : MonoBehaviour
     [SerializeField] GameObject[] monsterPefabs;
     [SerializeField] GameObject[] bulletPefabs;
     [Header("Pool Settings")]
+    [SerializeField] PlayerController pController;
     [SerializeField] float spawnRate = 0.5f;
     [SerializeField] PaseData spawnData;
     [SerializeField] Pase paseState;
@@ -21,6 +23,11 @@ public class PoolManager : MonoBehaviour
         curPase = -1;
         PaseUp();
         PreparePool();
+    }
+
+    private void Start()
+    {
+        pController = GameManager.Player.GetComponent<PlayerController>();
     }
 
     public void PaseUp() {
@@ -37,6 +44,25 @@ public class PoolManager : MonoBehaviour
         }
         InitPool();
     }
+
+//#if UNITY_EDITOR
+    public void PaseDown() {
+        curPase--;
+        if (curPase > spawnData.levelTables.Count - 1)
+        {
+            Debug.Log("최대 단계");
+            return;
+        }
+        paseState = spawnData.levelTables[curPase];
+        //대기하고 있는 전 단계 몬스터 제거
+        while (monsterPool.Count > 0)
+        {
+            BaseMonsterController oldMonster = monsterPool.Dequeue();
+            Destroy(oldMonster.gameObject);
+        }
+        InitPool();
+    }
+//#endif
 
     //Pool에 최대 유닛 수 만큼 몬스터 넣기
     public void InitPool()
@@ -64,10 +90,21 @@ public class PoolManager : MonoBehaviour
     public void SpawnFromPool() {
         if (monsterPool.Count > 0) {
             BaseMonsterController monster = monsterPool.Dequeue();
+            SetMonsterPos(monster.transform);
             monster.InitMonster();
             monster.gameObject.SetActive(true);
             curUnit++;
         }
+    }
+
+    void SetMonsterPos(Transform mTransform) {
+        Vector2 spawnDir = pController.inputVec;
+        if (spawnDir == Vector2.zero)
+            spawnDir = Random.insideUnitCircle.normalized;
+        Vector3 spawnPos = pController.transform.position
+            + (Vector3)(spawnDir * 15f)
+            + new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0);
+        mTransform.position = spawnPos;
     }
 
     void CreateNewMonster() {

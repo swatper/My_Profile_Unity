@@ -20,7 +20,7 @@ MonoBehaviour:
   MonsterID: 3
   levelTables:
   - curHp: 100
-    curSpeed: 1.7
+    curSpeed: 3
     Damage: 30
     KnockBack: 0.1
     Exp: 1

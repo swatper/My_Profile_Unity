@@ -2,6 +2,7 @@ using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class SurvivalSceneDirector : BaseSceneDirector
@@ -39,6 +40,12 @@ public class SurvivalSceneDirector : BaseSceneDirector
     public void PaseUp(){
         poolManager.PaseUp();
     }
+
+//#if UNITY_EDITOR
+    public void PaseDown() {
+        poolManager.PaseDown();
+    }
+//#endif
 
     #region 경험치용
 

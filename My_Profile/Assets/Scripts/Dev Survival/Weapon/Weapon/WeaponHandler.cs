@@ -52,4 +52,9 @@ public class WeaponHandler : MonoBehaviour
             targret.gameObject.SetActive(true);
         }
     }
+
+    private void OnDestroy()
+    {
+        Destroy(weaponContainer);
+    }
 }

@@ -18,10 +18,8 @@ public abstract class BaseWeapon : MonoBehaviour
 
     public virtual void LevelUp() {
         currentLevel++;
-        if (currentLevel >wData.levelTables.Count) {
-            Debug.Log("이미 최대 레벨");
+        if (currentLevel >wData.levelTables.Count) 
             return;
-        }
         InitWeaponData();
         Debug.Log($"무기 업그레이드 완료: {currentLevel}");
     }

@@ -10,7 +10,8 @@ public class SurvivalPortal : KeyHintDisplay
     {
         if (keyEvent == Define.KeyEvent.Enter) {
             if (GameManager.SceneLoader.isLoading || !isEnter) return;
-            sceneDirector.GoToScene();
+            //sceneDirector.GoToScene();
+            sceneDirector.OpenCheckUI();
         }
     }
 }
