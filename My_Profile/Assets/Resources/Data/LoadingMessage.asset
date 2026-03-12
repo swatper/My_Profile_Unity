@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 92a3436d868ef1c41ac77d15a873db44, type: 3}
   m_Name: LoadingMessage
-  m_EditorClassIdentifier: Core::LoadingMessageData
+  m_EditorClassIdentifier: 
   messageTable:
   - SceneName: Debug Village
     StartMessage: "\uBC84\uADF8 \uC5C6\uB294 \uD3C9\uD654\uB85C\uC6B4 \uB9C8\uC744\uC744
