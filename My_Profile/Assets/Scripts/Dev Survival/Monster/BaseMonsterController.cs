@@ -9,7 +9,7 @@ public class BaseMonsterController : MonoBehaviour
     [SerializeField] MonsterData mData;
     [Tooltip("Current Monster Data")]
     [SerializeField] MonsterStat mStat;
-    [SerializeField] int curLevel = 1;
+    [SerializeField] int curLevel;
     [Tooltip("플레이어")]
     [SerializeField] Rigidbody2D target;
     [Header("Monster Component")]
@@ -18,7 +18,12 @@ public class BaseMonsterController : MonoBehaviour
     [SerializeField] SpriteRenderer mSprite;
     [SerializeField] Animator mAnimator;
 
-    public void PreSetUp() {
+    /// <summary>
+    /// PoolManager가 진행
+    /// </summary>
+    /// <param name="monLevel"></param>
+    public void PreSetUp(int monLevel) {
+        curLevel = monLevel;
         rigid = GetComponent<Rigidbody2D>();
         mColl = GetComponent<Collider2D>();
         mSprite = GetComponent<SpriteRenderer>();
@@ -50,6 +55,10 @@ public class BaseMonsterController : MonoBehaviour
 
     public int GetMonsterID() {
         return mData.MonsterID;
+    }
+
+    public int GetMonserLevel() {
+        return curLevel;
     }
 
     public void Dead() {

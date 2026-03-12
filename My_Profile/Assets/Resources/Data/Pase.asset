@@ -15,22 +15,22 @@ MonoBehaviour:
   levelTables:
   - MonsterID: 0
     MonsterLevel: 1
-    MaxUnit: 15
+    MaxUnit: 20
   - MonsterID: 1
     MonsterLevel: 1
-    MaxUnit: 20
+    MaxUnit: 30
   - MonsterID: 2
     MonsterLevel: 1
-    MaxUnit: 25
+    MaxUnit: 40
   - MonsterID: 0
     MonsterLevel: 2
-    MaxUnit: 30
+    MaxUnit: 50
   - MonsterID: 1
     MonsterLevel: 2
-    MaxUnit: 35
+    MaxUnit: 60
   - MonsterID: 2
     MonsterLevel: 2
-    MaxUnit: 40
+    MaxUnit: 70
   - MonsterID: 3
     MonsterLevel: 1
-    MaxUnit: 1
+    MaxUnit: 80

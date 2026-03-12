@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class SyntaxError : BaseMonsterController
 {
-    private void Awake()
-    {
-        PreSetUp();
-    }
+
 }

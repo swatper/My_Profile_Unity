@@ -19,15 +19,15 @@ MonoBehaviour:
   MonsterType: 0
   MonsterID: 2
   levelTables:
-  - curHp: 0
-    curSpeed: 0
-    Damage: 0
-    KnockBack: 0
+  - curHp: 20
+    curSpeed: 1.7
+    Damage: 1
+    KnockBack: 0.3
     Exp: 0
     isDead: 0
-  - curHp: 0
-    curSpeed: 0
-    Damage: 0
-    KnockBack: 0
+  - curHp: 50
+    curSpeed: 1.7
+    Damage: 1
+    KnockBack: 0.3
     Exp: 0
     isDead: 0

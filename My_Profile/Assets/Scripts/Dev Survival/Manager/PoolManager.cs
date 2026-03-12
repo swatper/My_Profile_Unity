@@ -25,12 +25,10 @@ public class PoolManager : MonoBehaviour
 
     public void PaseUp() {
         curPase++;
-        if (curPase > spawnData.levelTables.Count) {
+        if (curPase > spawnData.levelTables.Count - 1) {
             Debug.Log("최대 단계");
             return;
         }
-
-
         paseState = spawnData.levelTables[curPase];
         //대기하고 있는 전 단계 몬스터 제거
         while (monsterPool.Count > 0){
@@ -73,9 +71,10 @@ public class PoolManager : MonoBehaviour
     }
 
     void CreateNewMonster() {
-        GameObject monsterObj = Instantiate(monsterPefabs[curPase], this.transform);
+        Debug.Log($"{paseState.MonsterID}, {paseState.MonsterLevel}");
+        GameObject monsterObj = Instantiate(monsterPefabs[paseState.MonsterID], this.transform);
         BaseMonsterController newMonster = monsterObj.GetComponent<BaseMonsterController>();
-        newMonster.PreSetUp();
+        newMonster.PreSetUp(paseState.MonsterLevel);
         monsterObj.SetActive(false);
         monsterPool.Enqueue(newMonster);
     }
@@ -106,7 +105,7 @@ public class PoolManager : MonoBehaviour
         curUnit--;
 
         //필터링: 이전 몬스터 관리
-        if (monster.GetMonsterID() == curPase)
+        if (monster.GetMonsterID() == paseState.MonsterID && monster.GetMonserLevel() == paseState.MonsterLevel)
             monsterPool.Enqueue(monster);
         else {
             Destroy(monster.gameObject);

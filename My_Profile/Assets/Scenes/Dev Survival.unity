@@ -6755,7 +6755,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.734375
+  orthographic size: 85.17083
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7103,12 +7103,12 @@ MonoBehaviour:
   monsterPefabs:
   - {fileID: 3458071720825777970, guid: 408f7b240b1788745b89d8b220222196, type: 3}
   - {fileID: 3458071720825777970, guid: c137f8af9d454de40a1702249b91e952, type: 3}
-  - {fileID: 3458071720825777970, guid: a6d84bb6858ed674cb9f61514b797b4c, type: 3}
-  - {fileID: 3458071720825777970, guid: 1f05b324f1784e24eb9ddb0e95d11951, type: 3}
+  - {fileID: 3458071720825777970, guid: e40c3d1ec6781f54eae05db7f08ce822, type: 3}
+  - {fileID: 3458071720825777970, guid: 8c2424208caa6fa4fba10ee8d3514b7b, type: 3}
   bulletPefabs:
   - {fileID: 2337762480524291686, guid: 4dd51e2f84502874ebb5ffecfc354076, type: 3}
   - {fileID: 2337762480524291686, guid: 7b0973ec5a329414cbaebdbd175428d7, type: 3}
-  spawnRate: 1
+  spawnRate: 0.5
   spawnData: {fileID: 11400000, guid: 2048e507e21be9347a2f8074fa98e418, type: 2}
   paseState:
     MonsterID: 0

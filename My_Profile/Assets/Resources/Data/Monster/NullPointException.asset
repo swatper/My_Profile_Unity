@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NullPointException
   m_EditorClassIdentifier: 
   Name: NullPointException
-  Description: "\uC81C\uBC1C \uBABB \uCC3E\uC9C0 \uB9D0\uC544\uB2E4\uC624..."
+  Description: "\uC788\uC558\uB294\uB370 \uC556\uC5B4\uC694"
   MaxHP: 0
   MoveSpeed: 0
   MonsterType: 0
@@ -21,13 +21,13 @@ MonoBehaviour:
   levelTables:
   - curHp: 15
     curSpeed: 1.5
-    Damage: 0
+    Damage: 1
     KnockBack: 0.5
     Exp: 1
     isDead: 0
-  - curHp: 21
+  - curHp: 35
     curSpeed: 2
-    Damage: 0
+    Damage: 1
     KnockBack: 0.5
     Exp: 1
     isDead: 0

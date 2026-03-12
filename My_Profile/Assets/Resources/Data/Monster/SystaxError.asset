@@ -17,6 +17,7 @@ MonoBehaviour:
   MaxHP: 0
   MoveSpeed: 0
   MonsterType: 0
+  MonsterID: 0
   levelTables:
   - curHp: 11
     curSpeed: 1
@@ -24,7 +25,7 @@ MonoBehaviour:
     KnockBack: 1
     Exp: 1
     isDead: 0
-  - curHp: 20
+  - curHp: 30
     curSpeed: 2
     Damage: 1
     KnockBack: 1
