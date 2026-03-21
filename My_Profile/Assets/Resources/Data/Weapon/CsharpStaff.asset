@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CsharpStaff
   m_EditorClassIdentifier: 
   WeaponName: C#Staff
+  type: 1
   levelTables:
   - WeaponDamage: 7
     WeaponSpeed: 1

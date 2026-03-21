@@ -114,8 +114,19 @@ public class PlayerController : MonoBehaviour
     
     public void InitPlayerInVillagel()
     {
+        ChangeStat(pData); //능력치  초기화
         pPosition.position = new Vector3(-7f, -0.8f, 0);
         playerPivot.rotation = Quaternion.identity;
         pSprite.flipX = false;
     }
+
+    public void UpgradeStat(Define.UpgradeType type) {
+        switch (type) {
+            case Define.UpgradeType.Hp:
+                break;
+            case Define.UpgradeType.Speed:
+                break;
+        }
+    }
+
 }

@@ -17,6 +17,8 @@ public class SurvivalSceneDirector : BaseSceneDirector
     [SerializeField] float curExp;
     [SerializeField] int curLv;
     public Action<float> OnMonsterKilled;
+    [Header("Upgrade Slot")]
+    [SerializeField] GameObject solt;
 
     private void Awake()
     {
@@ -35,6 +37,14 @@ public class SurvivalSceneDirector : BaseSceneDirector
         poolManager = FindObjectOfType<PoolManager>();
         GameManager.Player.InitPlayerInSurvival();
         GameManager.SceneLoader.SceneReady();
+    }
+    public override void GoToScene()
+    {
+        //무기 관리 스크립트 제거
+        WeaponHandler handler = GameManager.Player.GetComponent<WeaponHandler>();
+        if (handler != null)
+            Destroy(handler);
+        base.GoToScene();
     }
 
     public void PaseUp(){
@@ -77,7 +87,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
             else
             {
                 //TODO: 만렙 처리
-
+                Debug.Log("만렙");
                 break;
             }
         }
@@ -86,15 +96,20 @@ public class SurvivalSceneDirector : BaseSceneDirector
 
     void OnLevelUp() {
         Debug.Log($"레벨업: {curLv}");
+        Puase();
     }
 
     #endregion
 
-    public override void GoToScene(){
-        //무기 관리 스크립트 제거
-        WeaponHandler handler = GameManager.Player.GetComponent<WeaponHandler>();
-        if (handler != null)
-            Destroy (handler);
-        base.GoToScene();
+    public void Puase(){
+        GameManager.Player.ReadUIInfo();
+        solt.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Resume() {
+        GameManager.Player.StopReadUIInfo();
+        solt.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }

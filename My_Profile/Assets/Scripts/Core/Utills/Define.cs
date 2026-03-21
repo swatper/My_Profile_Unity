@@ -31,6 +31,15 @@ public class Define
         Night
     }
 
+    public enum UpgradeType { 
+        CrossBow = 0,
+        Staff = 1,
+        Garlic = 2,
+        Unity = 3,
+        Hp = 4,
+        Speed = 5,
+    }
+
     public enum MonsterType
     {
 

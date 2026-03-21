@@ -43,7 +43,8 @@ public class WeaponHandler : MonoBehaviour
     /// 무기 활성화 or 업그레이드
     /// </summary>
     /// <param name="wID"></param>
-    public void UpgradeWeapon(int wID){
+    public void UpgradeWeapon(Define.UpgradeType type){
+        int wID = (int)type;
         BaseWeapon targret = weaponList[wID];
         if (targret.isUnlocked)
             targret.LevelUp();
@@ -57,4 +58,16 @@ public class WeaponHandler : MonoBehaviour
     {
         Destroy(weaponContainer);
     }
+//#if UNITY_EDITOR
+    public void WeaponUpgradeButton(int wID) {
+        BaseWeapon targret = weaponList[wID];
+        if (targret.isUnlocked)
+            targret.LevelUp();
+        else
+        {
+            targret.isUnlocked = true;
+            targret.gameObject.SetActive(true);
+        }
+    }
+//#endif
 }

@@ -22,5 +22,6 @@ public struct WeaponStat
 public class WeaponData : ScriptableObject
 {
     public string WeaponName;
+    public Define.UpgradeType type;
     public List<WeaponStat> levelTables;
 }
