@@ -40,6 +40,9 @@ public class InputManager
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
             KeyPress.Invoke(Define.KeyEvent.Enter);
         }
+        if (Input.GetKeyDown(KeyCode.F1)) {
+            KeyPress.Invoke(Define.KeyEvent.Debug);
+        }
     }
 
     public void SubscribeKeyEvent(Action<Define.KeyEvent> tragetMethod) {

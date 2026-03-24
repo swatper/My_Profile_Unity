@@ -8,7 +8,8 @@ public class Define
         Down,
         ESC,
         Tab,
-        Enter
+        Enter,
+        Debug
     }
     /// <summary>
     /// 언젠간 필요하겠지...?

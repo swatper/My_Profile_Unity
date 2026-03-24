@@ -19,6 +19,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
     public Action<float> OnMonsterKilled;
     [Header("Upgrade Slot")]
     [SerializeField] GameObject solt;
+    [SerializeField] UpgradeSlot[] slots;
 
     private void Awake()
     {
@@ -50,8 +51,22 @@ public class SurvivalSceneDirector : BaseSceneDirector
     public void PaseUp(){
         poolManager.PaseUp();
     }
+    public void Puase()
+    {
+        GameManager.Player.ReadUIInfo();
+        solt.SetActive(true);
+        Time.timeScale = 0f;
+        InitSlots();
+    }
 
-//#if UNITY_EDITOR
+    public void Resume()
+    {
+        GameManager.Player.StopReadUIInfo();
+        solt.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
+    //#if UNITY_EDITOR
     public void PaseDown() {
         poolManager.PaseDown();
     }
@@ -101,15 +116,12 @@ public class SurvivalSceneDirector : BaseSceneDirector
 
     #endregion
 
-    public void Puase(){
-        GameManager.Player.ReadUIInfo();
-        solt.SetActive(true);
-        Time.timeScale = 0f;
+    #region ΩΩ∑‘ √ ±‚»≠øÎ
+    void InitSlots() {
+        for (int i = 0; i < slots.Length; i++) {
+            //TODO: ∑ª¥˝ ºˆ ªÃ±‚
+            //slots[i].InitSlot(RandomType);
+        }
     }
-
-    public void Resume() {
-        GameManager.Player.StopReadUIInfo();
-        solt.SetActive(false);
-        Time.timeScale = 1.0f;
-    }
+    #endregion
 }

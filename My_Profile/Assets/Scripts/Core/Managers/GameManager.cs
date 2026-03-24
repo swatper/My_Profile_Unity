@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public TimeUpdater TimeUpdater = new TimeUpdater();
     public static TimeUpdater Clock { get { return Instance.TimeUpdater; } }
+
+    GameObject PerformanceHUD;
     #endregion
 
     public PlayerController pController;
@@ -41,6 +43,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Define.TimeOfDay curTOD;
     [Header("시간대 알리미")]
     public Action<Define.TimeOfDay> OnTimeOfDayChanged;
+    [Header("HUD 상태")]
+    bool isDisplaying = false;
 
     static void Init()
     {
@@ -61,10 +65,29 @@ public class GameManager : MonoBehaviour
     {
         StartTimer();
         SetupUILoading();
+        InitPerformanceHUD();
     }
 
     private void Update() {
         Input.KeyEvent();
+    }
+
+    private void Start()
+    {
+        Input.SubscribeKeyEvent(SetPerformanceHUD);
+    }
+
+    void InitPerformanceHUD()
+    {
+        PerformanceHUD = M_Resource.Instantiate("PerformanceHUD", null, false);
+        DontDestroyOnLoad (PerformanceHUD);
+    }
+
+    void SetPerformanceHUD(Define.KeyEvent keyEvent) {
+        if (keyEvent == Define.KeyEvent.Debug) {
+            isDisplaying = !isDisplaying;
+            PerformanceHUD.SetActive(isDisplaying);
+        }
     }
 
     void SetupUILoading() {
@@ -72,7 +95,7 @@ public class GameManager : MonoBehaviour
         {
             GameObject loadingObj = M_Resource.Instantiate("LoadingUI");
             M_Scene = loadingObj.GetComponent<LoadingUI>();
-            DontDestroyOnLoad (loadingObj);
+            DontDestroyOnLoad(loadingObj);
         }
     }
 
@@ -81,7 +104,6 @@ public class GameManager : MonoBehaviour
         int curHour = Clock.Hour;
         int curMin = Clock.Minute;
         int curSec = Clock.Second;
-        
 
         //TODO: 추후 TimerUpdater로 옮길 예정
         //저녁/밤: 18시부터 4시
