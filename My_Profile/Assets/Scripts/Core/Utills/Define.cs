@@ -11,9 +11,7 @@ public class Define
         Enter,
         Debug
     }
-    /// <summary>
-    /// 언젠간 필요하겠지...?
-    /// </summary>
+
     public enum Layers 
     {
         Default,
@@ -35,12 +33,15 @@ public class Define
     public enum UpgradeType { 
         CrossBow = 0,
         Staff = 1,
-        Garlic = 2,
-        Unity = 3,
-        Hp = 4,
-        Speed = 5,
+        //Garlic = 2,
+        //Unity = 3,
+        Hp = 2,
+        Speed = 3,
     }
 
+    /// <summary>
+    /// 언젠간 필요하겠지...?
+    /// </summary>
     public enum MonsterType
     {
 

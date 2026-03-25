@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: CppCrossbow
   m_EditorClassIdentifier: 
   WeaponName: C++Corossbow
+  WeaponIcon: {fileID: -2031779718, guid: 88e03810229219441beec790df1dc48a, type: 3}
+  type: 0
   levelTables:
   - WeaponDamage: 10
     WeaponSpeed: 0.5

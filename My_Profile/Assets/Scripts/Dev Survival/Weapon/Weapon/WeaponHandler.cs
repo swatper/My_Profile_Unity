@@ -44,8 +44,7 @@ public class WeaponHandler : MonoBehaviour
     /// </summary>
     /// <param name="wID"></param>
     public void UpgradeWeapon(Define.UpgradeType type){
-        int wID = (int)type;
-        BaseWeapon targret = weaponList[wID];
+        BaseWeapon targret = GetWeaponScript(type);
         if (targret.isUnlocked)
             targret.LevelUp();
         else {
@@ -54,10 +53,30 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
+    public string GetUpgradeInfo(Define.UpgradeType type) {
+        BaseWeapon targret = GetWeaponScript(type);
+        return targret.UpgradeInfo();
+    }
+
+    public bool CheckUpgradeable(Define.UpgradeType type) {
+        BaseWeapon targret = GetWeaponScript(type);
+        return targret.isMaxLevel;
+    }
+
+    public bool CheckUnlock(Define.UpgradeType type) {
+        BaseWeapon targret = GetWeaponScript(type);
+        return targret.isUnlocked;
+    }
+
+    BaseWeapon GetWeaponScript(Define.UpgradeType type) {
+        int wID = (int)type;
+        return weaponList[wID];
+    }
+
+    private void OnDestroy(){
         Destroy(weaponContainer);
     }
+
 //#if UNITY_EDITOR
     public void WeaponUpgradeButton(int wID) {
         BaseWeapon targret = weaponList[wID];

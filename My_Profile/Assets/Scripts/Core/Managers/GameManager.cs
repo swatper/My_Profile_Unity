@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Xml.Linq;
 using UnityEngine;
+using static Define;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,9 +41,9 @@ public class GameManager : MonoBehaviour
     [Header("시간 관련 데이터 및 이벤트")]
     Coroutine timeRoutine;
     [Tooltip("확인 및 수동 조작용")]
-    [SerializeField] public Define.TimeOfDay curTOD;
+    [SerializeField] public TimeOfDay curTOD;
     [Header("시간대 알리미")]
-    public Action<Define.TimeOfDay> OnTimeOfDayChanged;
+    public Action<TimeOfDay> OnTimeOfDayChanged;
     [Header("HUD 상태")]
     bool isDisplaying = false;
 
@@ -69,7 +70,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
-        Input.KeyEvent();
+        Input.OnKeyEvent();
     }
 
     private void Start()
@@ -79,12 +80,14 @@ public class GameManager : MonoBehaviour
 
     void InitPerformanceHUD()
     {
-        PerformanceHUD = M_Resource.Instantiate("PerformanceHUD", null, false);
-        DontDestroyOnLoad (PerformanceHUD);
+        if (PerformanceHUD == null) {
+            PerformanceHUD = M_Resource.Instantiate("PerformanceHUD", null, false);
+            DontDestroyOnLoad(PerformanceHUD);
+        }
     }
 
-    void SetPerformanceHUD(Define.KeyEvent keyEvent) {
-        if (keyEvent == Define.KeyEvent.Debug) {
+    void SetPerformanceHUD(KeyEvent keyEvent) {
+        if (keyEvent == KeyEvent.Debug) {
             isDisplaying = !isDisplaying;
             PerformanceHUD.SetActive(isDisplaying);
         }
@@ -108,13 +111,13 @@ public class GameManager : MonoBehaviour
         //TODO: 추후 TimerUpdater로 옮길 예정
         //저녁/밤: 18시부터 4시
         if (curHour >= 18 || curHour < 5)
-            curTOD = Define.TimeOfDay.Night;
+            curTOD = TimeOfDay.Night;
         //아침: 5시부터 11시
         else if (curHour >= 5 && curHour < 12)
-            curTOD = Define.TimeOfDay.Morning;
+            curTOD = TimeOfDay.Morning;
         //점심/낮: 12시부터 18시
         else
-            curTOD = Define.TimeOfDay.Day;
+            curTOD = TimeOfDay.Day;
         OnTimeOfDayChanged?.Invoke(curTOD);
 
     }
@@ -130,7 +133,7 @@ public class GameManager : MonoBehaviour
 
     public void StopTimer() {
         StopCoroutine(timeRoutine);
-        curTOD = Define.TimeOfDay.Morning;
+        curTOD = TimeOfDay.Morning;
         OnTimeOfDayChanged?.Invoke(curTOD);
     }
 

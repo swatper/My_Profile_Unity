@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Weapon Struct
@@ -22,6 +23,7 @@ public struct WeaponStat
 public class WeaponData : ScriptableObject
 {
     public string WeaponName;
+    public Sprite WeaponIcon;
     public Define.UpgradeType type;
     public List<WeaponStat> levelTables;
 }

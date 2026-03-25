@@ -1,42 +1,87 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 using UnityEngine.UI;
 using static Define;
 
 public class UpgradeSlot : MonoBehaviour
 {
-    [SerializeField] Text nameText;
-    [SerializeField] Text desc;
-    [SerializeField] Define.UpgradeType type;
+    [Header("업그레이드 할 대상 정보")]
+    [SerializeField] Text targetName;
+    [SerializeField] Text targetDesc;
+    [SerializeField] UpgradeType targetType;
+    int uID;
+    [SerializeField] Image icon;
+    [SerializeField] GameObject[] fileNames;
     [SerializeField] WeaponHandler weaponHandler;
     [SerializeField] PlayerController playerController;
 
-    //UI 업데이트 용
-    public void InitSlot(UpgradeType type) {
-        this.type = type;
-        //TODO: 해당 타입에 맞게 데이터를 UII에 할당하기
+    /// <summary>
+    /// 슬롯에 업그레이드 할 대상 입력
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns>업그레이드 가능 여부</returns>
+    public bool InitSlot(UpgradeType type) {
+        SetUpgradeTarget();
 
+        targetType = type;
+        uID = (int)targetType;
+        Debug.Log($"{gameObject.name}: {uID}");
+        //무기 관련
+        if (uID < 2)
+        {
+            if (weaponHandler.CheckUpgradeable(targetType))
+                return false;
+            SetWeaponInfo();
+        }
+        else
+            SetStatInfo();
+
+        targetName.text = $"//{targetType.ToString()}";
+        //icon.sprite =
+        return true;
     }
+
+    void SetUpgradeTarget() {
+        weaponHandler = GameManager.Player.GetComponent<WeaponHandler>();
+        playerController = GameManager.Player.GetComponent<PlayerController>();
+    }
+
+    void SetWeaponInfo() {
+        InitFileName(!weaponHandler.CheckUnlock(targetType));
+         targetDesc.text = weaponHandler.GetUpgradeInfo(targetType);
+    }
+    void SetStatInfo() {
+        Debug.Log("능력치 강화");
+        InitFileName(false);
+        targetDesc.text = "    Stat ++ ; \n" + "}";
+    }
+
+
+    void InitFileName(bool isNew){
+        for (int i = 0; i < fileNames.Length; i++)
+            fileNames[i].SetActive(false);
+
+        if (isNew)
+            fileNames[1].SetActive(true);
+        else
+            fileNames[0].SetActive(true);
+    }
+
 
     /// <summary>
     /// 버튼이 눌렸을 때 호출될 메서드
     /// </summary>
     public void OnClickUpgrade()
     {
-        int id = (int)type;
-
         //CrossBow ~ Unity (무기군)
-        if (id < 4)
-        {
-            GameManager.Player.GetComponent<WeaponHandler>().UpgradeWeapon(type);
-        }
+        if (uID < 2)
+            weaponHandler.UpgradeWeapon(targetType);
         //Hp, Speed (능력치군)
         else
-        {
-            GameManager.Player.GetComponent<PlayerController>().UpgradeStat(type);
-        }
-
+            Debug.Log("능력치 강화 예정");
+            //playerController.GetComponent<PlayerController>().UpgradeStat(targetType);
         SurvivalSceneDirector.Instance.Resume();
     }
 }

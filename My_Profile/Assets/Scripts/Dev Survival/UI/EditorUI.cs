@@ -21,7 +21,6 @@ public class EditorUI : MonoBehaviour
 
     IEnumerator GetWeapon() {
         while (wHandler == null) {
-            Debug.Log("무기 찾는 중");
             wHandler = GameManager.Player.GetComponent<WeaponHandler>();
             yield return null;
         }

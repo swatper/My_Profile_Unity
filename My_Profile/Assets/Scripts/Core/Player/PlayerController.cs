@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
-
+using static Define;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
@@ -71,21 +71,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnKeyboardAction(Define.KeyEvent keyEvent) {
+    void OnKeyboardAction(KeyEvent keyEvent) {
         if (pState.isReadingInfo)
             return;
 
         switch (keyEvent) {
-            case Define.KeyEvent.Up:
+            case KeyEvent.Up:
                 moveBuffer.y = 1;
                 break;
-            case Define.KeyEvent.Down:
+            case KeyEvent.Down:
                 moveBuffer.y = -1; 
                 break;
-            case Define.KeyEvent.Left:
+            case KeyEvent.Left:
                 moveBuffer.x = -1; 
                 break;
-            case Define.KeyEvent.Right:
+            case KeyEvent.Right:
                 moveBuffer.x = 1;
                 break;
         }
@@ -120,11 +120,11 @@ public class PlayerController : MonoBehaviour
         pSprite.flipX = false;
     }
 
-    public void UpgradeStat(Define.UpgradeType type) {
+    public void UpgradeStat(UpgradeType type) {
         switch (type) {
-            case Define.UpgradeType.Hp:
+            case UpgradeType.Hp:
                 break;
-            case Define.UpgradeType.Speed:
+            case UpgradeType.Speed:
                 break;
         }
     }

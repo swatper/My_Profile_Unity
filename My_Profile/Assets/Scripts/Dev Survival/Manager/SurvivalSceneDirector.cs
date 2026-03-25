@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static Define;
 
 public class SurvivalSceneDirector : BaseSceneDirector
 {
@@ -118,9 +119,28 @@ public class SurvivalSceneDirector : BaseSceneDirector
 
     #region ΩΩ∑‘ √ ±‚»≠øÎ
     void InitSlots() {
-        for (int i = 0; i < slots.Length; i++) {
-            //TODO: ∑ª¥˝ ºˆ ªÃ±‚
-            //slots[i].InitSlot(RandomType);
+        List<UpgradeType> selectedTypes = new List<UpgradeType>();
+        int totalCount = Enum.GetNames(typeof(UpgradeType)).Length;
+
+        for (int i = 0; i < slots.Length; i++){
+            bool isSuccess = false;
+            UpgradeType randomType;
+            while (!isSuccess){
+                randomType = (UpgradeType)UnityEngine.Random.Range(0, totalCount);
+
+                //¡ﬂ∫π »Æ¿Œ
+                if (selectedTypes.Contains(randomType)){
+                    continue;
+                }
+
+                //«“¥Á Ω√µµ(∏∏∑¶ »Æ¿Œ)
+                if (slots[i].InitSlot(randomType)){
+                    selectedTypes.Add(randomType); 
+                    isSuccess = true;              
+                }
+                else
+                    selectedTypes.Add(randomType);
+            }
         }
     }
     #endregion

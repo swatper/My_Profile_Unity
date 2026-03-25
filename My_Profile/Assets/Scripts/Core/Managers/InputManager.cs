@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
-
+using static Define;
 public class InputManager
 {
-    public Action<Define.KeyEvent> KeyPress;
+    public Action<KeyEvent> KeyPress;
 
-    public void KeyEvent()
+    public void OnKeyEvent()
     {
         if (KeyPress == null)
             return;
@@ -13,43 +13,43 @@ public class InputManager
         //LeftArrow
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            KeyPress.Invoke(Define.KeyEvent.Left);
+            KeyPress.Invoke(KeyEvent.Left);
         }
         //RightArrow
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            KeyPress.Invoke(Define.KeyEvent.Right);
+            KeyPress.Invoke(KeyEvent.Right);
         }
         //UpArrow
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            KeyPress.Invoke(Define.KeyEvent.Up);
+            KeyPress.Invoke(KeyEvent.Up);
         }
         //DownArrow
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            KeyPress.Invoke(Define.KeyEvent.Down);
+            KeyPress.Invoke(KeyEvent.Down);
         }
         if (Input.GetKey(KeyCode.Escape))
         {
-            KeyPress.Invoke(Define.KeyEvent.ESC);
+            KeyPress.Invoke(KeyEvent.ESC);
         }
         if (Input.GetKey(KeyCode.Tab)) {
-            KeyPress.Invoke(Define.KeyEvent.Tab);
+            KeyPress.Invoke(KeyEvent.Tab);
         }
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
-            KeyPress.Invoke(Define.KeyEvent.Enter);
+            KeyPress.Invoke(KeyEvent.Enter);
         }
         if (Input.GetKeyDown(KeyCode.F1)) {
-            KeyPress.Invoke(Define.KeyEvent.Debug);
+            KeyPress.Invoke(KeyEvent.Debug);
         }
     }
 
-    public void SubscribeKeyEvent(Action<Define.KeyEvent> tragetMethod) {
+    public void SubscribeKeyEvent(Action<KeyEvent> tragetMethod) {
         KeyPress += tragetMethod;
     }
 
-    public void RemoveSubscribe(Action<Define.KeyEvent> tragetMethod) {
+    public void RemoveSubscribe(Action<KeyEvent> tragetMethod) {
         KeyPress -= tragetMethod;
     }
 }
