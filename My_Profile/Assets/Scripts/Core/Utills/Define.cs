@@ -33,10 +33,10 @@ public class Define
     public enum UpgradeType { 
         CrossBow = 0,
         Staff = 1,
-        //Garlic = 2,
+        Garlic = 2,
         //Unity = 3,
-        Hp = 2,
-        Speed = 3,
+        Hp = 3,
+        Speed = 4,
     }
 
     /// <summary>

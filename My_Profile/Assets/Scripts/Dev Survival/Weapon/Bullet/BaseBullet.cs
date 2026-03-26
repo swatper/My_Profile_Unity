@@ -35,10 +35,10 @@ public class BaseBullet : MonoBehaviour
         SurvivalSceneDirector.Instance.poolManager.InsertUsedBullet(this);
     }
 
-    public void DescPiercingCNT()
-    { 
+    public virtual void HitMonster(BaseMonsterController monster) {
+        monster.OnHit(Damage);
         piercingCnt--;
-        if (piercingCnt < 0) {
+        if (piercingCnt < 0){
             ReturnBullet();
         }
     }

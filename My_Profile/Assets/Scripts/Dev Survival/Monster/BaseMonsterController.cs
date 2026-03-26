@@ -84,20 +84,20 @@ public class BaseMonsterController : MonoBehaviour
         mSprite.flipX = target.position.x < rigid.position.x;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+    private void OnTriggerEnter2D(Collider2D collision){
         if (!collision.CompareTag("Weapon"))
             return;
+        collision.GetComponent<BaseBullet>().HitMonster(this);
+    }
 
-        mStat.curHp -= collision.GetComponent<BaseBullet>().Damage;
-        collision.GetComponent<BaseBullet>().DescPiercingCNT();
-
-        StartCoroutine("KnockBack");
-
-        if (mStat.curHp > 0){
+    public void OnHit(float damage, bool needKnockBack = true)
+    {
+        mStat.curHp -= damage;
+        if (needKnockBack) 
+            StartCoroutine("KnockBack");
+        if (mStat.curHp > 0)
             mAnimator.SetTrigger("Hit");
-        }
-        else {
+        else{
             mStat.isDead = true;
             SetComponentState(mStat.isDead);
         }

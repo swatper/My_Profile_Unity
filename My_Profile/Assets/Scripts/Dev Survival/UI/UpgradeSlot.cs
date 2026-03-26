@@ -29,7 +29,7 @@ public class UpgradeSlot : MonoBehaviour
         uID = (int)targetType;
         Debug.Log($"{gameObject.name}: {uID}");
         //무기 관련
-        if (uID < 2)
+        if (uID < 3)
         {
             if (weaponHandler.CheckUpgradeable(targetType))
                 return false;
@@ -76,7 +76,7 @@ public class UpgradeSlot : MonoBehaviour
     public void OnClickUpgrade()
     {
         //CrossBow ~ Unity (무기군)
-        if (uID < 2)
+        if (uID < 3)
             weaponHandler.UpgradeWeapon(targetType);
         //Hp, Speed (능력치군)
         else

@@ -5,6 +5,8 @@ using UnityEngine;
 public class CSharpBullet : BaseBullet
 {
     [SerializeField] ParticleSystem trailParticle;
+    [SerializeField] float explosionRadius;
+    public LayerMask targetLayer;
 
     protected override void Awake()
     {
@@ -18,9 +20,21 @@ public class CSharpBullet : BaseBullet
         base.Init(damage, cnt, dir);
     }
 
+    public override void HitMonster(BaseMonsterController monster){
+        Explode();
+    }
+
     protected override void ReturnBullet()
     {
         trailParticle.Stop();
         base.ReturnBullet();
+    }
+
+    void Explode() {
+        Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, explosionRadius, targetLayer);
+        foreach (var target in targets){
+            target.GetComponent<BaseMonsterController>().OnHit(Damage, false);
+        }
+        ReturnBullet();
     }
 }

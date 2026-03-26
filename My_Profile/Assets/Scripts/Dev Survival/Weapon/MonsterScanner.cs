@@ -14,8 +14,7 @@ public class MonsterScanner : MonoBehaviour
         scanRange = range;
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate(){
         targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayer);
         nearestTarget = GetNearestMonster();
     }
@@ -37,15 +36,12 @@ public class MonsterScanner : MonoBehaviour
         return result;
     }
 
-    //탐지 범위 시각화용
-    private void OnDrawGizmos()
-    {
 #if UNITY_EDITOR
+    //탐지 범위 시각화용
+    private void OnDrawGizmos(){
         DrowDetectRange();
-#endif
     }
 
-#if UNITY_EDITOR
     void DrowDetectRange() {
         Color baseColor = (nearestTarget != null) ? Color.green : Color.red;
 

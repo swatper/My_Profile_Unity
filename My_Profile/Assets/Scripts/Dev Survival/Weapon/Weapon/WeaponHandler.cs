@@ -9,6 +9,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] List<string> weaponPaths=new List<string> {
         "Weapon/CppCrossbow",
         "Weapon/CSharpStaff",
+        "Weapon/FlutterWidget"
     };
     [SerializeField] List<BaseWeapon> weaponList = new List<BaseWeapon>();
     [SerializeField] Transform pPivot;
@@ -44,33 +45,29 @@ public class WeaponHandler : MonoBehaviour
     /// </summary>
     /// <param name="wID"></param>
     public void UpgradeWeapon(Define.UpgradeType type){
-        BaseWeapon targret = GetWeaponScript(type);
-        if (targret.isUnlocked)
-            targret.LevelUp();
+        BaseWeapon target = GetWeaponScript(type);
+        if (target.isUnlocked)
+            target.LevelUp();
         else {
-            targret.isUnlocked = true;
-            targret.gameObject.SetActive(true);
+            target.isUnlocked = true;
+            target.gameObject.SetActive(true);
         }
     }
 
     public string GetUpgradeInfo(Define.UpgradeType type) {
-        BaseWeapon targret = GetWeaponScript(type);
-        return targret.UpgradeInfo();
+        return GetWeaponScript(type).UpgradeInfo();
     }
 
     public bool CheckUpgradeable(Define.UpgradeType type) {
-        BaseWeapon targret = GetWeaponScript(type);
-        return targret.isMaxLevel;
+        return GetWeaponScript(type).isMaxLevel;
     }
 
     public bool CheckUnlock(Define.UpgradeType type) {
-        BaseWeapon targret = GetWeaponScript(type);
-        return targret.isUnlocked;
+        return GetWeaponScript(type).isUnlocked;
     }
 
-    BaseWeapon GetWeaponScript(Define.UpgradeType type) {
-        int wID = (int)type;
-        return weaponList[wID];
+    BaseWeapon GetWeaponScript(Define.UpgradeType type){
+        return weaponList[(int)type];
     }
 
     private void OnDestroy(){

@@ -41,10 +41,10 @@ public abstract class BaseWeapon : MonoBehaviour
         if (!isUnlocked)
         {
             WeaponStat firstData = wData.levelTables[0]; // 1레벨 데이터
-            info += $"    damage = {firstData.WeaponDamage};\n";
-            info += $"    attackSpeed = {firstData.WeaponSpeed:F1};\n";
-            info += $"    pierceCount = {firstData.PierceCount};\n";
-            info += $"    scanRange = {firstData.ScanRange};\n";
+            info += $"    Damage = {firstData.WeaponDamage};\n";
+            info += $"    Speed = {firstData.WeaponSpeed:F1};\n";
+            info += $"    Pierce = {firstData.PierceCount};\n";
+            info += $"    Range = {firstData.ScanRange};\n";
             return info + "}";
         }
 
@@ -52,16 +52,16 @@ public abstract class BaseWeapon : MonoBehaviour
         WeaponStat curData = wData.levelTables[currentLevel - 1];
         // 수치가 변한 것만 코드 형태로 추가
         if (nextData.WeaponDamage != curData.WeaponDamage)
-            info += $"    damage += {nextData.WeaponDamage - curData.WeaponDamage};\n";
+            info += $"    Damage += {nextData.WeaponDamage - curData.WeaponDamage};\n";
 
         if (nextData.WeaponSpeed != curData.WeaponSpeed)
-            info += $"    attackSpeed += {nextData.WeaponSpeed - curData.WeaponSpeed:F1};\n";
+            info += $"    Speed += {nextData.WeaponSpeed - curData.WeaponSpeed:F1};\n";
 
         if (nextData.PierceCount != curData.PierceCount)
-            info += $"    pierceCount += {nextData.PierceCount - curData.PierceCount};\n";
+            info += $"    Pierce+= {nextData.PierceCount - curData.PierceCount};\n";
 
         if (nextData.ScanRange != curData.ScanRange)
-            info += $"    scanRange += {nextData.ScanRange - curData.ScanRange};\n";
+            info += $"    Range += {nextData.ScanRange - curData.ScanRange};\n";
 
         return info + "}";
     }
