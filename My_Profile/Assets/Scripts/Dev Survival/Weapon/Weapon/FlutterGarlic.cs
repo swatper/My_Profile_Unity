@@ -2,10 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlutterGarlic : BaseRangedWeapon
+public class FlutterGarlic : BaseWeapon
 {
     public LayerMask targetLayer;
     public RaycastHit2D[] targets;
+    [SerializeField] float timer;
+
+    private void Update()
+    {
+        timer += Time.deltaTime * wStat.WeaponSpeed;
+        if (timer > 1.0f)
+        {
+            timer = 0f;
+            Attack();
+        }
+    }
 
     protected override void InitWeaponData(){
         wStat = wData.levelTables[currentLevel - 1];

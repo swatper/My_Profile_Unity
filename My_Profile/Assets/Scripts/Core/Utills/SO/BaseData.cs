@@ -1,5 +1,5 @@
 using UnityEngine;
-public  abstract class BaseData : ScriptableObject
+public  abstract class BaseData : BaseUpgradeData
 {
     [Header("Character Data")]
     public string Name;

@@ -19,6 +19,8 @@ public class SurvivalSceneDirector : BaseSceneDirector
     [SerializeField] int curLv;
     public Action<float> OnMonsterKilled;
     [Header("Upgrade Slot")]
+    public WeaponHandler wHandler;
+    [SerializeField] PlayerController pController;
     [SerializeField] GameObject solt;
     [SerializeField] UpgradeSlot[] slots;
 
@@ -33,19 +35,19 @@ public class SurvivalSceneDirector : BaseSceneDirector
     protected override void InitScene()
     {
         virtualCamera.Follow = GameManager.Player.transform;
+        pController = GameManager.Player;
+        pController.InitPlayerInSurvival();
         //무기 관리 스크립트 추가
-        if (GameManager.Player.GetComponent<WeaponHandler>() == null)
-            GameManager.Player.gameObject.AddComponent<WeaponHandler>();
+        if (pController.GetComponent<WeaponHandler>() == null)
+            wHandler = GameManager.Player.gameObject.AddComponent<WeaponHandler>();
         poolManager = FindObjectOfType<PoolManager>();
-        GameManager.Player.InitPlayerInSurvival();
         GameManager.SceneLoader.SceneReady();
     }
     public override void GoToScene()
     {
         //무기 관리 스크립트 제거
-        WeaponHandler handler = GameManager.Player.GetComponent<WeaponHandler>();
-        if (handler != null)
-            Destroy(handler);
+        if (wHandler != null)
+            Destroy(wHandler);
         base.GoToScene();
     }
 
@@ -121,7 +123,9 @@ public class SurvivalSceneDirector : BaseSceneDirector
     void InitSlots() {
         List<UpgradeType> selectedTypes = new List<UpgradeType>();
         int totalCount = Enum.GetNames(typeof(UpgradeType)).Length;
+        PlayerController pController = GameManager.Player;
 
+        //슬롯에 업글 대상 넘겨주기
         for (int i = 0; i < slots.Length; i++){
             bool isSuccess = false;
             UpgradeType randomType;
@@ -129,14 +133,20 @@ public class SurvivalSceneDirector : BaseSceneDirector
                 randomType = (UpgradeType)UnityEngine.Random.Range(0, totalCount);
 
                 //중복 확인
-                if (selectedTypes.Contains(randomType)){
+                if (selectedTypes.Contains(randomType))
                     continue;
-                }
+
+                //무기인지 능력치인지 확인
+                IUpgradable target;
+                if ((int)randomType < 3) 
+                    target = wHandler.GetWeaponScript(randomType);
+                else
+                    target = pController;
 
                 //할당 시도(만랩 확인)
-                if (slots[i].InitSlot(randomType)){
-                    selectedTypes.Add(randomType); 
-                    isSuccess = true;              
+                if (slots[i].InitSlot(randomType, target)) {
+                    selectedTypes.Add(randomType);
+                    isSuccess = true;
                 }
                 else
                     selectedTypes.Add(randomType);

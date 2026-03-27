@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseWeapon : MonoBehaviour
+public abstract class BaseWeapon : MonoBehaviour, IUpgradable
 {
     [Header("Weapon Data")]
     [SerializeField] protected WeaponData wData;
@@ -16,8 +17,19 @@ public abstract class BaseWeapon : MonoBehaviour
         InitWeaponData();
     }
 
-    public virtual void LevelUp() {
+    /// <summary>
+    ///기본 업그레이드 로직
+    /// </summary>
+    public virtual void Upgrade()
+    {
+        Debug.Log("무기 업글");
         if (isMaxLevel) return;
+        if (!isUnlocked) {
+            SurvivalSceneDirector.Instance.wHandler.UnlockWeapon(wData.Type);
+            isUnlocked = true;
+            return;
+        }
+
         currentLevel++;
         InitWeaponData();
 
@@ -25,15 +37,18 @@ public abstract class BaseWeapon : MonoBehaviour
             isMaxLevel = true;
             Debug.Log($"무기 만렙 달성: {currentLevel}");
         }
-        else
-            Debug.Log($"무기 업그레이드 완료: {currentLevel}");
     }
 
-    /// <summary>
-    /// 무기 능력치 강화 정보 넘기기
-    /// </summary>
-    /// <returns></returns>
-    public string UpgradeInfo() {
+    public bool CanUpgrade(){
+        return isMaxLevel;
+    }
+    public bool GetUnlockState(){
+        return !isUnlocked;
+    }
+
+
+    public virtual string GetDescription()
+    {
         if (isMaxLevel) return "MaxLevel";
 
         string info = "";
@@ -50,7 +65,7 @@ public abstract class BaseWeapon : MonoBehaviour
 
         WeaponStat nextData = wData.levelTables[currentLevel];
         WeaponStat curData = wData.levelTables[currentLevel - 1];
-        // 수치가 변한 것만 코드 형태로 추가
+        //수치가 변한 것만 코드 형태로 추가
         if (nextData.WeaponDamage != curData.WeaponDamage)
             info += $"    Damage += {nextData.WeaponDamage - curData.WeaponDamage};\n";
 

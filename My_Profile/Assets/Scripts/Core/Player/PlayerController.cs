@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
 using static Define;
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IUpgradable
 {
     public static PlayerController Instance { get; private set; }
     [Header("Player Info")]
@@ -91,11 +91,46 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    #region 능력치 관련
     public void ChangeStat(PlayerData newData) {
         pData = newData;
         pState = new PlayerState(newData);
         pAnimator.runtimeAnimatorController = pAniControllers[pState.pID];
     }
+
+    public void Upgrade()
+    {
+        Debug.Log("능력치 강화됨");
+    }
+
+    public bool CanUpgrade(){
+        throw new NotImplementedException();
+    }
+
+
+    public bool GetUnlockState(){
+        return true;
+    }
+
+    public string GetDescription()
+    {
+        string info = "";
+        info += $"    Stat(?)++ \n";
+        return info + "}";
+    }
+
+    public void UpgradeStat(UpgradeType type)
+    {
+        switch (type)
+        {
+            case UpgradeType.Hp:
+                break;
+            case UpgradeType.Speed:
+                break;
+        }
+    }
+
+    #endregion
 
     public void ReadUIInfo() {
         pState.isReadingInfo = true;
@@ -111,7 +146,6 @@ public class PlayerController : MonoBehaviour
         pSprite.flipX = false;
     }
 
-    
     public void InitPlayerInVillagel()
     {
         ChangeStat(pData); //능력치  초기화
@@ -119,14 +153,4 @@ public class PlayerController : MonoBehaviour
         playerPivot.rotation = Quaternion.identity;
         pSprite.flipX = false;
     }
-
-    public void UpgradeStat(UpgradeType type) {
-        switch (type) {
-            case UpgradeType.Hp:
-                break;
-            case UpgradeType.Speed:
-                break;
-        }
-    }
-
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -33,4 +34,5 @@ public class PlayerData : BaseData
 {
     public int SpriteNum;
     public float MagnetRange;
+    public List<PlayerState> levelTables;
 }

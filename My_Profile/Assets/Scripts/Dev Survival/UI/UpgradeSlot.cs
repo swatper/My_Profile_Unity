@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static Define;
@@ -14,25 +15,23 @@ public class UpgradeSlot : MonoBehaviour
     int uID;
     [SerializeField] Image icon;
     [SerializeField] GameObject[] fileNames;
-    [SerializeField] WeaponHandler weaponHandler;
-    [SerializeField] PlayerController playerController;
+    [SerializeField] IUpgradable upgradeTarget;
+    [SerializeField] WeaponHandler wHandler;
 
     /// <summary>
     /// 슬롯에 업그레이드 할 대상 입력
     /// </summary>
     /// <param name="type"></param>
     /// <returns>업그레이드 가능 여부</returns>
-    public bool InitSlot(UpgradeType type) {
-        SetUpgradeTarget();
-
+    public bool InitSlot(UpgradeType type, IUpgradable target) {
         targetType = type;
+        upgradeTarget = target;
+
         uID = (int)targetType;
-        Debug.Log($"{gameObject.name}: {uID}");
-        //무기 관련
-        if (uID < 3)
-        {
-            if (weaponHandler.CheckUpgradeable(targetType))
-                return false;
+
+        if (uID < 3){
+            if (upgradeTarget.CanUpgrade())
+                return false;  //다른 업글 항목으로 다시 요청
             SetWeaponInfo();
         }
         else
@@ -43,21 +42,15 @@ public class UpgradeSlot : MonoBehaviour
         return true;
     }
 
-    void SetUpgradeTarget() {
-        weaponHandler = GameManager.Player.GetComponent<WeaponHandler>();
-        playerController = GameManager.Player.GetComponent<PlayerController>();
+    void SetWeaponInfo() {
+        InitFileName(upgradeTarget.GetUnlockState());
+         targetDesc.text = upgradeTarget.GetDescription();
     }
 
-    void SetWeaponInfo() {
-        InitFileName(!weaponHandler.CheckUnlock(targetType));
-         targetDesc.text = weaponHandler.GetUpgradeInfo(targetType);
-    }
     void SetStatInfo() {
-        Debug.Log("능력치 강화");
         InitFileName(false);
         targetDesc.text = "    Stat ++ ; \n" + "}";
     }
-
 
     void InitFileName(bool isNew){
         for (int i = 0; i < fileNames.Length; i++)
@@ -69,19 +62,12 @@ public class UpgradeSlot : MonoBehaviour
             fileNames[0].SetActive(true);
     }
 
-
     /// <summary>
     /// 버튼이 눌렸을 때 호출될 메서드
     /// </summary>
     public void OnClickUpgrade()
     {
-        //CrossBow ~ Unity (무기군)
-        if (uID < 3)
-            weaponHandler.UpgradeWeapon(targetType);
-        //Hp, Speed (능력치군)
-        else
-            Debug.Log("능력치 강화 예정");
-            //playerController.GetComponent<PlayerController>().UpgradeStat(targetType);
+        upgradeTarget.Upgrade();
         SurvivalSceneDirector.Instance.Resume();
     }
 }

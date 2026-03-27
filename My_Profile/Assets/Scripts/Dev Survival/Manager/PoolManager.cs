@@ -27,7 +27,7 @@ public class PoolManager : MonoBehaviour
 
     private void Start()
     {
-        pController = GameManager.Player.GetComponent<PlayerController>();
+        pController = GameManager.Player;
     }
 
     public void PaseUp() {
@@ -104,7 +104,6 @@ public class PoolManager : MonoBehaviour
     }
 
     void CreateNewMonster() {
-        Debug.Log($"{paseState.MonsterID}, {paseState.MonsterLevel}");
         GameObject monsterObj = Instantiate(monsterPefabs[paseState.MonsterID], this.transform);
         BaseMonsterController newMonster = monsterObj.GetComponent<BaseMonsterController>();
         newMonster.PreSetUp(paseState.MonsterLevel);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class WeaponHandler : MonoBehaviour
 {
@@ -44,41 +45,46 @@ public class WeaponHandler : MonoBehaviour
     /// 무기 활성화 or 업그레이드
     /// </summary>
     /// <param name="wID"></param>
-    public void UpgradeWeapon(Define.UpgradeType type){
+    public void UpgradeWeapon(UpgradeType type){
         BaseWeapon target = GetWeaponScript(type);
         if (target.isUnlocked)
-            target.LevelUp();
+            target.Upgrade();
         else {
             target.isUnlocked = true;
             target.gameObject.SetActive(true);
         }
     }
 
-    public string GetUpgradeInfo(Define.UpgradeType type) {
-        return GetWeaponScript(type).UpgradeInfo();
+    public string GetUpgradeInfo(UpgradeType type) {
+        return GetWeaponScript(type).GetDescription();
     }
 
-    public bool CheckUpgradeable(Define.UpgradeType type) {
-        return GetWeaponScript(type).isMaxLevel;
+    public bool CheckUpgradeable(UpgradeType type) {
+        return GetWeaponScript(type).CanUpgrade();
     }
 
-    public bool CheckUnlock(Define.UpgradeType type) {
+    public bool CheckUnlock(UpgradeType type) {
         return GetWeaponScript(type).isUnlocked;
     }
 
-    BaseWeapon GetWeaponScript(Define.UpgradeType type){
+    public BaseWeapon GetWeaponScript(UpgradeType type){
         return weaponList[(int)type];
     }
 
-    private void OnDestroy(){
-        Destroy(weaponContainer);
+    public void UnlockWeapon(UpgradeType type) {
+        Debug.Log($"새 무기 활성화: {type.ToString()}");
+        weaponList[(int)type].gameObject.SetActive(true);
     }
 
-//#if UNITY_EDITOR
+    private void OnDestroy()
+    {
+        Destroy(weaponContainer);
+    }
+    //#if UNITY_EDITOR
     public void WeaponUpgradeButton(int wID) {
         BaseWeapon targret = weaponList[wID];
         if (targret.isUnlocked)
-            targret.LevelUp();
+            targret.Upgrade();
         else
         {
             targret.isUnlocked = true;
