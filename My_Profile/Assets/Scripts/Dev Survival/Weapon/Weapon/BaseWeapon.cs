@@ -3,15 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseWeapon : MonoBehaviour, IUpgradable
+public abstract class BaseWeapon : BaseUpgradeModel<WeaponStat>, IUpgradable
 {
-    [Header("Weapon Data")]
-    [SerializeField] protected WeaponData wData;
-    [Header("Current Weapon Data")]
-    [SerializeField] protected WeaponStat wStat;
-    [SerializeField] protected int currentLevel = 1;
-    public bool isUnlocked = false;
-    public bool isMaxLevel = false;
+    [SerializeField] protected WeaponData wData => SOData as WeaponData;
+    protected WeaponStat wStat{
+        get => currentStat;
+        set => currentStat = value;
+    }
 
     protected void Awake(){
         InitWeaponData();
@@ -20,34 +18,21 @@ public abstract class BaseWeapon : MonoBehaviour, IUpgradable
     /// <summary>
     ///기본 업그레이드 로직
     /// </summary>
-    public virtual void Upgrade()
+    public override void Upgrade()
     {
         Debug.Log("무기 업글");
-        if (isMaxLevel) return;
-        if (!isUnlocked) {
+        if (!isUnlocked){
             SurvivalSceneDirector.Instance.wHandler.UnlockWeapon(wData.Type);
             isUnlocked = true;
             return;
         }
 
-        currentLevel++;
+
+        base.Upgrade();
         InitWeaponData();
-
-        if (currentLevel >= wData.levelTables.Count){
-            isMaxLevel = true;
-            Debug.Log($"무기 만렙 달성: {currentLevel}");
-        }
     }
 
-    public bool CanUpgrade(){
-        return isMaxLevel;
-    }
-    public bool GetUnlockState(){
-        return !isUnlocked;
-    }
-
-
-    public virtual string GetDescription()
+    public override string GetDescription()
     {
         if (isMaxLevel) return "MaxLevel";
 
@@ -58,7 +43,9 @@ public abstract class BaseWeapon : MonoBehaviour, IUpgradable
             WeaponStat firstData = wData.levelTables[0]; // 1레벨 데이터
             info += $"    Damage = {firstData.WeaponDamage};\n";
             info += $"    Speed = {firstData.WeaponSpeed:F1};\n";
-            info += $"    Pierce = {firstData.PierceCount};\n";
+            if (firstData.PierceCount != 0) {
+                info += $"    Pierce = {firstData.PierceCount};\n";
+            }
             info += $"    Range = {firstData.ScanRange};\n";
             return info + "}";
         }

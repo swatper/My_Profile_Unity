@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4cfb57c3ae06284bbd66c95e277f3ab, type: 3}
   m_Name: FlutterGarlic
   m_EditorClassIdentifier: 
-  WeaponName: 
-  WeaponIcon: {fileID: -1337122034, guid: f7792d90bd92d764aa42c005aff7d6a5, type: 3}
-  type: 2
   levelTables:
   - WeaponDamage: 2
     WeaponSpeed: 1.7
     PierceCount: 0
-    ScanRange: 1
+    ScanRange: 1.3
   - WeaponDamage: 3
     WeaponSpeed: 1.7
     PierceCount: 0
-    ScanRange: 2
+    ScanRange: 1.5
   - WeaponDamage: 5
     WeaponSpeed: 1.7
     PierceCount: 0
-    ScanRange: 4
+    ScanRange: 2
   - WeaponDamage: 8
     WeaponSpeed: 1.7
     PierceCount: 0
-    ScanRange: 5
+    ScanRange: 2.3
+  WeaponName: FlutterGarlic
+  WeaponIcon: {fileID: -1337122034, guid: f7792d90bd92d764aa42c005aff7d6a5, type: 3}
+  Type: 2

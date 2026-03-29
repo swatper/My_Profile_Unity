@@ -29,10 +29,9 @@ public struct PlayerState
 }
 
 
-[CreateAssetMenu(fileName = "Player", menuName = "ScriptableObject/PlayerData", order = 1)]
-public class PlayerData : BaseData
+[CreateAssetMenu(fileName = "Player", menuName = "ScriptableObject/Player/PlayerData", order = 1)]
+public class PlayerData : BaseData<float>
 {
     public int SpriteNum;
     public float MagnetRange;
-    public List<PlayerState> levelTables;
 }

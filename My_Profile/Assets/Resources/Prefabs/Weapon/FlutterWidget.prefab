@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8, y: 2.8, z: 2.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2112726108197695267}
@@ -45,22 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f217997e255fd7947827111befeb0e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wData: {fileID: 11400000, guid: 0bd79f8debbb78541aa5bd4870e5c8e4, type: 2}
-  wStat:
+  SOData: {fileID: 11400000, guid: 0bd79f8debbb78541aa5bd4870e5c8e4, type: 2}
+  currentStat:
     WeaponDamage: 0
     WeaponSpeed: 0
     PierceCount: 0
     ScanRange: 0
   currentLevel: 1
-  isUnlocked: 0
   isMaxLevel: 0
-  bID: 2
-  timer: 0.3
-  projectileSpeed: 0
-  mScanner: {fileID: 0}
+  isUnlocked: 0
+  obj: {fileID: 6391264977988766777}
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
+  timer: 0.3
 --- !u!1 &4573633284093651869
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +89,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6391264977988766777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -136,12 +134,12 @@ SpriteRenderer:
   m_SortingLayerID: -2030346375
   m_SortingLayer: 3
   m_SortingOrder: -1
-  m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
+  m_Sprite: {fileID: -5177388603050735206, guid: cc35afd292fc349128b36a291fb3a165, type: 3}
   m_Color: {r: 0.28490567, g: 0.7913068, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
-  m_Size: {x: 0.7, y: 0.7}
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -222,7 +220,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 2
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -230,7 +228,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -283,7 +281,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -401,7 +399,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.24
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -786,7 +784,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1.7, y: 1.7, z: 1.7}
+    m_Scale: {x: 1, y: 1, z: 0}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -861,7 +859,7 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 0
+    randomDirectionAmount: 0.3
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
@@ -4916,7 +4914,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 1
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2

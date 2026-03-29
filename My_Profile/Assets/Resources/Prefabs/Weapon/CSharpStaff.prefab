@@ -121,13 +121,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76805687457494848b799d3c481b23b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wData: {fileID: 11400000, guid: f58f9f15da74606449ac6cf543c876df, type: 2}
-  wStat:
+  SOData: {fileID: 11400000, guid: f58f9f15da74606449ac6cf543c876df, type: 2}
+  currentStat:
     WeaponDamage: 0
     WeaponSpeed: 0
     PierceCount: 0
     ScanRange: 0
   currentLevel: 1
+  isMaxLevel: 0
+  isUnlocked: 0
   bID: 1
   timer: 0
   projectileSpeed: 8
@@ -144,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f3a44de8a3b09409c504fc881cc295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanRange: 0
+  scanRadius: 0
   targetLayer:
     serializedVersion: 2
     m_Bits: 128

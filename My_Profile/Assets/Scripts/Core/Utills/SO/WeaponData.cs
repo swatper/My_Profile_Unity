@@ -12,7 +12,8 @@ public struct WeaponStat
     [Tooltip("공격 주기")]
     public float WeaponSpeed;
     public int PierceCount;
-    public int ScanRange;
+    [Tooltip("Radius")]
+    public float ScanRange;
 }
 
 
@@ -20,10 +21,9 @@ public struct WeaponStat
 /// Weapon Scriptable Object
 /// </summary>
 [CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObject/WeaopnData", order = 2)]
-public class WeaponData : BaseUpgradeData
+public class WeaponData : BaseUpgradeData<WeaponStat>
 {
     public string WeaponName;
     public Sprite WeaponIcon;
     public Define.UpgradeType Type;
-    public List<WeaponStat> levelTables;
 }

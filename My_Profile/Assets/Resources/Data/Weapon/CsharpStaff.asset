@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4cfb57c3ae06284bbd66c95e277f3ab, type: 3}
   m_Name: CsharpStaff
   m_EditorClassIdentifier: 
-  WeaponName: C#Staff
-  WeaponIcon: {fileID: 1204126822, guid: 88e03810229219441beec790df1dc48a, type: 3}
-  type: 1
   levelTables:
   - WeaponDamage: 7
     WeaponSpeed: 1
@@ -32,3 +29,6 @@ MonoBehaviour:
     WeaponSpeed: 2
     PierceCount: 0
     ScanRange: 9
+  WeaponName: C#Staff
+  WeaponIcon: {fileID: 1204126822, guid: 88e03810229219441beec790df1dc48a, type: 3}
+  Type: 1

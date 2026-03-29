@@ -14,9 +14,8 @@ public struct MonsterStat
 
 
 [CreateAssetMenu(fileName = "Monster", menuName = "ScriptableObject/MonsterData", order = 0)]
-public class MonsterData : BaseData
+public class MonsterData : BaseData<MonsterStat>
 {
     public Define.MonsterType MonsterType;
     public int MonsterID;
-    public List<MonsterStat> levelTables;
 }

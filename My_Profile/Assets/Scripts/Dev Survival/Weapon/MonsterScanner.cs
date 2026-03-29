@@ -5,23 +5,23 @@ using UnityEngine;
 public class MonsterScanner : MonoBehaviour
 {
     [Header("Scanner State")]
-    [SerializeField] float scanRange;
+    [SerializeField] float scanRadius;
     public LayerMask targetLayer;
     public RaycastHit2D[] targets;
     public Transform nearestTarget;
 
     public void SetScanRange(float range) {
-        scanRange = range;
+        scanRadius = range;
     }
 
     private void FixedUpdate(){
-        targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayer);
+        targets = Physics2D.CircleCastAll(transform.position, scanRadius, Vector2.zero, 0, targetLayer);
         nearestTarget = GetNearestMonster();
     }
 
     public Transform GetNearestMonster() {
         Transform result = null;
-        float dist = scanRange;
+        float dist = scanRadius;
 
         foreach (RaycastHit2D target in targets) {
             Vector3 myPos = transform.position;
@@ -47,11 +47,11 @@ public class MonsterScanner : MonoBehaviour
 
         //내부 그리기
         UnityEditor.Handles.color = new Color(baseColor.r, baseColor.g, baseColor.b, 0.15f);
-        UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.forward, scanRange);
+        UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.forward, scanRadius);
 
         //테두리 그리기 
         UnityEditor.Handles.color = new Color(baseColor.r, baseColor.g, baseColor.b, 1f);
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, scanRange);
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, scanRadius);
     }
 #endif
 }

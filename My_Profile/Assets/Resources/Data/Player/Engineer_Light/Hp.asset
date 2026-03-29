@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7529db00a12be8145a9ea9ed24f1a4a7, type: 3}
-  m_Name: Engineer_Light
+  m_Script: {fileID: 11500000, guid: 6a38d858bbd0b5544a7dd433cd67bad9, type: 3}
+  m_Name: Hp
   m_EditorClassIdentifier: 
-  Name: Engineer_Light
-  Description: "\uC815\uBCF4\uCC98\uB9AC\"\uAE30\uC0AC\""
-  MaxHP: 10
-  MoveSpeed: 4.5
-  SpriteNum: 1
-  MagnetRange: 2
+  levelTables:
+  - 10
+  - 13
+  - 17

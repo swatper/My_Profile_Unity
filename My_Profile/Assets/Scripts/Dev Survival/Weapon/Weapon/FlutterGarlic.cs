@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlutterGarlic : BaseWeapon
 {
+    public Transform obj;
     public LayerMask targetLayer;
     public RaycastHit2D[] targets;
     [SerializeField] float timer;
@@ -20,6 +21,7 @@ public class FlutterGarlic : BaseWeapon
 
     protected override void InitWeaponData(){
         wStat = wData.levelTables[currentLevel - 1];
+        UpdateEffects();
     }
 
     protected override void Attack()
@@ -32,6 +34,11 @@ public class FlutterGarlic : BaseWeapon
                 enemy.OnHit(wStat.WeaponDamage, false);
             }
         }
+    }
+
+    void UpdateEffects() {
+        float effectScale = wStat.ScanRange * 2;
+        obj.localScale = new Vector3(effectScale, effectScale, 1f);
     }
 
 
