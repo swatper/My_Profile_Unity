@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTables: []
   Name: CollegeStudent
+  ID: 0
   Description: "\uB300\uD559\uC0DD"
-  MaxHP: 10
-  MoveSpeed: 3.5
-  SpriteNum: 0
   MagnetRange: 3
+  Hp: {fileID: 0}
+  Speed: {fileID: 0}

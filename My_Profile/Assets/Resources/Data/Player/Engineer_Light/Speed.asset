@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Speed
   m_EditorClassIdentifier: 
   levelTables:
-  - 4.5
-  - 5.2
-  - 6
+  - spd: 4.5
+  - spd: 4.8
+  - spd: 5

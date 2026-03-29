@@ -17,5 +17,4 @@ public struct MonsterStat
 public class MonsterData : BaseData<MonsterStat>
 {
     public Define.MonsterType MonsterType;
-    public int MonsterID;
 }

@@ -52,8 +52,9 @@ public class PlayerController : MonoBehaviour, IUpgradable
 
         if (inputVec == Vector2.zero) 
             return;
- 
-       Vector2 nxtVec= inputVec.normalized * pState.curSpeed * Time.fixedDeltaTime;
+
+       Vector2 nxtVec= inputVec.normalized * pData.Speed.levelTables[0].spd * Time.fixedDeltaTime; //수정 필요
+
         rigid.MovePosition(rigid.position + nxtVec);
     }
 
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
     public void ChangeStat(PlayerData newData) {
         pData = newData;
         pState = new PlayerState(newData);
-        pAnimator.runtimeAnimatorController = pAniControllers[pState.pID];
+        pAnimator.runtimeAnimatorController = pAniControllers[pData.ID];
     }
 
     public void Upgrade()

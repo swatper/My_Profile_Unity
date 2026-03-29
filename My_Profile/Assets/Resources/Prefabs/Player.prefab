@@ -304,7 +304,6 @@ MonoBehaviour:
     curExp: 0
     isDead: 0
     isReadingInfo: 0
-  statHandler: {fileID: 0}
   rigid: {fileID: 4033354161993616692}
   pSprite: {fileID: 7176890837902994793}
   pAnimator: {fileID: 5047424141096528091}

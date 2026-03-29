@@ -5,10 +5,7 @@ using UnityEngine;
 public struct PlayerState
 {
     public string pName;
-    public int pID;
     public string pDesc;
-    public float curHp;
-    public float curSpeed;
     public float curMagnetRange;
     public int curExp;
     public bool isDead;
@@ -18,10 +15,7 @@ public struct PlayerState
     {
         pName = data.name;
         pDesc = data.Description;
-        curHp = data.MaxHP;
-        curSpeed = data.MoveSpeed;
         curMagnetRange = data.MagnetRange;
-        pID = data.SpriteNum;
         curExp = 0;
         isDead = false;
         isReadingInfo = false;
@@ -32,6 +26,7 @@ public struct PlayerState
 [CreateAssetMenu(fileName = "Player", menuName = "ScriptableObject/Player/PlayerData", order = 1)]
 public class PlayerData : BaseData<float>
 {
-    public int SpriteNum;
     public float MagnetRange;
+    public HpData Hp;
+    public SpeedData Speed;
 }

@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7529db00a12be8145a9ea9ed24f1a4a7, type: 3}
   m_Name: Engineer_Light
   m_EditorClassIdentifier: 
+  levelTables: []
   Name: Engineer_Light
+  ID: 1
   Description: "\uC815\uBCF4\uCC98\uB9AC\"\uAE30\uC0AC\""
   MaxHP: 10
   MoveSpeed: 4.5
-  SpriteNum: 1
+  pID: 0
   MagnetRange: 2
-  levelTables: []
-  Hp: 000000000000000000000000
-  Speed: 000000000000000000000000

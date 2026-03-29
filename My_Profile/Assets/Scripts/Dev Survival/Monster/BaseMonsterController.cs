@@ -54,7 +54,7 @@ public class BaseMonsterController : MonoBehaviour
     }
 
     public int GetMonsterID() {
-        return mData.MonsterID;
+        return mData.ID;
     }
 
     public int GetMonserLevel() {

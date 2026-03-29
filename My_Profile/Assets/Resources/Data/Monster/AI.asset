@@ -12,12 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1cf0c9e1d176c4f875c962576a8710, type: 3}
   m_Name: AI
   m_EditorClassIdentifier: 
-  Name: AI
-  Description: "\uB108\uC758 \uC9C1\uC5C5 AI\uB85C \uB300\uCCB4\uB418\uC5C8\uB2E4"
-  MaxHP: 0
-  MoveSpeed: 0
-  MonsterType: 0
-  MonsterID: 3
   levelTables:
   - curHp: 100
     curSpeed: 3
@@ -25,3 +19,9 @@ MonoBehaviour:
     KnockBack: 0.1
     Exp: 1
     isDead: 0
+  Name: AI
+  ID: 3
+  Description: "\uB108\uC758 \uC9C1\uC5C5 AI\uB85C \uB300\uCCB4\uB418\uC5C8\uB2E4"
+  MaxHP: 0
+  MoveSpeed: 0
+  MonsterType: 0

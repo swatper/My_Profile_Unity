@@ -5,6 +5,6 @@ using UnityEngine;
 [SerializeField]
 public class StatHandler : MonoBehaviour
 {
-    public HpStat hpStat { get; set; }
-    public SpeedStat spdStat { get; set; }
+    public HpStat hpStat;
+    public SpeedStat spdStat;
 }
