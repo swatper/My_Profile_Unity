@@ -17,7 +17,6 @@ MonoBehaviour:
   ID: 2
   Description: "\uC815\uBCF4\uCC98\uB9AC\"\uAE30\uC0AC\"\uC18D\uB3C4 \uB290\uB9BC
     but \uCCB4\uB825 \uB192\uC74C"
-  MaxHP: 20
-  MoveSpeed: 2
-  pID: 0
   MagnetRange: 2
+  Hp: {fileID: 11400000, guid: ae36d3ccc6dd82d4588e3915553b4490, type: 2}
+  Speed: {fileID: 11400000, guid: 687117527179fd24da124ee3ce63a49f, type: 2}

@@ -10,7 +10,6 @@ public class SurvivalSceneDirector : BaseSceneDirector
 {
     public static SurvivalSceneDirector Instance { get; private set; }
     public PoolManager poolManager;
-    [SerializeField] CinemachineVirtualCamera virtualCamera;
     [Header("Exp Info")]
     [SerializeField] EXPUI expBar;
     [SerializeField] ExpData expData;
@@ -34,7 +33,6 @@ public class SurvivalSceneDirector : BaseSceneDirector
     }
     protected override void InitScene()
     {
-        virtualCamera.Follow = GameManager.Player.transform;
         pController = GameManager.Player;
         pController.InitPlayerInSurvival();
         //무기 관리 스크립트 추가

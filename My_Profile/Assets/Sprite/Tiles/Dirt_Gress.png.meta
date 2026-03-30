@@ -93,6 +93,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -101,7 +114,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 481
+        y: 453
         width: 220
         height: 220
       alignment: 0
@@ -118,53 +131,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_Gress_2
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 473
-        width: 220
-        height: 220
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de67ecf5ccdc3ee448dc44b6291c76a9
-      internalID: 1982438867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dirt_Gress_3
-      rect:
-        serializedVersion: 2
-        x: 507
-        y: 473
-        width: 220
-        height: 220
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f85c8c58667c4d840a98c1bf1ef825bd
-      internalID: 1296351788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Dirt_Gress_4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 240
+        x: 0
+        y: 228
         width: 220
         height: 220
       alignment: 0
@@ -184,8 +155,8 @@ TextureImporter:
       name: Dirt_Gress_5
       rect:
         serializedVersion: 2
-        x: 509
-        y: 245
+        x: 450
+        y: 230
         width: 220
         height: 220
       alignment: 0
@@ -205,8 +176,8 @@ TextureImporter:
       name: Dirt_Gress_6
       rect:
         serializedVersion: 2
-        x: 6
-        y: 2
+        x: 0
+        y: 3
         width: 220
         height: 220
       alignment: 0
@@ -226,8 +197,8 @@ TextureImporter:
       name: Dirt_Gress_7
       rect:
         serializedVersion: 2
-        x: 256
-        y: 6
+        x: 227
+        y: 3
         width: 220
         height: 220
       alignment: 0
@@ -247,8 +218,8 @@ TextureImporter:
       name: Dirt_Gress_8
       rect:
         serializedVersion: 2
-        x: 509
-        y: 7
+        x: 451
+        y: 3
         width: 220
         height: 220
       alignment: 0
@@ -264,6 +235,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Dirt_Gress_2
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 452
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938a210a3d5eb80458def18e44262f59
+      internalID: 1982438867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dirt_Gress_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 453
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b2a83b124475f4c90d277e6c494b98
+      internalID: 1296351788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dirt_0
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 452
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503658c8e506d7b40a17ea91d8a1bfd6
+      internalID: -623758694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dirt_1
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 228
+        width: 220
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29846d49846904c41a7f2a73fb387681
+      internalID: 1040815968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -275,6 +330,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Dart_0: 1377034430
+      Dart_1: 1979872648
+      Dirt_0: -623758694
+      Dirt_1: 1040815968
       Dirt_Gress_1: -85297883
       Dirt_Gress_2: 1982438867
       Dirt_Gress_3: 1296351788

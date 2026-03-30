@@ -16,7 +16,6 @@ MonoBehaviour:
   Name: Engineer_Light
   ID: 1
   Description: "\uC815\uBCF4\uCC98\uB9AC\"\uAE30\uC0AC\""
-  MaxHP: 10
-  MoveSpeed: 4.5
-  pID: 0
   MagnetRange: 2
+  Hp: {fileID: 11400000, guid: e3e1cdc7f3f0b424aa939492018a535f, type: 2}
+  Speed: {fileID: 11400000, guid: 2beae5e1ee52010499bc241b2578ffac, type: 2}

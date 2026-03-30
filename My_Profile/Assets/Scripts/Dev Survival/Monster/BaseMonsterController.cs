@@ -90,11 +90,11 @@ public class BaseMonsterController : MonoBehaviour
         collision.GetComponent<BaseBullet>().HitMonster(this);
     }
 
-    public void OnHit(float damage, bool needKnockBack = true)
+    public void OnHit(float damage, bool needKnockBack = true, float KnockBackPower = 1f)
     {
         mStat.curHp -= damage;
         if (needKnockBack) 
-            StartCoroutine("KnockBack");
+            StartCoroutine(KnockBack(KnockBackPower));
         if (mStat.curHp > 0)
             mAnimator.SetTrigger("Hit");
         else{
@@ -103,10 +103,10 @@ public class BaseMonsterController : MonoBehaviour
         }
     }
 
-    IEnumerator KnockBack() { 
+    IEnumerator KnockBack(float power) { 
         yield return null;
         Vector3 playerPos = GameManager.Player.transform.position;
         Vector3 dirVec = transform.position - playerPos;
-        rigid.AddForce(dirVec.normalized * mStat.KnockBack, ForceMode2D.Impulse);
+        rigid.AddForce(dirVec.normalized * mStat.KnockBack * power, ForceMode2D.Impulse);
     }
 }

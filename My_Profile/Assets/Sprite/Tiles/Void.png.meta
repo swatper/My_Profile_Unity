@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81ee9fb33e264ec4caaf3f5233ff10be
+guid: 172c3af627d9eef4383ecf3d8cbfc65d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,18 +34,18 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 220
@@ -93,15 +93,28 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dirt_01
+      name: Void_0
       rect:
         serializedVersion: 2
-        x: 118
-        y: 708
+        x: 1
+        y: 41
         width: 220
         height: 220
       alignment: 0
@@ -111,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 292a9ed045b59ea4f88b1562dd566a74
-      internalID: -654571320
+      spriteID: 94f615dcf36ca2642a2b953251b287c8
+      internalID: -1538069579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dirt_02
+      name: Void_1
       rect:
         serializedVersion: 2
-        x: 402
-        y: 708
+        x: 226
+        y: 41
         width: 220
         height: 220
       alignment: 0
@@ -132,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f52466b98d8e0f4baac045ce5e135ba
-      internalID: -712404791
+      spriteID: f5198ab31cd41ff499a8a44568f2d777
+      internalID: 1137515089
       vertices: []
       indices: 
       edges: []
@@ -149,15 +162,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dirt_01: -654571320
-      Dirt_02: -712404791
-      Dirt_Gress_1: 755956729
-      Dirt_Gress_2: -550043999
-      Dirt_Gress_3: -1708180857
-      Gress_01: -1387421410
-      Gress_03: -1307741182
-      Gress_04: 1852504165
-      Vertical_Dairt_Gress: 859172330
+      Gress_1: 12286155
+      Gress_2: -79975822
+      Gress_3: 124065987
+      Gress_4: 1749909866
+      Gress_5: -1619486688
+      Gress_6: -196332805
+      Gress_7: -1924176117
+      Void_0: -1538069579
+      Void_1: 1137515089
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hp
   m_EditorClassIdentifier: 
   levelTables:
-  - MaxHp: 4.5
-  - MaxHp: 0
-  - MaxHp: 0
+  - MaxHp: 15
+  - MaxHp: 17
+  - MaxHp: 20

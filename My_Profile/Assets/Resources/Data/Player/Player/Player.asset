@@ -17,5 +17,5 @@ MonoBehaviour:
   ID: 0
   Description: "\uB300\uD559\uC0DD"
   MagnetRange: 3
-  Hp: {fileID: 0}
-  Speed: {fileID: 0}
+  Hp: {fileID: 11400000, guid: 74eb29d1bbe825e4e9f75c50a577adf6, type: 2}
+  Speed: {fileID: 11400000, guid: bed235249a0e2fc47b0a79042ac58499, type: 2}

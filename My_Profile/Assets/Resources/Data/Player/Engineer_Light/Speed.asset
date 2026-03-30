@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTables:
   - spd: 4.5
-  - spd: 4.8
-  - spd: 5
+  - spd: 5.1
+  - spd: 5.8
