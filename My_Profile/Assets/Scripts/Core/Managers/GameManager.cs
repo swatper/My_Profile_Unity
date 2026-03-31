@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        //프레임 설정 (제한 없음-> 하드웨어와 브라우저 설정이 허락하는 최대치)
+        Application.targetFrameRate = -1;
         StartTimer();
         SetupUILoading();
         InitPerformanceHUD();
