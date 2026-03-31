@@ -27,7 +27,6 @@ public abstract class BaseWeapon : BaseUpgradeModel<WeaponStat>, IUpgradable
             return;
         }
 
-
         base.Upgrade();
         InitWeaponData();
     }

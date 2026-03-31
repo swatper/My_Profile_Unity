@@ -98,7 +98,7 @@ public class PoolManager : MonoBehaviour
         if (spawnDir == Vector2.zero)
             spawnDir = Random.insideUnitCircle.normalized;
         Vector3 spawnPos = pController.transform.position
-            + (Vector3)(spawnDir * 15f)
+            + (Vector3)(spawnDir * 22f)
             + new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0);
         mTransform.position = spawnPos;
     }

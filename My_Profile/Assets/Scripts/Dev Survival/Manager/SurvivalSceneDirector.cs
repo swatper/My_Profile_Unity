@@ -136,7 +136,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
 
                 //무기인지 능력치인지 확인
                 IUpgradable target;
-                if ((int)randomType < 3) 
+                if ((int)randomType < 4) 
                     target = wHandler.GetWeaponScript(randomType);
                 else
                     target = pController;

@@ -14,11 +14,10 @@ public class BaseBullet : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
     }
 
-    public virtual void Init(float damage, int cnt, Vector3 dir)
+    public virtual void Init(float damage, int cnt, Vector3 dir = default)
     {
         Damage = damage;
         piercingCnt = cnt;
-        StopAllCoroutines();
 
         gameObject.SetActive(true);
         if (piercingCnt >= 0) {
@@ -26,7 +25,6 @@ public class BaseBullet : MonoBehaviour
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
-        StartCoroutine("DeactivateAfterTime");
     }
 
     protected virtual void  ReturnBullet() {
@@ -37,6 +35,9 @@ public class BaseBullet : MonoBehaviour
 
     public virtual void HitMonster(BaseMonsterController monster) {
         monster.OnHit(Damage);
+        if (piercingCnt < 0)
+            return;
+
         piercingCnt--;
         if (piercingCnt < 0){
             ReturnBullet();

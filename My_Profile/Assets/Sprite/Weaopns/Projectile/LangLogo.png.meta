@@ -114,7 +114,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 11
+        y: 219
         width: 154
         height: 174
       alignment: 0
@@ -135,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 181
-        y: 8
+        y: 218
         width: 156
         height: 177
       alignment: 0
@@ -152,22 +152,43 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: java
+      name: Java
       rect:
         serializedVersion: 2
-        x: 348
-        y: 8
-        width: 156
-        height: 177
+        x: 2
+        y: 19
+        width: 143
+        height: 169
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5541cc635d98ca440977b504c03f27a8
-      internalID: 1638415960
+      spriteID: de73849199da3cd408b7c881247cb837
+      internalID: 1493570386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unity
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 2
+        width: 183
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9252a5201befc954281aa8f4de00f57f
+      internalID: -246271565
       vertices: []
       indices: 
       edges: []
@@ -185,6 +206,8 @@ TextureImporter:
     nameFileIdTable:
       Cpp: -1355966995
       Cs: 938879508
+      Java: 1493570386
+      Unity: -246271565
       java: 1638415960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

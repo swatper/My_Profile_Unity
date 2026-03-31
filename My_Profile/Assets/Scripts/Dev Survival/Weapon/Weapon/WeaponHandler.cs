@@ -10,7 +10,8 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] List<string> weaponPaths=new List<string> {
         "Weapon/CppCrossbow",
         "Weapon/CSharpStaff",
-        "Weapon/FlutterWidget"
+        "Weapon/FlutterWidget",
+        "Weapon/UnityBook"
     };
     [SerializeField] List<BaseWeapon> weaponList = new List<BaseWeapon>();
     [SerializeField] Transform pPivot;

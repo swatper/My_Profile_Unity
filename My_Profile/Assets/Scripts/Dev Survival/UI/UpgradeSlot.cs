@@ -29,7 +29,7 @@ public class UpgradeSlot : MonoBehaviour
 
         uID = (int)targetType;
 
-        if (uID < 3){
+        if (uID < 4){
             if (upgradeTarget.CanUpgrade())
                 return false;  //다른 업글 항목으로 다시 요청
             SetWeaponInfo();

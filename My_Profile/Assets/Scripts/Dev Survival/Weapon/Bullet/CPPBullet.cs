@@ -14,8 +14,10 @@ public class CPPBullet : BaseBullet
 
     public override void Init(float damage, int cnt, Vector3 dir)
     {
+        StopAllCoroutines();
         trail.Clear();
         base.Init(damage, cnt, dir);
+        StartCoroutine("DeactivateAfterTime");
     }
 
     protected override void ReturnBullet()

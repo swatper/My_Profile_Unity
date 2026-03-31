@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public struct WeaponStat
 {
     public float WeaponDamage;
-    [Tooltip("공격 주기")]
+    [Tooltip("초당 공격 속도")]
     public float WeaponSpeed;
     public int PierceCount;
     [Tooltip("Radius")]
