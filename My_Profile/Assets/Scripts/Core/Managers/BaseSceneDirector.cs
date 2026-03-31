@@ -5,6 +5,7 @@ using UnityEngine;
 public class BaseSceneDirector : MonoBehaviour
 {
     [SerializeField] string nextSceneName;
+    [SerializeField] OnOffIconBase[] icons;
 
     private void Start(){
         InitScene();
@@ -19,5 +20,12 @@ public class BaseSceneDirector : MonoBehaviour
         GameManager.SceneLoader.LoadScene(nextSceneName);
     }
 
-    protected virtual void InitScene() { }
+    protected virtual void InitScene() {
+        for (int i = 0; i < icons.Length; i++) {
+            icons[i].InitStatus();
+        }
+    }
+
+    public virtual void MuteSound() { }
+    public virtual void UnMuteSound() { }
 }

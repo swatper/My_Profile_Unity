@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundClipController : TimeSensitiveControllerBase
+public class VillageSoundController : TimeSensitiveControllerBase
 {
     [SerializeField] AudioSource bgmBox;
     [SerializeField] AudioSource ambBox;
@@ -27,10 +27,18 @@ public class SoundClipController : TimeSensitiveControllerBase
             lastTOD = newTime;
         }
     }
+
+    /// <summary>
+    /// Volume만 조절
+    /// </summary>
     public void MuteAllSound() {
         bgmBox.volume = 0;
         ambBox.volume = 0;
     }
+
+    /// <summary>
+    /// Volume만 조절
+    /// </summary>
     public void UnMuteAllSound()
     {
         bgmBox.volume = 0.35f;

@@ -10,6 +10,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
 {
     public static SurvivalSceneDirector Instance { get; private set; }
     public PoolManager poolManager;
+    [SerializeField] SurvivalSoundController soundController;
     [Header("Exp Info")]
     [SerializeField] EXPUI expBar;
     [SerializeField] ExpData expData;
@@ -39,14 +40,25 @@ public class SurvivalSceneDirector : BaseSceneDirector
         if (pController.GetComponent<WeaponHandler>() == null)
             wHandler = GameManager.Player.gameObject.AddComponent<WeaponHandler>();
         poolManager = FindObjectOfType<PoolManager>();
+        base.InitScene();
+        soundController.Init();
         GameManager.SceneLoader.SceneReady();
     }
+
     public override void GoToScene()
     {
         //公扁 包府 胶农赋飘 力芭
         if (wHandler != null)
             Destroy(wHandler);
         base.GoToScene();
+    }
+
+    public override void MuteSound(){
+        soundController.MuteAllSound();
+    }
+
+    public override void UnMuteSound(){
+        soundController.UnMuteAllSound();
     }
 
     public void PaseUp(){
@@ -56,12 +68,14 @@ public class SurvivalSceneDirector : BaseSceneDirector
     {
         GameManager.Player.ReadUIInfo();
         solt.SetActive(true);
+        soundController.PlayLevelUpEffect(0);
         Time.timeScale = 0f;
         InitSlots();
     }
 
     public void Resume()
     {
+        soundController.PlayLevelUpEffect(0);
         GameManager.Player.StopReadUIInfo();
         solt.SetActive(false);
         Time.timeScale = 1.0f;

@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
     public Action<TimeOfDay> OnTimeOfDayChanged;
     [Header("HUD 상태")]
     bool isDisplaying = false;
+    [Header("버튼 상태")]
+    public bool IsMute = false;
+    public bool IsFullScreen = false;
 
     static void Init()
     {

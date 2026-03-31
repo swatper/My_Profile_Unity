@@ -17,6 +17,7 @@ public class BaseMonsterController : MonoBehaviour
     [SerializeField] Collider2D mColl;
     [SerializeField] SpriteRenderer mSprite;
     [SerializeField] Animator mAnimator;
+    [SerializeField] AudioSource mAudioClip;
 
     /// <summary>
     /// PoolManager°¡ ÁøÇà
@@ -93,10 +94,13 @@ public class BaseMonsterController : MonoBehaviour
     public void OnHit(float damage, bool needKnockBack = true, float KnockBackPower = 1f)
     {
         mStat.curHp -= damage;
+        mAudioClip.Play();
+
         if (needKnockBack) 
             StartCoroutine(KnockBack(KnockBackPower));
-        if (mStat.curHp > 0)
+        if (mStat.curHp > 0) {
             mAnimator.SetTrigger("Hit");
+        }
         else{
             mStat.isDead = true;
             SetComponentState(mStat.isDead);

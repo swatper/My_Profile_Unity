@@ -5,15 +5,31 @@ using UnityEngine.UI;
 
 public class DebugSceneDirector : BaseSceneDirector
 {
+    public static DebugSceneDirector Instance { get; private set; }
     [SerializeField] bool IsSceneProtected = false;
     [SerializeField] GameObject checkUI;
     [SerializeField] InputField code;
     [SerializeField] Text message;
+    public VillageSoundController soundController;
+
+    private void Awake(){
+        Instance = this;
+    }
+
     protected override void InitScene()
     {
+        base.InitScene();
         GameManager.Player.InitPlayerInVillagel();
         GameManager.Player.StopReadUIInfo();
         SceneReady();
+    }
+
+    public override void MuteSound(){
+        soundController.MuteAllSound();
+    }
+
+    public override void UnMuteSound(){
+        soundController.UnMuteAllSound();
     }
 
 //#if UNITY_EDITOR
