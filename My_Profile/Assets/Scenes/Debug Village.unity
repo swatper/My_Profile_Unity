@@ -818,7 +818,6 @@ MonoBehaviour:
   icons:
   - {fileID: 184845278}
   - {fileID: 1063665591}
-  IsSceneProtected: 1
   checkUI: {fileID: 1677222013}
   code: {fileID: 1823040814}
   message: {fileID: 1005248259}
@@ -9734,7 +9733,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 8, y: -15}
-  m_SizeDelta: {x: 300, y: 45}
+  m_SizeDelta: {x: 400, y: 45}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &999525661
 MonoBehaviour:
@@ -23223,7 +23222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8, y: -99}
+  m_AnchoredPosition: {x: 8, y: -104}
   m_SizeDelta: {x: 200, y: 37}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2123254042
@@ -23248,7 +23247,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 35a6d1cdb3bb9ab42986c0bbcfee933b, type: 3}
-    m_FontSize: 35
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
