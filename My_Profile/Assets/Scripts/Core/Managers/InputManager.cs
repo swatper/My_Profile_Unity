@@ -40,7 +40,7 @@ public class InputManager
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
             KeyPress.Invoke(KeyEvent.Enter);
         }
-        if (Input.GetKeyDown(KeyCode.F1)) {
+        if (Input.GetKeyDown(KeyCode.F2)) {
             KeyPress.Invoke(KeyEvent.Debug);
         }
     }

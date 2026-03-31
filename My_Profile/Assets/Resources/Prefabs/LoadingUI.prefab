@@ -173,7 +173,7 @@ GameObject:
   m_Layer: 5
   m_Name: LoadingUI
   m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: cf11117d4d6ad7c47a3a6530b270556c, type: 3}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

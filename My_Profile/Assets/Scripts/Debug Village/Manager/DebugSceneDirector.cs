@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DebugSceneDirector : BaseSceneDirector
 {
     public static DebugSceneDirector Instance { get; private set; }
-    [SerializeField] bool IsSceneProtected = false;
+    bool IsSceneProtected = false;
     [SerializeField] GameObject checkUI;
     [SerializeField] InputField code;
     [SerializeField] Text message;
