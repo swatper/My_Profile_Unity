@@ -134,36 +134,44 @@ public class SurvivalSceneDirector : BaseSceneDirector
 
     #region 슬롯 초기화용
     void InitSlots() {
-        List<UpgradeType> selectedTypes = new List<UpgradeType>();
+        List<UpgradeType> availableUpgrades = new List<UpgradeType>();
         int totalCount = Enum.GetNames(typeof(UpgradeType)).Length;
         PlayerController pController = GameManager.Player;
 
+        //업글 가능한 무기들 미리 준비
+        for (int i = 0; i < totalCount; i++){
+            UpgradeType type = (UpgradeType)i;
+            IUpgradable target;
+
+            if (i < 4)
+                target = wHandler.GetWeaponScript(type);
+            else
+                target = pController;
+
+            if (target.CanUpgrade()){
+                availableUpgrades.Add(type);
+            }
+        }
+
+        //섞기
+        for (int i = 0; i < availableUpgrades.Count; i++){
+            UpgradeType temp = availableUpgrades[i];
+            int randomIndex = UnityEngine.Random.Range(i, availableUpgrades.Count);
+            availableUpgrades[i] = availableUpgrades[randomIndex];
+            availableUpgrades[randomIndex] = temp;
+        }
+
         //슬롯에 업글 대상 넘겨주기
         for (int i = 0; i < slots.Length; i++){
-            bool isSuccess = false;
-            UpgradeType randomType;
-            while (!isSuccess){
-                randomType = (UpgradeType)UnityEngine.Random.Range(0, totalCount);
-
-                //중복 확인
-                if (selectedTypes.Contains(randomType))
-                    continue;
-
-                //무기인지 능력치인지 확인
-                IUpgradable target;
-                if ((int)randomType < 4) 
-                    target = wHandler.GetWeaponScript(randomType);
-                else
-                    target = pController;
-
-                //할당 시도(만랩 확인)
-                if (slots[i].InitSlot(randomType, target)) {
-                    selectedTypes.Add(randomType);
-                    isSuccess = true;
-                }
-                else
-                    selectedTypes.Add(randomType);
+            if (i >= availableUpgrades.Count){
+                slots[i].gameObject.SetActive(false);
+                continue;
             }
+
+            UpgradeType selectedType = availableUpgrades[i];
+            IUpgradable target = ((int)selectedType < 4) ? wHandler.GetWeaponScript(selectedType) : pController;
+            slots[i].gameObject.SetActive(true);
+            slots[i].InitSlot(selectedType, target);
         }
     }
     #endregion

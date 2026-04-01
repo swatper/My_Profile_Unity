@@ -26,7 +26,7 @@ public class BaseUpgradeModel <T>: MonoBehaviour, IUpgradable where T : struct
             isMaxLevel = true;
     }
 
-    public virtual bool CanUpgrade() => isMaxLevel;
+    public virtual bool CanUpgrade() => !isMaxLevel;
 
     public virtual bool GetUnlockState() => isUnlocked;
 

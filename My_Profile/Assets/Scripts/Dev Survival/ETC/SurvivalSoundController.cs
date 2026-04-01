@@ -34,6 +34,6 @@ public class SurvivalSoundController : MonoBehaviour
     /// Volume¸¸ Á¶Àý
     /// </summary>
     public void UnMuteAllSound() {
-        bgmSpeaker.volume = 0.3f;
+        bgmSpeaker.volume = 0.25f;
     }
 }

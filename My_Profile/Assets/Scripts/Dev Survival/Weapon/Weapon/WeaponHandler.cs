@@ -56,18 +56,6 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
-    public string GetUpgradeInfo(UpgradeType type) {
-        return GetWeaponScript(type).GetDescription();
-    }
-
-    public bool CheckUpgradeable(UpgradeType type) {
-        return GetWeaponScript(type).CanUpgrade();
-    }
-
-    public bool CheckUnlock(UpgradeType type) {
-        return GetWeaponScript(type).isUnlocked;
-    }
-
     public BaseWeapon GetWeaponScript(UpgradeType type){
         return weaponList[(int)type];
     }
@@ -77,10 +65,10 @@ public class WeaponHandler : MonoBehaviour
         weaponList[(int)type].gameObject.SetActive(true);
     }
 
-    private void OnDestroy()
-    {
+    private void OnDestroy(){
         Destroy(weaponContainer);
     }
+
     //#if UNITY_EDITOR
     public void WeaponUpgradeButton(int wID) {
         BaseWeapon targret = weaponList[wID];

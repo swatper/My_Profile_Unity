@@ -60,8 +60,7 @@ public class PoolManager : MonoBehaviour
 //#endif
 
     //Pool에 최대 유닛 수 만큼 몬스터 넣기
-    public void InitPool()
-    {
+    public void InitPool(){
         //몬스터 Pool 준비
         for (int i = curUnit; i < paseState.MaxUnit; i++){
             CreateNewMonster();

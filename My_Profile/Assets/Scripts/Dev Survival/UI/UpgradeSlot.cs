@@ -12,7 +12,7 @@ public class UpgradeSlot : MonoBehaviour
     [SerializeField] Text targetName;
     [SerializeField] Text targetDesc;
     [SerializeField] UpgradeType targetType;
-    int uID;
+    int upID;
     [SerializeField] Image icon;
     [SerializeField] Sprite defaultIcon;
     [SerializeField] GameObject[] fileNames;
@@ -24,15 +24,13 @@ public class UpgradeSlot : MonoBehaviour
     /// </summary>
     /// <param name="type"></param>
     /// <returns>업그레이드 가능 여부</returns>
-    public bool InitSlot(UpgradeType type, IUpgradable target) {
+    public void InitSlot(UpgradeType type, IUpgradable target) {
         targetType = type;
         upgradeTarget = target;
 
-        uID = (int)targetType;
+        upID = (int)targetType;
 
-        if (uID < 4){
-            if (upgradeTarget.CanUpgrade())
-                return false;  //다른 업글 항목으로 다시 요청
+        if (upID < 4){
             SetWeaponInfo();
         }
         else
@@ -44,8 +42,6 @@ public class UpgradeSlot : MonoBehaviour
             icon.sprite = target.GetIcon();
         else
             icon.sprite = defaultIcon;
-
-            return true;
     }
 
     void SetWeaponInfo() {

@@ -113,9 +113,9 @@ TextureImporter:
       name: Tab_1
       rect:
         serializedVersion: 2
-        x: 138
-        y: 210
-        width: 470
+        x: 7
+        y: 546
+        width: 440
         height: 360
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -134,9 +134,9 @@ TextureImporter:
       name: Tab_2
       rect:
         serializedVersion: 2
-        x: 680
-        y: 210
-        width: 470
+        x: 539
+        y: 554
+        width: 440
         height: 360
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -155,8 +155,8 @@ TextureImporter:
       name: Enter_2
       rect:
         serializedVersion: 2
-        x: 649
-        y: 600
+        x: 490
+        y: 944
         width: 470
         height: 430
       alignment: 0
@@ -176,8 +176,8 @@ TextureImporter:
       name: Enter_1
       rect:
         serializedVersion: 2
-        x: 135
-        y: 603
+        x: 0
+        y: 944
         width: 470
         height: 430
       alignment: 0
