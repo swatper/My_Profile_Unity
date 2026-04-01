@@ -113,8 +113,8 @@ TextureImporter:
       name: Tab_1
       rect:
         serializedVersion: 2
-        x: 7
-        y: 546
+        x: 8
+        y: 774
         width: 440
         height: 360
       alignment: 0
@@ -135,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 539
-        y: 554
+        y: 774
         width: 440
         height: 360
       alignment: 0
@@ -155,8 +155,8 @@ TextureImporter:
       name: Enter_2
       rect:
         serializedVersion: 2
-        x: 490
-        y: 944
+        x: 509
+        y: 1160
         width: 470
         height: 430
       alignment: 0
@@ -177,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 944
+        y: 1160
         width: 470
         height: 430
       alignment: 0
