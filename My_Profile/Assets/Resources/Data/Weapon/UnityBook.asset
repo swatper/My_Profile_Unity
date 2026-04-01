@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: UnityBook
   m_EditorClassIdentifier: 
   levelTables:
-  - WeaponDamage: 5
+  - WeaponDamage: 10
     WeaponSpeed: 0.2
     PierceCount: -1
     ScanRange: 4
-  - WeaponDamage: 10
+  - WeaponDamage: 14
     WeaponSpeed: 0.4
     PierceCount: -1
     ScanRange: 5
-  - WeaponDamage: 10
+  - WeaponDamage: 17
     WeaponSpeed: 0.7
     PierceCount: 0
     ScanRange: 6
@@ -30,5 +30,5 @@ MonoBehaviour:
     PierceCount: -1
     ScanRange: 7
   WeaponName: UnityHolyBook
-  WeaponIcon: {fileID: 0}
+  WeaponIcon: {fileID: -519129054, guid: f7792d90bd92d764aa42c005aff7d6a5, type: 3}
   Type: 3

@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: CsharpStaff
   m_EditorClassIdentifier: 
   levelTables:
-  - WeaponDamage: 7
+  - WeaponDamage: 8
     WeaponSpeed: 1
     PierceCount: 0
     ScanRange: 5
-  - WeaponDamage: 10
+  - WeaponDamage: 12
     WeaponSpeed: 1.3
     PierceCount: 0
     ScanRange: 6
-  - WeaponDamage: 12
+  - WeaponDamage: 15
     WeaponSpeed: 1.8
     PierceCount: 0
     ScanRange: 8
-  - WeaponDamage: 15
+  - WeaponDamage: 20
     WeaponSpeed: 2
     PierceCount: 0
     ScanRange: 9

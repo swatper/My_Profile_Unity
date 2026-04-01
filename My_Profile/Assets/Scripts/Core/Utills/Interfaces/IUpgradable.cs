@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public interface IUpgradable
@@ -12,4 +10,6 @@ public interface IUpgradable
     /// </summary>
     /// <returns></returns>
     public string GetDescription();
+
+    public Sprite GetIcon();
 }

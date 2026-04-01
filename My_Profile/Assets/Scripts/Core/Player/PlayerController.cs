@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
     [Header("Player Component")]
     [SerializeField] Rigidbody2D rigid;
     [SerializeField] private SpriteRenderer pSprite;
+    [SerializeField] private Sprite defaultStatIcon;
     [SerializeField] Animator pAnimator;
     [SerializeField] AnimatorOverrideController[] pAniControllers;
     [SerializeField] Transform playerPivot;
@@ -99,13 +100,12 @@ public class PlayerController : MonoBehaviour, IUpgradable
         pAnimator.runtimeAnimatorController = pAniControllers[pData.ID];
     }
 
-    public void Upgrade()
-    {
+    public void Upgrade(){
         Debug.Log("능력치 강화됨");
     }
 
     public bool CanUpgrade(){
-        throw new NotImplementedException();
+        return true;
     }
 
 
@@ -113,15 +113,16 @@ public class PlayerController : MonoBehaviour, IUpgradable
         return true;
     }
 
-    public string GetDescription()
-    {
+    public string GetDescription(){
         string info = "";
-        info += $"    Stat(?)++ \n";
+        info += $"    Null++ \n";
         return info + "}";
     }
+    public Sprite GetIcon(){
+        return defaultStatIcon;
+    }
 
-    public void UpgradeStat(UpgradeType type)
-    {
+    public void UpgradeStat(UpgradeType type){
         switch (type)
         {
             case UpgradeType.Hp:

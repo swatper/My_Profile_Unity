@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4cfb57c3ae06284bbd66c95e277f3ab, type: 3}
   m_Name: CppCrossbow
   m_EditorClassIdentifier: 
-  WeaponName: C++Corossbow
-  WeaponIcon: {fileID: -2031779718, guid: 88e03810229219441beec790df1dc48a, type: 3}
-  type: 0
   levelTables:
-  - WeaponDamage: 10
+  - WeaponDamage: 11
     WeaponSpeed: 0.5
     PierceCount: 1
     ScanRange: 7
-  - WeaponDamage: 12
+  - WeaponDamage: 13
     WeaponSpeed: 0.7
     PierceCount: 2
     ScanRange: 9
-  - WeaponDamage: 15
+  - WeaponDamage: 20
     WeaponSpeed: 1
     PierceCount: 2
     ScanRange: 11
-  - WeaponDamage: 20
+  - WeaponDamage: 30
     WeaponSpeed: 1.2
     PierceCount: 3
     ScanRange: 13
+  WeaponName: C++Corossbow
+  WeaponIcon: {fileID: -2031779718, guid: 88e03810229219441beec790df1dc48a, type: 3}
+  Type: 0

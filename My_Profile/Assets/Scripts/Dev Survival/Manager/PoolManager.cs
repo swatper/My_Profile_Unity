@@ -25,17 +25,17 @@ public class PoolManager : MonoBehaviour
         PreparePool();
     }
 
-    private void Start()
-    {
+    private void Start(){
         pController = GameManager.Player;
     }
 
     public void PaseUp() {
-        curPase++;
         if (curPase > spawnData.levelTables.Count - 1) {
             Debug.Log("최대 단계");
             return;
         }
+        curPase++;
+
         paseState = spawnData.levelTables[curPase];
         //대기하고 있는 전 단계 몬스터 제거
         while (monsterPool.Count > 0){
@@ -50,9 +50,8 @@ public class PoolManager : MonoBehaviour
         if (curPase <= 0) return;
         curPase--;
         paseState = spawnData.levelTables[curPase];
-        //대기하고 있는 전 단계 몬스터 제거
-        while (monsterPool.Count > 0)
-        {
+        //대기하고 있는 이전 단계 몬스터 제거
+        while (monsterPool.Count > 0){
             BaseMonsterController oldMonster = monsterPool.Dequeue();
             Destroy(oldMonster.gameObject);
         }

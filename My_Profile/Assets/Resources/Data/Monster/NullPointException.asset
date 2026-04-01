@@ -19,7 +19,7 @@ MonoBehaviour:
     KnockBack: 0.5
     Exp: 1
     isDead: 0
-  - curHp: 35
+  - curHp: 40
     curSpeed: 3
     Damage: 1
     KnockBack: 0.5
@@ -27,7 +27,5 @@ MonoBehaviour:
     isDead: 0
   Name: NullPointException
   ID: 1
-  Description: "\uC788\uC5C8\uB294\uB370 \uC556\uC5B4\uC694"
-  MaxHP: 0
-  MoveSpeed: 0
+  Description: "\uC788\uC5C8\uB294\uB370 \uC5C6\uC5B4"
   MonsterType: 0

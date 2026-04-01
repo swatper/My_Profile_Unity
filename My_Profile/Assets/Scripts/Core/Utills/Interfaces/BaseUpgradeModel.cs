@@ -30,8 +30,11 @@ public class BaseUpgradeModel <T>: MonoBehaviour, IUpgradable where T : struct
 
     public virtual bool GetUnlockState() => isUnlocked;
 
-    public  virtual string GetDescription()
-    {
+    public  virtual string GetDescription(){
+        return "";
+    }
+
+    public virtual Sprite GetIcon(){
         throw new System.NotImplementedException();
     }
 }

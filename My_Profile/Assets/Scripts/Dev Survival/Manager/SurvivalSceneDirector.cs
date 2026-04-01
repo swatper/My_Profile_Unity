@@ -64,6 +64,13 @@ public class SurvivalSceneDirector : BaseSceneDirector
     public void PaseUp(){
         poolManager.PaseUp();
     }
+
+    //#if UNITY_EDITOR
+    public void PaseDown(){
+        poolManager.PaseDown();
+    }
+    //#endif
+
     public void Puase()
     {
         GameManager.Player.ReadUIInfo();
@@ -80,12 +87,6 @@ public class SurvivalSceneDirector : BaseSceneDirector
         solt.SetActive(false);
         Time.timeScale = 1.0f;
     }
-
-    //#if UNITY_EDITOR
-    public void PaseDown() {
-        poolManager.PaseDown();
-    }
-//#endif
 
     #region 경험치용
 

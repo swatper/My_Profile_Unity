@@ -14,6 +14,7 @@ public class UpgradeSlot : MonoBehaviour
     [SerializeField] UpgradeType targetType;
     int uID;
     [SerializeField] Image icon;
+    [SerializeField] Sprite defaultIcon;
     [SerializeField] GameObject[] fileNames;
     [SerializeField] IUpgradable upgradeTarget;
     [SerializeField] WeaponHandler wHandler;
@@ -38,8 +39,13 @@ public class UpgradeSlot : MonoBehaviour
             SetStatInfo();
 
         targetName.text = $"//{targetType.ToString()}";
-        //icon.sprite =
-        return true;
+
+        if (target.GetIcon() != null)
+            icon.sprite = target.GetIcon();
+        else
+            icon.sprite = defaultIcon;
+
+            return true;
     }
 
     void SetWeaponInfo() {

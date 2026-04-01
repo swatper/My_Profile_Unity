@@ -22,15 +22,21 @@ MonoBehaviour:
   - MonsterID: 2
     MonsterLevel: 1
     MaxUnit: 120
-  - MonsterID: 0
+  - MonsterID: 3
     MonsterLevel: 2
     MaxUnit: 170
-  - MonsterID: 1
+  - MonsterID: 0
     MonsterLevel: 2
     MaxUnit: 280
-  - MonsterID: 2
+  - MonsterID: 1
     MonsterLevel: 2
     MaxUnit: 350
-  - MonsterID: 3
-    MonsterLevel: 1
+  - MonsterID: 2
+    MonsterLevel: 2
     MaxUnit: 400
+  - MonsterID: 3
+    MonsterLevel: 2
+    MaxUnit: 500
+  - MonsterID: 4
+    MonsterLevel: 1
+    MaxUnit: 600

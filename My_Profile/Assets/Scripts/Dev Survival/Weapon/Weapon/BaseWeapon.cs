@@ -67,6 +67,10 @@ public abstract class BaseWeapon : BaseUpgradeModel<WeaponStat>, IUpgradable
         return info + "}";
     }
 
+    public override Sprite GetIcon(){
+        return wData.WeaponIcon;
+    }
+
     protected abstract void Attack();
     protected abstract void InitWeaponData();
 }

@@ -296,16 +296,14 @@ MonoBehaviour:
   pData: {fileID: 11400000, guid: 483112d392eb5b446badd4f1ea2fe3a8, type: 2}
   pState:
     pName: 
-    pID: 0
     pDesc: 
-    curHp: 0
-    curSpeed: 0
     curMagnetRange: 0
     curExp: 0
     isDead: 0
     isReadingInfo: 0
   rigid: {fileID: 4033354161993616692}
   pSprite: {fileID: 7176890837902994793}
+  defaultStatIcon: {fileID: 934571490, guid: 0d5e657ee5a074e4baa53d5b248a01d2, type: 3}
   pAnimator: {fileID: 5047424141096528091}
   pAniControllers:
   - {fileID: 22100000, guid: 2ab99d63d9b3bd54bb13a1221101048f, type: 2}

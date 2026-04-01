@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: FlutterGarlic
   m_EditorClassIdentifier: 
   levelTables:
-  - WeaponDamage: 2
+  - WeaponDamage: 8
     WeaponSpeed: 1.7
     PierceCount: 0
     ScanRange: 1.3
-  - WeaponDamage: 3
+  - WeaponDamage: 11
     WeaponSpeed: 1.7
     PierceCount: 0
     ScanRange: 1.5
-  - WeaponDamage: 5
+  - WeaponDamage: 15
     WeaponSpeed: 1.7
     PierceCount: 0
     ScanRange: 2
-  - WeaponDamage: 8
+  - WeaponDamage: 18
     WeaponSpeed: 1.7
     PierceCount: 0
     ScanRange: 2.3

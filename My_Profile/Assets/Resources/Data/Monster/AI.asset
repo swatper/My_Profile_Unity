@@ -13,15 +13,13 @@ MonoBehaviour:
   m_Name: AI
   m_EditorClassIdentifier: 
   levelTables:
-  - curHp: 100
+  - curHp: 120
     curSpeed: 3
     Damage: 30
     KnockBack: 0.1
     Exp: 1
     isDead: 0
   Name: AI
-  ID: 3
+  ID: 4
   Description: "\uB108\uC758 \uC9C1\uC5C5 AI\uB85C \uB300\uCCB4\uB418\uC5C8\uB2E4"
-  MaxHP: 0
-  MoveSpeed: 0
   MonsterType: 0

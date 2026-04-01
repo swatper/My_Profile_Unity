@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 public class EditorUI : MonoBehaviour
 {
     [SerializeField] WeaponHandler wHandler;
@@ -27,4 +27,4 @@ public class EditorUI : MonoBehaviour
     }
 
 }
-#endif
+//#endif
