@@ -113,8 +113,8 @@ TextureImporter:
       name: Tab_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 774
+        x: 16
+        y: 315
         width: 440
         height: 360
       alignment: 0
@@ -134,8 +134,8 @@ TextureImporter:
       name: Tab_2
       rect:
         serializedVersion: 2
-        x: 539
-        y: 774
+        x: 549
+        y: 315
         width: 440
         height: 360
       alignment: 0
@@ -155,8 +155,8 @@ TextureImporter:
       name: Enter_2
       rect:
         serializedVersion: 2
-        x: 509
-        y: 1160
+        x: 506
+        y: 704
         width: 470
         height: 430
       alignment: 0
@@ -177,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1160
+        y: 704
         width: 470
         height: 430
       alignment: 0
@@ -193,6 +193,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Arrow_0
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 316
+        width: 265
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8089707bb66889946a46672b4642448a
+      internalID: 514840553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arrow_1
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 316
+        width: 265
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff97e1aa58d7824eba3c7ef0d1ff1e9
+      internalID: -1811041466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 9
+        width: 265
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec473641fef765248adfd5bb4612d8cc
+      internalID: 919970541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_1
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 13
+        width: 265
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5ba472a60cb2f44a6edb80e0cbd7e1
+      internalID: -707588511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -204,6 +288,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Arrow_0: 514840553
+      Arrow_1: -1811041466
+      E_0: 919970541
+      E_1: -707588511
       Enter_1: -332580925
       Enter_2: -578268000
       Tab_1: 1699793854

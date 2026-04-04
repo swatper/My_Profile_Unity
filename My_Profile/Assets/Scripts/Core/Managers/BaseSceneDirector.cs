@@ -6,6 +6,7 @@ public class BaseSceneDirector : MonoBehaviour
 {
     [SerializeField] string nextSceneName;
     [SerializeField] OnOffIconBase[] icons;
+    public GameObject mobileKeyBoard;
 
     private void Start(){
         InitScene();
@@ -28,4 +29,12 @@ public class BaseSceneDirector : MonoBehaviour
 
     public virtual void MuteSound() { }
     public virtual void UnMuteSound() { }
+
+    public virtual void SetPcMode() {
+        mobileKeyBoard.SetActive(false);
+    }
+
+    public virtual void SetMobileMode() {
+        mobileKeyBoard.SetActive(true);
+    }
 }

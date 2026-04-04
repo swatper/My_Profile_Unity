@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     [Header("버튼 상태")]
     public bool IsMute = false;
     public bool IsFullScreen = false;
+    public bool isMobile = false;
 
     static void Init()
     {

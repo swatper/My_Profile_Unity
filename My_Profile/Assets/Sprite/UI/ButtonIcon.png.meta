@@ -114,7 +114,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 225
+        y: 454
         width: 205
         height: 186
       alignment: 0
@@ -134,8 +134,8 @@ TextureImporter:
       name: Sound_Off
       rect:
         serializedVersion: 2
-        x: 262
-        y: 224
+        x: 263
+        y: 453
         width: 205
         height: 186
       alignment: 0
@@ -155,8 +155,8 @@ TextureImporter:
       name: FullScreen_On
       rect:
         serializedVersion: 2
-        x: 32
-        y: 15
+        x: 34
+        y: 243
         width: 205
         height: 186
       alignment: 0
@@ -176,8 +176,8 @@ TextureImporter:
       name: FullScreen_Off
       rect:
         serializedVersion: 2
-        x: 262
-        y: 14
+        x: 263
+        y: 243
         width: 205
         height: 186
       alignment: 0
@@ -189,6 +189,48 @@ TextureImporter:
       bones: []
       spriteID: 8a2669b082594a04082450618554e3ea
       internalID: 1152359544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 23
+        width: 205
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e60ccca646bdf478307ebf7d20fcae
+      internalID: -1134803406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 23
+        width: 205
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ae5579cfe9ed842b0d34641b5a7c11
+      internalID: 1540995256
       vertices: []
       indices: 
       edges: []
@@ -206,6 +248,8 @@ TextureImporter:
     nameFileIdTable:
       FullScreen_Off: 1152359544
       FullScreen_On: 491830940
+      Mobile: 1540995256
+      PC: -1134803406
       Sound_Off: -470307136
       Sound_On: -1396668460
   mipmapLimitGroupName: 

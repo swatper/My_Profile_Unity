@@ -45,6 +45,14 @@ public class InputManager
         }
     }
 
+    /// <summary>
+    /// 외부 키 용
+    /// </summary>
+    /// <param name="type"></param>
+    public void RequestKeyEvent(KeyEvent type){
+        KeyPress?.Invoke(type);
+    }
+
     public void SubscribeKeyEvent(Action<KeyEvent> tragetMethod) {
         KeyPress += tragetMethod;
     }

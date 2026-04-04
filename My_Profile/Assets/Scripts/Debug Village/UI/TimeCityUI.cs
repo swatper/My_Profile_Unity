@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainUI : MonoBehaviour
+public class TimeCityUI : MonoBehaviour
 {
     [Tooltip("현재 위치 및 시간 정보")]
     [SerializeField] Text clock;
