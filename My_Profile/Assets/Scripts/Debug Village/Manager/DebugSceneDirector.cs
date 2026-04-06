@@ -7,6 +7,7 @@ public class DebugSceneDirector : BaseSceneDirector
 {
     public static DebugSceneDirector Instance { get; private set; }
     bool IsSceneProtected = false;
+    [SerializeField] GithubChecker commitField;
     [SerializeField] GameObject checkUI;
     [SerializeField] InputField code;
     [SerializeField] Text message;
@@ -21,6 +22,7 @@ public class DebugSceneDirector : BaseSceneDirector
         base.InitScene();
         GameManager.Player.InitPlayerInVillagel();
         GameManager.Player.StopReadUIInfo();
+        commitField.CheckCommit();
         SceneReady();
     }
 

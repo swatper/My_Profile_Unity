@@ -124,6 +124,7 @@ public class GameManager : MonoBehaviour
         //점심/낮: 12시부터 18시
         else
             curTOD = TimeOfDay.Day;
+
         OnTimeOfDayChanged?.Invoke(curTOD);
 
     }

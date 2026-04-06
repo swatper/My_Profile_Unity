@@ -256,6 +256,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: FieldBoard_1
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 81
+        width: 194
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f267e2d19b06641a00003f1797046a
+      internalID: -1206652256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FieldBoard_2
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 80
+        width: 194
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70dc27935b8a0a548877708d116c0b01
+      internalID: -547810665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -268,6 +310,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Bush: 1385943217
+      FieldBoard_1: -1206652256
+      FieldBoard_2: -547810665
       Lamp_1: 579768366
       Lamp_2: 23677772
       Portal: -616967691
