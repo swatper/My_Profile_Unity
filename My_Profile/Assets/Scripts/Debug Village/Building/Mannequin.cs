@@ -25,7 +25,7 @@ public class Mannequin : KeyHintDisplay
 
     protected override void OnInteract(Define.KeyEvent keyEvent)
     {
-        if (keyEvent == Define.KeyEvent.Tab && playerController != null  && isEnter) {
+        if ((keyEvent == Define.KeyEvent.Tab || keyEvent == Define.KeyEvent.Enter) && playerController != null  && isEnter) {
             playerController.ChangeStat(skinStat);
         }
     }

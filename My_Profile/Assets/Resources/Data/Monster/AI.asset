@@ -17,7 +17,7 @@ MonoBehaviour:
     curSpeed: 3
     Damage: 30
     KnockBack: 0.1
-    Exp: 1
+    Exp: 3
     isDead: 0
   Name: AI
   ID: 4

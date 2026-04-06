@@ -23,7 +23,7 @@ MonoBehaviour:
     curSpeed: 3
     Damage: 1
     KnockBack: 0.5
-    Exp: 1
+    Exp: 2
     isDead: 0
   Name: NullPointException
   ID: 1

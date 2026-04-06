@@ -23,7 +23,7 @@ MonoBehaviour:
     curSpeed: 2.5
     Damage: 1
     KnockBack: 1
-    Exp: 1
+    Exp: 2
     isDead: 0
   Name: SystaxError
   ID: 0

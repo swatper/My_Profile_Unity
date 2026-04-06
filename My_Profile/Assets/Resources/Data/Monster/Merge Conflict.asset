@@ -17,13 +17,13 @@ MonoBehaviour:
     curSpeed: 1.5
     Damage: 0
     KnockBack: 0
-    Exp: 0
+    Exp: 1
     isDead: 0
   - curHp: 50
     curSpeed: 3.3
     Damage: 0
     KnockBack: 0
-    Exp: 0
+    Exp: 2
     isDead: 0
   Name: Merge Conflict
   ID: 2

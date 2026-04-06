@@ -17,13 +17,13 @@ MonoBehaviour:
     curSpeed: 2.2
     Damage: 1
     KnockBack: 0.3
-    Exp: 0
+    Exp: 1
     isDead: 0
   - curHp: 70
     curSpeed: 2.5
     Damage: 1
     KnockBack: 0.3
-    Exp: 0
+    Exp: 2
     isDead: 0
   Name: Bug
   ID: 3
