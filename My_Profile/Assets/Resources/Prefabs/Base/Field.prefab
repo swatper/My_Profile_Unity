@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -842228611
-  m_SortingLayer: 6
-  m_SortingOrder: 1
+  m_SortingLayerID: 392086237
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1545133652, guid: 866008045a514f746ad966d797c8b499, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,6 +117,7 @@ MonoBehaviour:
   filedSprite:
   - {fileID: -1545133652, guid: 866008045a514f746ad966d797c8b499, type: 3}
   - {fileID: 1903636447, guid: 866008045a514f746ad966d797c8b499, type: 3}
+  date: 
   isCommited: 0
 --- !u!1 &7743058895084008164
 GameObject:

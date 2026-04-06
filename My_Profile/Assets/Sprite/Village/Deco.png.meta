@@ -113,8 +113,8 @@ TextureImporter:
       name: Lamp_1
       rect:
         serializedVersion: 2
-        x: 45
-        y: 617
+        x: 6
+        y: 616
         width: 155
         height: 290
       alignment: 0
@@ -134,8 +134,8 @@ TextureImporter:
       name: Lamp_2
       rect:
         serializedVersion: 2
-        x: 45
-        y: 322
+        x: 7
+        y: 312
         width: 155
         height: 290
       alignment: 0
@@ -155,10 +155,10 @@ TextureImporter:
       name: Bush
       rect:
         serializedVersion: 2
-        x: 612
-        y: 653
+        x: 488
+        y: 647
         width: 262
-        height: 194
+        height: 195
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,8 +176,8 @@ TextureImporter:
       name: Tree
       rect:
         serializedVersion: 2
-        x: 307
-        y: 611
+        x: 199
+        y: 600
         width: 258
         height: 301
       alignment: 0
@@ -197,8 +197,8 @@ TextureImporter:
       name: SignBoard_1
       rect:
         serializedVersion: 2
-        x: 375
-        y: 336
+        x: 185
+        y: 346
         width: 150
         height: 200
       alignment: 0
@@ -215,32 +215,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SignBoard_2
-      rect:
-        serializedVersion: 2
-        x: 664
-        y: 336
-        width: 150
-        height: 200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fff9126d4ded0774981483df8d942e09
-      internalID: 667983378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Portal
       rect:
         serializedVersion: 2
-        x: 30
-        y: 18
+        x: 28
+        y: 0
         width: 238
         height: 265
       alignment: 0
@@ -260,8 +239,8 @@ TextureImporter:
       name: FieldBoard_1
       rect:
         serializedVersion: 2
-        x: 329
-        y: 81
+        x: 434
+        y: 374
         width: 194
         height: 184
       alignment: 0
@@ -278,13 +257,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FieldBoard_2
+      name: FieldBoardLamp_1
       rect:
         serializedVersion: 2
-        x: 615
-        y: 80
-        width: 194
-        height: 184
+        x: 641
+        y: 511
+        width: 24
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,8 +271,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70dc27935b8a0a548877708d116c0b01
-      internalID: -547810665
+      spriteID: 2ccd3276c20b2574c89b6f21b3e970bf
+      internalID: 643685745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FieldBoardLamp_2
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 510
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f27beddc5475442843168a8f28e1a0
+      internalID: 891172784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SignBoardLamp_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 508
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68036f0be80c93e4996d6dfce6191592
+      internalID: 693879275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SignBoardLamp_2
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 458
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6594673e194641949a3150c45446f89e
+      internalID: 1632694247
       vertices: []
       indices: 
       edges: []
@@ -310,14 +352,19 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Bush: 1385943217
+      FieldBoardLamp_1: 643685745
+      FieldBoardLamp_2: 891172784
       FieldBoard_1: -1206652256
       FieldBoard_2: -547810665
       Lamp_1: 579768366
       Lamp_2: 23677772
       Portal: -616967691
+      SignBoardLamp_1: 693879275
+      SignBoardLamp_2: 1632694247
       SignBoard_1: 2077239896
       SignBoard_2: 667983378
       Tree: -668110772
+      tmp: 879092469
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
