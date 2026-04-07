@@ -24,18 +24,22 @@ public class GithubChecker : MonoBehaviour
                 Debug.Log("받은 Json 데이터: \n" + json);
 
                 for (int i = 0; i < 14; i++){
-                    //i일 전의 날짜 문자열 생성 (UTC 기준)
-                    string targetDate = DateTime.UtcNow.AddDays(-i).ToString("yyyy-MM-dd");
+                    //날짜 선택 (UTC 기준
+                    DateTime dateValue = DateTime.UtcNow.AddDays(-i);
+                    //i일 전의 날짜 문자열 생성 )
+                    string searchTag = dateValue.ToString("yyyy-MM-dd");
+                    string displayDate = dateValue.ToString("MM.dd");
+
                     //단순 commit 유무만 확인
-                    bool isCommited = json.Contains(targetDate) && json.Contains("PushEvent");
+                    bool isCommited = json.Contains(searchTag) && json.Contains("PushEvent");
 
                     if (isCommited){
-                        commitFields[i].InitFiled(true, targetDate);
-                        Debug.Log($"{targetDate} : 커밋 확인됨!");
+                        commitFields[i].InitFiled(true, displayDate);
+                        //Debug.Log($"{displayDate} : 커밋 확인됨!");
                     }
                     else{
-                        commitFields[i].InitFiled(false, targetDate);
-                        Debug.Log($"{targetDate} : 기록 없음.");
+                        commitFields[i].InitFiled(false, displayDate);
+                        //Debug.Log($"{displayDate} : 기록 없음.");
                     }
                 }
             }

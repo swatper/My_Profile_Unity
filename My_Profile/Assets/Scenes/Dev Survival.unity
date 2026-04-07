@@ -14794,6 +14794,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1319269668}
   - {fileID: 1486645690}
   - {fileID: 819409075}
   - {fileID: 259212290}
@@ -15416,7 +15417,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2075503949}
-  m_Father: {fileID: 1486645690}
+  m_Father: {fileID: 842657907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -16097,7 +16098,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 865052173}
-  - {fileID: 1319269668}
   - {fileID: 448494594}
   - {fileID: 1938887289}
   - {fileID: 1329893977}
@@ -31430,10 +31430,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1691900276}
+  - {fileID: 1166402561}
   - {fileID: 1223592983}
   - {fileID: 2088430018}
   - {fileID: 1414796031}
-  - {fileID: 1166402561}
   - {fileID: 1977532591}
   - {fileID: 1406251983}
   - {fileID: 842657907}

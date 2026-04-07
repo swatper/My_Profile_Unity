@@ -24,7 +24,7 @@ public class EXPUI : MonoBehaviour
             timerAfterStageUp += Time.deltaTime;
 
             //단계 상승 로직 (20 + 단계 x 4)
-            if (currentStage < 9 && timerAfterStageUp >= nextStageTime){
+            if (currentStage <= 9 && timerAfterStageUp >= nextStageTime){
                 currentStage++;
                 SurvivalSceneDirector.Instance.PaseUp();
                 timerAfterStageUp = 0f;

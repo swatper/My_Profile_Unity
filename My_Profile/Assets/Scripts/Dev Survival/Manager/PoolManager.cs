@@ -10,7 +10,7 @@ public class PoolManager : MonoBehaviour
     [SerializeField] GameObject[] bulletPefabs;
     [Header("Pool Settings")]
     [SerializeField] PlayerController pController;
-    [SerializeField] float spawnRate = 0.5f;
+    [SerializeField] float spawnRate = 0.3f;
     [SerializeField] PaseData spawnData;
     [SerializeField] Pase paseState;
     [SerializeField] int curPase;
