@@ -30808,7 +30808,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac9e21ecaf87b342bf9f21120be032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SOData: {fileID: 11400000, guid: 2048e507e21be9347a2f8074fa98e418, type: 2}
+  currentStat:
+    MonsterID: 0
+    MonsterLevel: 0
+    MaxUnit: 0
+  currentLevel: 1
+  isMaxLevel: 0
+  isUnlocked: 0
   sceneDirector: {fileID: 2088430019}
+  pController: {fileID: 0}
   monsterPefabs:
   - {fileID: 3458071720825777970, guid: 408f7b240b1788745b89d8b220222196, type: 3}
   - {fileID: 3458071720825777970, guid: c137f8af9d454de40a1702249b91e952, type: 3}
@@ -30818,14 +30827,7 @@ MonoBehaviour:
   bulletPefabs:
   - {fileID: 2337762480524291686, guid: 4dd51e2f84502874ebb5ffecfc354076, type: 3}
   - {fileID: 2337762480524291686, guid: 7b0973ec5a329414cbaebdbd175428d7, type: 3}
-  pController: {fileID: 0}
   spawnRate: 0.5
-  spawnData: {fileID: 11400000, guid: 2048e507e21be9347a2f8074fa98e418, type: 2}
-  paseState:
-    MonsterID: 0
-    MonsterLevel: 0
-    MaxUnit: 0
-  curPase: 0
   curUnit: 0
 --- !u!114 &2005393605 stripped
 MonoBehaviour:

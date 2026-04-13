@@ -62,7 +62,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
     }
 
     public void PaseUp(){
-        poolManager.PaseUp();
+        poolManager.Upgrade();
     }
 
     //#if UNITY_EDITOR

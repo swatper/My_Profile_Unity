@@ -3,25 +3,31 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class PoolManager : MonoBehaviour
+public class PoolManager : BaseUpgradeModel<Phase>
 {
     [SerializeField] BaseSceneDirector  sceneDirector;
+    [SerializeField] PlayerController pController;
+    [Header("Prefabs")]
     [SerializeField] GameObject[] monsterPefabs;
     [SerializeField] GameObject[] bulletPefabs;
-    [Header("Pool Settings")]
-    [SerializeField] PlayerController pController;
-    [SerializeField] float spawnRate = 0.3f;
-    [SerializeField] PaseData spawnData;
-    [SerializeField] Pase paseState;
-    [SerializeField] int curPase;
+    [Header("Pool State")]
+    float spawnRate = 0.3f;
+    [SerializeField] PhaseData spawnData => SOData as PhaseData;
+    [SerializeField] Phase paseState {
+        get => currentStat;
+        set => currentStat = value;
+    }
     [SerializeField] int curUnit;
-
+    [Header("Object Pool")]
+    [Tooltip("Monster")]
     [SerializeField] Queue<BaseMonsterController> monsterPool = new Queue<BaseMonsterController>();
-    [Header("각 투사체 Pool")]
+    [Tooltip("Projectiles")]
     [SerializeField] List<Queue<BaseBullet>> bulletPools = new List<Queue<BaseBullet>>();
+
     private void Awake(){
-        curPase = -1;
-        PaseUp();
+        isUnlocked = true;
+        currentLevel = 0;
+        Upgrade();
         PreparePool();
     }
 
@@ -29,14 +35,11 @@ public class PoolManager : MonoBehaviour
         pController = GameManager.Player;
     }
 
-    public void PaseUp() {
-        if (curPase > spawnData.levelTables.Count - 1) {
-            Debug.Log("최대 단계");
-            return;
-        }
-        curPase++;
+    public override void Upgrade()
+    {
+        base.Upgrade();
 
-        paseState = spawnData.levelTables[curPase];
+        paseState = spawnData.levelTables[currentLevel - 1];
         //대기하고 있는 전 단계 몬스터 제거
         while (monsterPool.Count > 0){
             BaseMonsterController oldMonster = monsterPool.Dequeue();
@@ -47,9 +50,9 @@ public class PoolManager : MonoBehaviour
 
 //#if UNITY_EDITOR
     public void PaseDown() {
-        if (curPase <= 0) return;
-        curPase--;
-        paseState = spawnData.levelTables[curPase];
+        if (currentLevel <= 0) return;
+        currentLevel--;
+        paseState = spawnData.levelTables[currentLevel];
         //대기하고 있는 이전 단계 몬스터 제거
         while (monsterPool.Count > 0){
             BaseMonsterController oldMonster = monsterPool.Dequeue();
@@ -102,7 +105,7 @@ public class PoolManager : MonoBehaviour
     }
 
     void CreateNewMonster() {
-        GameObject monsterObj = Instantiate(monsterPefabs[paseState.MonsterID], this.transform);
+        GameObject monsterObj = Instantiate(monsterPefabs[paseState.MonsterID], transform);
         BaseMonsterController newMonster = monsterObj.GetComponent<BaseMonsterController>();
         newMonster.PreSetUp(paseState.MonsterLevel);
         monsterObj.SetActive(false);
@@ -123,7 +126,7 @@ public class PoolManager : MonoBehaviour
             return bullet;
         }
 
-        GameObject bulletobj = Instantiate(bulletPefabs[index], this.transform);
+        GameObject bulletobj = Instantiate(bulletPefabs[index], transform);
         bullet = bulletobj.GetComponent<BaseBullet>();
         bullet.bID = index;
 
