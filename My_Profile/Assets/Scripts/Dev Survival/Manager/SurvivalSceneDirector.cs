@@ -1,4 +1,3 @@
-using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,7 +38,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
         //무기 관리 스크립트 추가
         if (pController.GetComponent<WeaponHandler>() == null)
             wHandler = GameManager.Player.gameObject.AddComponent<WeaponHandler>();
-        poolManager = FindObjectOfType<PoolManager>();
+        poolManager = FindAnyObjectByType<PoolManager>();
         base.InitScene();
         soundController.Init();
         GameManager.SceneLoader.SceneReady();

@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="Core.csproj" />
+  <Project Path="DebugVillage.csproj" />
+  <Project Path="DevSurvival.csproj" />
+</Solution>

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class BaseWeapon : BaseUpgradeModel<WeaponStat>, IUpgradable
 {
-    [SerializeField] protected WeaponData wData => SOData as WeaponData;
+    protected WeaponData wData => SOData as WeaponData;
     protected WeaponStat wStat{
         get => currentStat;
         set => currentStat = value;

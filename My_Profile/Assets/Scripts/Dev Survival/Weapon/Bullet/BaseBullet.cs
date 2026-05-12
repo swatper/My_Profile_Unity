@@ -21,14 +21,14 @@ public class BaseBullet : MonoBehaviour
 
         gameObject.SetActive(true);
         if (piercingCnt >= 0) {
-            rigid.velocity = dir;
+            rigid.linearVelocity = dir;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
 
     protected virtual void  ReturnBullet() {
-        rigid.velocity = Vector2.zero;
+        rigid.linearVelocity = Vector2.zero;
         StopAllCoroutines();
         SurvivalSceneDirector.Instance.poolManager.InsertUsedBullet(this);
     }
@@ -45,7 +45,7 @@ public class BaseBullet : MonoBehaviour
     }
 
     /// <summary>
-    /// Åõ»çÃ¼ ÀÚÆø
+    /// ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     /// <returns></returns>
     IEnumerator DeactivateAfterTime()

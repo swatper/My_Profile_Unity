@@ -12,8 +12,8 @@ public class PoolManager : BaseUpgradeModel<Phase>
     [SerializeField] GameObject[] bulletPefabs;
     [Header("Pool State")]
     float spawnRate = 0.3f;
-    [SerializeField] PhaseData spawnData => SOData as PhaseData;
-    [SerializeField] Phase paseState {
+    PhaseData spawnData => SOData as PhaseData;
+    Phase paseState {
         get => currentStat;
         set => currentStat = value;
     }

@@ -10,7 +10,7 @@ public class BaseMonsterController : MonoBehaviour
     [Tooltip("Current Monster Data")]
     [SerializeField] MonsterStat mStat;
     [SerializeField] int curLevel;
-    [Tooltip("ÇÃ·¹ÀÌ¾î")]
+    [Tooltip("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½")]
     [SerializeField] Rigidbody2D target;
     [Header("Monster Component")]
     [SerializeField] Rigidbody2D rigid;
@@ -20,7 +20,7 @@ public class BaseMonsterController : MonoBehaviour
     [SerializeField] AudioSource mAudioClip;
 
     /// <summary>
-    /// PoolManager°¡ ÁøÇà
+    /// PoolManagerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     /// <param name="monLevel"></param>
     public void PreSetUp(int monLevel) {
@@ -34,7 +34,7 @@ public class BaseMonsterController : MonoBehaviour
     }
 
     /// <summary>
-    /// Pool¿¡¼­ ²¨³»Áú ¶§ ¸¶´Ù ½ÇÇà (´É·ÂÄ¡/»óÅÂ ÃÊ±âÈ­)
+    /// Poolï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½É·ï¿½Ä¡/ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­)
     /// </summary>
     /// <param name="data"></param>
     public void InitMonster() {
@@ -72,13 +72,13 @@ public class BaseMonsterController : MonoBehaviour
         if (mStat.isDead || mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
-        //ÇÃ·¹ÀÌ¾î ¹æÇâ Ã£±â
+        //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
         Vector2 dirVec = target.position - rigid.position;
-        //°¡¾ßÇÒ À§Ä¡ Ã£±â
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ Ã£ï¿½ï¿½
         Vector2 nextVec = dirVec.normalized * mStat.curSpeed * Time.fixedDeltaTime;
-        //ÀÌµ¿
+        //ï¿½Ìµï¿½
         rigid.MovePosition(rigid.position + nextVec);
-        rigid.velocity = Vector2.zero;
+        rigid.linearVelocity = Vector2.zero;
     }
 
     private void LateUpdate(){

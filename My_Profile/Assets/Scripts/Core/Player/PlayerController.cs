@@ -7,9 +7,9 @@ public class PlayerController : MonoBehaviour, IUpgradable
 {
     public static PlayerController Instance { get; private set; }
     [Header("Player Info")]
-    [Tooltip("Ä³¸¯ÅÍ ±âº» ´É·ÂÄ¡")]
+    [Tooltip("Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½âº» ï¿½É·ï¿½Ä¡")]
     [SerializeField] PlayerData pData;
-    [Tooltip("½Ç½Ã°£ µ¥ÀÌÅÍ Ã³¸®¿ë")]
+    [Tooltip("ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½")]
     [SerializeField] PlayerState pState;
     [Header("Player Component")]
     [SerializeField] Rigidbody2D rigid;
@@ -49,12 +49,12 @@ public class PlayerController : MonoBehaviour, IUpgradable
     }
 
     private void FixedUpdate(){
-        rigid.velocity = Vector2.zero;
+        rigid.linearVelocity = Vector2.zero;
 
         if (inputVec == Vector2.zero) 
             return;
 
-       Vector2 nxtVec= inputVec.normalized * pData.Speed.levelTables[0].spd * Time.fixedDeltaTime; //¼öÁ¤ ÇÊ¿ä
+       Vector2 nxtVec= inputVec.normalized * pData.Speed.levelTables[0].spd * Time.fixedDeltaTime; //ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½
 
         rigid.MovePosition(rigid.position + nxtVec);
     }
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
     private void LateUpdate()
     {
         pAnimator.SetFloat("speed", inputVec.magnitude);
-        //¹æÇâ Á¶Àý
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (inputVec.x != 0) {
             bool isFlipped = inputVec.x < 0;
             pSprite.flipX = isFlipped;
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
         }
     }
 
-    #region ´É·ÂÄ¡ °ü·Ã
+    #region ï¿½É·ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
     public void ChangeStat(PlayerData newData) {
         pData = newData;
         pState = new PlayerState(newData);
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
     }
 
     public void Upgrade(){
-        Debug.Log("´É·ÂÄ¡ °­È­µÊ");
+        Debug.Log("ï¿½É·ï¿½Ä¡ ï¿½ï¿½È­ï¿½ï¿½");
     }
 
     public bool CanUpgrade(){
@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
 
     public void InitPlayerInVillagel()
     {
-        ChangeStat(pData); //´É·ÂÄ¡  ÃÊ±âÈ­
+        ChangeStat(pData); //ï¿½É·ï¿½Ä¡  ï¿½Ê±ï¿½È­
         pPosition.position = new Vector3(-7f, -0.8f, 0);
         playerPivot.rotation = Quaternion.identity;
         pSprite.flipX = false;
