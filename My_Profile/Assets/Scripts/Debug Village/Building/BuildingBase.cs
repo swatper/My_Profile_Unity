@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 구버전 빌딩 스크립트
+/// </summary>
 public abstract  class BuildingBase : MonoBehaviour
 {
     [SerializeField] public GameObject infomaionUI;
@@ -9,7 +12,7 @@ public abstract  class BuildingBase : MonoBehaviour
     [SerializeField] public string buildingName;
 
     /// <summary>
-    /// 충돌 감지
+    /// 충돌 감지로 UI 보여줌
     /// </summary>
     /// <param name="collision"></param>
     public abstract void OnTriggerEnter2D(Collider2D collision);

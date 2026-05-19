@@ -9,7 +9,7 @@ public class SurvivalPortal : KeyHintDisplay
     protected override void OnInteract(Define.KeyEvent keyEvent)
     {
         if (keyEvent == Define.KeyEvent.Enter) {
-            if (GameManager.SceneLoader.isLoading || !isEnter) return;
+            if (GameManager.SceneLoader.isLoading) return;
             //sceneDirector.GoToScene();
             sceneDirector.OpenCheckUI();
         }

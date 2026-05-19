@@ -8,13 +8,12 @@ public abstract class TimeSensitiveControllerBase : MonoBehaviour
 
     protected virtual void Awake()
     {
-        GameManager.Instance.OnTimeOfDayChanged += CheckTime;
-        CheckTime(GameManager.Instance.curTOD);
+        GameManager.Instance.TimeUpdater.SubscribeTimeOfDayAlarm(CheckTime);
     }
     private void OnDestroy()
     {
         if (GameManager.Instance != null){
-            GameManager.Instance.OnTimeOfDayChanged -= CheckTime;
+            GameManager.Instance.TimeUpdater.UnsubscribeTimeOfDayAlarm(CheckTime);
         }
     }
 }

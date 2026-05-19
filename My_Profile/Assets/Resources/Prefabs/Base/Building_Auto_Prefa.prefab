@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 6216121350919989501}
   - component: {fileID: 2280065857050289952}
   m_Layer: 6
-  m_Name: BuildingBase
+  m_Name: Building_Auto_Prefa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

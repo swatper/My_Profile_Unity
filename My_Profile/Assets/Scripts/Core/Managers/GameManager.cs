@@ -41,9 +41,8 @@ public class GameManager : MonoBehaviour
     [Header("시간 관련 데이터 및 이벤트")]
     Coroutine timeRoutine;
     [Tooltip("확인 및 수동 조작용")]
-    [SerializeField] public TimeOfDay curTOD;
-    [Header("시간대 알리미")]
-    public Action<TimeOfDay> OnTimeOfDayChanged;
+    [SerializeField] public TimeOfDay testingTOD;
+    [SerializeField] bool isTesting = false;
     [Header("HUD 상태")]
     bool isDisplaying = false;
     [Header("버튼 상태")]
@@ -70,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         //프레임 설정 (제한 없음-> 하드웨어와 브라우저 설정이 허락하는 최대치)
         Application.targetFrameRate = -1;
-        StartTimer();
+
         SetupUILoading();
         InitPerformanceHUD();
     }
@@ -81,6 +80,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        //시간 초기화 및 측정 시작
+        InitTime();
+        StartTimer();
+
         Input.SubscribeKeyEvent(SetPerformanceHUD);
     }
 
@@ -108,40 +111,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void CheckTime() {
-        //시간대 알림
-        int curHour = Clock.Hour;
-        int curMin = Clock.Minute;
-        int curSec = Clock.Second;
-
-        //TODO: 추후 TimerUpdater로 옮길 예정
-        //저녁/밤: 18시부터 4시
-        if (curHour >= 18 || curHour < 5)
-            curTOD = TimeOfDay.Night;
-        //아침: 5시부터 11시
-        else if (curHour >= 5 && curHour < 12)
-            curTOD = TimeOfDay.Morning;
-        //점심/낮: 12시부터 18시
-        else
-            curTOD = TimeOfDay.Day;
-
-        OnTimeOfDayChanged?.Invoke(curTOD);
-
-    }
-
     //1초마다 시간 측정
     IEnumerator UpdateTimePerSec() {
-        while (true) {
-            TimeUpdater.UpdateTime();
-            CheckTime();
+        while (true)
+        {
+            if (isTesting)
+                Clock.OnTimeOfDayChanged.Invoke(testingTOD);
+            else
+                TimeUpdater.UpdateTime();
             yield return new WaitForSeconds(1.0f);
         }
     }
 
+    void InitTime()
+    {
+        Clock.InitClock();
+    }
+
     public void StopTimer() {
         StopCoroutine(timeRoutine);
-        curTOD = TimeOfDay.Morning;
-        OnTimeOfDayChanged?.Invoke(curTOD);
+        testingTOD = TimeOfDay.Morning;
+        Clock.OnTimeOfDayChanged.Invoke(testingTOD);
     }
 
     public void StartTimer() {
