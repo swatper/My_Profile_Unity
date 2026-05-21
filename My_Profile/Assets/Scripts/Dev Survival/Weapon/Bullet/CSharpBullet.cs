@@ -19,7 +19,7 @@ public class CSharpBullet : BaseBullet
         trailParticle.Clear();
         trailParticle.Play();
         base.Init(damage, cnt, dir);
-        StartCoroutine("DeactivateAfterTime");
+        StartCoroutine(DeactivateAfterTime());
     }
 
     public override void HitMonster(BaseMonsterController monster){

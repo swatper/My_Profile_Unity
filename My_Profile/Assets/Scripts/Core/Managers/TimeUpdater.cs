@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Define;
+using Core.Define;
 
 [System.Serializable]
 public class TimeUpdater

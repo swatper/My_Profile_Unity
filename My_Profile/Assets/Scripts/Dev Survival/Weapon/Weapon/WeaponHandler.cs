@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Define;
+using Core.Define;
 
 public class WeaponHandler : MonoBehaviour
 {

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Core.Define;
 
 public class MobileKeyboard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] Image image;
     [SerializeField] Sprite[] OnOffsprite;
     [SerializeField] bool isPressed;
-    public Define.KeyEvent keyType;
+    public KeyEvent keyType;
 
     public void OnPointerUp(PointerEventData eventData){
         isPressed = false;

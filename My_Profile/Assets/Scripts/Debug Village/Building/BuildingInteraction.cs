@@ -1,4 +1,5 @@
 using UnityEngine;
+using Core.Define;
 
 public class BuildingInteraction: KeyHintDisplay
 {
@@ -11,9 +12,9 @@ public class BuildingInteraction: KeyHintDisplay
     /// 정보가 담긴 UI 보여주기
     /// </summary>
     /// <param name="keyEvent"></param>
-    protected  override void OnInteract(Define.KeyEvent keyEvent)
+    protected  override void OnInteract(KeyEvent keyEvent)
     {
-        if (keyEvent == Define.KeyEvent.Enter) {
+        if (keyEvent == KeyEvent.Enter) {
             uiScript.Show();
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Core.Define;
 
 /// <summary>
 /// Weapon Struct
@@ -25,5 +26,5 @@ public class WeaponData : BaseUpgradeData<WeaponStat>
 {
     public string WeaponName;
     public Sprite WeaponIcon;
-    public Define.UpgradeType Type;
+    public UpgradeType Type;
 }

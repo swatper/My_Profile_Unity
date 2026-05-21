@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Define;
 
 public class Mannequin : KeyHintDisplay
 {
@@ -21,9 +22,9 @@ public class Mannequin : KeyHintDisplay
         playerController = null;
     }
 
-    protected override void OnInteract(Define.KeyEvent keyEvent)
+    protected override void OnInteract(KeyEvent keyEvent)
     {
-        if ((keyEvent == Define.KeyEvent.Tab || keyEvent == Define.KeyEvent.Enter) && playerController != null) {
+        if ((keyEvent == KeyEvent.Tab || keyEvent == KeyEvent.Enter) && playerController != null) {
             playerController.ChangeStat(skinStat);
         }
     }

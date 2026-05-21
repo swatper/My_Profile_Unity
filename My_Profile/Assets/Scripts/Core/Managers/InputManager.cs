@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using static Define;
+using  Core.Define;
 public class InputManager
 {
     public Action<KeyEvent> KeyPress;

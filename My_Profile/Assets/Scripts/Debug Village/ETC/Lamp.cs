@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using Core.Define;
 
 public class Lamp : BaseLightContoller
 {
@@ -14,10 +15,10 @@ public class Lamp : BaseLightContoller
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    protected override void CheckTime(Define.TimeOfDay timeOfDay) {
+    protected override void CheckTime(TimeOfDay timeOfDay) {
         base.CheckTime(timeOfDay);
 
-        if (timeOfDay == Define.TimeOfDay.Night) {
+        if (timeOfDay == TimeOfDay.Night) {
             spriteRenderer.sprite = lampOn;
         }
         else{

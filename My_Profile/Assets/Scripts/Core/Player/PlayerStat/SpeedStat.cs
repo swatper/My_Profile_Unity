@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Define;
 
 [System.Serializable]
 public class SpeedStat : BaseUpgradeModel<Speed>
 {
-    public Define.UpgradeType upgradeType;
+    public UpgradeType upgradeType;
 
     public override string GetDescription()
     {

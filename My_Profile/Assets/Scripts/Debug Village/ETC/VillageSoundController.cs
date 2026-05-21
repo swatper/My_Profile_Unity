@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Define;
 
 public class VillageSoundController : TimeSensitiveControllerBase
 {
     [SerializeField] AudioSource bgmBox;
     [SerializeField] AudioSource ambBox;
     [SerializeField] AudioClip[] natureAmbs;
-    [SerializeField] Define.TimeOfDay lastTOD = Define.TimeOfDay.Morning;
+    [SerializeField] TimeOfDay lastTOD = TimeOfDay.Morning;
 
-    protected override void CheckTime(Define.TimeOfDay newTime)
+    protected override void CheckTime(TimeOfDay newTime)
     {
         if (lastTOD != newTime) {
             Debug.Log("½Ã°£´ë º¯°æµÊ");
             switch (newTime) {
-                case Define.TimeOfDay.Morning:
+                case TimeOfDay.Morning:
                     ambBox.clip = natureAmbs[0];
                     break;
-                case Define.TimeOfDay.Day:
+                case TimeOfDay.Day:
                     Debug.Log("¿ÀÈÄ À½¾Ç");
                     break;
-                case Define.TimeOfDay.Night:
+                case TimeOfDay.Night:
                     ambBox.clip = natureAmbs[1];
                     break;
             }

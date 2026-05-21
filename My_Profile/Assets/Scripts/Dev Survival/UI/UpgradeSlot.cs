@@ -4,7 +4,7 @@ using System.Dynamic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using static Define;
+using Core.Define;
 
 public class UpgradeSlot : MonoBehaviour
 {

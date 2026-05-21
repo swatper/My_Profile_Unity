@@ -10,7 +10,7 @@ public class BaseMonsterController : MonoBehaviour
     [Tooltip("Current Monster Data")]
     [SerializeField] MonsterStat mStat;
     [SerializeField] int curLevel;
-    [Tooltip("�÷��̾�")]
+    [Tooltip("플레이어")]
     [SerializeField] Rigidbody2D target;
     [Header("Monster Component")]
     [SerializeField] Rigidbody2D rigid;
@@ -20,7 +20,7 @@ public class BaseMonsterController : MonoBehaviour
     [SerializeField] AudioSource mAudioClip;
 
     /// <summary>
-    /// PoolManager�� ����
+    /// PoolManager가 진행
     /// </summary>
     /// <param name="monLevel"></param>
     public void PreSetUp(int monLevel) {
@@ -34,7 +34,7 @@ public class BaseMonsterController : MonoBehaviour
     }
 
     /// <summary>
-    /// Pool���� ������ �� ���� ���� (�ɷ�ġ/���� �ʱ�ȭ)
+    /// Pool에서 꺼낼질 때 마다 실행 (능력치, 상태 초기화)
     /// </summary>
     /// <param name="data"></param>
     public void InitMonster() {
@@ -72,11 +72,11 @@ public class BaseMonsterController : MonoBehaviour
         if (mStat.isDead || mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
-        //�÷��̾� ���� ã��
+        //플레이어 방향 찾기
         Vector2 dirVec = target.position - rigid.position;
-        //������ ��ġ ã��
+        //가야할 위치 설정
         Vector2 nextVec = dirVec.normalized * mStat.curSpeed * Time.fixedDeltaTime;
-        //�̵�
+        //이동
         rigid.MovePosition(rigid.position + nextVec);
         rigid.linearVelocity = Vector2.zero;
     }

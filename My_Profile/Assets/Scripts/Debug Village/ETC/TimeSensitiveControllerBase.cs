@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Define;
 
 public abstract class TimeSensitiveControllerBase : MonoBehaviour
 {
-    protected abstract void CheckTime(Define.TimeOfDay newTime);
+    protected abstract void CheckTime(TimeOfDay newTime);
 
     protected virtual void Awake()
     {

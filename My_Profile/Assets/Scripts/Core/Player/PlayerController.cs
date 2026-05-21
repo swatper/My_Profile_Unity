@@ -2,14 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
-using static Define;
+using Core.Define;
 public class PlayerController : MonoBehaviour, IUpgradable
 {
     public static PlayerController Instance { get; private set; }
     [Header("Player Info")]
-    [Tooltip("ĳ���� �⺻ �ɷ�ġ")]
+    [Tooltip("캐릭터 기본 능력치")]
     [SerializeField] PlayerData pData;
-    [Tooltip("�ǽð� ������ ó����")]
+    [Tooltip("실시간 데이터 처리용")]
     [SerializeField] PlayerState pState;
     [Header("Player Component")]
     [SerializeField] Rigidbody2D rigid;
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
         if (inputVec == Vector2.zero) 
             return;
 
-       Vector2 nxtVec= inputVec.normalized * pData.Speed.levelTables[0].spd * Time.fixedDeltaTime; //���� �ʿ�
+       Vector2 nxtVec= inputVec.normalized * pData.Speed.levelTables[0].spd * Time.fixedDeltaTime; //수정 필요
 
         rigid.MovePosition(rigid.position + nxtVec);
     }
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
     private void LateUpdate()
     {
         pAnimator.SetFloat("speed", inputVec.magnitude);
-        //���� ����
+        //방향 조절
         if (inputVec.x != 0) {
             bool isFlipped = inputVec.x < 0;
             pSprite.flipX = isFlipped;
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
         }
     }
 
-    #region �ɷ�ġ ����
+    #region 능력치 관련
     public void ChangeStat(PlayerData newData) {
         pData = newData;
         pState = new PlayerState(newData);
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
     }
 
     public void Upgrade(){
-        Debug.Log("�ɷ�ġ ��ȭ��");
+        Debug.Log("능력치 강화됨");
     }
 
     public bool CanUpgrade(){
@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour, IUpgradable
 
     public void InitPlayerInVillagel()
     {
-        ChangeStat(pData); //�ɷ�ġ  �ʱ�ȭ
+        ChangeStat(pData); //능력치 초기화
         pPosition.position = new Vector3(-7f, -0.8f, 0);
         playerPivot.rotation = Quaternion.identity;
         pSprite.flipX = false;

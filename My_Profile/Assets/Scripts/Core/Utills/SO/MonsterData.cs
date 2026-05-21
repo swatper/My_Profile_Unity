@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Core.Define;
 
 [System.Serializable]
 public struct MonsterStat
@@ -16,5 +17,5 @@ public struct MonsterStat
 [CreateAssetMenu(fileName = "Monster", menuName = "ScriptableObject/MonsterData", order = 0)]
 public class MonsterData : BaseData<MonsterStat>
 {
-    public Define.MonsterType MonsterType;
+    public MonsterType MonsterType;
 }

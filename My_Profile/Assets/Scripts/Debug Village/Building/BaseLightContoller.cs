@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using Core.Define;
 
 /// <summary>
 /// 시간에 따른 2D 및 처리 (기본은 켜고 끄기)
@@ -9,9 +10,9 @@ using UnityEngine.Rendering.Universal;
 public class BaseLightContoller : TimeSensitiveControllerBase
 {
     [SerializeField] protected Light2D[] light2D;
-    protected override void CheckTime(Define.TimeOfDay timeOfDay)
+    protected override void CheckTime(TimeOfDay timeOfDay)
     {
-        if (timeOfDay == Define.TimeOfDay.Night)
+        if (timeOfDay == TimeOfDay.Night)
             LightOn();
         else
             LightOff();

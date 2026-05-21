@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using Core.Define;
 
 public abstract class KeyHintDisplay : MonoBehaviour
 {
@@ -53,5 +54,5 @@ public abstract class KeyHintDisplay : MonoBehaviour
     /// 탐지 범위 내 상호 작용
     /// </summary>
     /// <param name="keyEvent"></param>
-    protected abstract void OnInteract(Define.KeyEvent keyEvent);
+    protected abstract void OnInteract(KeyEvent keyEvent);
 }

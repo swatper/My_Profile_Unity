@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Xml.Linq;
 using UnityEngine;
-using static Define;
+using Core.Define;
 
 public class GameManager : MonoBehaviour
 {

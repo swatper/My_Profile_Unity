@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using Core.Define;
 
 public class SurvivalPortal : KeyHintDisplay
 {
     [SerializeField] DebugSceneDirector sceneDirector;
-    protected override void OnInteract(Define.KeyEvent keyEvent)
+    protected override void OnInteract(KeyEvent keyEvent)
     {
-        if (keyEvent == Define.KeyEvent.Enter) {
+        if (keyEvent == KeyEvent.Enter) {
             if (GameManager.SceneLoader.isLoading) return;
             //sceneDirector.GoToScene();
             sceneDirector.OpenCheckUI();

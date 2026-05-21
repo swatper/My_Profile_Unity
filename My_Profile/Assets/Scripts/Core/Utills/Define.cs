@@ -1,4 +1,4 @@
-public class Define
+namespace Core.Define
 {
     public enum KeyEvent
     {

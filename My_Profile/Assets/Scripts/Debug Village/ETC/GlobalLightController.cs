@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using Core.Define;
 
 public class GlobalLightController : TimeSensitiveControllerBase
 {
@@ -12,15 +13,15 @@ public class GlobalLightController : TimeSensitiveControllerBase
     [SerializeField] Color32 nightLight = new Color32(78, 84, 100, 0);
     [SerializeField] float changeDuration = 0.7f;
 
-    protected override void CheckTime(Define.TimeOfDay timeOfDay) {
+    protected override void CheckTime(TimeOfDay timeOfDay) {
         switch (timeOfDay) {
-            case Define.TimeOfDay.Morning:
+            case TimeOfDay.Morning:
                 StartCoroutine(ChangeLightColor(moringLight, 1.0f));
                 break;
-            case Define.TimeOfDay.Day:
+            case TimeOfDay.Day:
                 StartCoroutine(ChangeLightColor(dayLight, 0.8f));
                 break;
-            case Define.TimeOfDay.Night:
+            case TimeOfDay.Night:
                 StartCoroutine(ChangeLightColor(nightLight, 0.4f));
                 break;
         }

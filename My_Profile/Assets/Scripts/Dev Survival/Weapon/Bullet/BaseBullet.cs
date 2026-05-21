@@ -45,10 +45,10 @@ public class BaseBullet : MonoBehaviour
     }
 
     /// <summary>
-    /// ����ü ����
+    /// 투사체 작폭
     /// </summary>
     /// <returns></returns>
-    IEnumerator DeactivateAfterTime()
+    protected IEnumerator DeactivateAfterTime()
     {
         yield return new WaitForSeconds(lifeTime);
         ReturnBullet();

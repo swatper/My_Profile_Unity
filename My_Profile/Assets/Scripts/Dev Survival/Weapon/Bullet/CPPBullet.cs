@@ -17,7 +17,7 @@ public class CPPBullet : BaseBullet
         StopAllCoroutines();
         trail.Clear();
         base.Init(damage, cnt, dir);
-        StartCoroutine("DeactivateAfterTime");
+        StartCoroutine(DeactivateAfterTime());
     }
 
     protected override void ReturnBullet()
