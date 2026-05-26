@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 6256622918097702072}
   - component: {fileID: 6593136981897806739}
   - component: {fileID: 8679395340480157289}
+  - component: {fileID: 860557627319229265}
   m_Layer: 6
   m_Name: Manequin
   m_TagString: Untagged
@@ -310,7 +311,21 @@ MonoBehaviour:
   targetTag: PlayerLayerTag
   keyAni: {fileID: 731687461365092901}
   keyType: Tab
-  isEnter: 0
   sprite: {fileID: 9054234972328661203}
   playerController: {fileID: 0}
   skinStat: {fileID: 0}
+--- !u!114 &860557627319229265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605248082085814499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
+  spriteObj: {fileID: 9018928260651077807}
+  originalScale: {x: 0.85, y: 0.85, z: 0.85}
+  expandScale: {x: 1, y: 1, z: 1}

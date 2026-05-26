@@ -21,7 +21,7 @@ public class GithubChecker : MonoBehaviour
             if (webRequest.result == UnityWebRequest.Result.Success)
             {
                 string json = webRequest.downloadHandler.text;
-                Debug.Log("받은 Json 데이터: \n" + json);
+                Debug.Log("받은 Github Json 데이터: \n" + json);
 
                 for (int i = 0; i < 14; i++){
                     //날짜 선택 (UTC 기준
