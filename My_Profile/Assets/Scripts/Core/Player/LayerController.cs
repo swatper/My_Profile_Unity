@@ -14,24 +14,27 @@ public class LayerController : MonoBehaviour
     /// </summary>
     private void LateUpdate()
     {
+        //건물 위
         if (buildingCNT > 0) 
             pSpriteRender.sortingLayerName = frontLayer;
+        //건물 위, 울타리 뒤
         else if (fenceCNT > 0)
             pSpriteRender.sortingLayerName = midLayer;
+        //기본
         else
             pSpriteRender.sortingLayerName = backLayer;
     }
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.tag == "Fence")
             fenceCNT++;
-        else 
+        else if (collision.tag == "Building")
             buildingCNT++;
     }
 
     private void OnTriggerExit2D(Collider2D collision){
         if (collision.tag == "Fence")
             fenceCNT--;
-        else
+        else if (collision.tag == "Building")
             buildingCNT--;
     }
 }
