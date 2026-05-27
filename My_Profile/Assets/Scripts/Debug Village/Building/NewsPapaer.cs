@@ -3,9 +3,13 @@ using UnityEngine;
 using UnityEngine.Networking;
 using  Core.Data.Json;
 using UnityEngine.UI;
+using System.Runtime.InteropServices;   //웹GL 플로그인
 
 public class NewsPapaer : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern void CopyTextToClipboardWebGL(string text);
+
     [Header("Gist Settings")]
     [SerializeField] private string gistRawUrl;
     [Header("쿠폰 정보")]
@@ -25,10 +29,26 @@ public class NewsPapaer : MonoBehaviour
 
     public void CopyCoupon()
     {
-        if (LoadedCoupon == null)
+        if (LoadedCoupon == null || string.IsNullOrEmpty(LoadedCoupon.coupon_code))
             return;
 
-        GUIUtility.systemCopyBuffer = LoadedCoupon.coupon_code;
+        string textToCopy = LoadedCoupon.coupon_code;
+
+#if !UNITY_EDITOR && UNITY_WEBGL
+        //🌐 WebGL 빌드 환경일 때 실행
+        try
+        {
+            CopyTextToClipboardWebGL(textToCopy);
+        }
+        catch (System.EntryPointNotFoundException e)
+        {
+            Debug.LogError("WebGL 클립보드 플러그인을 찾을 수 없습니다: " + e.Message);
+        }
+#else
+        //💻 유니티 에디터나 PC 빌드 환경일 때 실행
+        GUIUtility.systemCopyBuffer = textToCopy;
+#endif
+
     }
 
     IEnumerator FetchGistData()
