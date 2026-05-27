@@ -8,12 +8,14 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class HoverVisualScaler : HoverableObject
 {
-    [Header("Sprite 게임 오브젝트")]
+    [Header("시각적 연출이 필요한 오브젝트")]
     [SerializeField] Transform spriteObj;
+    [SerializeField] GameObject explain;
     [Header("효과 설정")]
     float duration = 0.15f;
     [SerializeField] Vector3 originalScale;
     [SerializeField] Vector3 expandScale;
+    [SerializeField] Vector3 cursorPos;
     private Coroutine scaleCoroutine;
 
     public override  void OnHoverEnter(PointerEventData eventData){
@@ -22,8 +24,8 @@ public class HoverVisualScaler : HoverableObject
 
         if (scaleCoroutine != null)
             StopCoroutine(scaleCoroutine);
-
-        scaleCoroutine = StartCoroutine(ChangeScaleRoutine(expandScale));
+        cursorPos = eventData.position;
+        scaleCoroutine = StartCoroutine(ChangeScaleRoutine(expandScale, true));
     }
 
     public override void OnHoverExit(PointerEventData eventData){
@@ -32,12 +34,12 @@ public class HoverVisualScaler : HoverableObject
 
         if (scaleCoroutine != null)
             StopCoroutine(scaleCoroutine);
-
-        scaleCoroutine = StartCoroutine(ChangeScaleRoutine(originalScale));
+        cursorPos = Vector3.zero;
+        scaleCoroutine = StartCoroutine(ChangeScaleRoutine(originalScale, false));
 
     }
 
-    IEnumerator ChangeScaleRoutine(Vector3 targetScale)
+    IEnumerator ChangeScaleRoutine(Vector3 targetScale, bool isEnter)
     {
         Vector3 initialScale = spriteObj.localScale;
 
@@ -53,5 +55,7 @@ public class HoverVisualScaler : HoverableObject
         //마지막 보정
         spriteObj.localScale = targetScale;
         scaleCoroutine = null;
+        explain.SetActive(isEnter);
+        //explain.transform.position = cursorPos;
     }
 }

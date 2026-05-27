@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public struct Phase
+public struct Pase
 {
     public int MonsterID;
     public int MonsterLevel;
@@ -10,6 +10,6 @@ public struct Phase
 }
 
 
-[CreateAssetMenu(fileName = "Phase", menuName = "ScriptableObject/PhaseData", order = 3)]
-public class PhaseData: BaseUpgradeData<Phase>
+[CreateAssetMenu(fileName = "Pase", menuName = "ScriptableObject/PaseData", order = 3)]
+public class PaseData: BaseUpgradeData<Pase>
 {}

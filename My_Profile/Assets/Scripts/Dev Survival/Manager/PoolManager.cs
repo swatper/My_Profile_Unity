@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class PoolManager : BaseUpgradeModel<Phase>
+public class PoolManager : BaseUpgradeModel<Pase>
 {
     [SerializeField] BaseSceneDirector  sceneDirector;
     [SerializeField] PlayerController pController;
@@ -12,8 +12,8 @@ public class PoolManager : BaseUpgradeModel<Phase>
     [SerializeField] GameObject[] bulletPefabs;
     [Header("Pool State")]
     float spawnRate = 0.3f;
-    PhaseData spawnData => SOData as PhaseData;
-    Phase paseState {
+    PaseData spawnData => SOData as PaseData;
+    Pase paseState {
         get => currentStat;
         set => currentStat = value;
     }
