@@ -12,14 +12,14 @@ public class NewsPapaer : MonoBehaviour
 
     [Header("Gist Settings")]
     [SerializeField] private string gistRawUrl;
-    [Header("쿠폰 정보")]
     [SerializeField] URLOpen urlOpenner;
     [Header("UI 요소")]
     [SerializeField] Text assetName;
     [SerializeField] Text assetPublisherName;
     [SerializeField] Text couponCode;
     [SerializeField] Text updateDate;
-    
+
+    [Header("쿠폰 정보")]
     public CouponData LoadedCoupon { get; private set; }
 
     void Awake()
