@@ -31,18 +31,22 @@ public abstract class BaseWeapon : BaseUpgradeModel<WeaponStat>, IUpgradable
         InitWeaponData();
     }
 
+    /// <summary>
+    /// 업그레이드 슬롯에 보여줄 무기 능력치 강화 수치
+    /// </summary>
     public override string GetDescription()
     {
         if (isMaxLevel) return "MaxLevel";
 
         string info = "";
 
+        //아이템을 해금할 경우
         if (!isUnlocked)
         {
             WeaponStat firstData = wData.levelTables[0]; // 1레벨 데이터
             info += $"    Damage = {firstData.WeaponDamage};\n";
             info += $"    Speed = {firstData.WeaponSpeed:F1};\n";
-            if (firstData.PierceCount != 0) {
+            if (firstData.PierceCount > 0) {
                 info += $"    Pierce = {firstData.PierceCount};\n";
             }
             info += $"    Range = {firstData.ScanRange};\n";
@@ -59,7 +63,7 @@ public abstract class BaseWeapon : BaseUpgradeModel<WeaponStat>, IUpgradable
             info += $"    Speed += {nextData.WeaponSpeed - curData.WeaponSpeed:F1};\n";
 
         if (nextData.PierceCount != curData.PierceCount)
-            info += $"    Pierce+= {nextData.PierceCount - curData.PierceCount};\n";
+            info += $"    Pierce += {nextData.PierceCount - curData.PierceCount};\n";
 
         if (nextData.ScanRange != curData.ScanRange)
             info += $"    Range += {nextData.ScanRange - curData.ScanRange};\n";

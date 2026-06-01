@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 /// </summary>
 public abstract class HoverableObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    [Header("시각적 연출 대상")]
+    public Transform targetObj;
     public void OnPointerEnter(PointerEventData eventData){
         OnHoverEnter(eventData);
     }

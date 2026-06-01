@@ -45,7 +45,7 @@ public class UpgradeSlot : MonoBehaviour
     }
 
     void SetWeaponInfo() {
-        InitFileName(upgradeTarget.GetUnlockState());
+        InitFileName(!upgradeTarget.GetUnlockState());
          targetDesc.text = upgradeTarget.GetDescription();
     }
 
@@ -55,13 +55,8 @@ public class UpgradeSlot : MonoBehaviour
     }
 
     void InitFileName(bool isNew){
-        for (int i = 0; i < fileNames.Length; i++)
-            fileNames[i].SetActive(false);
-
-        if (isNew)
-            fileNames[1].SetActive(true);
-        else
-            fileNames[0].SetActive(true);
+        fileNames[0].SetActive(!isNew);
+        fileNames[1].SetActive(isNew);
     }
 
     /// <summary>
