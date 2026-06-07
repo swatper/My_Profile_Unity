@@ -64,7 +64,8 @@ public class UpgradeSlot : MonoBehaviour
     /// </summary>
     public void OnClickUpgrade()
     {
-        upgradeTarget.Upgrade();
+        if (upgradeTarget != null)
+            upgradeTarget.Upgrade();
         SurvivalSceneDirector.Instance.Resume();
     }
 }

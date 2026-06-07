@@ -327,11 +327,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
-  spriteObj: {fileID: 9018928260651077807}
-  explain: {fileID: 7749159392412736101}
+  targetObj: {fileID: 9018928260651077807}
+  duration: 0.15
   originalScale: {x: 0.85, y: 0.85, z: 0.85}
   expandScale: {x: 1, y: 1, z: 1}
   cursorPos: {x: 0, y: 0, z: 0}
+  explain: {fileID: 7749159392412736101}
 --- !u!1 &7749159392412736101
 GameObject:
   m_ObjectHideFlags: 0

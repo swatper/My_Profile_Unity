@@ -37,9 +37,14 @@ public class HoverVisualScalerWorld: HoverableObject
             StopCoroutine(scaleCoroutine);
         cursorPos = Vector3.zero;
         scaleCoroutine = StartCoroutine(ChangeScaleRoutine(originalScale, false));
-
     }
 
+    /// <summary>
+    /// 크기 변화 연출
+    /// </summary>
+    /// <param name="targetScale"></param>
+    /// <param name="isEnter"></param>
+    /// <returns></returns>
     IEnumerator ChangeScaleRoutine(Vector3 targetScale, bool isEnter)
     {
         Vector3 initialScale = targetObj.localScale;
@@ -47,7 +52,7 @@ public class HoverVisualScalerWorld: HoverableObject
         float elapsedTime = 0f;
         while (elapsedTime < duration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             float percentage = elapsedTime / duration;
             targetObj.localScale = Vector3.Lerp(initialScale, targetScale, percentage);
             yield return null; 
