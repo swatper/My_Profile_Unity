@@ -5,14 +5,11 @@ using UnityEngine;
 public class FullScreenIcon :  OnOffIconBase
 {
     public override void InitStatus(){
-/*
 #if UNITY_WEBGL && !UNITY_EDITOR
         GameManager.Plugin.SubscribeWebScreenListener();
 #else
         IsOn = GameManager.Instance.IsFullScreen;
 #endif
-*/
-        IsOn = GameManager.Instance.IsFullScreen;
 
         base.InitStatus();
     }
@@ -48,7 +45,7 @@ public class FullScreenIcon :  OnOffIconBase
 #else
         //나머지 환경
         Debug.Log("화면 크기 전환");
-        Screen.fullScreen = IsOn;
 #endif
+        Screen.fullScreen = IsOn;
     }
 }
