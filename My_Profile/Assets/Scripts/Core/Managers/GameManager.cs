@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
 
     public PluginManager M_Plugin= new PluginManager();
     public static PluginManager Plugin { get { return Instance.M_Plugin; } }
+
+    public DataManager M_Data = new DataManager();
+    public static DataManager Data { get { return Instance.M_Data; } }
     #endregion
 
     public PlayerController pController;

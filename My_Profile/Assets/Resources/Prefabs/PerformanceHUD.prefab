@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -5, y: -4}
-  m_SizeDelta: {x: 450, y: 130}
+  m_SizeDelta: {x: 450, y: 92}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &7896517147405923709
 CanvasRenderer:
@@ -72,20 +72,18 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Total System (RAM): {0} MB
+  m_Text: 'OS Reserved (UA): {1} MB
 
-    OS Reserved (UA): {1} MB
+    Engine Active (Asset): {2} MB
 
-    Engine Active
-    (Asset): {2} MB
-
-    C# Mono Heap (Code): {3} MB
+    C# Mono
+    Heap (Code): {3} MB
 
 '
 --- !u!1 &8540613523605199166
@@ -122,7 +120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -5, y: 117}
+  m_AnchoredPosition: {x: -5, y: 90}
   m_SizeDelta: {x: 220, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &1082298704479443800

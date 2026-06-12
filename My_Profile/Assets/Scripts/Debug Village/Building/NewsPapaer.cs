@@ -50,28 +50,35 @@ public class NewsPapaer : MonoBehaviour
 
     IEnumerator FetchGistData()
     {
-        //Gist로부터 쿠폰 정보 가져오기
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(gistRawUrl))
+        CouponData tmp = GameManager.Data.AssetCoupon;
+        if (tmp == null)
         {
-            yield return webRequest.SendWebRequest();
+            //Gist로부터 쿠폰 정보 가져오기
+            using (UnityWebRequest webRequest = UnityWebRequest.Get(gistRawUrl))
+            {
+                Debug.Log("캐싱된 쿠폰 정보 없음");
+                yield return webRequest.SendWebRequest();
 
-            //에러 체크
-            if (webRequest.result == UnityWebRequest.Result.Success){
-                string jsonText = webRequest.downloadHandler.text;
-                Debug.Log($"Gist 원본 JSON 수신 성공:\n{jsonText}");
+                //에러 체크
+                if (webRequest.result == UnityWebRequest.Result.Success)
+                {
+                    string jsonText = webRequest.downloadHandler.text;
+                    //Debug.Log($"Gist 원본 JSON 수신 성공:\n{jsonText}");
 
-                //JsonUtility로 C# 객체에 쏙 파싱하기
-                LoadedCoupon = JsonUtility.FromJson<CouponData>(jsonText);
-                //UI에 할당
-                assetName.text = "Asset Name: " + LoadedCoupon.asset_name;
-                assetPublisherName.text = "Publisher: " + LoadedCoupon.publisher_name;
-                couponCode.text = LoadedCoupon.coupon_code;
-                updateDate.text = "Last Updated: " + LoadedCoupon.last_updated;
-                urlOpenner.AddURL(LoadedCoupon.asset_url);
-            }
-            else{
-                Debug.LogError($"쿠폰 정보 가져오기 실패: {webRequest.error}");
+                    //JsonUtility로 C# 객체에 쏙 파싱하기
+                    tmp = JsonUtility.FromJson<CouponData>(jsonText);
+                    GameManager.Data.AssetCoupon = tmp;
+                }
+                else{
+                    Debug.LogError($"쿠폰 정보 가져오기 실패: {webRequest.error}");
+                }
             }
         }
+        //UI에 할당
+        assetName.text = "Asset Name: " + tmp.asset_name;
+        assetPublisherName.text = "Publisher: " + tmp.publisher_name;
+        couponCode.text = tmp.coupon_code;
+        updateDate.text = "Last Updated: " + tmp.last_updated;
+        urlOpenner.AddURL(tmp.asset_url);
     }
 }

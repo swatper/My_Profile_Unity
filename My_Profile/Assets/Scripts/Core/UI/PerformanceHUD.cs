@@ -54,11 +54,10 @@ public class PerformanceHUD : MonoBehaviour
     /// </summary>
     private void UpdateMemory()
     {
-        if (memoryText == null) return;
-        //1. [시스템] OS가 이 게임 프로세스에 할당한 실제 물리 메모리 총량 (Working Set)
-        currentProcess.Refresh();
-        long totalSystemMemory = currentProcess.WorkingSet64 / (1024 * 1024);
+        if (memoryText == null) 
+            return;
 
+        currentProcess.Refresh();
         //2. [유니티 예약] 유니티가 OS로부터 선점해둔 총 가상 공간
         long osReservedMemory = Profiler.GetTotalReservedMemoryLong() / (1024 * 1024);
 
@@ -70,11 +69,10 @@ public class PerformanceHUD : MonoBehaviour
 
         // UI 텍스트 출력
         memoryText.text = string.Format(
-            "<color=red>Total System (RAM): {0} MB</color>\n" +
-            "<color=yellow>OS Reserved (UA): {1} MB</color>\n" +
-            "<color=lime>Engine Active (Asset): {2} MB</color>\n" +
-            "<color=cyan>C# Mono Heap (Code): {3} MB</color>",
-            totalSystemMemory, osReservedMemory, engineActiveMemory, monoHeapMemory
+            "<color=yellow>OS Reserved (UA): {0} MB</color>\n" +
+            "<color=lime>Engine Active (Asset): {1} MB</color>\n" +
+            "<color=cyan>C# Mono Heap (Code): {2} MB</color>",
+            osReservedMemory, engineActiveMemory, monoHeapMemory
         );
     }
 }
