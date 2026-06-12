@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BaseSceneDirector" Collapsed="true">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAMIGAAAAAAABAEIAAAAAgAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Core\Managers\BaseSceneDirector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQIAAAAKCAAAAAUAEAAAgAIEBBBAoBhQACKCxAAgkA=</HashCode>
+      <FileName>Assets\Scripts\Core\Managers\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputManager" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAEAAAQAAAQAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Managers\InputManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResourceManager" Collapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Managers\ResourceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeUpdater" Collapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAgAJAAgAQAQAgAIAAoQAAEAQCIEAAAAAAggAAE=</HashCode>
+      <FileName>Assets\Scripts\Core\Managers\TimeUpdater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HpStat" Collapsed="true">
+    <Position X="5.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Player\PlayerStat\HpStat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeedStat" Collapsed="true">
+    <Position X="7.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Player\PlayerStat\SpeedStat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatHandler" Collapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\Core\Player\PlayerStat\StatHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LayerController" Collapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAACAACAQAAAAAAAAIAAAAEAAACAAAEQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Player\LayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAgDBAQgMAAAgAIAAgIUgAAEBAACCAQAAIAIIAAEg=</HashCode>
+      <FileName>Assets\Scripts\Core\Player\PlayerController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FullScreenIcon" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\UI\FullScreenIcon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadingUI" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAEAgAwAAAAIAAAAAAECBACAAEAAAAAAARQAEAAAGA=</HashCode>
+      <FileName>Assets\Scripts\Core\UI\LoadingUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MobileKeyboard" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAAAAIAAAAAAAAABAEEAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\UI\MobileKeyboard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnOffIconBase" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAABBAAAAAAAAABAAQBAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\UI\OnOffIconBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PC_MobileButton" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAACAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\UI\PC_MobileButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PerformanceHUD" Collapsed="true">
+    <Position X="17" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAiAAAAAEAAAAAAAAYAAAAAAAAAEAAAIAABAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Core\UI\PerformanceHUD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundIcon" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAACAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\UI\SoundIcon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseUpgradeModel&lt;T&gt;" Collapsed="true">
+    <Position X="6.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAIAAAAAAAAAAAAIAAgAAAAAAAAACAARAAIAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\Interfaces\BaseUpgradeModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HoverableObject" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAEAAABAAAAAAAAAAAAAQgAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\Interfaces\HoverableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BaseData&lt;T&gt;" Collapsed="true">
+    <Position X="13.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\Base\BaseData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseUpgradeData&lt;T&gt;" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\Base\BaseUpgradeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExpData" Collapsed="true">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PlayerData\ExpData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HpData" Collapsed="true">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PlayerData\HpData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerData" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAQAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PlayerData\PlayerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpeedData" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PlayerData\SpeedData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadingMessageData" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\LoadingMessageData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterData" Collapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\MonsterData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PaseData" Collapsed="true">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PaseData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WeaponData" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\WeaponData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HoverVisualScalerUI" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAkAAAAAAAAAAAAAAAAAQQAAAIAAAAAAAADBA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\HoverVisualScalerUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HoverVisualScalerWorld" Collapsed="true">
+    <Position X="2.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAkAAAAAAAAAAgAAAAAAQAAAQAAAAAAAAABBA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\HoverVisualScalerWorld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Data.Json.CouponData" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAJAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\JsonDataModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Exp" Collapsed="true">
+    <Position X="17" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PlayerData\ExpData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Hp" Collapsed="true">
+    <Position X="18.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PlayerData\HpData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="PlayerState" Collapsed="true">
+    <Position X="18.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAEAAAAEAAAAAAAAAABAAAAAAAQAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PlayerData\PlayerData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Speed" Collapsed="true">
+    <Position X="20.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PlayerData\SpeedData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="LoadingMessage" Collapsed="true">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAQAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\LoadingMessageData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="MonsterStat" Collapsed="true">
+    <Position X="22.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACCAAAAAAAAAAAAAAAAAABAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\MonsterData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Pase" Collapsed="true">
+    <Position X="17" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAEAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\PaseData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="WeaponStat" Collapsed="true">
+    <Position X="22.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAQAAIAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\WeaponData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="IUpgradable" Collapsed="true">
+    <Position X="17" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAIAAgAAAAAAAAACAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\Interfaces\IUpgradable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Core.Define.KeyEvent" Collapsed="true">
+    <Position X="17" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAgAIAAAAAAAAAAAAAEAAAACACAAABAAAI=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\Define.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Define.Layers" Collapsed="true">
+    <Position X="18.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAIAAAAAAAAgIAAAAAAAAAAAAAICAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\Define.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Define.TimeOfDay" Collapsed="true">
+    <Position X="22.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\Define.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Define.UpgradeType" Collapsed="true">
+    <Position X="17" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAABACAAAAAAgAAAAAAAQgA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\Define.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Define.MonsterType" Collapsed="true">
+    <Position X="20.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\Define.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

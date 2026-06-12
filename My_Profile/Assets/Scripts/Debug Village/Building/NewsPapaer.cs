@@ -7,9 +7,6 @@ using System.Runtime.InteropServices;   //웹GL 플로그인
 
 public class NewsPapaer : MonoBehaviour
 {
-    [DllImport("__Internal")]
-    private static extern void CopyTextToClipboardWebGL(string text);
-
     [Header("Gist Settings")]
     [SerializeField] private string gistRawUrl;
     [SerializeField] URLOpen urlOpenner;
@@ -38,7 +35,7 @@ public class NewsPapaer : MonoBehaviour
         //🌐 WebGL 빌드 환경일 때 실행
         try
         {
-            CopyTextToClipboardWebGL(textToCopy);
+            GameManager.Plugin.CopyWebClipbaord(textToCopy);
         }
         catch (System.EntryPointNotFoundException e)
         {

@@ -25,14 +25,18 @@ public abstract class OnOffIconBase : MonoBehaviour
         CheckSprite();
     }
 
-
-    public virtual void CheckSprite() {
+    /// <summary>
+    /// 스프라이트 변경 및 이후 작업 호출
+    /// </summary>
+    /// <param name="isInit">fasle: 스프라이트만 변경</param>
+    public virtual void CheckSprite(bool isInit = false) {
         if (!IsOn)
             buttonIcon.sprite = iconSprites[0];
         else
             buttonIcon.sprite = iconSprites[1];
 
-        ActionalProcessing();
+        if(!isInit)
+            ActionalProcessing();
     }
 
     protected abstract void ActionalProcessing();

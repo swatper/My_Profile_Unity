@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public static TimeUpdater Clock { get { return Instance.TimeUpdater; } }
 
     GameObject PerformanceHUD;
+
+    public PluginManager M_Plugin= new PluginManager();
+    public static PluginManager Plugin { get { return Instance.M_Plugin; } }
     #endregion
 
     public PlayerController pController;

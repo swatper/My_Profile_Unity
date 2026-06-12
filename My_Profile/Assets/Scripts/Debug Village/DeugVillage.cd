@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BaseLightContoller" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\Building\BaseLightContoller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuildingBase" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAIAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\Building\BuildingBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuildingInteraction" Collapsed="true">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAIAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\Building\BuildingInteraction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommitField" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAABAAABAAAAAAAAAAIwAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\Building\CommitField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HoverVisualScalerWorld" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAkAAAAAAAAAAgAAAAAAQAAAQAAAAAAAAABBA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\Building\HoverVisualScalerWorld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mannequin" Collapsed="true">
+    <Position X="3.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAUAAAIAAAAAAQAAAAAAAABAAAAAAAABAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\Building\Mannequin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewsPapaer" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAACAAAAAAAAAAAAQAAAgCAAAAEABAIAUA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\Building\NewsPapaer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SurvivalPortal" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\Building\SurvivalPortal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GithubChecker" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAQAAAAAAEAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\ETC\GithubChecker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GlobalLightController" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAABAAAAIAAAAEgAAAAAAAAAQAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\ETC\GlobalLightController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KeyHintDisplay" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAABAQCAAIAAAABAAAAAABAIAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\ETC\KeyHintDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lamp" Collapsed="true">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAACAAAAAAIAAAAAAAAAAAAAQAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\ETC\Lamp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeSensitiveControllerBase" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\ETC\TimeSensitiveControllerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VillageSoundController" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAIAAgAAAAAAAAAAIAAECCAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\ETC\VillageSoundController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DebugSceneDirector" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAMAAAAAABAIAAAAAEAIAAAAAAAwIAAAAAAEGI=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\Manager\DebugSceneDirector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InfoUI" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAEAAAAAAAAAAEAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\UI\InfoUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeCityUI" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAQAAAAAAAAACAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\UI\TimeCityUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIBase" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\UI\UIBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URLOpen" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Debug Village\UI\URLOpen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
