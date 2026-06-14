@@ -1,7 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.UIElements;
 using Core.Define;
 public class PlayerController : MonoBehaviour, IUpgradable
 {

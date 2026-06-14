@@ -17,7 +17,7 @@ public class GithubChecker : MonoBehaviour
     {
         string githubLog = GameManager.Data.GithubJsonText;
         if (githubLog == null){
-            Debug.Log("캐싱된 Commit 기록 없음");
+            //Debug.Log("캐싱된 Commit 기록 없음");
             string url = $"https://api.github.com/users/{username}/events/public?per_page=100";
             using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
             {
@@ -26,7 +26,7 @@ public class GithubChecker : MonoBehaviour
                 if (webRequest.result == UnityWebRequest.Result.Success)
                 {
                     githubLog = webRequest.downloadHandler.text;
-                    //Debug.Log("받은 Github Json 데이터: \n" + githubLog);
+                    Debug.Log("받은 Github Json 데이터: \n" + githubLog);
                     GameManager.Data.GithubJsonText = githubLog;
                 }
                 else

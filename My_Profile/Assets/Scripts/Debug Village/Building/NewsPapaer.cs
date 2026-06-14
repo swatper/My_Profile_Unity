@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 using  Core.Data.Json;
 using UnityEngine.UI;
-using System.Runtime.InteropServices;   //웹GL 플로그인
 
 public class NewsPapaer : MonoBehaviour
 {
@@ -19,55 +18,38 @@ public class NewsPapaer : MonoBehaviour
     [Header("쿠폰 정보")]
     public CouponData LoadedCoupon { get; private set; }
 
-    void Awake()
-    {
+    void Awake(){
         StartCoroutine(FetchGistData());
     }
 
     public void CopyCoupon()
     {
-        if (LoadedCoupon == null || string.IsNullOrEmpty(LoadedCoupon.coupon_code))
+        if (LoadedCoupon == null || string.IsNullOrEmpty(LoadedCoupon.coupon_code)) 
             return;
 
-        string textToCopy = LoadedCoupon.coupon_code;
-
-#if !UNITY_EDITOR && UNITY_WEBGL
-        //🌐 WebGL 빌드 환경일 때 실행
-        try
-        {
-            GameManager.Plugin.CopyWebClipbaord(textToCopy);
-        }
-        catch (System.EntryPointNotFoundException e)
-        {
-            Debug.LogError("WebGL 클립보드 플러그인을 찾을 수 없습니다: " + e.Message);
-        }
-#else
-        //💻 유니티 에디터나 PC 빌드 환경일 때 실행
-        GUIUtility.systemCopyBuffer = textToCopy;
-#endif
-
+        GameManager.Native.CopyToClipboard(LoadedCoupon.coupon_code);
     }
 
     IEnumerator FetchGistData()
     {
-        CouponData tmp = GameManager.Data.AssetCoupon;
-        if (tmp == null)
+        LoadedCoupon = GameManager.Data.AssetCoupon;
+        if (LoadedCoupon == null)
         {
             //Gist로부터 쿠폰 정보 가져오기
             using (UnityWebRequest webRequest = UnityWebRequest.Get(gistRawUrl))
             {
-                Debug.Log("캐싱된 쿠폰 정보 없음");
+                //Debug.Log("캐싱된 쿠폰 정보 없음");
                 yield return webRequest.SendWebRequest();
 
                 //에러 체크
                 if (webRequest.result == UnityWebRequest.Result.Success)
                 {
                     string jsonText = webRequest.downloadHandler.text;
-                    //Debug.Log($"Gist 원본 JSON 수신 성공:\n{jsonText}");
+                    Debug.Log($"받은 쿠폰 Json 데이터: \n{jsonText}");
 
                     //JsonUtility로 C# 객체에 쏙 파싱하기
-                    tmp = JsonUtility.FromJson<CouponData>(jsonText);
-                    GameManager.Data.AssetCoupon = tmp;
+                    LoadedCoupon = JsonUtility.FromJson<CouponData>(jsonText);
+                    GameManager.Data.AssetCoupon = LoadedCoupon;
                 }
                 else{
                     Debug.LogError($"쿠폰 정보 가져오기 실패: {webRequest.error}");
@@ -75,10 +57,10 @@ public class NewsPapaer : MonoBehaviour
             }
         }
         //UI에 할당
-        assetName.text = "Asset Name: " + tmp.asset_name;
-        assetPublisherName.text = "Publisher: " + tmp.publisher_name;
-        couponCode.text = tmp.coupon_code;
-        updateDate.text = "Last Updated: " + tmp.last_updated;
-        urlOpenner.AddURL(tmp.asset_url);
+        assetName.text = "Asset Name: " + LoadedCoupon.asset_name;
+        assetPublisherName.text = "Publisher: " + LoadedCoupon.publisher_name;
+        couponCode.text = LoadedCoupon.coupon_code;
+        updateDate.text = "Last Updated: " + LoadedCoupon.last_updated;
+        urlOpenner.AddURL(LoadedCoupon.asset_url);
     }
 }

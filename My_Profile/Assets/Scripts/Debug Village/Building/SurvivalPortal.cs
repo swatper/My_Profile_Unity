@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.U2D;
 using Core.Define;
 
 public class SurvivalPortal : BuildingInteraction

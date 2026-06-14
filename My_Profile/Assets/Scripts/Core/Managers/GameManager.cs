@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Xml.Linq;
 using UnityEngine;
 using Core.Define;
 
@@ -29,6 +27,9 @@ public class GameManager : MonoBehaviour
 
     public DataManager M_Data = new DataManager();
     public static DataManager Data { get { return Instance.M_Data; } }
+
+    public NativeManager M_Native = new NativeManager();
+    public static NativeManager Native { get { return Instance.M_Native; } }
     #endregion
 
     public PlayerController pController;
