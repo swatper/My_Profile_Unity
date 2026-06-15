@@ -28,13 +28,6 @@
       <FileName>Assets\Scripts\Debug Village\Building\CommitField.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HoverVisualScalerWorld" Collapsed="true">
-    <Position X="10" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAgIAkAAAAAAAAAAgAAAAAAQAAAQAAAAAAAAABBA=</HashCode>
-      <FileName>Assets\Scripts\Debug Village\Building\HoverVisualScalerWorld.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Mannequin" Collapsed="true">
     <Position X="3.5" Y="5" Width="1.5" />
     <TypeIdentifier>
@@ -45,7 +38,7 @@
   <Class Name="NewsPapaer" Collapsed="true">
     <Position X="11.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAACAAAAAAAAAAAAQAAAgCAAAAEABAIAUA=</HashCode>
+      <HashCode>AAAAAAAAAEAACAAAAAAAAAAAAQAAAgCAAAAEABAIAEA=</HashCode>
       <FileName>Assets\Scripts\Debug Village\Building\NewsPapaer.cs</FileName>
     </TypeIdentifier>
   </Class>

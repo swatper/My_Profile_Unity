@@ -8,21 +8,42 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GameManager" Collapsed="true">
-    <Position X="20.5" Y="0.5" Width="1.5" />
+    <Position X="9.5" Y="11.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="M_Data" Type="DataManager" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.5" Y="11.812" />
+        <Point X="9.173" Y="11.795" />
+        <Point X="6.5" Y="11.795" />
+        <Point X="6.5" Y="8.562" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>EAQIAAAAKCAAAAAUAEAAAgAIEBBBAoBhQACKCxAAgkA=</HashCode>
+      <HashCode>EARIABAAKCAAgAAUAEAEAgAIEBBBApBhQACKCxBAgkA=</HashCode>
       <FileName>Assets\Scripts\Core\Managers\GameManager.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="M_Plugin" />
+      <Field Name="M_Scene" />
+      <Field Name="M_Resource" />
+      <Field Name="M_Input" />
+      <Field Name="M_Native" />
+      <Field Name="M_Data" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="InputManager" Collapsed="true">
-    <Position X="22.25" Y="0.5" Width="1.5" />
+    <Position X="9.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAEAAAQAAAQAAAAAAAgAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\Managers\InputManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ResourceManager" Collapsed="true">
-    <Position X="20.5" Y="2.5" Width="1.5" />
+    <Position X="14.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\Managers\ResourceManager.cs</FileName>
@@ -36,14 +57,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="HpStat" Collapsed="true">
-    <Position X="5.5" Y="8" Width="1.5" />
+    <Position X="12" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\Player\PlayerStat\HpStat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SpeedStat" Collapsed="true">
-    <Position X="7.75" Y="8" Width="1.5" />
+    <Position X="14.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\Player\PlayerStat\SpeedStat.cs</FileName>
@@ -72,14 +93,14 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="FullScreenIcon" Collapsed="true">
-    <Position X="5.25" Y="5" Width="1.5" />
+    <Position X="5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACCAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\UI\FullScreenIcon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LoadingUI" Collapsed="true">
-    <Position X="20.5" Y="1.5" Width="1.5" />
+    <Position X="13" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IBAEAgAwAAAAIAAAAAAECBACAAEAAAAAAARQAEAAAGA=</HashCode>
       <FileName>Assets\Scripts\Core\UI\LoadingUI.cs</FileName>
@@ -94,14 +115,14 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="OnOffIconBase" Collapsed="true">
-    <Position X="3" Y="3.5" Width="1.5" />
+    <Position X="2.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAABBAAAAAAAAABAAQBAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\UI\OnOffIconBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PC_MobileButton" Collapsed="true">
-    <Position X="0.75" Y="5" Width="1.5" />
+    <Position X="0.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAACAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\UI\PC_MobileButton.cs</FileName>
@@ -115,14 +136,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SoundIcon" Collapsed="true">
-    <Position X="3" Y="5" Width="1.5" />
+    <Position X="2.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAACAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\UI\SoundIcon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BaseUpgradeModel&lt;T&gt;" Collapsed="true">
-    <Position X="6.75" Y="6.5" Width="1.5" />
+    <Position X="13.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAIAAAAAAAAAAAAIAAgAAAAAAAAACAARAAIAAAAABA=</HashCode>
       <FileName>Assets\Scripts\Core\Utills\Interfaces\BaseUpgradeModel.cs</FileName>
@@ -130,7 +151,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="HoverableObject" Collapsed="true">
-    <Position X="1.75" Y="6.5" Width="1.5" />
+    <Position X="8.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAEAAABAAAAAAAAAAAAAQgAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\Utills\Interfaces\HoverableObject.cs</FileName>
@@ -208,14 +229,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="HoverVisualScalerUI" Collapsed="true">
-    <Position X="0.5" Y="8" Width="1.5" />
+    <Position X="7" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgIAkAAAAAAAAAAAAAAAAAQQAAAIAAAAAAAADBA=</HashCode>
       <FileName>Assets\Scripts\Core\Utills\HoverVisualScalerUI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HoverVisualScalerWorld" Collapsed="true">
-    <Position X="2.75" Y="8" Width="1.5" />
+    <Position X="9.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgIAkAAAAAAAAAAgAAAAAAQAAAQAAAAAAAAABBA=</HashCode>
       <FileName>Assets\Scripts\Core\Utills\HoverVisualScalerWorld.cs</FileName>
@@ -226,6 +247,27 @@
     <TypeIdentifier>
       <HashCode>AAAAAJAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAQAA=</HashCode>
       <FileName>Assets\Scripts\Core\Utills\JsonDataModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataManager" Collapsed="true">
+    <Position X="5.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Managers\DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NativeManager" Collapsed="true">
+    <Position X="11.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACQAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Managers\NativeManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PluginManager" Collapsed="true">
+    <Position X="7.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Managers\PluginManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="Exp" Collapsed="true">

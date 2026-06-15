@@ -6,6 +6,6 @@ using UnityEngine;
 /// </summary>
 public class DataManager
 {
-    public string GithubJsonText { get; set; }
     public CouponData AssetCoupon { get;  set; }
+    public GithubEventList GitEvent { get; set; }
 }

@@ -13,7 +13,7 @@ public class VillageSoundController : TimeSensitiveControllerBase
     protected override void CheckTime(TimeOfDay newTime)
     {
         if (lastTOD != newTime) {
-            Debug.Log("시간대 변경됨");
+            //Debug.Log("시간대 변경됨");
             switch (newTime) {
                 case TimeOfDay.Morning:
                     ambBox.clip = natureAmbs[0];

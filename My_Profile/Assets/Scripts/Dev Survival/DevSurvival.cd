@@ -56,13 +56,6 @@
       <FileName>Assets\Scripts\Dev Survival\UI\EXPUI.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HoverVisualScalerUI" Collapsed="true">
-    <Position X="11.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAgIAkAAAAAAAAAAAAAAAAAQQAAAIAAAAAAAADBA=</HashCode>
-      <FileName>Assets\Scripts\Dev Survival\UI\HoverVisualScalerUI.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="UpgradeSlot" Collapsed="true">
     <Position X="9.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>

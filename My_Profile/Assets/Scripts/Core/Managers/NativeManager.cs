@@ -21,7 +21,7 @@ public class NativeManager
         //💻 유니티 에디터나 PC 빌드 환경일 때 실행
         GUIUtility.systemCopyBuffer = text;
 #endif
-        Debug.Log($"복사 완료: {text}");
+        Debug.Log($"[NativeManager] 복사 완료: {text}");
     }
 
     public void SetFullScreen(bool IsOn)
@@ -29,7 +29,7 @@ public class NativeManager
         GameManager.Instance.IsFullScreen  = IsOn;
 #if UNITY_EDITOR
         //에디터 환경
-        Debug.Log("에디터에서는 테스트 불가능");
+        Debug.Log("[NativeManager] 에디터에서는 전체 화면 테스트 불가능");
 
         /* #elif UNITY_WEBGL
                 //WebGL 환경
