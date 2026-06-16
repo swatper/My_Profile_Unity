@@ -7,18 +7,21 @@
       <FileName>Assets\Scripts\Core\Managers\BaseSceneDirector.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameManager" Collapsed="true">
-    <Position X="9.5" Y="11.25" Width="1.5" />
+  <Class Name="GameManager">
+    <Position X="9.5" Y="10" Width="1.5" />
     <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
       <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
-    <AssociationLine Name="M_Data" Type="DataManager" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="M_Data" Type="DataManager" ManuallyRouted="true">
       <Path>
-        <Point X="9.5" Y="11.812" />
-        <Point X="9.173" Y="11.795" />
-        <Point X="6.5" Y="11.795" />
+        <Point X="9.5" Y="11.268" />
+        <Point X="9.5" Y="11.442" />
+        <Point X="7.735" Y="11.442" />
+        <Point X="7.408" Y="11.795" />
+        <Point X="7.408" Y="11.391" />
+        <Point X="6.5" Y="11.391" />
         <Point X="6.5" Y="8.562" />
       </Path>
     </AssociationLine>
@@ -27,12 +30,12 @@
       <FileName>Assets\Scripts\Core\Managers\GameManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="M_Plugin" />
-      <Field Name="M_Scene" />
-      <Field Name="M_Resource" />
       <Field Name="M_Input" />
-      <Field Name="M_Native" />
+      <Field Name="M_Resource" />
+      <Field Name="M_Scene" />
+      <Field Name="M_Plugin" />
       <Field Name="M_Data" />
+      <Field Name="M_Native" />
     </ShowAsAssociation>
   </Class>
   <Class Name="InputManager" Collapsed="true">
@@ -158,13 +161,6 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="BaseData&lt;T&gt;" Collapsed="true">
-    <Position X="13.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assets\Scripts\Core\Utills\SO\Base\BaseData.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="BaseUpgradeData&lt;T&gt;" Collapsed="true">
     <Position X="7.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
@@ -187,7 +183,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PlayerData" Collapsed="true">
-    <Position X="14.5" Y="3.5" Width="1.5" />
+    <Position X="12.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAQAAAAQAA=</HashCode>
       <FileName>Assets\Scripts\Core\Utills\SO\PlayerData\PlayerData.cs</FileName>
@@ -208,7 +204,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MonsterData" Collapsed="true">
-    <Position X="12.25" Y="3.5" Width="1.5" />
+    <Position X="11" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\Utills\SO\MonsterData.cs</FileName>
@@ -229,14 +225,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="HoverVisualScalerUI" Collapsed="true">
-    <Position X="7" Y="6.5" Width="1.5" />
+    <Position X="7" Y="6.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAgIAkAAAAAAAAAAAAAAAAAQQAAAIAAAAAAAADBA=</HashCode>
       <FileName>Assets\Scripts\Core\Utills\HoverVisualScalerUI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HoverVisualScalerWorld" Collapsed="true">
-    <Position X="9.25" Y="6.5" Width="1.5" />
+    <Position X="9.25" Y="6.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAgIAkAAAAAAAAAAgAAAAAAQAAAQAAAAAAAAABBA=</HashCode>
       <FileName>Assets\Scripts\Core\Utills\HoverVisualScalerWorld.cs</FileName>
@@ -252,7 +248,7 @@
   <Class Name="DataManager" Collapsed="true">
     <Position X="5.75" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\Managers\DataManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -268,6 +264,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Core\Managers\PluginManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseCharacterData&lt;T&gt;" Collapsed="true">
+    <Position X="11.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Core\Utills\SO\Base\BaseCharacterData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="Exp" Collapsed="true">

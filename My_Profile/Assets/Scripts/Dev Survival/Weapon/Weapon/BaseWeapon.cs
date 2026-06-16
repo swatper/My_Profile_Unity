@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class BaseWeapon : BaseUpgradeModel<WeaponStat>, IUpgradable
+public abstract class BaseWeapon : BaseUpgradeModel<WeaponStat>
 {
     protected WeaponData wData => SOData as WeaponData;
     protected WeaponStat wStat{
@@ -17,7 +17,6 @@ public abstract class BaseWeapon : BaseUpgradeModel<WeaponStat>, IUpgradable
     /// </summary>
     public override void Upgrade()
     {
-        Debug.Log("무기 업글");
         if (!isUnlocked){
             SurvivalSceneDirector.Instance.wHandler.UnlockWeapon(wData.Type);
             isUnlocked = true;

@@ -162,4 +162,12 @@ public class PoolManager : BaseUpgradeModel<Pase>
     private void OnDestroy(){
         StopAllCoroutines();
     }
+
+    public override string GetDescription(){
+        return "";
+    }
+
+    public override Sprite GetIcon(){
+        return null;
+    }
 }

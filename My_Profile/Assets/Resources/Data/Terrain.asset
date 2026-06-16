@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9841d6da2220644fad9392c257daef5, type: 3}
+  m_Name: Terrain
+  m_EditorClassIdentifier: Core::TerrainStageData
+  levelTables:
+  - {x: 30, y: 30}
+  - {x: 50, y: 50}
+  - {x: 100, y: 100}
+  TerrainIcon: {fileID: 124065987, guid: 2b0158848e2e97b41afd25d38034bda0, type: 3}
+  type: 6

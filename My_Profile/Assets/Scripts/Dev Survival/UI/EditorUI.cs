@@ -1,10 +1,15 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 //#if UNITY_EDITOR
+/// <summary>
+/// 추후 막을 예정
+/// </summary>
 public class EditorUI : MonoBehaviour
 {
     [SerializeField] WeaponHandler wHandler;
+    [SerializeField] TerrainScaler terrain;
 
     private void Start(){
         StartCoroutine("GetWeapon");
@@ -15,7 +20,10 @@ public class EditorUI : MonoBehaviour
     /// </summary>
     /// <param name="wID"></param>
     public void UpgradeWeaponToButton(int wID) {
-        wHandler.WeaponUpgradeButton(wID);
+        if (wID < 4)
+            wHandler.WeaponUpgradeButton(wID);
+        else if (wID == 6)
+            terrain.Upgrade();
     }
 
     IEnumerator GetWeapon() {
@@ -24,6 +32,5 @@ public class EditorUI : MonoBehaviour
             yield return null;
         }
     }
-
 }
 //#endif

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Core.Define;
 
@@ -19,5 +17,9 @@ public class SpeedStat : BaseUpgradeModel<Speed>
         info += $"    {upgradeType.ToString()} += {nextData.spd - curData.spd}";
 
         return info + "}";
+    }
+
+    public override Sprite GetIcon(){
+        return null;
     }
 }

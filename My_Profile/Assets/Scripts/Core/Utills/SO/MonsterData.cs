@@ -15,7 +15,7 @@ public struct MonsterStat
 
 
 [CreateAssetMenu(fileName = "Monster", menuName = "ScriptableObject/MonsterData", order = 0)]
-public class MonsterData : BaseData<MonsterStat>
+public class MonsterData : BaseCharacterData<MonsterStat>
 {
     public MonsterType MonsterType;
 }

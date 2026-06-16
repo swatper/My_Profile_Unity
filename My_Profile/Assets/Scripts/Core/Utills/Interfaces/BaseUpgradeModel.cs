@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// 실제 업그레이드 기능이 있는 클래스
 /// </summary>
-/// <typeparam name="T"></typeparam>
-public class BaseUpgradeModel <T>: MonoBehaviour, IUpgradable where T : struct
+/// <typeparam name="T">업드레이드 데이터 테이블 타입</typeparam>
+public abstract class BaseUpgradeModel <T>: MonoBehaviour, IUpgradable where T : struct
 {
     [Header("SO Data")]
     public BaseUpgradeData<T> SOData;
@@ -20,6 +18,7 @@ public class BaseUpgradeModel <T>: MonoBehaviour, IUpgradable where T : struct
     {
         if (isMaxLevel)
             return;
+        Debug.Log($"업그레이드: {gameObject.name}");
         currentLevel++;
 
         if (currentLevel >= SOData.levelTables.Count)
@@ -30,11 +29,7 @@ public class BaseUpgradeModel <T>: MonoBehaviour, IUpgradable where T : struct
 
     public virtual bool GetUnlockState() => isUnlocked;
 
-    public  virtual string GetDescription(){
-        return "";
-    }
+    public abstract string GetDescription();
 
-    public virtual Sprite GetIcon(){
-        throw new System.NotImplementedException();
-    }
+    public abstract Sprite GetIcon();
 }

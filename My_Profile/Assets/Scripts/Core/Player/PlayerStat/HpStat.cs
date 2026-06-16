@@ -21,4 +21,7 @@ public class HpStat : BaseUpgradeModel<Hp>
         return info + "}";
     }
 
+    public override Sprite GetIcon(){
+        return null ;
+    }
 }

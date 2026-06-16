@@ -37,6 +37,7 @@ namespace Core.Define
         Unity = 3,
         Hp = 4,
         Speed = 5,
+        Terrain = 6, //지형 범위 강화
     }
 
     /// <summary>

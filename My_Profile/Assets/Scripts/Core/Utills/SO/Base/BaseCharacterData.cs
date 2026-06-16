@@ -1,5 +1,5 @@
 using UnityEngine;
-public abstract class BaseData<T> : BaseUpgradeData<T> where T : struct
+public abstract class BaseCharacterData<T> : BaseUpgradeData<T> where T : struct
 {
     [Header("Character Data")]
     public string Name;

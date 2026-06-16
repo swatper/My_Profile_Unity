@@ -24,7 +24,7 @@ public struct PlayerState
 
 
 [CreateAssetMenu(fileName = "Player", menuName = "ScriptableObject/Player/PlayerData", order = 1)]
-public class PlayerData : BaseData<float>
+public class PlayerData : BaseCharacterData<float>
 {
     public float MagnetRange;
     public HpData Hp;

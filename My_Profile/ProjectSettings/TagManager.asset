@@ -9,6 +9,7 @@ TagManager:
   - Monster
   - Weapon
   - PlayerLayerTag
+  - ETC
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Monster
   - Player
   - Weapon
-  - 
+  - Ground
   - 
   - 
   - 

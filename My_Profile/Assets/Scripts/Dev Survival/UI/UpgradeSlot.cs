@@ -29,6 +29,9 @@ public class UpgradeSlot : MonoBehaviour
         if (upID < 4){
             SetWeaponInfo();
         }
+        else if (upID == 6){
+            SetTerrainInfo();
+        }
         else
             SetStatInfo();
 
@@ -50,6 +53,16 @@ public class UpgradeSlot : MonoBehaviour
         targetDesc.text = "    Stat ++ ; \n" + "}";
     }
 
+    void SetTerrainInfo()
+    {
+        InitFileName(false);
+        targetDesc.text = upgradeTarget.GetDescription();
+    }
+
+    /// <summary>
+    /// 해금 여부
+    /// </summary>
+    /// <param name="isNew">true: 해금 | false : 업글 </param>
     void InitFileName(bool isNew){
         fileNames[0].SetActive(!isNew);
         fileNames[1].SetActive(isNew);

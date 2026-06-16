@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.Define;
+using UnityEditor.Build;
 
 public class SurvivalSceneDirector : BaseSceneDirector
 {
@@ -15,10 +16,12 @@ public class SurvivalSceneDirector : BaseSceneDirector
     [SerializeField] float curExp;
     [SerializeField] int curLv;
     public Action<float> OnMonsterKilled;
-    [Header("Upgrade Slot")]
+    [Header("Upgradable Target")]
     public WeaponHandler wHandler;
     [SerializeField] PlayerController pController;
-    [SerializeField] GameObject solt;
+    [SerializeField] TerrainScaler terrainScaler;
+    [Header("Slot")]
+    [SerializeField] GameObject soltCanvas;
     [SerializeField] UpgradeSlot[] slots;
 
     private void Awake()
@@ -71,7 +74,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
     public void Puase()
     {
         GameManager.Player.ReadUIInfo();
-        solt.SetActive(true);
+        soltCanvas.SetActive(true);
         soundController.PlayLevelUpEffect(0);
         Time.timeScale = 0f;
         InitSlots();
@@ -81,7 +84,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
     {
         soundController.PlayLevelUpEffect(0);
         GameManager.Player.StopReadUIInfo();
-        solt.SetActive(false);
+        soltCanvas.SetActive(false);
         Time.timeScale = 1.0f;
     }
 
@@ -135,16 +138,20 @@ public class SurvivalSceneDirector : BaseSceneDirector
         int totalCount = Enum.GetNames(typeof(UpgradeType)).Length;
         PlayerController pController = GameManager.Player;
 
-        //업글 가능한 무기들 미리 준비
+        //업글 가능한 종류(무기, 스텟, 지형) 미리 준비
         for (int i = 0; i < totalCount; i++){
-            UpgradeType type = (UpgradeType)i;
+            UpgradeType type = (UpgradeType) i;
             IUpgradable target;
 
+            //종류 확인
             if (i < 4)
                 target = wHandler.GetWeaponScript(type);
+            else if (i == 6)
+                target = terrainScaler;
             else
                 target = pController;
 
+            //업글 가능 목록에 저장
             if (target.CanUpgrade()){
                 availableUpgrades.Add(type);
             }
@@ -160,13 +167,26 @@ public class SurvivalSceneDirector : BaseSceneDirector
 
         //슬롯에 업글 대상 넘겨주기
         for (int i = 0; i < slots.Length; i++){
+            //슬롯의 개수가 업글 가능한 항목보다 작을 경우
+            //그 슬롯을 비활성화 시킴
             if (i >= availableUpgrades.Count){
                 slots[i].gameObject.SetActive(false);
                 continue;
             }
 
             UpgradeType selectedType = availableUpgrades[i];
-            IUpgradable target = ((int)selectedType < 4) ? wHandler.GetWeaponScript(selectedType) : pController;
+            IUpgradable target;
+            int typeNum = (int)selectedType;
+            //무기
+            if (typeNum < 4)
+                target = wHandler.GetWeaponScript(selectedType);
+            //능력치
+            else if (typeNum < 6)
+                target = pController;
+            //지형
+            else
+                target = terrainScaler;
+
             slots[i].gameObject.SetActive(true);
             slots[i].InitSlot(selectedType, target);
         }
