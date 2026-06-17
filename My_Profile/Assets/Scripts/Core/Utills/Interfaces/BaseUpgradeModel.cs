@@ -9,6 +9,7 @@ public abstract class BaseUpgradeModel <T>: MonoBehaviour, IUpgradable where T :
     [Header("SO Data")]
     public BaseUpgradeData<T> SOData;
     [Header("Current Stat")]
+    [Tooltip("Runtime Stat")]
     public T currentStat;
     [SerializeField] protected int currentLevel = 1;
     public bool isMaxLevel = false;

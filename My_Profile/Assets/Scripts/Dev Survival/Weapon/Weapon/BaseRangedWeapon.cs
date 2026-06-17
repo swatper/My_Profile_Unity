@@ -3,12 +3,12 @@ using UnityEngine;
 public class BaseRangedWeapon : BaseWeapon
 {
     [Header("Ranged Weapon Info")]
-    [SerializeField] int bID;
-    [SerializeField] float timer;
+    [SerializeField] protected int bID;
+    [SerializeField] protected float timer;
     [Tooltip("발사체 속도")]
-    [SerializeField] float projectileSpeed;
+    [SerializeField] protected float projectileSpeed;
     [Header("Weapon Component")]
-    [SerializeField] MonsterScanner mScanner;
+    [SerializeField] protected MonsterScanner mScanner;
 
     protected override void InitWeaponData(){
         wStat = wData.levelTables[currentLevel - 1];

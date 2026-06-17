@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Core.Define;
-using UnityEditor.Build;
 
 public class SurvivalSceneDirector : BaseSceneDirector
 {
