@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTables:
   - WeaponDamage: 11
-    WeaponSpeed: 0.5
-    PierceCount: 1
-    ScanRange: 7
-  - WeaponDamage: 13
     WeaponSpeed: 0.7
     PierceCount: 2
+    ScanRange: 8
+  - WeaponDamage: 13
+    WeaponSpeed: 1
+    PierceCount: 3
     ScanRange: 9
   - WeaponDamage: 20
-    WeaponSpeed: 1
-    PierceCount: 2
-    ScanRange: 11
-  - WeaponDamage: 30
     WeaponSpeed: 1.2
     PierceCount: 3
+    ScanRange: 11
+  - WeaponDamage: 30
+    WeaponSpeed: 1.5
+    PierceCount: 4
     ScanRange: 13
   WeaponName: C++Corossbow
   WeaponIcon: {fileID: -2031779718, guid: 88e03810229219441beec790df1dc48a, type: 3}

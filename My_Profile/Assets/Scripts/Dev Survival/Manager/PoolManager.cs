@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,12 @@ public class PoolManager : BaseUpgradeModel<Pase>
 {
     [SerializeField] BaseSceneDirector  sceneDirector;
     [SerializeField] PlayerController pController;
+   public Action RetrieveBulletSignal;
     [Header("Prefabs")]
     [SerializeField] GameObject[] monsterPefabs;
     [SerializeField] GameObject[] bulletPefabs;
     [Header("Pool State")]
+    [SerializeField] bool isSuppliable = true;
     float spawnRate = 0.3f;
     PaseData spawnData => SOData as PaseData;
     Pase paseState {
@@ -49,7 +52,7 @@ public class PoolManager : BaseUpgradeModel<Pase>
 
 //#if UNITY_EDITOR
     public void PaseDown() {
-        if (currentLevel <= 0) return;
+        if (currentLevel <= 1) return;
         currentLevel--;
         paseState = spawnData.levelTables[currentLevel];
         //대기하고 있는 이전 단계 몬스터 제거
@@ -81,7 +84,7 @@ public class PoolManager : BaseUpgradeModel<Pase>
         StartCoroutine("SpawnRoutine");
     }
 
-
+    #region Monster
     //Pool에서 몬스터 소환히기
     public void SpawnFromPool() {
         if (monsterPool.Count > 0) {
@@ -96,10 +99,10 @@ public class PoolManager : BaseUpgradeModel<Pase>
     void SetMonsterPos(Transform mTransform) {
         Vector2 spawnDir = pController.inputVec;
         if (spawnDir == Vector2.zero)
-            spawnDir = Random.insideUnitCircle.normalized;
+            spawnDir = UnityEngine.Random.insideUnitCircle.normalized;
         Vector3 spawnPos = pController.transform.position
             + (Vector3)(spawnDir * 22f)
-            + new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0);
+            + new Vector3(UnityEngine.Random.Range(-2f, 2f), UnityEngine.Random.Range(-2f, 2f), 0);
         mTransform.position = spawnPos;
     }
 
@@ -111,6 +114,19 @@ public class PoolManager : BaseUpgradeModel<Pase>
         monsterPool.Enqueue(newMonster);
     }
 
+    IEnumerator SpawnRoutine()
+    {
+        yield return new WaitForSeconds(0.7f);
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnRate);
+            SpawnFromPool();
+        }
+    }
+
+    #endregion
+
+    #region Bullet
     /// <summary>
     /// Pool에서 총알 달라고 요청
     /// </summary>
@@ -118,6 +134,11 @@ public class PoolManager : BaseUpgradeModel<Pase>
     /// <returns></returns>
     public BaseBullet GetBulletFromPool(int index) {
         BaseBullet bullet = null;
+        if (!isSuppliable){
+            Debug.Log("탄 보급 중단 상태");
+            return bullet;
+        }
+
 
         if (bulletPools[index].Count > 0){
             bullet = bulletPools[index].Dequeue();
@@ -147,17 +168,26 @@ public class PoolManager : BaseUpgradeModel<Pase>
 
     public void InsertUsedBullet(BaseBullet bullet) {
         bullet.gameObject.SetActive(false);
-        bulletPools[bullet.bID].Enqueue(bullet);
+        if(bullet.bID < 2)
+            bulletPools[bullet.bID].Enqueue(bullet);
     }
 
-    IEnumerator SpawnRoutine() {
-        yield return new WaitForSeconds(0.7f);
-        while (true)
-        {
-            yield return new WaitForSeconds(spawnRate);
-            SpawnFromPool();
-        }
+    public void RetrieveAllBullets(){
+        isSuppliable = false;
+        //모든 탄 회수
+        if(RetrieveBulletSignal != null)
+            RetrieveBulletSignal.Invoke();
     }
+
+    public void SubscribeRetrieve(Action bulletDeactivate){
+        RetrieveBulletSignal += bulletDeactivate;
+    }
+
+    public void RemoveSubscribeRetrieve(Action bulletDeactivate){
+        RetrieveBulletSignal -= bulletDeactivate;
+    }
+
+    #endregion
 
     private void OnDestroy(){
         StopAllCoroutines();

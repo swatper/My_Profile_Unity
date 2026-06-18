@@ -11,25 +11,31 @@ public class BaseRangedWeapon : BaseWeapon
     [SerializeField] protected MonsterScanner mScanner;
 
     protected override void InitWeaponData(){
+        timer = 1.0f;   //첫 공격은 바로 공격
         wStat = wData.levelTables[currentLevel - 1];
         mScanner.SetScanRange(wStat.ScanRange);
     }
 
     private void Update()
     {
-        timer += Time.deltaTime * wStat.WeaponSpeed;
-        if (timer > 1.0f) {
-            timer = 0f;
-            Attack();
-        }
+        if (mScanner.nearestTarget == null)
+            return;
+        Attack();
     }
 
     protected override void Attack() {
-        if (mScanner.nearestTarget == null)
+        timer += Time.deltaTime * wStat.WeaponSpeed;
+        if (timer < 1.0f)
             return;
+        //쿨타임 적용
+        timer = 0f;
 
         //탄 요청: 비활성화 상태
         BaseBullet bullet = SurvivalSceneDirector.Instance.poolManager.GetBulletFromPool(bID);
+
+        if (bullet == null)
+            return;
+            
 
         //방향 조절
         Vector3 targetPos = mScanner.nearestTarget.position;

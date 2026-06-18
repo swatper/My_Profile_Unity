@@ -18,17 +18,22 @@ public class BaseMonsterController : MonoBehaviour
     [SerializeField] Animator mAnimator;
     [SerializeField] AudioSource mAudioClip;
 
+    private void Reset(){
+        curLevel = 1;
+        rigid = GetComponent<Rigidbody2D>();
+        mColl = GetComponent<Collider2D>();
+        mSprite = GetComponent<SpriteRenderer>();
+        mAnimator = GetComponent<Animator>();
+        mAudioClip = gameObject.GetComponent<AudioSource>();
+    }
+
     /// <summary>
     /// PoolManager가 진행
     /// </summary>
     /// <param name="monLevel"></param>
     public void PreSetUp(int monLevel) {
         curLevel = monLevel;
-        rigid = GetComponent<Rigidbody2D>();
-        mColl = GetComponent<Collider2D>();
-        mSprite = GetComponent<SpriteRenderer>();
         target = GameManager.Player.GetComponent<Rigidbody2D>();
-        mAnimator = GetComponent<Animator>();
         InitMonster();
     }
 

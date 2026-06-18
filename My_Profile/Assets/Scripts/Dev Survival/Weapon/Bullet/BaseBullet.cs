@@ -11,6 +11,7 @@ public class BaseBullet : MonoBehaviour
 
     protected virtual void Awake(){
         rigid = GetComponent<Rigidbody2D>();
+        SurvivalSceneDirector.Instance.poolManager.SubscribeRetrieve(ReturnBullet);
     }
 
     public virtual void Init(float damage, int cnt, Vector3 dir = default)
@@ -27,7 +28,8 @@ public class BaseBullet : MonoBehaviour
     }
 
     protected virtual void  ReturnBullet() {
-        rigid.linearVelocity = Vector2.zero;
+        if (rigid != null) 
+            rigid.linearVelocity = Vector2.zero;
         StopAllCoroutines();
         SurvivalSceneDirector.Instance.poolManager.InsertUsedBullet(this);
     }
@@ -51,5 +53,9 @@ public class BaseBullet : MonoBehaviour
     {
         yield return new WaitForSeconds(lifeTime);
         ReturnBullet();
+    }
+
+    private void OnDestroy(){
+        SurvivalSceneDirector.Instance.poolManager.RemoveSubscribeRetrieve(ReturnBullet);
     }
 }

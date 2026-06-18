@@ -8,6 +8,11 @@ using Core.Define;
 public class BaseLightContoller : TimeSensitiveControllerBase
 {
     [SerializeField] protected Light2D[] light2D;
+
+    void Reset(){
+        light2D = GetComponentsInChildren<Light2D>(true);
+    }
+
     protected override void CheckTime(TimeOfDay timeOfDay)
     {
         if (timeOfDay == TimeOfDay.Night)

@@ -60,7 +60,6 @@ public class LoadingUI : MonoBehaviour
 
     public void LoadScene(string sceneName) {
         InitMessage(sceneName);
-
         if (isLoading)
             return;
         loadingPanel.SetActive(true);
@@ -89,6 +88,9 @@ public class LoadingUI : MonoBehaviour
 
     IEnumerator LoadAsync(string sceneName)
     {
+        if (Time.timeScale == 0)
+            Time.timeScale = 1.0f;
+
         isDone = false;
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         operation.allowSceneActivation = false;

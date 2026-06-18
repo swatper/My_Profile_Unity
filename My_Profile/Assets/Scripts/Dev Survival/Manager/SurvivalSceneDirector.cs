@@ -8,6 +8,7 @@ public class SurvivalSceneDirector : BaseSceneDirector
     public static SurvivalSceneDirector Instance { get; private set; }
     public PoolManager poolManager;
     [SerializeField] SurvivalSoundController soundController;
+    [SerializeField] bool isLoading = false;
     [Header("Exp Info")]
     [SerializeField] EXPUI expBar;
     [SerializeField] ExpData expData;
@@ -46,9 +47,11 @@ public class SurvivalSceneDirector : BaseSceneDirector
 
     public override void GoToScene()
     {
+        isLoading = true;
         //무기 관리 스크립트 제거
         if (wHandler != null)
             Destroy(wHandler);
+        poolManager.RetrieveAllBullets();
         base.GoToScene();
     }
 
@@ -103,7 +106,11 @@ public class SurvivalSceneDirector : BaseSceneDirector
     /// </summary>
     /// <param name="exp">경험치 증가량</param>
     void AddExp(float exp) {
+        if (isLoading)
+            return;
+
         curExp += exp;
+
         //레벨 업 처리
         while (curExp >= expData.levelTables[curLv - 1].MaxExp) {
             curExp -= expData.levelTables[curLv - 1].MaxExp;
