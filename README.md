@@ -22,30 +22,28 @@
 
 ## 🛠 기술적 도전 및 최적화 (Optimization)
 
-### ⚡ WebGL 프레임 드랍 해결 (30FPS → 60FPS)
+### ⚡ WebGL 환경 문제
 - **문제**: 웹 페이지의 배경 CSS 애니메이션(DOM)과 Unity WebGL 엔진 간의 리소스 경합으로 인해 게임 프레임이 30FPS로 저하되는 현상이 발생했습니다.
 - **해결**: 
     - **JS-Unity 연동**: `mouseenter` 이벤트를 감지하여 게임 화면 진입 시 외부 CSS 애니메이션을 `paused` 상태로 전환, 가용 리소스를 엔진에 집중시켰습니다.
     - **메모리 최적화**: 프로젝트의 Initial/Maximum Memory Size를 1024MB로 조정하고 프레임 제한을 해제했습니다.
-
-### 🖼️ Draw Call 최적화
-- **문제**: 개별 이미지 사용으로 인한 GPU 부하(Draw Call)가 증가했습니다.
-- **해결**: 유사한 용도의 이미지들을 **Sprite Atlas** 형태(Multiple Sprite Mode)로 합쳐 관리함으로써 렌더링 효율을 높였습니다.
+- **문제**: WebGL 빌드에서는 `GUIUtility.systemCopyBuffer`로 클립보드 복사가 동작하지 않습니다. 또한 전체 화면 토글(특히 ESC로 축소) 시 웹의 전체화면 상태와 인게임 상태가 동기화되지 않는 문제가 있었습니다.
+- **해결**: 
+  - **Plugins(.jslib) 사용**: `Plugins` 폴더에 `.jslib` 파일로 웹 전용 JS 함수를 구현하고, WebGL 빌드에서 네이티브 호출로 클립보드와 전체화면 제어를 호출합니다. 에디터/PC 빌드에서는 기존 `GUIUtility.systemCopyBuffer`를 사용하도록 플랫폼 분기 처리를 적용했습니다.
 
 ### 🌐 GitHub Pages 배포 이슈
 - **문제**: GitHub Pages 서버가 Unity의 Brotli/Gzip 압축 파일을 자동으로 해제하지 못해 게임 실행이 불가능했습니다.
 - **해결**: 빌드 설정에서 `Compression Format`을 `Disable`로 변경하여 호환성을 확보했습니다.
 
-## 🏗 System Architecture
+### 🖼️ Draw Call 최적화
+- **내용**: 유사한 용도의 이미지들을 **Sprite Sheet** 형태(Multiple Sprite Mode)로 합쳐 관리함으로써 렌더링 효율을 높였습니다.
 
-### [Scriptable Object Inheritance]
-- `BaseUpgradeData<T>` (Abstract)
-    - `WeaponData` (struct: `WeaponStat`)
-    - `MonsterData` (struct: `MonsterStat`)
-    - `ExpData` (struct: `Exp`)
+### 큐(Queue) 기반 Object Pooling
+- **내용**: 직접 만든 Queue 기반 풀링 시스템으로 `PoolManager`가 몬스터와 투사체를 재사용해 Instantiate/Destroy 비용을 줄입니다.
+- **몬스터**: `Queue<BaseMonsterController>`에서 꺼내 위치 설정 후 활성화, 죽으면 조건에 따라 재입고 또는 교체합니다.
+- **투사체**: 종류별로 `Queue<BaseBullet>`를 만들어 투사체별로 각각 관리합니다. 
+- **일괄 회수**: `RetrieveAllBullets()`가 신호를 보내 모든 투사체를 회수하도록 합니다.
 
-### [Upgrade System Logic]
-- `IUpgradable` (Interface) ⮕ `BaseUpgradeModel<T>` (MonoBehaviour) ⮕ `BaseWeapon` (Abstract)
 
 ## 🔗 관련 링크
   - Demo URL: [실시간 데모 플레이](https://swatper.github.io/)
