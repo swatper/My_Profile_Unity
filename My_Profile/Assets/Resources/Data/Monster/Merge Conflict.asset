@@ -20,7 +20,7 @@ MonoBehaviour:
     Exp: 1
     isDead: 0
   - curHp: 50
-    curSpeed: 3.3
+    curSpeed: 3
     Damage: 0
     KnockBack: 0
     Exp: 2

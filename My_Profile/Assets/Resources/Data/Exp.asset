@@ -18,14 +18,15 @@ MonoBehaviour:
   - MaxExp: 35
   - MaxExp: 55
   - MaxExp: 65
-  - MaxExp: 100
-  - MaxExp: 140
-  - MaxExp: 170
-  - MaxExp: 200
-  - MaxExp: 230
-  - MaxExp: 310
-  - MaxExp: 310
-  - MaxExp: 310
-  - MaxExp: 310
-  - MaxExp: 310
-  - MaxExp: 310
+  - MaxExp: 90
+  - MaxExp: 115
+  - MaxExp: 145
+  - MaxExp: 180
+  - MaxExp: 215
+  - MaxExp: 250
+  - MaxExp: 290
+  - MaxExp: 300
+  - MaxExp: 300
+  - MaxExp: 300
+  - MaxExp: 300
+  - MaxExp: 300

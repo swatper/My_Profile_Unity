@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTables:
   - curHp: 15
-    curSpeed: 2
+    curSpeed: 1.7
     Damage: 1
     KnockBack: 0.5
     Exp: 1
     isDead: 0
   - curHp: 40
-    curSpeed: 3
+    curSpeed: 2.7
     Damage: 1
     KnockBack: 0.5
     Exp: 2

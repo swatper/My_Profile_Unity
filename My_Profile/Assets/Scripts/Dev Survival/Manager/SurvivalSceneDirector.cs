@@ -15,7 +15,6 @@ public class SurvivalSceneDirector : BaseSceneDirector
     [SerializeField] Exp reqExp;
     [SerializeField] float curExp;
     [SerializeField] int curLv;
-    public Action<float> OnMonsterKilled;
     [Header("Upgradable Target")]
     public WeaponHandler wHandler;
     [SerializeField] PlayerController pController;
@@ -30,7 +29,6 @@ public class SurvivalSceneDirector : BaseSceneDirector
         curLv = 1;
         Instance = this;
         SetUpExp();
-        OnMonsterKilled += AddExp;
     }
     protected override void InitScene()
     {
@@ -90,7 +88,15 @@ public class SurvivalSceneDirector : BaseSceneDirector
         Time.timeScale = 1.0f;
     }
 
-    #region 경험치용
+    #region 몬스터 킬 관련
+    /// 몬스터 처치 처리
+    /// </summary>
+    /// <param name="exp">경험치 증가량</param>
+    /// <param name="monsterID">몬스터 ID</param>
+    public void MonsterKilled(float exp, int monsterID){
+        AddExp(exp);
+        AddMonsterKill(monsterID);
+    }
 
     /// <summary>
     /// 경험치 바 초기화
@@ -102,27 +108,23 @@ public class SurvivalSceneDirector : BaseSceneDirector
     }
 
     /// <summary>
-    /// 경험치 추가
+    /// 레벨 업 처리
     /// </summary>
-    /// <param name="exp">경험치 증가량</param>
-    void AddExp(float exp) {
-        if (isLoading)
-            return;
-
+    /// <param name="exp"></param>
+    void AddExp(float exp){
         curExp += exp;
 
         //레벨 업 처리
-        while (curExp >= expData.levelTables[curLv - 1].MaxExp) {
+        while (curExp >= expData.levelTables[curLv - 1].MaxExp)
+        {
             curExp -= expData.levelTables[curLv - 1].MaxExp;
 
             curLv++;
             OnLevelUp();
 
-            if (curLv -1 < expData.levelTables.Count) {
+            if (curLv - 1 < expData.levelTables.Count)
                 SetUpExp();
-            }
-            else
-            {
+            else{
                 //TODO: 만렙 처리
                 Debug.Log("만렙");
                 break;
@@ -136,6 +138,11 @@ public class SurvivalSceneDirector : BaseSceneDirector
         Puase();
     }
 
+    //TODO: 몬스터 킬 수 구현하기
+    public void AddMonsterKill(int monsterID)
+    {
+
+    }
     #endregion
 
     #region 슬롯 초기화용

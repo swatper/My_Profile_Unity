@@ -67,7 +67,7 @@ public class BaseMonsterController : MonoBehaviour
     }
 
     public void Dead() {
-        SurvivalSceneDirector.Instance.OnMonsterKilled?.Invoke(mStat.Exp);
+        SurvivalSceneDirector.Instance.MonsterKilled(mStat.Exp, mData.ID);
         SurvivalSceneDirector.Instance.poolManager.InsertDeadMonster(this);
     }
 

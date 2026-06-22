@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Terrain
   m_EditorClassIdentifier: Core::TerrainStageData
   levelTables:
-  - {x: 30, y: 30}
-  - {x: 50, y: 50}
-  - {x: 100, y: 100}
+  - {x: 45, y: 45}
+  - {x: 70, y: 70}
+  - {x: 110, y: 110}
   TerrainIcon: {fileID: 124065987, guid: 2b0158848e2e97b41afd25d38034bda0, type: 3}
   type: 6
