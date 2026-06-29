@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class OnOffIconBase : MonoBehaviour
+public abstract class BaseOnOffIconController : MonoBehaviour
 {
     [SerializeField] public Image buttonIcon;
     [Tooltip("0: Defualit")]
     [SerializeField] public Sprite[] iconSprites;
+    [Tooltip("인스펙터 창에서 확인용")]
     [SerializeField] public bool IsOn = false;
 
     /// <summary>
@@ -24,18 +25,19 @@ public abstract class OnOffIconBase : MonoBehaviour
     }
 
     /// <summary>
-    /// 스프라이트 변경 및 이후 작업 호출
+    /// 스프라이트 변경 및 이후 기능 수행
     /// </summary>
-    /// <param name="isInit">fasle: 스프라이트만 변경</param>
-    public virtual void CheckSprite(bool isInit = false) {
+    public virtual void CheckSprite() {
         if (!IsOn)
             buttonIcon.sprite = iconSprites[0];
         else
             buttonIcon.sprite = iconSprites[1];
 
-        if(!isInit)
-            ActionalProcessing();
+        ActionalProcessing();
     }
 
+    /// <summary>
+    /// 기능 로직
+    /// </summary>
     protected abstract void ActionalProcessing();
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PC_MobileButton : OnOffIconBase
+public class PC_MobileButton : BaseOnOffIconController
 {
     [SerializeField] BaseSceneDirector sceneDirector;
 

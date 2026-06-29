@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SoundIcon : OnOffIconBase
+public class SoundIcon : BaseOnOffIconController
 {
     [SerializeField] BaseSceneDirector sceneDirector;
 

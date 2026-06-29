@@ -3,7 +3,7 @@ using UnityEngine;
 public class BaseSceneDirector : MonoBehaviour
 {
     [SerializeField] string nextSceneName;
-    [SerializeField] OnOffIconBase[] icons;
+    [SerializeField] BaseOnOffIconController[] icons;
     public GameObject mobileKeyBoard;
 
     private void Start(){

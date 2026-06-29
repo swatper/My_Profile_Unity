@@ -57,11 +57,11 @@ mergeInto(LibraryManager.library, {
         //전체 화면 상태 변경 이벤트 리스너 구독 및 감지
         document.addEventListener("fullscreenchange", function () {
             var isNow = !!document.fullscreenElement;
-            SendMessage('FullScreenButton', 'SyncFullScreen', isNow ? 1 : 0);
+            SendMessage('GameManager', 'SyncWebFullScreen', isNow ? 1 : 0);
         });
 
         //초기 상태 동기화
         var isInitial = !!document.fullscreenElement;
-        SendMessage('FullScreenButton', 'SyncFullScreen', isInitial ? 1 : 0);
+        SendMessage('GameManager', 'SyncWebFullScreen', isInitial ? 1 : 0);
     }
 });

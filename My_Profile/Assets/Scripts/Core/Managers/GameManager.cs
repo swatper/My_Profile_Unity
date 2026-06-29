@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Core.Define;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -56,6 +57,8 @@ public class GameManager : MonoBehaviour
     public bool IsMute = false;
     public bool IsFullScreen = false;
     public bool isMobile = false;
+    [Header("전체 화면 상태")]
+    public Action<bool> OnFullScreenChageEvt;
 
     static void Init()
     {
@@ -93,6 +96,26 @@ public class GameManager : MonoBehaviour
 
         Input.SubscribeKeyEvent(SetPerformanceHUD);
     }
+
+    #region 전체화면 연동 관련
+    public void SubscribeScreenSync(Action<bool> action){
+        OnFullScreenChageEvt += action;
+    }
+
+    public void UnsubscribeScreenSync(Action<bool> action){
+        OnFullScreenChageEvt-=action;
+    }
+
+    /// <summary>
+    /// 외부(웹) -> 인게임 오브젝트 연동 (사실상 아이콘 상태  연동)
+    /// </summary>
+    /// <param name="isFullscreen">1: 전체화면 0: 축소</param>
+    public void SyncWebFullScreen(int isFullscreen){
+        IsFullScreen = isFullscreen == 1;
+        OnFullScreenChageEvt?.Invoke(IsFullScreen);
+    }
+
+    #endregion
 
     void InitPerformanceHUD()
     {

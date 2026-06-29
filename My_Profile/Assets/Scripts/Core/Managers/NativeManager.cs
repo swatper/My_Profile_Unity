@@ -55,10 +55,10 @@ public class NativeManager
     /// </summary>
     public void SubscribeScreenListener() {
 #if !UNITY_EDITOR && UNITY_WEBGL
+        //NativeManager가 PluginManager를 통해 Js 이벤트 리스너 등록
         GameManager.Plugin.SubscribeWebScreenListener();
 #else
         Debug.Log("[NativeManager] 에디터/PC 환경이므로 웹 리스너 등록 스킵");
 #endif
-
     }
 }

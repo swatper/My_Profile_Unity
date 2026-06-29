@@ -10,7 +10,7 @@ public class PluginManager
     [DllImport("__Internal")] private static extern void CopyTextToClipboardWebGL(string text);
     //전체화면
     [DllImport("__Internal")] private static extern void SetFullscreenWebGL(bool isFullscreen);
-    //전체화면 감지
+    //전체화면 감지(이벤트 발생 시, Js에서 GameManager로 바로 전달)
     [DllImport("__Internal")] private static extern void RegisterFullscreenListener();
 
     public void CopyWebClipbaord(string copyText) => CopyTextToClipboardWebGL(copyText);
