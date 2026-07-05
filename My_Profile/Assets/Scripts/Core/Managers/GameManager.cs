@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     public bool IsFullScreen = false;
     public bool isMobile = false;
     [Header("전체 화면 상태")]
-    public Action<bool> OnFullScreenChageEvt;
+    public Action<bool> OnFullScreenChangeEvt;
 
     static void Init()
     {
@@ -99,11 +99,11 @@ public class GameManager : MonoBehaviour
 
     #region 전체화면 연동 관련
     public void SubscribeScreenSync(Action<bool> action){
-        OnFullScreenChageEvt += action;
+        OnFullScreenChangeEvt += action;
     }
 
     public void UnsubscribeScreenSync(Action<bool> action){
-        OnFullScreenChageEvt-=action;
+        OnFullScreenChangeEvt -= action;
     }
 
     /// <summary>
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
     /// <param name="isFullscreen">1: 전체화면 0: 축소</param>
     public void SyncWebFullScreen(int isFullscreen){
         IsFullScreen = isFullscreen == 1;
-        OnFullScreenChageEvt?.Invoke(IsFullScreen);
+        OnFullScreenChangeEvt?.Invoke(IsFullScreen);
     }
 
     #endregion

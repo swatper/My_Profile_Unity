@@ -42,20 +42,22 @@ public class GithubChecker : MonoBehaviour
             GameManager.Data.GitEvent = tmp;
         }
 
-        //각 기록 정보 확인 (Hash를 사용해 빠름)
-        HashSet<string> commitDates = new HashSet<string>();
+        //각 기록 정보 확인
+        Dictionary<string, string> commitDateTimeMap = new Dictionary<string, string>();
         if (tmp != null && tmp.events != null)
         {
             foreach (var githubEvent in tmp.events)
             {
                 //PushEvent만 필터링
                 if (githubEvent.type == "PushEvent" && !string.IsNullOrEmpty(githubEvent.created_at)){
-                    //"2026-06-14T04:28:31Z" -> 앞의 "2026-06-14"만 잘라내기
-                    string dateOnly = githubEvent.created_at.Substring(0, 10);
-                    commitDates.Add(dateOnly);
+                    //날짜 중복 방지
+                    commitDateTimeMap[githubEvent.localDate] = githubEvent.localTime;
                 }
             }
         }
+
+
+        DateTime today = DateTime.Today;
 
         ///Commit 잔디에 반영 (0번째부터 14일전 ~ 13번째까지 당일)
         for (int i = 0; i < commitFields.Length; i ++){
@@ -63,21 +65,18 @@ public class GithubChecker : MonoBehaviour
             if (commitFields[i].isCommited)
                 continue;
 
-            //날짜 선택 (UTC 기준)
-            DateTime dateValue = DateTime.UtcNow.AddDays(-i);
             //i일 전의 날짜 문자열 생성 
+            DateTime dateValue = today.AddDays(-i);
             string searchTag = dateValue.ToString("yyyy-MM-dd");    //찾으려는 최종 날짜
             string displayDate = dateValue.ToString("MM.dd");           //Commit 잔디에 표시할 날짜
 
-            //단순 commit 유무만 확인
-            bool isCommited = commitDates.Contains(searchTag);
-            if (isCommited){
-                commitFields[i].InitFiled(true, displayDate);
-                //Debug.Log($"{displayDate} : 커밋 확인됨!");
+            if (commitDateTimeMap.TryGetValue(searchTag, out string commitTime)){
+                commitFields[i].InitFiled(true, displayDate, commitTime);
+                // Debug.Log($"{displayDate} {commitTime} : 커밋 확인됨!");
             }
             else{
                 commitFields[i].InitFiled(false, displayDate);
-                //Debug.Log($"{displayDate} : 기록 없음.");
+                // Debug.Log($"{displayDate} : 기록 없음.");
             }
         }
     }
