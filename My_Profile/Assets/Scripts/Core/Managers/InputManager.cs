@@ -1,48 +1,71 @@
 using System;
 using UnityEngine;
 using  Core.Define;
+using UnityEngine.InputSystem; //새로운 InputSystem 사용
+
 public class InputManager
 {
     public Action<KeyEvent> KeyPress;
+    public Keyboard keyboard;
+
+    public InputManager()
+    {
+        //생성자에서 최초 할당 및 디바이스 연결 이벤트 등록
+        RefreshKeyboard();
+        InputSystem.onDeviceChange += OnDeviceChange;
+    }
+
+    //디바이스가 새로 연결되거나 끊겼을 때 감지 (안전장치)
+    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    {
+        if (device is Keyboard)
+            RefreshKeyboard();
+    }
+
+    private void RefreshKeyboard(){
+        keyboard = Keyboard.current;
+    }
 
     public void OnKeyEvent()
     {
         if (KeyPress == null)
             return;
 
-        //LeftArrow
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
+        keyboard = Keyboard.current;
+        if (keyboard == null){
+            Debug.Log("키보들을 찾을 수 없음");
+            return;
+        }
+
+        #region 플레이어 조작
+        //←
+        if (keyboard.leftArrowKey.isPressed || keyboard.aKey.isPressed) 
             KeyPress.Invoke(KeyEvent.Left);
-        }
-        //RightArrow
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
+        //→
+        if (keyboard.rightArrowKey.isPressed || keyboard.dKey.isPressed)
             KeyPress.Invoke(KeyEvent.Right);
-        }
-        //UpArrow
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        {
+        //↑
+        if (keyboard.upArrowKey.isPressed || keyboard.wKey.isPressed)
             KeyPress.Invoke(KeyEvent.Up);
-        }
-        //DownArrow
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
+        //↓
+        if (keyboard.downArrowKey.isPressed || keyboard.sKey.isPressed)
             KeyPress.Invoke(KeyEvent.Down);
-        }
-        if (Input.GetKey(KeyCode.Escape))
-        {
+        #endregion
+
+        #region 기다 타른 키
+        //ESC
+        if (keyboard.escapeKey.wasPressedThisFrame)
             KeyPress.Invoke(KeyEvent.ESC);
-        }
-        if (Input.GetKey(KeyCode.Tab)) {
+        //Tab
+        if (keyboard.tabKey.wasPressedThisFrame) 
             KeyPress.Invoke(KeyEvent.Tab);
-        }
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) {
+        //Enter
+        if (keyboard.enterKey.wasPressedThisFrame || keyboard.numpadEnterKey.wasPressedThisFrame) 
             KeyPress.Invoke(KeyEvent.Enter);
-        }
-        if (Input.GetKeyDown(KeyCode.F2)) {
+        //F12
+        if (keyboard.f2Key.wasPressedThisFrame)
             KeyPress.Invoke(KeyEvent.Debug);
-        }
+        #endregion
     }
 
     /// <summary>

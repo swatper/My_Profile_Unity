@@ -1,7 +1,8 @@
-using System.Collections;
-using UnityEngine;
 using Core.Define;
 using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Windows;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager GM_Instance;
     public static GameManager Instance { get { Init(); return GM_Instance; } }
 
-    InputManager M_Input = new InputManager();
+    InputManager M_Input;
     public static InputManager Input { get { return Instance.M_Input; } }
 
     ResourceManager M_Resource = new ResourceManager();
@@ -77,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        M_Input = new InputManager();
         //프레임 설정 (제한 없음-> 하드웨어와 브라우저 설정이 허락하는 최대치)
         Application.targetFrameRate = -1;
 
