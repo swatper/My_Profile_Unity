@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviour, IUpgradable
     [SerializeField] private Sprite defaultStatIcon;
     [SerializeField] Animator pAnimator;
     [SerializeField] AnimatorOverrideController[] pAniControllers;
+    public ParticleSystem vfx;
     [SerializeField] Transform playerPivot;
     [SerializeField] Transform pPosition;
     public Vector2 inputVec;
     public Vector2 moveBuffer;
+
     private void Awake()
     {
         if (Instance == null)
@@ -96,6 +98,10 @@ public class PlayerController : MonoBehaviour, IUpgradable
         pData = newData;
         pState = new PlayerState(newData);
         pAnimator.runtimeAnimatorController = pAniControllers[pData.ID];
+        if (vfx != null){
+            vfx.Stop();
+            vfx.Play();
+        }
     }
 
     public void Upgrade(){
