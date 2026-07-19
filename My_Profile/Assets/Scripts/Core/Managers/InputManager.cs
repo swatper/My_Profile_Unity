@@ -52,7 +52,7 @@ public class InputManager
             KeyPress.Invoke(KeyEvent.Down);
         #endregion
 
-        #region 기다 타른 키
+        #region 기타 다른 키
         //ESC
         if (keyboard.escapeKey.wasPressedThisFrame)
             KeyPress.Invoke(KeyEvent.ESC);
