@@ -9,7 +9,8 @@ namespace Core.Define
         ESC,
         Tab,
         Enter,
-        Debug
+        Debug,
+        Help
     }
 
     public enum Layers 

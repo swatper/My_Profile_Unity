@@ -65,6 +65,8 @@ public class InputManager
         //F12
         if (keyboard.f2Key.wasPressedThisFrame)
             KeyPress.Invoke(KeyEvent.Debug);
+        if (keyboard.hKey.wasPressedThisFrame)
+            KeyPress.Invoke(KeyEvent.Help);
         #endregion
     }
 

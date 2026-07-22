@@ -4311,6 +4311,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6216121350919989501, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
   m_PrefabInstance: {fileID: 334275604}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &334275606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8994801293318469779, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
+  m_PrefabInstance: {fileID: 334275604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
 --- !u!1 &334330866
 GameObject:
   m_ObjectHideFlags: 0
@@ -6880,7 +6891,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1866984960}
     m_Modifications:
     - target: {fileID: 671073400449544191, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       propertyPath: m_Size.x
@@ -7080,7 +7091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6216121350919989501, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -16.93
       objectReference: {fileID: 0}
     - target: {fileID: 6216121350919989501, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7096,15 +7107,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6216121350919989501, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6216121350919989501, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6216121350919989501, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6216121350919989501, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8154,6 +8165,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773850269}
   m_CullTransparentMesh: 1
+--- !u!114 &781542443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8994801293318469779, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
+  m_PrefabInstance: {fileID: 1893643462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
 --- !u!1 &782760633
 GameObject:
   m_ObjectHideFlags: 0
@@ -9212,6 +9234,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3565269536670570839, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
   m_PrefabInstance: {fileID: 850187616}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &850187621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8994801293318469779, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
+  m_PrefabInstance: {fileID: 850187616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
 --- !u!114 &850187624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11873,6 +11906,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187982740}
   m_CullTransparentMesh: 1
+--- !u!114 &1197063639 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8994801293318469779, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
+  m_PrefabInstance: {fileID: 1721149879}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
 --- !u!1 &1199110582
 GameObject:
   m_ObjectHideFlags: 0
@@ -15859,6 +15903,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8304527133124482305, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
   m_PrefabInstance: {fileID: 596245861}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1599620080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8994801293318469779, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
+  m_PrefabInstance: {fileID: 596245861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
 --- !u!1 &1601148620
 GameObject:
   m_ObjectHideFlags: 0
@@ -23990,6 +24045,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4727650432624924169, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
   m_PrefabInstance: {fileID: 1798595853}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1798595856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8994801293318469779, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
+  m_PrefabInstance: {fileID: 1798595853}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
 --- !u!114 &1798595857 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4666837742273314746, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
@@ -25663,6 +25729,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3565269536670570839, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
   m_PrefabInstance: {fileID: 1858666286}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1858666291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8994801293318469779, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
+  m_PrefabInstance: {fileID: 1858666286}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
 --- !u!1 &1864164722
 GameObject:
   m_ObjectHideFlags: 0
@@ -25706,6 +25783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1866984960}
+  - component: {fileID: 1866984961}
   m_Layer: 6
   m_Name: Town
   m_TagString: Building
@@ -25734,8 +25812,31 @@ Transform:
   - {fileID: 124120690}
   - {fileID: 334275605}
   - {fileID: 1122786231}
+  - {fileID: 596245868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1866984961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866984959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d79a14ca52f5454b91764375eeead3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::TownHelper
+  buildings:
+  - {fileID: 1798595856}
+  - {fileID: 1858666291}
+  - {fileID: 850187621}
+  - {fileID: 1197063639}
+  - {fileID: 781542443}
+  - {fileID: 1889180247}
+  - {fileID: 334275606}
+  - {fileID: 1599620080}
+  needHelp: 0
 --- !u!1001 &1888131407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25806,6 +25907,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4567531224648516971, guid: 3568bbe2035779847a3f076dde1ad3f1, type: 3}
   m_PrefabInstance: {fileID: 1888131407}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1889180247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8994801293318469779, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
+  m_PrefabInstance: {fileID: 124120689}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3893a4928474349a97de0a7c6b6723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DebugVillage::HoverVisualScaler
 --- !u!1 &1890254339
 GameObject:
   m_ObjectHideFlags: 0
@@ -29633,7 +29745,6 @@ SceneRoots:
   - {fileID: 1601148622}
   - {fileID: 1866984960}
   - {fileID: 1864164723}
-  - {fileID: 596245861}
   - {fileID: 447423716}
   - {fileID: 1643540072}
   - {fileID: 141367790}
