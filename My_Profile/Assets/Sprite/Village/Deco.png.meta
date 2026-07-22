@@ -395,6 +395,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: speech balloon
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 176
+        width: 164
+        height: 76
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d7d1e1a69d1304f9edc836804e5ccb
+      internalID: 1077084993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -424,6 +446,7 @@ TextureImporter:
       SignBoard_1: 2077239896
       SignBoard_2: 667983378
       Tree: -668110772
+      speech balloon: 1077084993
       tmp: 879092469
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
