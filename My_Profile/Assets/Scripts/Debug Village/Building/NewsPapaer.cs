@@ -1,9 +1,10 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Networking;
 using  Core.Data.Json;
 using UnityEngine.UI;
 
+/// <summary>
+/// MVC 패턴의 View (쿠폰 정보 UI에 할당)
+/// </summary>
 public class NewsPapaer : MonoBehaviour
 {
     [Header("Gist Settings")]
@@ -16,11 +17,7 @@ public class NewsPapaer : MonoBehaviour
     [SerializeField] Text updateDate;
 
     [Header("쿠폰 정보")]
-    public CouponData LoadedCoupon { get; private set; }
-
-    void Awake(){
-        StartCoroutine(FetchGistData());
-    }
+    CouponData LoadedCoupon { get; set; }
 
     public void CopyCoupon()
     {
@@ -30,37 +27,17 @@ public class NewsPapaer : MonoBehaviour
         GameManager.Native.CopyToClipboard(LoadedCoupon.coupon_code);
     }
 
-    IEnumerator FetchGistData()
-    {
-        LoadedCoupon = GameManager.Data.AssetCoupon;
-        if (LoadedCoupon == null)
-        {
-            //Gist로부터 쿠폰 정보 가져오기
-            using (UnityWebRequest webRequest = UnityWebRequest.Get(gistRawUrl))
-            {
-                //Debug.Log("캐싱된 쿠폰 정보 없음");
-                yield return webRequest.SendWebRequest();
-
-                //에러 체크
-                if (webRequest.result == UnityWebRequest.Result.Success)
-                {
-                    string jsonText = webRequest.downloadHandler.text;
-                    Debug.Log($"받은 쿠폰 Json 데이터: \n{jsonText}");
-
-                    //JsonUtility로 C# 객체에 쏙 파싱하기
-                    LoadedCoupon = JsonUtility.FromJson<CouponData>(jsonText);
-                    GameManager.Data.AssetCoupon = LoadedCoupon;
-                }
-                else{
-                    Debug.LogError($"쿠폰 정보 가져오기 실패: {webRequest.error}");
-                }
-            }
-        }
+    /// <summary>
+    /// 쿠폰 정보 UI에 할당
+    /// </summary>
+    /// <param name="couponInfo"></param>
+    public void SetCouponInfo(CouponData couponData){
+        LoadedCoupon = couponData;
         //UI에 할당
-        assetName.text = "Asset Name: " + LoadedCoupon.asset_name;
-        assetPublisherName.text = "Publisher: " + LoadedCoupon.publisher_name;
-        couponCode.text = LoadedCoupon.coupon_code;
-        updateDate.text = "Last Updated: " + LoadedCoupon.last_updated;
+        assetName.text = "Asset Name: " + couponData.asset_name;
+        assetPublisherName.text = "Publisher: " + couponData.publisher_name;
+        couponCode.text = couponData.coupon_code;
+        updateDate.text = "Last Updated: " + couponData.last_updated;
         urlOpenner.AddURL(LoadedCoupon.asset_url);
     }
 }

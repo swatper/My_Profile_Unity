@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Core.Data.Json
 {
     /// <summary>
-    /// GIST에 있는 유니티 에셋 쿠폰 정보
+    /// GIST에 있는 유니티 에셋 쿠폰 정보 (퍼블리셔, 에셋 이름, 쿠폰 코드, 에셋 URL,  정보 업데이트 날짜)
     /// </summary>
     [System.Serializable]
     public class CouponData
@@ -16,6 +16,7 @@ namespace Core.Data.Json
         public string asset_url;
         public string last_updated;
     }
+
     #region Github API
     /// <summary>
     /// GitHub Event API 최상위 배열을 파싱하기 위한 래퍼 클래스

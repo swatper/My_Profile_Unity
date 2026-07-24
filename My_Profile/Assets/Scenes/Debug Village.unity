@@ -1079,6 +1079,17 @@ MonoBehaviour:
   code: {fileID: 1823040814}
   message: {fileID: 1005248259}
   soundController: {fileID: 708119043}
+  gistRawUrl: https://gist.githubusercontent.com/swatper/11377643110a76652a4dc5c7015b651f/raw/unity_free_asset.json
+  loadedCoupon:
+    publisher_name: 
+    asset_name: 
+    coupon_code: 
+    asset_url: 
+    last_updated: 
+  newsPaper: {fileID: 1604708097}
+  commitInfo:
+    events: []
+  commitfield: {fileID: 1643540073}
 --- !u!4 &53179043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9018928260651077807, guid: e1226836986776b4a847a7287898b59e, type: 3}
@@ -1936,9 +1947,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 182810333}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1102997499166545649, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 3565269536670570839, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 124120694}
@@ -4309,9 +4317,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3931776601358360330, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1604708097}
-    - targetCorrespondingSourceObject: {fileID: 1102997499166545649, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 3565269536670570839, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 917347118}
@@ -9222,9 +9227,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3931776601358360330, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1062960978}
-    - targetCorrespondingSourceObject: {fileID: 1102997499166545649, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 3565269536670570839, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 850187624}
@@ -17936,9 +17938,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3931776601358360330, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1721149886}
-    - targetCorrespondingSourceObject: {fileID: 1102997499166545649, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 3565269536670570839, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1721149890}
@@ -24071,9 +24070,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1712031744}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1102997499166545649, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 3565269536670570839, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1798595861}
@@ -25749,9 +25745,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3931776601358360330, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1554586488}
-    - targetCorrespondingSourceObject: {fileID: 1102997499166545649, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
 --- !u!4 &1858666287 stripped
 Transform:
@@ -26521,9 +26514,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3931776601358360330, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1893643470}
-    - targetCorrespondingSourceObject: {fileID: 1102997499166545649, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 4524873115476100710, guid: ac2d841cf8a38444f91884d897aabb39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 911809876}
